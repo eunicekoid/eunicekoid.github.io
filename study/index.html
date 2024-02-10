@@ -130,7 +130,7 @@
             </div>
         </div>
 
-        <!-- Add more flashcards as needed -->
+        <!-- Add more flashcards -->
 
     </div>
 
@@ -142,26 +142,42 @@
         <!-- Add more tags as needed -->
     </select>
 
+    <!-- Move your script to the end of the body or wrap it in DOMContentLoaded event listener -->
     <script>
-        const tagFilter = document.getElementById('tag-filter');
-        const flashcards = document.querySelectorAll('.flashcard');
+        document.addEventListener("DOMContentLoaded", function () {
+            const tagFilter = document.getElementById('tag-filter');
+            const flashcards = document.querySelectorAll('.flashcard');
 
-        tagFilter.addEventListener('change', filterFlashcards);
+            tagFilter.addEventListener('change', filterFlashcards);
 
-        function filterFlashcards() {
-            const selectedTag = tagFilter.value;
+            function filterFlashcards() {
+                const selectedTag = tagFilter.value;
 
-            flashcards.forEach((flashcard) => {
-                const tags = flashcard.getAttribute('data-tags').split(',');
+                flashcards.forEach((flashcard) => {
+                    const tags = flashcard.getAttribute('data-tags').split(',');
 
-                if (selectedTag === 'all' || tags.includes(selectedTag)) {
-                    flashcard.classList.add('active');
-                } else {
-                    flashcard.classList.remove('active');
-                }
-            });
-        }
+                    if (selectedTag === 'all' || tags.includes(selectedTag)) {
+                        flashcard.classList.add('active');
+                    } else {
+                        flashcard.classList.remove('active');
+                    }
+                });
+            }
+        });
     </script>
+
+    <!-- Bootstrap & MDB JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-7s69cAwdRQl+ZtzUR4z9H1L/7XDTd9aAeTJfJae0rc4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-Ud7oE9dpEhcyZY8bD7N5nIVuHJ/qGPgDevSIXGMEFDH6YD7G5FfZDCLsvZMD+2s3" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"
+        integrity="sha256-ow0tfM3U7whRvvdeUc1+3+ycRGlhe4+1chRUFEkUhhg=" crossorigin="anonymous"></script>
+
 
 </body>
 
