@@ -125,11 +125,36 @@
 
       <article>
         <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a
-            href="https://eunicekoid.github.io/">here</a>.</p>
-
+            id="redirect-link" href="https://eunicekoid.github.io/">here</a>.</p>
       </article>
 
     </div>
+
+    <script>
+      // Function to get the referring URL
+      function getReferringURL() {
+        var referringURL = document.referrer;
+        return referringURL;
+      }
+
+      // Function to update the href attribute of the link with the referring URL
+      function updateRedirectLink() {
+        var redirectLink = document.getElementById('redirect-link');
+        if (redirectLink) {
+          redirectLink.href = getReferringURL();
+        }
+      }
+
+      // Perform redirection after 3 seconds
+      setTimeout(function () {
+        window.location.href = getReferringURL();
+      }, 3000);
+
+      // Update the redirect link immediately
+      updateRedirectLink();
+    </script>
+
+  </div>
 
   </div>
 
