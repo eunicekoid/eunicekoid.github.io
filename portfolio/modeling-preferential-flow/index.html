@@ -182,6 +182,31 @@
                     pressure gradient. Note that L indicates a length-based unit like meters and T indicates a
                     time-based unit like seconds.</p>
 
+
+
+                <h5>Effective Saturation, Van Genuchten, and Relative Permeability</h5>
+                <p>The Van Genuchten and effective saturation equations are needed to calculate the relative
+                    permeability, $k_{r\alpha}$. The Van Genuchten equation models the soil's water retention by
+                    relating the water content to the soil’s empirical parameters (Mayer, 2005; Pinder and Celia, 2006).
+                </p>
+
+                <p>$$\text{if } h_c > 0 \text{, } S_{\text{eff}}(h_c) = [1 + (\alpha h_c)^n]^{-m}$$</p>
+                <p>$$\text{if } h_c \leq 0 \text{, } S_{\text{eff}}(h_c) = 1$$</p>
+
+                <p>where $\alpha$ is an empirical parameter of the soil in $L^{-1}$ which is the point on the water
+                    retention curve where $S_{eff}=0$. $h_{c}$ is the capillary pressure head in length-based unit. $n$
+                    and $m$ are empirical soil parameters where $n=\frac{1}{1-m}$ and $m=1-(\frac{1}{n})$ (Mayer, 2005).
+                    With $S_{eff}$ known using the equation above, the volumetric water content, $\theta_{w}$ $(L^3
+                    L^{-3})$, can be calculated via the effective saturation equation as shown in the following
+                    equation.</p>
+
+                <p>$$S_{eff} = \frac{\theta_{w}-\theta_{res}}{\theta_{sat}-\theta_{res}}$$</p>
+
+                <p>while the relative permeability can be found by the following equation (Pinder and Celia, 2006)</p>
+
+                <p>$$k_{rw} = (S_{eff})^3$$</p>
+
+
             </article>
 
         </div>
