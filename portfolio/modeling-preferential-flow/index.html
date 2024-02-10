@@ -176,8 +176,10 @@
                 <p>$$q_{\alpha} =
                     \frac{\textbf{k}k_{r\alpha}}{\mu_{\alpha}}(\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})$$</p>
 
-                <p>where \(q_{\alpha}\) is the water discharge rate in \(\frac{L^2}{T}\), \(\textbf{k}\) is the permeability
-                    in \(L^2\), \(k_{r\alpha}\) is the relative permeability (dimensionless), \(\mu_{\alpha}\) is the dynamic
+                <p>where \(q_{\alpha}\) is the water discharge rate in \(\frac{L^2}{T}\), \(\textbf{k}\) is the
+                    permeability
+                    in \(L^2\), \(k_{r\alpha}\) is the relative permeability (dimensionless), \(\mu_{\alpha}\) is the
+                    dynamic
                     viscosity in Pascals \(\cdot\) T, \((\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})\) is the
                     pressure gradient. Note that L indicates a length-based unit like meters and T indicates a
                     time-based unit like seconds.
@@ -195,8 +197,9 @@
                 <p>$$\text{if } h_c \leq 0 \text{, } S_{\text{eff}}(h_c) = 1$$</p>
 
                 <p>where \(\alpha\) is an empirical parameter of the soil in \(L^{-1}\) which is the point on the water
-                    retention curve where \(S_{eff}=0\). \(h_{c}\) is the capillary pressure head in length-based unit. \(n$
-                    and \(m\) are empirical soil parameters where \(n=\frac{1}{1-m}\) and \(m=1-(\frac{1}{n})\) (Mayer, 2005).
+                    retention curve where \(S_{eff}=0\). \(h_{c}\) is the capillary pressure head in length-based unit.
+                    \(n\) and \(m\) are empirical soil parameters where \(n=\frac{1}{1-m}\) and \(m=1-(\frac{1}{n})\) (Mayer,
+                    2005).
                     With \(S_{eff}\) known using the equation above, the volumetric water content, \(\theta_{w}\) \((L^3
                     L^{-3})\), can be calculated via the effective saturation equation as shown in the following
                     equation.</p>
@@ -208,21 +211,28 @@
                 <p>$$k_{rw} = (S_{eff})^3$$</p>
 
                 <h4>Richard's Equation</h4>
+                <p>The pressure head form of the Richards Equation is as follows.
+                </p>
+
                 <p>$$[C(h_{w}) + S_{w}S^w_{s}]\frac{\delta h_{w}}{\delta t} - \mathbf{\nabla} \cdot [K^w_{sat}
                     k_{rw}(\mathbf{\nabla} h_{w} + \mathbf{\nabla}z)]=0$$</p>
 
-                <p>where \(K^w_{sat}\) is the saturated hydraulic conductivity in \(\frac{L}{T}\), \(h_{w}\) is the water
-                    pressure head, and \(z\) is the depth. Note that negative \(z\) indicates a direction from top to bottom
-                    of the soil column (away from the surface into deeper layers). \(C(h_{w})\) is the differential water
+                <p>where \(K^w_{sat}\) is the saturated hydraulic conductivity in \(\frac{L}{T}\), \(h_{w}\) is the
+                    water
+                    pressure head, and \(z\) is the depth. Note that negative \(z\) indicates a direction from top to
+                    bottom
+                    of the soil column (away from the surface into deeper layers). \(C(h_{w})\) is the differential
+                    water
                     capacity which equals \(\frac{\delta \theta_{w}}{\delta h_{w}}\). \(S_{w}\) is known as the water
                     storage which equals \(\frac{\theta_{w}}{\theta_{sat}}\).</p>
 
-                <p>$S^w_{s}\) is the storativity coefficient which is the specific water capacity of the soil, given by
+                <p>\(S^w_{s}\) is the storativity coefficient which is the specific water capacity of the soil, given by
                     the following equation.</p>
 
                 <p>$$S^w_{s} = \rho_{w} g (C_v+\epsilon \beta_w)$$</p>
 
-                <p>where \(C_v\) is the compressibility of the soil, \(\epsilon\) is the porosity of the soil, \(\beta_w\) is
+                <p>where \(C_v\) is the compressibility of the soil, \(\epsilon\) is the porosity of the soil,
+                    \(\beta_w\) is
                     the compressibility of water, \(\rho_w\) is the density of water, and \(g\) is gravitational
                     acceleration.</p>
 
@@ -238,7 +248,8 @@
 
                 <p>$$q_{w} = -K_{sat}k_{rel}(\theta_{w}) ({\Delta} h_w+\mathbf{\nabla}z)$$</p>
 
-                <p>where \(q_w\), \(K_{sat}\), \(k_{rel}\), and \(h_w\) are unique to the respective fast flow and slow flow
+                <p>where \(q_w\), \(K_{sat}\), \(k_{rel}\), and \(h_w\) are unique to the respective fast flow and slow
+                    flow
                     domains. The hydraulic conductivity, \(-K_{sat}k_{rel}\), is a function of the water content.</p>
 
                 <p>In the model, the flows in both the fast and slow zones are coupled by the exchange for water term
@@ -247,7 +258,8 @@
                 <p>$$Q_{exchange} = -k_{ex}(h_{w,fast}-h_{w,slow})$$</p>
 
                 <p>where \(k_{ex}\) is the rate of exchange of water between the two porosities and \(h_w\) is the water
-                    pressure head for the fast and slow zones. \(k_{ex}\) is a resistance term and expected to be large if
+                    pressure head for the fast and slow zones. \(k_{ex}\) is a resistance term and expected to be large
+                    if
                     there is a barrier like a worm's slimy paste that keeps the holes in place; this interface presents
                     a higher resistivity. Since it is an empirical parameter, it is determined by trial and error. The
                     \(Q_{exchange}\) term has the same magnitude at all times for both flow zones, but with different
@@ -256,8 +268,8 @@
 
                 <p>$$\theta_{sat} = \theta_{sat,fast} + \theta_{sat,slow}$$</p>
 
-                <p>where $\theta_{sat,fast} = \beta \theta_{sat}\) and $\theta_{sat,slow} = (1-\beta) \theta_{sat}\).
-                    $\beta\) is the fraction of porosity associated with the fast flow.</p>
+                <p>where \(\theta_{sat,fast} = \beta \theta_{sat}\) and \(\theta_{sat,slow} = (1-\beta) \theta_{sat}\).
+                    \(\beta\) is the fraction of porosity associated with the fast flow.</p>
 
                 <p>The water mass balances for both the fast and slow flow zones, respectively, are as follows.</p>
 
@@ -265,8 +277,28 @@
 
                 <p>$$\frac{\delta \theta_{w,slow}}{\delta t} + \mathbf{\nabla} \cdot q_{w,slow} - Q_{exchange} =0$$</p>
 
-                <p>If the \(h_{w,fast}\) > \(h_{h,slow}\), then the \(Q_{exchange}\) is negative, indicating that the water
-                    flows from the fast flow zone to the slow flow zone.</p>
+                <p>If the \(h_{w,fast}\) > \(h_{h,slow}\), then the \(Q_{exchange}\) is negative, indicating that the
+                    water flows from the fast flow zone to the slow flow zone.</p>
+
+
+                <h2>Methodology</h2>
+                <p>To implement the equations in the model, the following steps were taken. Firstly, both domains were
+                    defined to have the same top and boundary conditions and the same number of nodes; the soil column
+                    used for both is the same. The flow was assumed to enter through the fast flow zone only. The
+                    Richards Equation was modeled with two states with identical soil properties and a \(Q_{exchange}\) of
+                    zero to see if the model produced identical results as unsaturated flow, as in this case, there is
+                    no exchange between the zones. The model solves both of the states of the two domains in parallel.
+                    The fast flow zone is controlled by \(\beta\), with \(\beta \theta_{sat}\) indicating the pore space in
+                    the fast flow zone. Then, the parameters were varied to have different soil parameters to study the
+                    behavior of the fast and slow flow zones. After that, the exchange term can be also changed to model
+                    the preferential flow. From the exchange term, \(Q_{exchange}\), it is evident that the difference
+                    between the pressure heads of the fast and slow flow zones and therefore the \(Q_{exchange}\) will
+                    dominate the flow process. To see the results of this stepwise expansion of the model, please see
+                    the Appendix. The model was then used to run different scenarios to see the effect of preferential
+                    flow through unsaturated soils; these scenarios contain different boundary conditions and model
+                    parameters to see how the model results change with under varying conditions. The scenarios will be
+                    further detailed in an upcoming section.
+                </p>
 
             </article>
 
