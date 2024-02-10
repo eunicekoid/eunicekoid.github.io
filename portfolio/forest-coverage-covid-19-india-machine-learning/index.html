@@ -215,73 +215,71 @@
                         relationships between variables.</li>
                 </ol>
 
-                <details>
-                    <summary><b><u>Data Collection and Interrogation</u></b></summary>
-                    <br>
+                
+                <h2>Data Collection and Interrogation</h2>
 
-                    <p><strong>Covid-19 data</strong></p>
-                    <ul>
-                        <li>Data from January 30 to April 26, 2020 from the Data Development Lab India (DLL India).
-                            Files used: covid_cases_deaths_district.csv, covid_deaths_recoveries.csv, and
-                            covid_infected_deaths.csv</li>
-                        <li>The following operations were done:
-                            <ul>
-                                <li>Renamed the state names according to the state name in shapefile</li>
-                                <li>Merged Covid_cases_death_districts with death_recoveries by state_id</li>
-                                <li>Dropped duplicates</li>
-                                <li>Recovered number of Covid-19 patients by summing up grouped data by state</li>
-                            </ul>
-                        </li>
-                    </ul>
+                <p><strong>Covid-19 data</strong></p>
+                <ul>
+                    <li>Data from January 30 to April 26, 2020 from the Data Development Lab India (DLL India).
+                        Files used: covid_cases_deaths_district.csv, covid_deaths_recoveries.csv, and
+                        covid_infected_deaths.csv</li>
+                    <li>The following operations were done:
+                        <ul>
+                            <li>Renamed the state names according to the state name in shapefile</li>
+                            <li>Merged Covid_cases_death_districts with death_recoveries by state_id</li>
+                            <li>Dropped duplicates</li>
+                            <li>Recovered number of Covid-19 patients by summing up grouped data by state</li>
+                        </ul>
+                    </li>
+                </ul>
 
-                    <p><strong>Health and demographics data</strong></p>
-                    <ul>
-                        <li>The files titled pc11_demographics.csv and health_district_pc11.csv are from DLL India and
-                            the Socioeconomic High-resolution Rural-Urban Geographic Platform (SHRUG) (2020). The
-                            demographics data is from the 2011 population census; the relevant variables are StateID,
-                            UrbanShare, PopDens, StateName, SlumPop, TotPop, WorkPopGeo.</li>
-                    </ul>
+                <p><strong>Health and demographics data</strong></p>
+                <ul>
+                    <li>The files titled pc11_demographics.csv and health_district_pc11.csv are from DLL India and
+                        the Socioeconomic High-resolution Rural-Urban Geographic Platform (SHRUG) (2020). The
+                        demographics data is from the 2011 population census; the relevant variables are StateID,
+                        UrbanShare, PopDens, StateName, SlumPop, TotPop, WorkPopGeo.</li>
+                </ul>
 
-                    <p><strong>Air quality and forest data</strong></p>
-                    <ul>
-                        <li>The mean pollution data (ddl_pollution_sedac_lgd.csv) is from DLL India and includes data on
-                            mean pollution per state. The state names were renamed according to the state name in
-                            shapefile, merging on state ID.</li>
-                        <li>Forest data (Indian_forest.csv and shrug_ec13_state_key.csv) is from the SHRUG platform.
-                            This consists of a calculation of forest coverage by pixel density of each state
-                            photographed by satellites between 2000 and 2014. 2014 forest data was used because it is
-                            the most recent data available; the relevant variables are the total amount of forest
-                            coverage and the maximum value of forest cover (percent) in each district. This data was
-                            reformatted and cleaned by merging and averaging the data by state. States were renamed
-                            according to the state names in the shapefile and merged with the shapefile.</li>
-                    </ul>
+                <p><strong>Air quality and forest data</strong></p>
+                <ul>
+                    <li>The mean pollution data (ddl_pollution_sedac_lgd.csv) is from DLL India and includes data on
+                        mean pollution per state. The state names were renamed according to the state name in
+                        shapefile, merging on state ID.</li>
+                    <li>Forest data (Indian_forest.csv and shrug_ec13_state_key.csv) is from the SHRUG platform.
+                        This consists of a calculation of forest coverage by pixel density of each state
+                        photographed by satellites between 2000 and 2014. 2014 forest data was used because it is
+                        the most recent data available; the relevant variables are the total amount of forest
+                        coverage and the maximum value of forest cover (percent) in each district. This data was
+                        reformatted and cleaned by merging and averaging the data by state. States were renamed
+                        according to the state names in the shapefile and merged with the shapefile.</li>
+                </ul>
 
-                    <p><strong>Final dataframe</strong></p>
-                    <ul>
-                        <li>The aforementioned cleaned data along with the Indian shapefile, were saved as the final
-                            dataframe. The shape file was retrieved from Github user AnuragAnalog (2020) and contains
-                            the boundaries of India.</li>
-                        <li>The variables of interest are: Total number of hospitals, Total number of doctors, urban
-                            share, population density, slum population, total population, working population, mean
-                            pollution, forest data from 2000 until 2014, ec13_state_id, Covid-19 deaths and cases and
-                            average.</li>
-                    </ul>
+                <p><strong>Final dataframe</strong></p>
+                <ul>
+                    <li>The aforementioned cleaned data along with the Indian shapefile, were saved as the final
+                        dataframe. The shape file was retrieved from Github user AnuragAnalog (2020) and contains
+                        the boundaries of India.</li>
+                    <li>The variables of interest are: Total number of hospitals, Total number of doctors, urban
+                        share, population density, slum population, total population, working population, mean
+                        pollution, forest data from 2000 until 2014, ec13_state_id, Covid-19 deaths and cases and
+                        average.</li>
+                </ul>
 
-                    <p>The data has the following limitations:</p>
-                    <ol>
-                        <li>The India shapefile contains new states; for example, Ladakh became a state in 2019. Air
-                            quality data is not available for newly-created states. However, since air quality data
-                            overlaps with other known maps of India, the consequence of not having accurate mapping from
-                            state to air quality is insignificant.</li>
-                        <li>The forest data is from 2000 to 2014 while Covid-19 outbreak data start from 2020. The
-                            forest condition might have changed between 2015 and 2019.</li>
-                        <li>Demographic data comes from 2011.</li>
-                        <li>The timeframe from which the mean population was taken is unknown.</li>
-                        <li>Covid-19 cases and deaths change frequently, so the data will quickly become outdated.</li>
-                        <li>Two states were dropped in this analysis, Ladakh and Telangana, because demographic data was
-                            not available.</li>
-                    </ol>
-                </details>
+                <p>The data has the following limitations:</p>
+                <ol>
+                    <li>The India shapefile contains new states; for example, Ladakh became a state in 2019. Air
+                        quality data is not available for newly-created states. However, since air quality data
+                        overlaps with other known maps of India, the consequence of not having accurate mapping from
+                        state to air quality is insignificant.</li>
+                    <li>The forest data is from 2000 to 2014 while Covid-19 outbreak data start from 2020. The
+                        forest condition might have changed between 2015 and 2019.</li>
+                    <li>Demographic data comes from 2011.</li>
+                    <li>The timeframe from which the mean population was taken is unknown.</li>
+                    <li>Covid-19 cases and deaths change frequently, so the data will quickly become outdated.</li>
+                    <li>Two states were dropped in this analysis, Ladakh and Telangana, because demographic data was
+                        not available.</li>
+                </ol>
 
                 <details>
                     <summary><b><u>Literature Review</u></b></summary>
