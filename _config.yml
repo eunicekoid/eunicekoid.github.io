@@ -264,26 +264,26 @@ jekyll-minifier:
 # -----------------------------------------------------------------------------
 
 jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+  enabled: [tags] #[year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
   layouts:
-    year: archive-year
+    # year: archive-year
     tag: archive-tag
-    category: archive-category
+    # category: archive-category
   permalinks:
-    year: "/blog/:year/"
+    # year: "/blog/:year/"
     tag: "/blog/tag/:name/"
-    category: "/blog/category/:name/"
+    # category: "/blog/category/:name/"
 
 display_tags: ["machine-learning", "statistics", "engineering", "code", "finance"] # these tags will be displayed on the front page of your blog
-display_categories: ["blockquotes"] # these categories will be displayed on the front page of your blog
+# display_categories: ["blockquotes"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Koid]
+  first_name: [Eunice]
 
   style: apa
   locale: en
