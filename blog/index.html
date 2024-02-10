@@ -122,18 +122,6 @@
                 <h2>blog</h2>
             </div>
 
-            <!-- Display Tags -->
-            <div class="tags-list">
-                <h3>tags</h3>
-                <ul>
-                    {% for tag in site.tags %}
-                    <li>
-                        <a href="{{ '/blog/tag/' | append: tag[0] | relative_url }}">{{ tag[0] }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-
 
 
             <ul class="post-list">
@@ -143,11 +131,11 @@
                     </h3>
                     <p></p>
                     <p class="post-meta"> 1 min read &nbsp; &middot; &nbsp;
-                        February 10, 2024
+                        <!-- February 10, 2024 -->
                     </p>
                     <p class="post-tags">
-                        <a href="/blog/2024">
-                            <i class="fas fa-calendar fa-sm"></i>2024 </a>
+                        <a href="/blog/data-science">
+                            <i class="fas fa-tag fa-sm"></i>data-science </a>
                     </p>
                 </li>
 
