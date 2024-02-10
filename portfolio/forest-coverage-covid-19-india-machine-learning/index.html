@@ -145,14 +145,14 @@
             <article>
 
 
-                Preliminary evidence in the United States (as of mid 2020) suggested that environmental factors such as
+                <!-- Preliminary evidence in the United States (as of mid 2020) suggested that environmental factors such as
                 forest density and air quality may have an impact on Covid-19 transmission and deaths. Using open source
                 data, I employ machine learning techniques to predict Covid-19 cases and deaths in India from forest
                 coverage and air quality data. The model's prediction suggests that higher populated and polluted states
                 will likely have higher cases and deaths from Covid-19.
 
                 <br>
-                <br>
+                <br> -->
 
                 <!-- <img src="assets/img/thumbnail_covid_india.png" style="transform: scale(0.9);" alt="thumbnail_covid_india.png" /> -->
 
@@ -164,7 +164,8 @@
 
 
                 <p>The Covid-19 virus spreads respiratorily as people come in contact with one another. Preliminary
-                    evidence in the United States (as of November 2020) shows that environmental factors such as forest
+                    evidence in the United States (as of November 2020) indicated that environmental factors such as
+                    forest
                     density and air quality may have an impact on the spread and mortality rate of Covid-19 (<a
                         href="https://scopeblog.stanford.edu/2020/07/17/why-air-pollution-is-linked-to-severe-cases-of-covid-19/"
                         target="_blank">Costello, 2020</a>).</p>
@@ -191,32 +192,28 @@
 
                 <ul>
                     <li>AnuragAnalog. (2020, June 19). Geodata-of-India <a
-                            href="https://github.com/AnuragAnalog/Geodata-of-India" target="_blank">Dataset</a></li>
+                            href="https://github.com/AnuragAnalog/Geodata-of-India" target="_blank">[Link]</a></li>
                     <li>Development Data Lab. (2020, April 14). Development Data Lab <a
-                            href="http://www.devdatalab.org/covid" target="_blank">Dataset</a></li>
+                            href="http://www.devdatalab.org/covid" target="_blank">[Link]</a></li>
                     <li>Socioeconomic High-resolution Rural-Urban Geographic Platform</li>
                 </ul>
 
 
-                <details>
-                    <summary><b><u>Approach</u></b></summary>
-                    <br>
-
-                    <ol>
-                        <li>Conduct exploratory data analysis by each Indian state, examining the following three main
-                            variable groups: air quality, health and demographic, and Covid-19 cases.
-                            <ul>
-                                <li>Air quality variables are total area of forest, the forest cover value, and mean
-                                    pollution.</li>
-                                <li>Health and demographic variables are slum, work and total population, urban share,
-                                    population density and number of doctors and hospitals.</li>
-                                <li>Covid-19 variables are total cases and deaths.</li>
-                            </ul>
-                        </li>
-                        <li>Apply spatial visualization, regression, and clustering algorithms to identify patterns and
-                            relationships between variables.</li>
-                    </ol>
-                </details>
+                <h2>Approach</h2>
+                <ol>
+                    <li>Conduct exploratory data analysis by each Indian state, examining the following three main
+                        variable groups: air quality, health and demographic, and Covid-19 cases.
+                        <ul>
+                            <li>Air quality variables are total area of forest, the forest cover value, and mean
+                                pollution.</li>
+                            <li>Health and demographic variables are slum, work and total population, urban share,
+                                population density and number of doctors and hospitals.</li>
+                            <li>Covid-19 variables are total cases and deaths.</li>
+                        </ul>
+                    </li>
+                    <li>Apply spatial visualization, regression, and clustering algorithms to identify patterns and
+                        relationships between variables.</li>
+                </ol>
 
                 <details>
                     <summary><b><u>Data Collection and Interrogation</u></b></summary>
