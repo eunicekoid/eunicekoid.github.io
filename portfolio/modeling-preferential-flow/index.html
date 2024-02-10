@@ -176,9 +176,9 @@
                 <p>$$q_{\alpha} =
                     \frac{\textbf{k}k_{r\alpha}}{\mu_{\alpha}}(\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})$$</p>
 
-                <p>where \(q_{\alpha}\) is the water discharge rate in $\frac{L^2}{T}$, $\textbf{k}$ is the permeability
-                    in $L^2$, $k_{r\alpha}$ is the relative permeability (dimensionless), $\mu_{\alpha}$ is the dynamic
-                    viscosity in Pascals $\cdot$ T, $(\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})$ is the
+                <p>where \(q_{\alpha}\) is the water discharge rate in \(\frac{L^2}{T}\), \(\textbf{k}\) is the permeability
+                    in \(L^2\), \(k_{r\alpha}\) is the relative permeability (dimensionless), \(\mu_{\alpha}\) is the dynamic
+                    viscosity in Pascals \(\cdot\) T, \((\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})\) is the
                     pressure gradient. Note that L indicates a length-based unit like meters and T indicates a
                     time-based unit like seconds.
                 </p>
@@ -187,18 +187,18 @@
 
                 <h4>Effective Saturation, Van Genuchten, and Relative Permeability</h4>
                 <p>The Van Genuchten and effective saturation equations are needed to calculate the relative
-                    permeability, $k_{r\alpha}$. The Van Genuchten equation models the soil's water retention by
+                    permeability, \(k_{r\alpha}\). The Van Genuchten equation models the soil's water retention by
                     relating the water content to the soil’s empirical parameters (Mayer, 2005; Pinder and Celia, 2006).
                 </p>
 
                 <p>$$\text{if } h_c > 0 \text{, } S_{\text{eff}}(h_c) = [1 + (\alpha h_c)^n]^{-m}$$</p>
                 <p>$$\text{if } h_c \leq 0 \text{, } S_{\text{eff}}(h_c) = 1$$</p>
 
-                <p>where $\alpha$ is an empirical parameter of the soil in $L^{-1}$ which is the point on the water
-                    retention curve where $S_{eff}=0$. $h_{c}$ is the capillary pressure head in length-based unit. $n$
-                    and $m$ are empirical soil parameters where $n=\frac{1}{1-m}$ and $m=1-(\frac{1}{n})$ (Mayer, 2005).
-                    With $S_{eff}$ known using the equation above, the volumetric water content, $\theta_{w}$ $(L^3
-                    L^{-3})$, can be calculated via the effective saturation equation as shown in the following
+                <p>where \(\alpha\) is an empirical parameter of the soil in \(L^{-1}\) which is the point on the water
+                    retention curve where \(S_{eff}=0\). \(h_{c}\) is the capillary pressure head in length-based unit. \(n$
+                    and \(m\) are empirical soil parameters where \(n=\frac{1}{1-m}\) and \(m=1-(\frac{1}{n})\) (Mayer, 2005).
+                    With \(S_{eff}\) known using the equation above, the volumetric water content, \(\theta_{w}\) \((L^3
+                    L^{-3})\), can be calculated via the effective saturation equation as shown in the following
                     equation.</p>
 
                 <p>$$S_{eff} = \frac{\theta_{w}-\theta_{res}}{\theta_{sat}-\theta_{res}}$$</p>
@@ -211,19 +211,19 @@
                 <p>$$[C(h_{w}) + S_{w}S^w_{s}]\frac{\delta h_{w}}{\delta t} - \mathbf{\nabla} \cdot [K^w_{sat}
                     k_{rw}(\mathbf{\nabla} h_{w} + \mathbf{\nabla}z)]=0$$</p>
 
-                <p>where $K^w_{sat}$ is the saturated hydraulic conductivity in $\frac{L}{T}$, $h_{w}$ is the water
-                    pressure head, and $z$ is the depth. Note that negative $z$ indicates a direction from top to bottom
-                    of the soil column (away from the surface into deeper layers). $C(h_{w})$ is the differential water
-                    capacity which equals $\frac{\delta \theta_{w}}{\delta h_{w}}$. $S_{w}$ is known as the water
-                    storage which equals $\frac{\theta_{w}}{\theta_{sat}}$.</p>
+                <p>where \(K^w_{sat}\) is the saturated hydraulic conductivity in \(\frac{L}{T}\), \(h_{w}\) is the water
+                    pressure head, and \(z\) is the depth. Note that negative \(z\) indicates a direction from top to bottom
+                    of the soil column (away from the surface into deeper layers). \(C(h_{w})\) is the differential water
+                    capacity which equals \(\frac{\delta \theta_{w}}{\delta h_{w}}\). \(S_{w}\) is known as the water
+                    storage which equals \(\frac{\theta_{w}}{\theta_{sat}}\).</p>
 
-                <p>$S^w_{s}$ is the storativity coefficient which is the specific water capacity of the soil, given by
+                <p>$S^w_{s}\) is the storativity coefficient which is the specific water capacity of the soil, given by
                     the following equation.</p>
 
                 <p>$$S^w_{s} = \rho_{w} g (C_v+\epsilon \beta_w)$$</p>
 
-                <p>where $C_v$ is the compressibility of the soil, $\epsilon$ is the porosity of the soil, $\beta_w$ is
-                    the compressibility of water, $\rho_w$ is the density of water, and $g$ is gravitational
+                <p>where \(C_v\) is the compressibility of the soil, \(\epsilon\) is the porosity of the soil, \(\beta_w\) is
+                    the compressibility of water, \(\rho_w\) is the density of water, and \(g\) is gravitational
                     acceleration.</p>
 
                 <h4>Dual Porosity Concept</h4>
@@ -238,26 +238,26 @@
 
                 <p>$$q_{w} = -K_{sat}k_{rel}(\theta_{w}) ({\Delta} h_w+\mathbf{\nabla}z)$$</p>
 
-                <p>where $q_w$, $K_{sat}$, $k_{rel}$, and $h_w$ are unique to the respective fast flow and slow flow
-                    domains. The hydraulic conductivity, $-K_{sat}k_{rel}$, is a function of the water content.</p>
+                <p>where \(q_w\), \(K_{sat}\), \(k_{rel}\), and \(h_w\) are unique to the respective fast flow and slow flow
+                    domains. The hydraulic conductivity, \(-K_{sat}k_{rel}\), is a function of the water content.</p>
 
                 <p>In the model, the flows in both the fast and slow zones are coupled by the exchange for water term
-                    $Q_{exchange}$.</p>
+                    \(Q_{exchange}\).</p>
 
                 <p>$$Q_{exchange} = -k_{ex}(h_{w,fast}-h_{w,slow})$$</p>
 
-                <p>where $k_{ex}$ is the rate of exchange of water between the two porosities and $h_w$ is the water
-                    pressure head for the fast and slow zones. $k_{ex}$ is a resistance term and expected to be large if
+                <p>where \(k_{ex}\) is the rate of exchange of water between the two porosities and \(h_w\) is the water
+                    pressure head for the fast and slow zones. \(k_{ex}\) is a resistance term and expected to be large if
                     there is a barrier like a worm's slimy paste that keeps the holes in place; this interface presents
                     a higher resistivity. Since it is an empirical parameter, it is determined by trial and error. The
-                    $Q_{exchange}$ term has the same magnitude at all times for both flow zones, but with different
+                    \(Q_{exchange}\) term has the same magnitude at all times for both flow zones, but with different
                     signs in each respective soil fraction. The saturated water content is denoted by the following
                     equation.</p>
 
                 <p>$$\theta_{sat} = \theta_{sat,fast} + \theta_{sat,slow}$$</p>
 
-                <p>where $\theta_{sat,fast} = \beta \theta_{sat}$ and $\theta_{sat,slow} = (1-\beta) \theta_{sat}$.
-                    $\beta$ is the fraction of porosity associated with the fast flow.</p>
+                <p>where $\theta_{sat,fast} = \beta \theta_{sat}\) and $\theta_{sat,slow} = (1-\beta) \theta_{sat}\).
+                    $\beta\) is the fraction of porosity associated with the fast flow.</p>
 
                 <p>The water mass balances for both the fast and slow flow zones, respectively, are as follows.</p>
 
@@ -265,7 +265,7 @@
 
                 <p>$$\frac{\delta \theta_{w,slow}}{\delta t} + \mathbf{\nabla} \cdot q_{w,slow} - Q_{exchange} =0$$</p>
 
-                <p>If the $h_{w,fast}$ > $h_{h,slow}$, then the $Q_{exchange}$ is negative, indicating that the water
+                <p>If the \(h_{w,fast}\) > \(h_{h,slow}\), then the \(Q_{exchange}\) is negative, indicating that the water
                     flows from the fast flow zone to the slow flow zone.</p>
 
             </article>
