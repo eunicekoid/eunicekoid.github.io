@@ -428,6 +428,8 @@
                     // Make the Table of Contents fixed and adjust its position 
                     document.addEventListener("DOMContentLoaded", function () {
                         var toc = document.getElementById("toc");
+                        var maxTocHeight = 400;  // Set your desired maximum height
+
 
                         // Calculate the position of the Table of Contents
                         function adjustTocPosition() {
@@ -454,7 +456,7 @@
                         adjustTocPosition();
                     });
                 </script>
-                
+
                 <!-- jQuery -->
                 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
                     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
