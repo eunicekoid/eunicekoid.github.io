@@ -527,11 +527,55 @@
                 <h4 id="scenario3">Gravity flow bottom boundary and \(k_{ex}=1.05*10^{-5}\) \(m^2/day\)</h4>
 
                 <p>To determine the value for \(k_{ex}\), it was assumed that a small wormhole or crack would have a
-                    length dimension (dz) of \(10^{-3}\) m or 1mm. Using Darcy's Law and the equation for \(Q_{exchange}\),
-                    the \(k_{ex}\) could be determined by \(dz * K_{sat}\). Using the \(K_{sat}\) from the slow flow regime,
-                    which is \(0.010526\) \(m/day\), the \(k_{ex}\) was determined to be \(1.0526 \times 10^{-5}\) \(m^2$/day\) for
+                    length dimension (dz) of \(10^{-3}\) m or 1mm. Using Darcy's Law and the equation for
+                    \(Q_{exchange}\),
+                    the \(k_{ex}\) could be determined by \(dz * K_{sat}\). Using the \(K_{sat}\) from the slow flow
+                    regime,
+                    which is \(0.010526\) \(m/day\), the \(k_{ex}\) was determined to be \(1.0526 \times 10^{-5}\)
+                    \(m^2$/day\) for
                     this scenario.
                 </p>
+                <p>In the first 25 days when there is an inflow at the top boundary of the fast flow soil fraction, the
+                    water drains out of the fast flow column. There is a higher pressure head gradient between the two
+                    soil fractions during this time; therefore, the $Q_{exchange}$ rapidly declines as the pressure head
+                    in the slow flow column is greater than the pressure head in the fast flow column. During this time,
+                    the slow flow soil fraction is still in hydrostatic conditions. Once the inflow from the top stops
+                    after Day 25, there is a dynamic interaction that happens between the two columns. At first, the
+                    pressure head gradient starts to level out as the water continues to drain; as time goes on, there
+                    is insufficient water inflow, and the soil gets increasingly more saturated, which causes a reversal
+                    of the pressure gradient to favor the fast flow domain. The exchange changes to become negative,
+                    signaling an exchange from the fast flow to slow flow soil fractions. This reversal of the sign of
+                    $Q_{exchange}$ shows that as the fast flow soil gets more saturated from the inflow of water at the
+                    top boundary, the exchange flow reverses. Therefore, preferential flow occurs due to the different
+                    volumes of flow between the two zones; the water flows much faster through the fast flow zone due to
+                    the cracks and coarse nature. Once it is saturated, it will exchange with the slow flow fraction.
+                </p>
+
+
+                <img class="img-fluid z-dept-1" src="images/3.B0.2Kex(-5)Gravity.png" alt="3.B0.2Kex(-5)Gravity.png" />
+                <div class="caption">
+                    <em>Figure 5: Results of the model where \(k_{ex}=1.05*10^{-5}\) \(m^2/day\), gravity flow at the
+                        bottom boundary, and β = 0.2.</em>
+                </div>
+                <h4 id="scenario4">Robbin bottom boundary and \(k_{ex}=1.05*10^{-5}\) \(m^2/day\)</h4>
+
+                <p>Notably, the \)k_{ex}\) set at the order of magnitude of \(10^{-5}\) \(m^2/day\)does not alter the results
+                    from the scenario with a Robbin bottom boundary and \(k_{ex} = 0\). Looking at the \(Q_{exchange}\)
+                    graphs below, it is evident that the external pressure head causes a quick flow through the column
+                    and the pressure head gradient quickly drops to zero. After the 25 day mark and over time,
+                    \(Q_{exchange}\) becomes increasingly negative signifying the slight preferential flow through the
+                    fast flow soil column as it has a higher hydraulic conductivity and there is not enough inflow to
+                    sustain a high magnitude of exchange to the slow flow column. After day 25, the pressure head of the
+                    fast flow fraction increases above the pressure head of the slow flow fraction.
+                </p>
+
+
+                <img class="img-fluid z-dept-1" src="images/4.B0.2Kex(-5)RobbinQex.png" alt="4.B0.2Kex(-5)RobbinQex.png" />
+                <div class="caption">
+                    <em>Figure 5: \(Q_{exchange}\) graphs where \(k_{ex}=1.05*10^{-5}\) \(m^2/day\), Robbin condition at the bottom boundary, and β = 0.2.</em>
+                </div>
+                <h4 id="sc
+
 
 
             </article>
