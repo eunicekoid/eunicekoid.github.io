@@ -55,8 +55,10 @@
             top: 40;
             width: 250px;
             left: 0;
-            padding: 20px; /* Add padding to the fixed navigation for better visibility */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Add a shadow for better separation */
+            padding: 20px;
+            /* Add padding to the fixed navigation for better visibility */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Add a shadow for better separation */
         }
 
         .submenu {
@@ -127,26 +129,18 @@
     </header>
 
     <div class="fixedNavigation">
-        <a href="#theory">Theory and Basic
-            Equations</a>
-        <br />
+        <a href="#theory">Theory and Basic Equations</a>
         <div class="submenu">
             <a href="#darcy">Darcy's Law</a>
-            <br />
             <a href="effective">Effective Saturation, Van Genuchten, and Relative Permeability</a>
-            <br />
             <a href="richard">Richard's Equation</a>
-            <br />
             <a href="dual">Dual Porosity Concept</a>
-            <br />
         </div>
         <br />
         <a href="#methodology">Methodology</a>
-        <br />
-        <!-- <a href="yoursite.com/somepage.html#anchorname">link to anchor</a> -->
-        <br />
-        <!-- <a href="yoursite.com/somepage.html#anchorname">link to anchor</a> -->
-        <br />
+        <div class="submenu">
+            <a href="#parameter">Parameter Values and Initial Conditions</a>
+        </div>
     </div>
 
     <!-- Content -->
@@ -438,7 +432,7 @@
                     of -1m. These values were given as part of the model for unsaturated flow.
                 </p>
 
-                <h4>Parameter Values and Initial Conditions</h4>
+                <h4 id="parameter">Parameter Values and Initial Conditions</h4>
                 <p>The initial conditions were given according to the model for unsaturated flow. The initial soil
                     column length was taken to be one meter and the phreatic water level was 25 centimeters. Therefore,
                     the initial pressure head was determined to be \(h_{w,initial} = zRef - zN\), where \(zRef\) is the
@@ -458,6 +452,70 @@
                         Genuchten, 1993).</em>
                 </div>
 
+                <p>These parameters were determined to be the best ones to use after calibrating the model with
+                    different soil parameters and testing the sensitivity of changes in soil parameters on the model
+                    outcomes. For example, using the sand and silty clay parameters from Mayer (2005) as shown in Figure
+                    13 in the Appendix, the results as shown in Figure 20 were produced. The slow flow soil had a
+                    significant negative pressure head. This indicates that the water is draining very quickly out of
+                    the slow flow soil column. The flow of water is influenced by hydraulic conductivity. When the
+                    hydraulic conductivity in the slow flow fraction was changed to be 0.01 m/day, comparable to the
+                    value indicated in Gerke and Van Genuchten (1993), the pressure head in the slow flow fraction was
+                    much less negative, which confirms that the hydraulic conductivity influences the flow as shown in
+                    Figure 2. A lower permeability means there is slower flow. Then, the sensitivity of the saturated
+                    water content was tested by raising it; the results are shown in Figure 22. Again, the pressure head
+                    in the slow flow column was much less negative. With a higher saturated water content, the water
+                    storage also increases. The higher saturation capacity means that more soil pores are filled with
+                    and conducting water; the water does not drain as quickly. Therefore, a higher saturation water
+                    content as determined by Gerke and Van Genuchten
+                </p>
+
+                <h2 id="scenarios">Scenarios</h2>
+
+                <h4 id="scenario1">Gravity flow bottom boundary and \(k_{ex}=0\)</h4>
+                <p>When \(k_{ex}=0\), there is no exchange between the two soil fractions. In the first 25 days, there
+                    is an inflow at the top boundary condition of the fast flow fraction, so the water pressure head
+                    steadily decreases during this time. Then, a flow is introduced at the top boundary at Day 25, which
+                    recharges the soil column with a steady water flow, bringing the pressure head to a steady level.
+                    Meanwhile, as there is no exchange, the slow flow fraction is in hydrostatic conditions because
+                    there is no inflow in the slow flow fraction. This is exhibited by the constant pressure change in
+                    the vertical direction. Since the flow of water in the slow flow zone is only influenced by the
+                    density, gravity, and change in depth under hydrostatic conditions, the pressure head change is only
+                    due to the weight of the fluid as it trickles down the slow flow column. The inflow in the fast flow
+                    column is too slow to sustain the water content, so at the end of the model run, it drops to the
+                    residual water content. In the slow flow zone, it does not reach the residual water content as the
+                    water content barely changes with respect to depth. From the graphs, it is clear that the water
+                    enters through the fast flow domain and flows faster through the fast flow soil fraction than the
+                    slow flow fraction.
+                </p>
+                <img class="img-fluid z-dept-1" src="images/1.B0.2Kex0Gravity.png" alt="1.B0.2Kex0Gravity.png" />
+                <div class="caption">
+                    <em>Figure 3: Results of the model where there is no exchange, gravity flow at the bottom boundary,
+                        and β = 0.2.</em>
+                </div>
+
+                <h4 id="scenario2">Robbin bottom boundary and \(k_{ex}=0\)</h4>
+                <p>This scenario is similar to that of the foregoing section, except that the bottom boundary is now a
+                    Robbin boundary.
+                </p>
+                <img class="img-fluid z-dept-1" src="images/2.B0.2Kex0Robbin.png" alt="2.B0.2Kex0Robbin.png" />
+                <div class="caption">
+                    <em>Figure 4: Results of the model where there is no exchange, gravity flow at the bottom boundary,
+                        and β = 0.2.</em>
+                </div>
+
+                <p>With the Robbin condition at the bottom boundary, there is an external head that limits the drop in
+                    pressure head; the lowest pressure head in both columns is greater than the lowest pressure head in
+                    the preceding scenario. For both soil columns, the pressure head converges to the external pressure
+                    head at the bottom boundary over time. Moreover, the pressure head tends to stabilize over time in
+                    both soil columns. In this scenario, it is evident that the slow flow fraction converges to a
+                    residual water content level that is higher than the fast flow section. This makes sense as coarser
+                    soil characteristics, such as sand, of the fast flow fraction make the residual water content lower
+                    than the residual water content of the slow flow fraction that is driven by finer soil
+                    characteristics like clay or organic matter. For most of the time, the flow through the fast flow
+                    domain is faster than the flow through the slow flow domain except at deeper levels, as the external
+                    head applied causes the flow in the slow flow domain to increase.
+                </p>
+<h4 id="scenario3">Gravity flow bottom boundary and \(k_{ex}=1.05*10^{-5}\) \(m^2/day\)</h4>
             </article>
 
         </div>
