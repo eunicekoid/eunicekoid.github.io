@@ -214,7 +214,11 @@
                         href="http://soilandwater.bee.cornell.edu/research/pfweb/educators/intro/why.htm">http://soilandwater.bee.cornell.edu/research/pfweb/educators/intro/why.htm</a>
                 </p> -->
 
-         
+                <!-- PDF
+                <a href="/assets/pdf/example_pdf.pdf" target="_blank" rel="noopener noreferrer" class="float-right" aria-label="PDF Document">
+                    <i class="fas fa-file-pdf"></i>
+                </a> -->
+
             </article>
         </div>
     </div>
