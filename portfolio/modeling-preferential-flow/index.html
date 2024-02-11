@@ -115,8 +115,9 @@
     <!-- Two-column layout -->
     <div class="container-fluid">
         <div class="row">
+
             <!-- Left Panel (Table of Contents) -->
-            <nav id="toc" class="col-md-3 d-none d-md-block">
+            <nav id="toc" class="col-md-3 d-md-block">
                 <ul class="list-unstyled">
                     <li><a href="#theory">Theory and Basic Equations</a></li>
                     <li><a href="#methodology">Methodology</a></li>
@@ -420,7 +421,7 @@
                             </p>
 
                             <h4>Parameter Values and Initial Conditions</h4>
- 
+
                         </article>
 
                     </div>
@@ -458,9 +459,11 @@
                                 toc.style.position = "fixed";
                                 toc.style.top = headerHeight + "px";
                                 toc.style.maxHeight = (tocHeight < maxTocHeight) ? tocHeight + "px" : maxTocHeight + "px";
+                                toc.classList.remove("d-none");  // Ensure TOC is visible
                             } else {
                                 toc.style.position = "static";
                                 toc.style.maxHeight = "none";  // Remove the max height if not fixed
+                                toc.classList.add("d-none");  // Hide TOC if not needed
                             }
                         }
 
@@ -471,6 +474,7 @@
                         // Initial adjustment
                         adjustTocPosition();
                     });
+
                 </script>
 
                 <!-- jQuery -->
