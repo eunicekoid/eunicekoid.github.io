@@ -438,44 +438,6 @@
 
                 <!-- JavaScripts -->
 
-                <script>
-                    // Make the Table of Contents fixed and adjust its position
-                    document.addEventListener("DOMContentLoaded", function () {
-                        var toc = document.getElementById("toc");
-                        var maxTocHeight = 400;  // Set desired maximum height
-
-                        // Calculate the position of the Table of Contents
-                        function adjustTocPosition() {
-                            var windowHeight = window.innerHeight;
-                            var headerHeight = document.querySelector("header").offsetHeight;
-                            var footerHeight = document.querySelector("footer").offsetHeight;
-                            var mainContent = document.querySelector(".col-md-9");
-                            var mainContentHeight = mainContent.offsetHeight;
-                            var scrollPosition = window.scrollY;
-
-                            if (mainContentHeight + headerHeight + footerHeight > windowHeight) {
-                                // Check if the calculated height exceeds the maximum
-                                var tocHeight = windowHeight - headerHeight - footerHeight;
-                                toc.style.position = "fixed";
-                                toc.style.top = headerHeight + "px";
-                                toc.style.maxHeight = (tocHeight < maxTocHeight) ? tocHeight + "px" : maxTocHeight + "px";
-                                toc.classList.remove("d-none");  // Ensure TOC is visible
-                            } else {
-                                toc.style.position = "static";
-                                toc.style.maxHeight = "none";  // Remove the max height if not fixed
-                                toc.classList.add("d-none");  // Hide TOC if not needed
-                            }
-                        }
-
-                        // Update the position on scroll
-                        window.addEventListener("scroll", adjustTocPosition);
-                        window.addEventListener("resize", adjustTocPosition);
-
-                        // Initial adjustment
-                        adjustTocPosition();
-                    });
-
-                </script>
 
                 <!-- jQuery -->
                 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
