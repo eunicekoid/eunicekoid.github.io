@@ -206,6 +206,8 @@
 
                 
 
+                
+
                 <!-- References
                 <p style="margin-left: 1.5em; text-indent: -1.5em;">
                     Cornell University. (2021). <em>Why preferential flow is important?</em> Retrieved June 9, 2021,
@@ -215,8 +217,9 @@
                 </p> -->
 
                 <!-- PDF
-                <a href="/assets/pdf/example_pdf.pdf" target="_blank" rel="noopener noreferrer" class="float-right" aria-label="PDF Document">
-                    <i class="fas fa-file-pdf"></i>
+                     <a href="https://drive.google.com/file/d/1OiOlzZw2aZiWtdgFCl4wKmkiGQlJg3Gd/view" target="_blank"
+                    rel="noopener noreferrer" class="float-left">
+                    <i class="fas fa-file-pdf" style="font-size: 24px;"></i> <u>Full Report</u>
                 </a> -->
 
             </article>
