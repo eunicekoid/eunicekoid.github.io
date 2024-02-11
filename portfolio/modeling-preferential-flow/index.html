@@ -139,6 +139,14 @@
             <br>
             <hr>
 
+                <!-- Table of Contents -->
+                <div id="toc" class="d-none d-md-block">
+                    <ul class="list-unstyled">
+                        <li><a href="#theory">Theory and Basic Equations</a></li>
+                        <li><a href="#methodology">Methodology</a></li>
+                    </ul>
+                </div>
+
 
             <article>
                 <p>This model, written in Python, expands upon the Richards Equation for the movement of water through
@@ -160,7 +168,7 @@
                 </p>
 
 
-                <h2>Theory and Basic Equations</h2>
+                <h2 id="theory">Theory and Basic Equations</h2>
 
                 <h4>Darcy's Law</h4>
                 <p>Concepts that drive the rate of water flow through porous media, such as capillary pressure,
@@ -282,7 +290,7 @@
                     water flows from the fast flow zone to the slow flow zone.</p>
 
 
-                <h2>Methodology</h2>
+                <h2 id="methodology">Methodology</h2>
                 <p>To implement the equations in the model, the following steps were taken. Firstly, both domains were
                     defined to have the same top and boundary conditions and the same number of nodes; the soil column
                     used for both is the same. The flow was assumed to enter through the fast flow zone only. The
