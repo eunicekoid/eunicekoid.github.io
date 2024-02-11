@@ -52,18 +52,17 @@
     <style>
         .fixedNavigation {
             position: fixed;
-            top: 50;
-            width: 250px;
+            top: 1000;
+            width: 4000px;
             left: 10;
             padding: 20px;
-            /* Add padding to the fixed navigation for better visibility */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /* Add a shadow for better separation */
         }
 
         .submenu {
-            margin-left: 20px;
-            /* Adjust the indentation as needed */
+            margin-left: 15px;
+            font-size: 12px; 
+
         }
     </style>
 
@@ -141,6 +140,7 @@
         <div class="submenu">
             <a href="#parameter">Parameter Values and Initial Conditions</a><br>
         </div>
+        <br />
         <a href="#scenarios">Scenarios</a>
         <div class="submenu">
             <a href="#scenario1">Darcy's Law</a><br>
@@ -557,9 +557,12 @@
                     <em>Figure 5: Results of the model where \(k_{ex}=1.05*10^{-5}\) \(m^2/day\), gravity flow at the
                         bottom boundary, and β = 0.2.</em>
                 </div>
+
+
                 <h4 id="scenario4">Robbin bottom boundary and \(k_{ex}=1.05*10^{-5}\) \(m^2/day\)</h4>
 
-                <p>Notably, the \)k_{ex}\) set at the order of magnitude of \(10^{-5}\) \(m^2/day\)does not alter the results
+                <p>Notably, the \)k_{ex}\) set at the order of magnitude of \(10^{-5}\) \(m^2/day\)does not alter the
+                    results
                     from the scenario with a Robbin bottom boundary and \(k_{ex} = 0\). Looking at the \(Q_{exchange}\)
                     graphs below, it is evident that the external pressure head causes a quick flow through the column
                     and the pressure head gradient quickly drops to zero. After the 25 day mark and over time,
@@ -570,13 +573,25 @@
                 </p>
 
 
-                <img class="img-fluid z-dept-1" src="images/4.B0.2Kex(-5)RobbinQex.png" alt="4.B0.2Kex(-5)RobbinQex.png" />
+                <img class="img-fluid z-dept-1" src="images/4.B0.2Kex(-5)RobbinQex.png"
+                    alt="4.B0.2Kex(-5)RobbinQex.png" />
                 <div class="caption">
-                    <em>Figure 5: \(Q_{exchange}\) graphs where \(k_{ex}=1.05*10^{-5}\) \(m^2/day\), Robbin condition at the bottom boundary, and β = 0.2.</em>
+                    <em>Figure 5: \(Q_{exchange}\) graphs where \(k_{ex}=1.05*10^{-5}\) \(m^2/day\), Robbin condition at
+                        the bottom boundary, and β = 0.2.</em>
                 </div>
-                <h4 id="sc
 
 
+                <h4 id="scenario5">Gravity flow bottom boundary and \(k_{ex}=1.05*10^{-4}\) \(m^2/day\)</h4>
+
+                <p>This scenario tests the sensitivity of the exchange resistance term by checking the model behavior if
+                    the $k_{ex}$ increases by one order of magnitude. More resistance means that it would be harder to
+                    exchange between the soil columns, as exhibited by the graphs below. The flow through the soil
+                    columns happens much faster. The pressure head gradient is much smaller between the two soil
+                    fractions, so the magnitude of \(Q_{exchange}\) is small, and there is little exchange. Again, the
+                    pressure head of the slow flow domain lags behind the fast flow domain, and the flow goes faster
+                    through the fast flow zone than the slow flow zone. The bottom boundary of the fast flow domain
+                    experiences higher drainage than the slow flow domain.
+                </p>
 
             </article>
 
