@@ -131,15 +131,22 @@
     <div class="fixedNavigation">
         <a href="#theory">Theory and Basic Equations</a>
         <div class="submenu">
-            <a href="#darcy">Darcy's Law</a>
-            <a href="effective">Effective Saturation, Van Genuchten, and Relative Permeability</a>
-            <a href="richard">Richard's Equation</a>
-            <a href="dual">Dual Porosity Concept</a>
+            <a href="#darcy">Darcy's Law</a><br>
+            <a href="#effective">Effective Saturation, Van Genuchten, and Relative Permeability</a><br>
+            <a href="#richard">Richard's Equation</a><br>
+            <a href="#dual">Dual Porosity Concept</a><br>
         </div>
         <br />
         <a href="#methodology">Methodology</a>
         <div class="submenu">
-            <a href="#parameter">Parameter Values and Initial Conditions</a>
+            <a href="#parameter">Parameter Values and Initial Conditions</a><br>
+        </div>
+        <a href="#scenarios">Scenarios</a>
+        <div class="submenu">
+            <a href="#scenario1">Darcy's Law</a><br>
+            <a href="#scenario2">Effective Saturation, Van Genuchten, and Relative Permeability</a><br>
+            <a href="#scenario3">Richard's Equation</a><br>
+            <a href="#scenario4">Dual Porosity Concept</a><br>
         </div>
     </div>
 
@@ -515,7 +522,18 @@
                     domain is faster than the flow through the slow flow domain except at deeper levels, as the external
                     head applied causes the flow in the slow flow domain to increase.
                 </p>
-<h4 id="scenario3">Gravity flow bottom boundary and \(k_{ex}=1.05*10^{-5}\) \(m^2/day\)</h4>
+
+
+                <h4 id="scenario3">Gravity flow bottom boundary and \(k_{ex}=1.05*10^{-5}\) \(m^2/day\)</h4>
+
+                <p>To determine the value for \(k_{ex}\), it was assumed that a small wormhole or crack would have a
+                    length dimension (dz) of \(10^{-3}\) m or 1mm. Using Darcy's Law and the equation for \(Q_{exchange}\),
+                    the \(k_{ex}\) could be determined by \(dz * K_{sat}\). Using the \(K_{sat}\) from the slow flow regime,
+                    which is \(0.010526\) \(m/day\), the \(k_{ex}\) was determined to be \(1.0526 \times 10^{-5}\) \(m^2$/day\) for
+                    this scenario.
+                </p>
+
+
             </article>
 
         </div>
