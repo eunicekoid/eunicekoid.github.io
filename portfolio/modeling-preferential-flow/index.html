@@ -112,267 +112,352 @@
         </nav>
     </header>
 
-    <!-- Content -->
-    <div class="container mt-5">
-        <!-- page.html -->
-        <div class="post">
+    <!-- Two-column layout -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Left Panel (Table of Contents) -->
+            <nav id="toc" class="col-md-3 d-none d-md-block">
+                <ul class="list-unstyled">
+                    <li><a href="#theory">Theory and Basic Equations</a></li>
+                    <li><a href="#methodology">Methodology</a></li>
+                </ul>
+            </nav>
 
-            <header class="post-header">
-                <h1 class="post-title">Modeling Preferential Flow through Unsaturated Soil using the 1-D Dual Porosity
-                    Approach</h1>
-                <p class="post-description"></p>
-            </header>
-            <br>
-            <br>
-            <a href="https://github.com/eunicekoid/Portfolio/tree/main/Modeling%20Preferential%20Flow%20through%20Unsaturated%20Soil"
-                style="font-size: 16px;">
-                Click to view code on Github
-            </a>
-            <br>
-            <style>
-                .scaled-image-icons {
-                    width: 40%;
-                }
-            </style>
-            <img class="img-fluid z-dept-1 rounded scaled-image-icons" src="/assets/img/icons_pf.png"
-                alt="icons_pf.png" />
-            <br>
-            <hr>
+            <!-- Main Content -->
+            <main class="col-md-9">
 
-                <!-- Table of Contents -->
-                <div id="toc" class="d-none d-md-block">
-                    <ul class="list-unstyled">
-                        <li><a href="#theory">Theory and Basic Equations</a></li>
-                        <li><a href="#methodology">Methodology</a></li>
-                    </ul>
+                <!-- Content -->
+                <div class="container mt-5">
+                    <!-- page.html -->
+                    <div class="post">
+
+                        <header class="post-header">
+                            <h1 class="post-title">Modeling Preferential Flow through Unsaturated Soil using the 1-D
+                                Dual Porosity
+                                Approach</h1>
+                            <p class="post-description"></p>
+                        </header>
+
+                        <br>
+                        <br>
+                        <a href="https://github.com/eunicekoid/Portfolio/tree/main/Modeling%20Preferential%20Flow%20through%20Unsaturated%20Soil"
+                            style="font-size: 16px;">
+                            Click to view code on Github
+                        </a>
+                        <br>
+                        <style>
+                            .scaled-image-icons {
+                                width: 40%;
+                            }
+                        </style>
+                        <img class="img-fluid z-dept-1 rounded scaled-image-icons" src="/assets/img/icons_pf.png"
+                            alt="icons_pf.png" />
+                        <br>
+                        <hr>
+
+
+
+
+                        <article>
+                            <p>This model, written in Python, expands upon the Richards Equation for the movement of
+                                water through
+                                unsaturated soils to include preferential flow. Preferential flow occurs when there are
+                                cracks or
+                                holes in the soil due to, for example, plowing that breaks up aggregates, roots, or
+                                wormholes,
+                                allowing uneven movement of water through porous media like soils (Cornell University,
+                                2021). The
+                                cracks and holes allow for faster water flow than the bulk of the soil. These areas also
+                                allow for
+                                deeper penetration of water, which could have implications for groundwater quality
+                                (Cornell
+                                University, 2021).
+                            </p>
+
+                            <p>The code extends the Richards equation to model two fractions in the soil: 1. Fast flow
+                                zone, and 2.
+                                Slow flow zone. The total flow through porous soil media is determined by the flow in
+                                these two
+                                domains, modeled using a staggered grid scheme. In this way, the dual porosity concept
+                                was
+                                implemented where the fast and slow flow zones are described separately; this is
+                                appropriate as
+                                these zones could have different soil properties. The model couples the preferential
+                                flow and
+                                unsaturated flow processes to investigate how water flows through porous media under
+                                various
+                                conditions using different scenarios.
+                            </p>
+
+
+                            <h2 id="theory">Theory and Basic Equations</h2>
+
+                            <h4>Darcy's Law</h4>
+                            <p>Concepts that drive the rate of water flow through porous media, such as capillary
+                                pressure,
+                                hydraulic head and fluid potential, are related to the energy gradient in Darcy’s Law
+                                (Pinder and
+                                Celia, 2006). The model uses the extended form of Darcy’s law for groundwater flow, as
+                                it describes
+                                the simultaneous flow of non-homogeneous phases (Mayer, 2005). The modeled system has
+                                non-homogeneous phases because it is a porous medium where two immiscible phases are
+                                present; this
+                                is needed to create capillary pressure that retains water (Mayer, 2005). The extended
+                                form of
+                                Darcy’s equation is:
+                            </p>
+
+
+                            <p>$$q_{\alpha} =
+                                \frac{\textbf{k}k_{r\alpha}}{\mu_{\alpha}}(\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})$$
+                            </p>
+
+                            <p>where \(q_{\alpha}\) is the water discharge rate in \(\frac{L^2}{T}\), \(\textbf{k}\) is
+                                the
+                                permeability
+                                in \(L^2\), \(k_{r\alpha}\) is the relative permeability (dimensionless),
+                                \(\mu_{\alpha}\) is the
+                                dynamic
+                                viscosity in Pascals \(\cdot\) T,
+                                \((\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})\) is the
+                                pressure gradient. Note that L indicates a length-based unit like meters and T indicates
+                                a
+                                time-based unit like seconds.
+                            </p>
+
+
+
+                            <h4>Effective Saturation, Van Genuchten, and Relative Permeability</h4>
+                            <p>The Van Genuchten and effective saturation equations are needed to calculate the relative
+                                permeability, \(k_{r\alpha}\). The Van Genuchten equation models the soil's water
+                                retention by
+                                relating the water content to the soil’s empirical parameters (Mayer, 2005; Pinder and
+                                Celia, 2006).
+                            </p>
+
+                            <p>$$\text{if } h_c > 0 \text{, } S_{\text{eff}}(h_c) = [1 + (\alpha h_c)^n]^{-m}$$</p>
+                            <p>$$\text{if } h_c \leq 0 \text{, } S_{\text{eff}}(h_c) = 1$$</p>
+
+                            <p>where \(\alpha\) is an empirical parameter of the soil in \(L^{-1}\) which is the point
+                                on the water
+                                retention curve where \(S_{eff}=0\). \(h_{c}\) is the capillary pressure head in
+                                length-based unit.
+                                \(n\) and \(m\) are empirical soil parameters where \(n=\frac{1}{1-m}\) and
+                                \(m=1-(\frac{1}{n})\)
+                                (Mayer,
+                                2005).
+                                With \(S_{eff}\) known using the equation above, the volumetric water content,
+                                \(\theta_{w}\) \((L^3
+                                L^{-3})\), can be calculated via the effective saturation equation as shown in the
+                                following
+                                equation.</p>
+
+                            <p>$$S_{eff} = \frac{\theta_{w}-\theta_{res}}{\theta_{sat}-\theta_{res}}$$</p>
+
+                            <p>while the relative permeability can be found by the following equation (Pinder and Celia,
+                                2006)</p>
+
+                            <p>$$k_{rw} = (S_{eff})^3$$</p>
+
+                            <h4>Richard's Equation</h4>
+                            <p>The pressure head form of the Richards Equation is as follows.
+                            </p>
+
+                            <p>$$[C(h_{w}) + S_{w}S^w_{s}]\frac{\delta h_{w}}{\delta t} - \mathbf{\nabla} \cdot
+                                [K^w_{sat}
+                                k_{rw}(\mathbf{\nabla} h_{w} + \mathbf{\nabla}z)]=0$$</p>
+
+                            <p>where \(K^w_{sat}\) is the saturated hydraulic conductivity in \(\frac{L}{T}\), \(h_{w}\)
+                                is the
+                                water
+                                pressure head, and \(z\) is the depth. Note that negative \(z\) indicates a direction
+                                from top to
+                                bottom
+                                of the soil column (away from the surface into deeper layers). \(C(h_{w})\) is the
+                                differential
+                                water
+                                capacity which equals \(\frac{\delta \theta_{w}}{\delta h_{w}}\). \(S_{w}\) is known as
+                                the water
+                                storage which equals \(\frac{\theta_{w}}{\theta_{sat}}\).</p>
+
+                            <p>\(S^w_{s}\) is the storativity coefficient which is the specific water capacity of the
+                                soil, given by
+                                the following equation.</p>
+
+                            <p>$$S^w_{s} = \rho_{w} g (C_v+\epsilon \beta_w)$$</p>
+
+                            <p>where \(C_v\) is the compressibility of the soil, \(\epsilon\) is the porosity of the
+                                soil,
+                                \(\beta_w\) is
+                                the compressibility of water, \(\rho_w\) is the density of water, and \(g\) is
+                                gravitational
+                                acceleration.</p>
+
+                            <h4>Dual Porosity Concept</h4>
+
+                            <p>In the dual porosity model, the fast flow fraction can have different soil properties
+                                than the slow
+                                flow fraction; a Darcy’s Law-based water flow is considered for both porosity systems by
+                                using a
+                                "first-order coupling term" (Gerke and Van Genuchten, 1993). In this model, the
+                                densities of both
+                                the solid and liquid phases are constant, and temperature, air pressure, and solute
+                                concentration
+                                effects are considered to be negligible (Gerke and Van Genuchten, 1993).</p>
+
+                            <p>The fast and slow flows are modeled based on the extended form of Darcy’s Law.</p>
+
+                            <p>$$q_{w} = -K_{sat}k_{rel}(\theta_{w}) ({\Delta} h_w+\mathbf{\nabla}z)$$</p>
+
+                            <p>where \(q_w\), \(K_{sat}\), \(k_{rel}\), and \(h_w\) are unique to the respective fast
+                                flow and slow
+                                flow
+                                domains. The hydraulic conductivity, \(-K_{sat}k_{rel}\), is a function of the water
+                                content.</p>
+
+                            <p>In the model, the flows in both the fast and slow zones are coupled by the exchange for
+                                water term
+                                \(Q_{exchange}\).</p>
+
+                            <p>$$Q_{exchange} = -k_{ex}(h_{w,fast}-h_{w,slow})$$</p>
+
+                            <p>where \(k_{ex}\) is the rate of exchange of water between the two porosities and \(h_w\)
+                                is the water
+                                pressure head for the fast and slow zones. \(k_{ex}\) is a resistance term and expected
+                                to be large
+                                if
+                                there is a barrier like a worm's slimy paste that keeps the holes in place; this
+                                interface presents
+                                a higher resistivity. Since it is an empirical parameter, it is determined by trial and
+                                error. The
+                                \(Q_{exchange}\) term has the same magnitude at all times for both flow zones, but with
+                                different
+                                signs in each respective soil fraction. The saturated water content is denoted by the
+                                following
+                                equation.</p>
+
+                            <p>$$\theta_{sat} = \theta_{sat,fast} + \theta_{sat,slow}$$</p>
+
+                            <p>where \(\theta_{sat,fast} = \beta \theta_{sat}\) and \(\theta_{sat,slow} = (1-\beta)
+                                \theta_{sat}\).
+                                \(\beta\) is the fraction of porosity associated with the fast flow.</p>
+
+                            <p>The water mass balances for both the fast and slow flow zones, respectively, are as
+                                follows.</p>
+
+                            <p>$$\frac{\delta \theta_{w,fast}}{\delta t} + \mathbf{\nabla} \cdot q_{w,fast} +
+                                Q_{exchange} =0$$</p>
+
+                            <p>$$\frac{\delta \theta_{w,slow}}{\delta t} + \mathbf{\nabla} \cdot q_{w,slow} -
+                                Q_{exchange} =0$$</p>
+
+                            <p>If the \(h_{w,fast}\) > \(h_{h,slow}\), then the \(Q_{exchange}\) is negative, indicating
+                                that the
+                                water flows from the fast flow zone to the slow flow zone.</p>
+
+
+                            <h2 id="methodology">Methodology</h2>
+                            <p>To implement the equations in the model, the following steps were taken. Firstly, both
+                                domains were
+                                defined to have the same top and boundary conditions and the same number of nodes; the
+                                soil column
+                                used for both is the same. The flow was assumed to enter through the fast flow zone
+                                only. The
+                                Richards Equation was modeled with two states with identical soil properties and a
+                                \(Q_{exchange}\)
+                                of
+                                zero to see if the model produced identical results as unsaturated flow, as in this
+                                case, there is
+                                no exchange between the zones. The model solves both of the states of the two domains in
+                                parallel.
+                                The fast flow zone is controlled by \(\beta\), with \(\beta \theta_{sat}\) indicating
+                                the pore space
+                                in
+                                the fast flow zone. Then, the parameters were varied to have different soil parameters
+                                to study the
+                                behavior of the fast and slow flow zones. After that, the exchange term can be also
+                                changed to model
+                                the preferential flow. From the exchange term, \(Q_{exchange}\), it is evident that the
+                                difference
+                                between the pressure heads of the fast and slow flow zones and therefore the
+                                \(Q_{exchange}\) will
+                                dominate the flow process. To see the results of this stepwise expansion of the model,
+                                please see
+                                the Appendix. The model was then used to run different scenarios to see the effect of
+                                preferential
+                                flow through unsaturated soils; these scenarios contain different boundary conditions
+                                and model
+                                parameters to see how the model results change with under varying conditions. The
+                                scenarios will be
+                                further detailed in an upcoming section.
+                            </p>
+
+                            <p>To model the unsaturated flow, discretization was used in a one-dimensional staggered
+                                grid scheme to
+                                capture the flow in a continuous way through small time steps and depth increments. The
+                                nodes
+                                represent the soil layers, and the internodes represent the space between soil layers as
+                                shown in
+                                Figure 1.
+                            </p>
+
+                            <img class="img-fluid z-dept-1" src="images/StaggeredGridDualPorosity.png"
+                                alt="StaggeredGridDualPorosity.png" />
+                            <div class="caption">
+                                <em>Figure 1: Staggered grid scheme for discretization and dual porosity conceptual
+                                    model.</em>
+                            </div>
+
+                        </article>
+
+                    </div>
+
                 </div>
 
+                <!-- Footer -->
+                <footer class="fixed-bottom">
+                    <div class="container mt-0">
+                        <!-- © Copyright 2022 Eunice Koid. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. -->
 
-            <article>
-                <p>This model, written in Python, expands upon the Richards Equation for the movement of water through
-                    unsaturated soils to include preferential flow. Preferential flow occurs when there are cracks or
-                    holes in the soil due to, for example, plowing that breaks up aggregates, roots, or wormholes,
-                    allowing uneven movement of water through porous media like soils (Cornell University, 2021). The
-                    cracks and holes allow for faster water flow than the bulk of the soil. These areas also allow for
-                    deeper penetration of water, which could have implications for groundwater quality (Cornell
-                    University, 2021).
-                </p>
+                    </div>
+                </footer>
 
-                <p>The code extends the Richards equation to model two fractions in the soil: 1. Fast flow zone, and 2.
-                    Slow flow zone. The total flow through porous soil media is determined by the flow in these two
-                    domains, modeled using a staggered grid scheme. In this way, the dual porosity concept was
-                    implemented where the fast and slow flow zones are described separately; this is appropriate as
-                    these zones could have different soil properties. The model couples the preferential flow and
-                    unsaturated flow processes to investigate how water flows through porous media under various
-                    conditions using different scenarios.
-                </p>
+                <!-- JavaScripts -->
+                <!-- jQuery -->
+                <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+                <!-- Bootsrap & MDB scripts -->
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
+                    integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+                    integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"
+                    integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
 
-                <h2 id="theory">Theory and Basic Equations</h2>
+                <!-- Masonry & imagesLoaded -->
+                <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+                    integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+                <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+                <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
 
-                <h4>Darcy's Law</h4>
-                <p>Concepts that drive the rate of water flow through porous media, such as capillary pressure,
-                    hydraulic head and fluid potential, are related to the energy gradient in Darcy’s Law (Pinder and
-                    Celia, 2006). The model uses the extended form of Darcy’s law for groundwater flow, as it describes
-                    the simultaneous flow of non-homogeneous phases (Mayer, 2005). The modeled system has
-                    non-homogeneous phases because it is a porous medium where two immiscible phases are present; this
-                    is needed to create capillary pressure that retains water (Mayer, 2005). The extended form of
-                    Darcy’s equation is:
-                </p>
+                <!-- Medium Zoom JS -->
+                <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"
+                    integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+                <script src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+                <script src="/assets/js/common.js"></script>
 
-
-                <p>$$q_{\alpha} =
-                    \frac{\textbf{k}k_{r\alpha}}{\mu_{\alpha}}(\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})$$</p>
-
-                <p>where \(q_{\alpha}\) is the water discharge rate in \(\frac{L^2}{T}\), \(\textbf{k}\) is the
-                    permeability
-                    in \(L^2\), \(k_{r\alpha}\) is the relative permeability (dimensionless), \(\mu_{\alpha}\) is the
-                    dynamic
-                    viscosity in Pascals \(\cdot\) T, \((\mathbf{\nabla}p_{\alpha}-\rho_{\alpha}\textbf{g})\) is the
-                    pressure gradient. Note that L indicates a length-based unit like meters and T indicates a
-                    time-based unit like seconds.
-                </p>
-
-
-
-                <h4>Effective Saturation, Van Genuchten, and Relative Permeability</h4>
-                <p>The Van Genuchten and effective saturation equations are needed to calculate the relative
-                    permeability, \(k_{r\alpha}\). The Van Genuchten equation models the soil's water retention by
-                    relating the water content to the soil’s empirical parameters (Mayer, 2005; Pinder and Celia, 2006).
-                </p>
-
-                <p>$$\text{if } h_c > 0 \text{, } S_{\text{eff}}(h_c) = [1 + (\alpha h_c)^n]^{-m}$$</p>
-                <p>$$\text{if } h_c \leq 0 \text{, } S_{\text{eff}}(h_c) = 1$$</p>
-
-                <p>where \(\alpha\) is an empirical parameter of the soil in \(L^{-1}\) which is the point on the water
-                    retention curve where \(S_{eff}=0\). \(h_{c}\) is the capillary pressure head in length-based unit.
-                    \(n\) and \(m\) are empirical soil parameters where \(n=\frac{1}{1-m}\) and \(m=1-(\frac{1}{n})\)
-                    (Mayer,
-                    2005).
-                    With \(S_{eff}\) known using the equation above, the volumetric water content, \(\theta_{w}\) \((L^3
-                    L^{-3})\), can be calculated via the effective saturation equation as shown in the following
-                    equation.</p>
-
-                <p>$$S_{eff} = \frac{\theta_{w}-\theta_{res}}{\theta_{sat}-\theta_{res}}$$</p>
-
-                <p>while the relative permeability can be found by the following equation (Pinder and Celia, 2006)</p>
-
-                <p>$$k_{rw} = (S_{eff})^3$$</p>
-
-                <h4>Richard's Equation</h4>
-                <p>The pressure head form of the Richards Equation is as follows.
-                </p>
-
-                <p>$$[C(h_{w}) + S_{w}S^w_{s}]\frac{\delta h_{w}}{\delta t} - \mathbf{\nabla} \cdot [K^w_{sat}
-                    k_{rw}(\mathbf{\nabla} h_{w} + \mathbf{\nabla}z)]=0$$</p>
-
-                <p>where \(K^w_{sat}\) is the saturated hydraulic conductivity in \(\frac{L}{T}\), \(h_{w}\) is the
-                    water
-                    pressure head, and \(z\) is the depth. Note that negative \(z\) indicates a direction from top to
-                    bottom
-                    of the soil column (away from the surface into deeper layers). \(C(h_{w})\) is the differential
-                    water
-                    capacity which equals \(\frac{\delta \theta_{w}}{\delta h_{w}}\). \(S_{w}\) is known as the water
-                    storage which equals \(\frac{\theta_{w}}{\theta_{sat}}\).</p>
-
-                <p>\(S^w_{s}\) is the storativity coefficient which is the specific water capacity of the soil, given by
-                    the following equation.</p>
-
-                <p>$$S^w_{s} = \rho_{w} g (C_v+\epsilon \beta_w)$$</p>
-
-                <p>where \(C_v\) is the compressibility of the soil, \(\epsilon\) is the porosity of the soil,
-                    \(\beta_w\) is
-                    the compressibility of water, \(\rho_w\) is the density of water, and \(g\) is gravitational
-                    acceleration.</p>
-
-                <h4>Dual Porosity Concept</h4>
-
-                <p>In the dual porosity model, the fast flow fraction can have different soil properties than the slow
-                    flow fraction; a Darcy’s Law-based water flow is considered for both porosity systems by using a
-                    "first-order coupling term" (Gerke and Van Genuchten, 1993). In this model, the densities of both
-                    the solid and liquid phases are constant, and temperature, air pressure, and solute concentration
-                    effects are considered to be negligible (Gerke and Van Genuchten, 1993).</p>
-
-                <p>The fast and slow flows are modeled based on the extended form of Darcy’s Law.</p>
-
-                <p>$$q_{w} = -K_{sat}k_{rel}(\theta_{w}) ({\Delta} h_w+\mathbf{\nabla}z)$$</p>
-
-                <p>where \(q_w\), \(K_{sat}\), \(k_{rel}\), and \(h_w\) are unique to the respective fast flow and slow
-                    flow
-                    domains. The hydraulic conductivity, \(-K_{sat}k_{rel}\), is a function of the water content.</p>
-
-                <p>In the model, the flows in both the fast and slow zones are coupled by the exchange for water term
-                    \(Q_{exchange}\).</p>
-
-                <p>$$Q_{exchange} = -k_{ex}(h_{w,fast}-h_{w,slow})$$</p>
-
-                <p>where \(k_{ex}\) is the rate of exchange of water between the two porosities and \(h_w\) is the water
-                    pressure head for the fast and slow zones. \(k_{ex}\) is a resistance term and expected to be large
-                    if
-                    there is a barrier like a worm's slimy paste that keeps the holes in place; this interface presents
-                    a higher resistivity. Since it is an empirical parameter, it is determined by trial and error. The
-                    \(Q_{exchange}\) term has the same magnitude at all times for both flow zones, but with different
-                    signs in each respective soil fraction. The saturated water content is denoted by the following
-                    equation.</p>
-
-                <p>$$\theta_{sat} = \theta_{sat,fast} + \theta_{sat,slow}$$</p>
-
-                <p>where \(\theta_{sat,fast} = \beta \theta_{sat}\) and \(\theta_{sat,slow} = (1-\beta) \theta_{sat}\).
-                    \(\beta\) is the fraction of porosity associated with the fast flow.</p>
-
-                <p>The water mass balances for both the fast and slow flow zones, respectively, are as follows.</p>
-
-                <p>$$\frac{\delta \theta_{w,fast}}{\delta t} + \mathbf{\nabla} \cdot q_{w,fast} + Q_{exchange} =0$$</p>
-
-                <p>$$\frac{\delta \theta_{w,slow}}{\delta t} + \mathbf{\nabla} \cdot q_{w,slow} - Q_{exchange} =0$$</p>
-
-                <p>If the \(h_{w,fast}\) > \(h_{h,slow}\), then the \(Q_{exchange}\) is negative, indicating that the
-                    water flows from the fast flow zone to the slow flow zone.</p>
-
-
-                <h2 id="methodology">Methodology</h2>
-                <p>To implement the equations in the model, the following steps were taken. Firstly, both domains were
-                    defined to have the same top and boundary conditions and the same number of nodes; the soil column
-                    used for both is the same. The flow was assumed to enter through the fast flow zone only. The
-                    Richards Equation was modeled with two states with identical soil properties and a \(Q_{exchange}\)
-                    of
-                    zero to see if the model produced identical results as unsaturated flow, as in this case, there is
-                    no exchange between the zones. The model solves both of the states of the two domains in parallel.
-                    The fast flow zone is controlled by \(\beta\), with \(\beta \theta_{sat}\) indicating the pore space
-                    in
-                    the fast flow zone. Then, the parameters were varied to have different soil parameters to study the
-                    behavior of the fast and slow flow zones. After that, the exchange term can be also changed to model
-                    the preferential flow. From the exchange term, \(Q_{exchange}\), it is evident that the difference
-                    between the pressure heads of the fast and slow flow zones and therefore the \(Q_{exchange}\) will
-                    dominate the flow process. To see the results of this stepwise expansion of the model, please see
-                    the Appendix. The model was then used to run different scenarios to see the effect of preferential
-                    flow through unsaturated soils; these scenarios contain different boundary conditions and model
-                    parameters to see how the model results change with under varying conditions. The scenarios will be
-                    further detailed in an upcoming section.
-                </p>
-
-                <p>To model the unsaturated flow, discretization was used in a one-dimensional staggered grid scheme to
-                    capture the flow in a continuous way through small time steps and depth increments. The nodes
-                    represent the soil layers, and the internodes represent the space between soil layers as shown in
-                    Figure 1.
-                </p>
-
-                <img class="img-fluid z-dept-1" src="images/StaggeredGridDualPorosity.png"
-                    alt="StaggeredGridDualPorosity.png" />
-                <div class="caption">
-                    <em>Figure 1: Staggered grid scheme for discretization and dual porosity conceptual model.</em>
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-    <!-- Footer -->
-    <footer class="fixed-bottom">
-        <div class="container mt-0">
-            <!-- © Copyright 2022 Eunice Koid. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. -->
-
-        </div>
-    </footer>
-
-    <!-- JavaScripts -->
-    <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <!-- Bootsrap & MDB scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
-        integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
-        integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"
-        integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
-
-    <!-- Masonry & imagesLoaded -->
-    <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-        integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
-
-    <!-- Medium Zoom JS -->
-    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"
-        integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
-    <script src="/assets/js/zoom.js"></script><!-- Load Common JS -->
-    <script src="/assets/js/common.js"></script>
-
-    <!-- MathJax -->
-    <script type="text/javascript">
-        window.MathJax = {
-            tex: {
-                tags: 'ams'
-            }
-        };
-    </script>
-    <script defer type="text/javascript" id="MathJax-script"
-        src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
-    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+                <!-- MathJax -->
+                <script type="text/javascript">
+                    window.MathJax = {
+                        tex: {
+                            tags: 'ams'
+                        }
+                    };
+                </script>
+                <script defer type="text/javascript" id="MathJax-script"
+                    src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+                <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
 
 </body>
