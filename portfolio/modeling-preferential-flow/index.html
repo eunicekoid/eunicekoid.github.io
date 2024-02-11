@@ -425,11 +425,10 @@
                 <!-- JavaScripts -->
 
                 <script>
-                    // Make the Table of Contents fixed and adjust its position 
+                    // Make the Table of Contents fixed and adjust its position
                     document.addEventListener("DOMContentLoaded", function () {
                         var toc = document.getElementById("toc");
                         var maxTocHeight = 400;  // Set desired maximum height
-
 
                         // Calculate the position of the Table of Contents
                         function adjustTocPosition() {
@@ -441,10 +440,14 @@
                             var scrollPosition = window.scrollY;
 
                             if (mainContentHeight + headerHeight + footerHeight > windowHeight) {
+                                // Check if the calculated height exceeds the maximum
+                                var tocHeight = windowHeight - headerHeight - footerHeight;
                                 toc.style.position = "fixed";
                                 toc.style.top = headerHeight + "px";
+                                toc.style.maxHeight = (tocHeight < maxTocHeight) ? tocHeight + "px" : maxTocHeight + "px";
                             } else {
                                 toc.style.position = "static";
+                                toc.style.maxHeight = "none";  // Remove the max height if not fixed
                             }
                         }
 
@@ -493,7 +496,7 @@
                     src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
                 <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
-                
+
 </body>
 
 </html>
