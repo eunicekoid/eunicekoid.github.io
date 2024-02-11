@@ -459,7 +459,37 @@
                     src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
                 <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 
+                <script>
 
+                    // Make the Table of Contents fixed and adjust its position 
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var toc = document.getElementById("toc");
+
+                        // Calculate the position of the Table of Contents
+                        function adjustTocPosition() {
+                            var windowHeight = window.innerHeight;
+                            var headerHeight = document.querySelector("header").offsetHeight;
+                            var footerHeight = document.querySelector("footer").offsetHeight;
+                            var mainContent = document.querySelector(".col-md-9");
+                            var mainContentHeight = mainContent.offsetHeight;
+                            var scrollPosition = window.scrollY;
+
+                            if (mainContentHeight + headerHeight + footerHeight > windowHeight) {
+                                toc.style.position = "fixed";
+                                toc.style.top = headerHeight + "px";
+                            } else {
+                                toc.style.position = "static";
+                            }
+                        }
+
+                        // Update the position on scroll
+                        window.addEventListener("scroll", adjustTocPosition);
+                        window.addEventListener("resize", adjustTocPosition);
+
+                        // Initial adjustment
+                        adjustTocPosition();
+                    });
+                </script>
 </body>
 
 </html>
