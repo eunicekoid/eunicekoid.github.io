@@ -122,7 +122,7 @@
             </div>
         </nav>
     </header>
-    
+
     <div class="fixedNavigation">
         <a href="https://eunicekoid.github.io/portfolio/modeling-preferential-flow/#theory">Theory and Basic
             Equations</a>
@@ -158,7 +158,7 @@
             <br>
             <a href="https://github.com/eunicekoid/Portfolio/tree/main/Modeling%20Preferential%20Flow%20through%20Unsaturated%20Soil"
                 style="font-size: 16px;">
-                Click to view code on Github
+                <u>View code on Github</u>
             </a>
             <br>
             <style>
@@ -436,6 +436,24 @@
                 </p>
 
                 <h4>Parameter Values and Initial Conditions</h4>
+                <p>The initial conditions were given according to the model for unsaturated flow. The initial soil
+                    column length was taken to be one meter and the phreatic water level was 25 centimeters. Therefore,
+                    the initial pressure head was determined to be \(h_{w,initial} = zRef - zN\), where \(zRef\) is the
+                    depth of the phreatic water table and \(zN\) is the depth. The initial pressure head at the top
+                    boundary, \(zRef\), and bottom boundary were -0.25m, 0m, and 0.75m, respectively.
+                </p>
+
+                <p>The parameter values used in the model were the soil parameters from Gerke and Van Genuchten (1993).
+                    Figure 2 shows the soil parameters used in the Python code, where the fracture and matrix soil
+                    parameters were taken to be the fast flow and slow flow fractions, respectively.
+                </p>
+
+
+                <img class="img-fluid z-dept-1" src="images/soilParGerke.png" alt="soilParGerke.png" />
+                <div class="caption">
+                    <em>Figure 2: Soil parameters for different soil fractions in dual porosity flow (Gerke and Van
+                        Genuchten, 1993).</em>
+                </div>
 
             </article>
 
