@@ -143,16 +143,7 @@
         <br />
         <a href="#scenarios">Scenarios</a>
         <div class="submenu">
-            <a href="#scenario1">Gravity bottom, <small>\(k_{ex} = 0\)</small></a><br>
-            <a href="#scenario2">Robbin bottom, <small>\(k_{ex} = 0\)</small></a><br>
-            <a href="#scenario3">Gravity bottom, <small>\(k_{ex} = 1.05\times10^{-5} m^2/d\)</small> </a><br>
-            <a href="#scenario4">Robbin bottom, <small>\(k_{ex} = 1.05\times10^{-5} m^2/d\)</small> </a><br>
-            <a href="#scenario5">Gravity bottom, <small>\(k_{ex} = 1.05\times10^{-4} m^2/d\)</small> </a><br>
-            <a href="#scenario6">Robbin bottom, <small> \(k_{ex} = 1.05\times10^{-4} m^2/d\)</small> </a><br>
-            <a href="#scenario7">Gravity bottom, <small> \(k_{ex} = 1.05\times10^{-5} m^2/d\)</small>, ponding & varying
-                top</a><br>
-            <a href="#scenario8">Gravity bottom, <small>\(k_{ex} = 1.05\times10^{-5} m^2/d\)</small>, ponding & higher
-                inflow</a><br>
+            <a href="#scenario1">xxxx</a><br>
         </div>
         <br />
         <a href="#conclusion">Conclusion</a>

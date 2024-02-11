@@ -51,7 +51,27 @@
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
 
+    <!-- Table of Contents in Left Panel-->
+    <style>
+        body {
+            margin-left: 2px;
+        }
 
+        .fixedNavigation {
+            position: fixed;
+            top: 1000;
+            width: 275px;
+            left: 10;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+        }
+
+        .submenu {
+            margin-left: 3px;
+            font-size: 11px;
+        }
+    </style>
 </head>
 
 <!-- Body -->
@@ -112,6 +132,28 @@
             </div>
         </nav>
     </header>
+    
+     <!----------------------------------------------------------------------------------------------------------- Table of Contents --> 
+     <div class="fixedNavigation">
+        <a href="#approach">Approach</a>
+        <br />
+        <a href="#data">Data Collection and Interrogation</a>
+        <br />
+        <a href="#litreview">Literature Review</a>
+        <br />
+        <a href="#analysis">Analysis</a>
+        <div class="submenu">
+            <a href="#spatial">Spatial Visualization</a><br>
+            <a href="#regression">Regression</a><br>
+            <a href="#clustering">Clustering </a><br>
+        </div>
+        <br />
+        <a href="#observations">Observations</a>
+        <br />
+        <a href="#conclusion">Conclusion</a>
+    </div>
+
+
 
     <!-- Content -->
     <div class="container mt-5">
@@ -131,6 +173,7 @@
                 <u>View code on Github</u>
             </a>
             <br />
+            <br /> 
             <style>
                 .scaled-image-icons {
                     width: 70%;
@@ -182,14 +225,15 @@
 
                 <ul>
                     <li>AnuragAnalog. (2020, June 19). Geodata-of-India <a
-                            href="https://github.com/AnuragAnalog/Geodata-of-India" target="_blank"><u>Dataset</u></a></li>
+                            href="https://github.com/AnuragAnalog/Geodata-of-India" target="_blank"><u>Dataset</u></a>
+                    </li>
                     <li>Development Data Lab. (2020, April 14). Development Data Lab <a
                             href="http://www.devdatalab.org/covid" target="_blank"><u>Dataset</u></a></li>
                     <li>Socioeconomic High-resolution Rural-Urban Geographic Platform</li>
                 </ul>
 
 
-                <h2>Approach</h2>
+                <h2 id="approach">Approach</h2>
                 <ol>
                     <li>Conduct exploratory data analysis by each Indian state, examining the following three main
                         variable groups: air quality, health and demographic, and Covid-19 cases.
@@ -206,7 +250,7 @@
                 </ol>
 
 
-                <h2>Data Collection and Interrogation</h2>
+                <h2 id="data">Data Collection and Interrogation</h2>
 
                 <p><strong>Covid-19 data</strong></p>
                 <ul>
@@ -271,7 +315,7 @@
                         not available.</li>
                 </ol>
 
-                <h2>Literature Review</h2>
+                <h2 id="litreview">Literature Review</h2>
                 <style>
                     table {
                         border-collapse: collapse;
@@ -397,9 +441,9 @@
                 <br>
                 <br>
 
-                <h2>Analysis</h2>
+                <h2 id="analysis">Analysis</h2>
 
-                <h4>Spatial Visualization</h4>
+                <h4 id="spatial">Spatial Visualization</h4>
 
                 <p>Almost all states with high cases and deaths have a large number of total hospitals, doctors, work
                     population, total population, slum population, and mean pollution. These states also have a low
@@ -408,7 +452,7 @@
 
                 <img class="img-fluid z-dept-1" src="images/map_all_variables.png" alt="map_all_variables.png" />
 
-                <h4>Regression</h4>
+                <h4 id="regression">Regression</h4>
 
                 <p>Based on the linear regression, an increase in all variables except forest coverage value will also
                     increase Covid-19 cases.</p>
@@ -416,10 +460,10 @@
 
                 <img class="img-fluid z-dept-1" src="images/all_regression.png" alt="all_regression.png" />
 
-                <br> 
+                <br>
                 <br>
 
-                <h4>MSE and R-squared values:</h4>
+                <h5>MSE and R-squared values:</h6>
 
                 <table>
                     <tr>
@@ -487,7 +531,7 @@
                 <p>The variables with a good fit with total deaths have positive R-squared values: total population,
                     slum population, work population, total doctors, mean pollution, and forest coverage.</p>
 
-                <h4>Clustering</h4>
+                <h4 id="clustering">Clustering</h4>
 
                 <p>The data was spatially clustered using KMeans and three clusters. Mean population, slum population,
                     forest coverage, work population, and total cases were examined based on three categories: low,
@@ -583,35 +627,35 @@
                     cases.</p>
 
 
-                <h3>Observations</h3>
+                <h3 id="observations">Observations</h3>
 
                 <ol>
                     <li>
                         <p>States with higher forest coverage generally have lower Covid-19 cases.<br>
-                        There are a few outliers and exceptions to this pattern. The state with the most cases,
-                        Maharashtra, has a relatively low forest coverage percentage. The high cases could be
-                        due to the fact that there is a large population in Maharashtra.</p>
+                            There are a few outliers and exceptions to this pattern. The state with the most cases,
+                            Maharashtra, has a relatively low forest coverage percentage. The high cases could be
+                            due to the fact that there is a large population in Maharashtra.</p>
                     </li>
 
                     </li>
                     <li>
                         <p>Higher forest coverage has relatively less mean pollution.<br>
-                        On a larger scale, this pattern is consistent. This supports the point that forests and
-                        pollution are negatively correlated.</p>
+                            On a larger scale, this pattern is consistent. This supports the point that forests and
+                            pollution are negatively correlated.</p>
                     </li>
 
                     </li>
                     <li>
                         <p>Generally, there is a small positive correlation between pollution and total cases.<br>
-                        correlation, though not as strong as hypothesized. Forest coverage is a better predictor
-                        of total cases. More research into the contributors to pollution would help identify the
-                        specific causes of pollution and how they might affect Covid-19 cases.</p>
+                            correlation, though not as strong as hypothesized. Forest coverage is a better predictor
+                            of total cases. More research into the contributors to pollution would help identify the
+                            specific causes of pollution and how they might affect Covid-19 cases.</p>
                     </li>
 
                     </li>
                 </ol>
 
-                <h3>Conclusion</h3>
+                <h3 id="conclusion">Conclusion</h3>
 
                 <p>In summary, states with lower forest coverage typically have higher pollution. Higher polluted states
                     tend to have higher populations. Polluted and populated states have a higher number of Covid-19
