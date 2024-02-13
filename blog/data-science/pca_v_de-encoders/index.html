@@ -1,1 +1,38 @@
+Dimensionality Reduction:
 
+PCA: In PCA, the goal is to reduce the dimensionality of a dataset by finding a set of orthogonal axes (principal
+components) that capture the maximum variance in the data. This allows for a lower-dimensional representation of the
+original data.
+Encoders/Decoders in NLP: In NLP, encoders and decoders are often used in the context of autoencoders, variational
+autoencoders (VAEs), or sequence-to-sequence models. These models learn to represent high-dimensional input data (e.g.,
+text sequences) in a lower-dimensional latent space through an encoder. The decoder then reconstructs the input from
+this lower-dimensional representation.
+
+
+Information Compression:
+
+PCA: PCA aims to capture the most important information in the data while discarding less important variance. The
+principal components are chosen based on the amount of variance they explain.
+Encoders/Decoders in NLP: In autoencoders and VAEs, the encoder learns a compressed representation (latent space) of the
+input data. This compressed representation should retain essential information about the input.
+
+
+Representation Learning:
+
+PCA: The principal components learned by PCA can be viewed as a new set of features that represent the original data in
+a more compact form.
+Encoders/Decoders in NLP: In NLP, especially with encoder-decoder architectures, the encoder learns a representation of
+the input text that captures semantic information. This learned representation can be used for various downstream tasks,
+such as text generation or translation.
+
+
+Linear Transformations:
+
+PCA: PCA is a linear transformation that finds a set of axes in the feature space along which the data varies the most.
+Encoders/Decoders in NLP: While neural network-based encoders and decoders can involve non-linear transformations, the
+basic idea of transforming input data into a different representation and then reconstructing it shares some conceptual
+similarity with linear transformations.
+It's important to note that PCA and NLP encoder/decoder models are applied in different contexts and have different
+goals. PCA is a classical statistical method for dimensionality reduction, while NLP encoder/decoder models are often
+used for representation learning and generation tasks in natural language understanding and generation. The underlying
+principles of capturing essential information and reducing dimensionality, however, connect these concepts.
