@@ -196,7 +196,7 @@
                                 component</em></b>, the linear combination of the features.
                         <ul>
                             <li>Projected points on the fitted line are where the sum of squared distances between
-                                observations and the line is minimized.</li>
+                                observations and the line (the <b><em>projection error</em></b>) is minimized.</li>
                             <li>The slope of the best-fit line (let's call it PC1) indicates the spread of the data. If
                                 the slope is greater than 1, that means the feature on the x-axis contributes more
                                 information to PC1 than the feature on the y-axis.</li>
@@ -246,9 +246,11 @@
 
 
 
-                <h4 id="assumptions">Assumptions</h4>
+                <h4 id="assumptions">Requirements</h4>
                 <ul>
-                    <li>Standardize all features</li>
+                    <li>All features must be standardized.</li>
+                    <li>The number of samples should be greater than the number of features.</li>
+                    <ul><li>If not, PCA will pick up the noise associated with each feature and overfit to it.</li></ul>
                     
 
                 </ul>
