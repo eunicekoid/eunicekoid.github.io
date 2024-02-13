@@ -192,16 +192,18 @@
                     <br />
                     <li>The best-fit line that goes through the origin is determined by maximizing the sum of squared
                         distances from projected points on the line to the origin. This is the <b><em>principal
-                            component</em></b>, the linear combination of the features.
+                                component</em></b>, the linear combination of the features.
                         <ul>
-                            <li>Projected points on the fitted line are the points where the sum of squared distances between
+                            <li>Projected points on the fitted line are the points where the sum of squared distances
+                                between
                                 observations and the line are minimized.</li>
                             <li>The slope of the best-fit line (let's call it PC1) indicates the spread of the data. If
                                 the slope is greater than 1, that means the feature on the x-axis contributes more
                                 information to PC1 than the feature on the y-axis.</li>
                         </ul>
                         <br />
-                    <li>Using the slope of PC1, the <b><em>eigenvector</em></b> and <b><em>singular vector</em></b> for PC1 can be
+                    <li>Using the slope of PC1, the <b><em>eigenvector</em></b> and <b><em>singular vector</em></b> for
+                        PC1 can be
                         determined. </li>
                     <ul>
                         <li>The eigenvector is the unit vector that shows the direction of maximum variance. </li>
@@ -211,11 +213,13 @@
                         <li>The average of the sum of squared distances of each projected point on PC1 to the origin is
                             called the <b><em>eigenvalue</em></b> for PC1.</li>
                         $$ \frac{\Sigma (distances^2)}{n-1} = \text{eigenvalue}$$
-                        <li>The <b><em>singular value</em></b> of PC1 is the square root of the sum of squared distances of PC1.</li>
+                        <li>The <b><em>singular value</em></b> of PC1 is the square root of the sum of squared distances
+                            of PC1.</li>
                         $$\sqrt{\Sigma (distances^2)} = \text{singular value}$$
                     </ul>
                     <br />
-                    
+                    <li>Subsequent principal components are found by finding the line through the origin that is
+                        perpendicular to the existing principal components.</li>
                     <br />
 
 
