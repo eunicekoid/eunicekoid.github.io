@@ -273,7 +273,8 @@
                             <li>Select <code class="language-plaintext highlighter-gray">n_components</code> by using
                                 the <code class="language-plaintext highlighter-gray">explained_variance_ratio_</code>
                                 parameter. Choose the combination of principal components that give you a total
-                                explained variance of >95%.
+                                explained variance of above a given threshold (e.g., 95%). You can safely truncate all
+                                the components that contribute minimally to the overall variance.
                             </li>
                         </ul>
                     <li><code class="language-plaintext highlighter-gray">svd_solver</code>: 'auto', 'full', 'arpack',
@@ -303,12 +304,27 @@
                 </ul>
 
                 <h2 id="advantages">Advantages</h2>
+                <ul>
+                    <li>Effective at filtering out noise by capturing variance in the data</li>
+                    <li>Principal components are orthogonal and therefore uncorrelated, which makes PCA effective at dealing with multicollinearity</li>
+                </ul>
 
                 <h2 id="disadvantages">Disadvantages</h2>
+                <ul>
+                    <li>Does not handle missing values well</li>
+                    <li>Sensitive to outliers</li>
+                    <li>Hard to directly interpret principal components, especially with high-dimensional data</li>
+                    <li>Assumes that the primary components and original features have a linear relationship</li>
+                    <li>Equates variance with importance, though some features with low variance may still be important</li>
+                    <li>Disregards class separation; prioritizes overall variance over class-specific patterns</li>
+
+                </ul>
                 <h2 id="usecases">Use Cases</h2>
                 <h4 id="usecase1">Use Case 1</h4>
 
-                <a href="your_link_here"><h2 id="example">Example Code</h2></a>
+                <a href="your_link_here">
+                    <h2 id="example">Example Code</h2>
+                </a>
 
 
 
