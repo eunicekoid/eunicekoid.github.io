@@ -229,8 +229,9 @@
 
                     </li>
                     <br />
-                    <li>This process is repeated for all combinations of features. The number of principal components is
-                        usually the number of samples. The principal components that account for the most variation
+                    <li>This process is repeated for all combinations of features.
+                        The maximum number of principal components is usually the minimum of the number of
+                        samples or features. The principal components that account for the most variation
                         (determined by the eigenvalues) represent good approximations of the dataset because they
                         contain the most information. To reduce the number of dimensions, only the important principal
                         components are kept.
@@ -292,6 +293,9 @@
                             <li>A high explained variance for a given principal component means that a high percentage
                                 of the dataset's variability is retained by said component.</li>
                     </li>
+                    <li><code class="language-plaintext highlighter-gray">components_</code></li>: an array in which
+                    each row represents a principal component and the values within each row represent the weight (or
+                    contribution) of each original feature to that principal component.
                 </ul>
                 </ul>
 
