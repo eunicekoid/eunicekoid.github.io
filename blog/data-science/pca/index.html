@@ -213,6 +213,7 @@
                         <li>The average of the sum of squared distances of each projected point on PC1 to the origin is
                             called the <b><em>eigenvalue</em></b> for PC1.</li>
                         $$ \frac{\Sigma (distances^2)}{n-1} = \text{eigenvalue}$$
+                        The eigenvalue is a measure of variation. Adding eigenvalues of all the principal components gives you the total variation.
                         <li>The <b><em>singular value</em></b> of PC1 is the square root of the sum of squared distances
                             of PC1.</li>
                         $$\sqrt{\Sigma (distances^2)} = \text{singular value}$$
@@ -221,7 +222,8 @@
                     <li>Subsequent principal components are found by finding the line through the origin that is
                         perpendicular to the existing principal components. The singular vector and eigenvector for new
                         principal components can be calculated as described above.</li>
-                    <li>The perpendicular principal components act as the new coordinate system on which the observations can be projected.</li>
+                    <li>The perpendicular principal components act as the new coordinate system on which the
+                        observations can be projected.</li>
                     <br />
 
 
