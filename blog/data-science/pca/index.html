@@ -178,7 +178,14 @@
 
                 <h2 id="about">About</h2>
                 <h4 id="motivation">Motivation</h4> <!--The problem it solves -->
-                <p>The <b>curse of dimensionality</b> </p>
+                <p>Higher-dimensional datasets have sparse data points that have large distances between them. This
+                        increases computational complexity and the risk of overfitting.</p>
+               
+
+                <p>Principal Component Analysis (PCA) addresses these challenges by emphasizing the capture of variance,
+                effectively reducing noise. By retaining the most pertinent features, PCA enhances the model's
+                generalizability, improves computational efficiency, and mitigates the likelihood of overfitting.</p>
+
 
                 <h4 id="steps">How It Works</h4>
 
@@ -305,8 +312,10 @@
 
                 <h2 id="advantages">Advantages</h2>
                 <ul>
-                    <li>Effective at filtering out noise by capturing variance in the data</li>
-                    <li>Principal components are orthogonal and therefore uncorrelated, which makes PCA effective at dealing with multicollinearity</li>
+                    <li>Effective at filtering out noise by prioritizing and retaining variance in the data</li>
+                    <li>Principal components are orthogonal and therefore uncorrelated, which makes PCA effective at
+                        dealing with multicollinearity</li>
+                    <li>Allows for lower-dimensional visualization</li>
                 </ul>
 
                 <h2 id="disadvantages">Disadvantages</h2>
@@ -315,7 +324,8 @@
                     <li>Sensitive to outliers</li>
                     <li>Hard to directly interpret principal components, especially with high-dimensional data</li>
                     <li>Assumes that the primary components and original features have a linear relationship</li>
-                    <li>Equates variance with importance, though some features with low variance may still be important</li>
+                    <li>Equates variance with importance, though some features with low variance may still be important
+                    </li>
                     <li>Disregards class separation; prioritizes overall variance over class-specific patterns</li>
 
                 </ul>
