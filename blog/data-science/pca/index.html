@@ -183,20 +183,20 @@
                 <p> PCA uses <b>Singular Value Decomposition (SVD)</b> to find the principal components.
                 </p>
                 <ol>
-                    <li>The average measurement across all features is calculated and plotted along with the
-                        observations in the dataset.</li>
+                    <li>The average measurement across all features is calculated and plotted, along with the
+                        observations in the dataset.
+                    </li>
                     <br />
                     <li>Using the average measurement, all of the points are shifted so that the center (average
-                        measurement) is aligned to the origin. All the other observations maintain the same relative
+                        measurement) is aligned to the origin. All other observations maintain the same relative
                         distance from the center.</li>
                     <br />
                     <li>The best-fit line that goes through the origin is determined by maximizing the sum of squared
                         distances from projected points on the line to the origin. This is the <b><em>principal
                                 component</em></b>, the linear combination of the features.
                         <ul>
-                            <li>Projected points on the fitted line are the points where the sum of squared distances
-                                between
-                                observations and the line are minimized.</li>
+                            <li>Projected points on the fitted line are where the sum of squared distances between
+                                observations and the line is minimized.</li>
                             <li>The slope of the best-fit line (let's call it PC1) indicates the spread of the data. If
                                 the slope is greater than 1, that means the feature on the x-axis contributes more
                                 information to PC1 than the feature on the y-axis.</li>
@@ -224,13 +224,16 @@
                     <li>Subsequent principal components are found by finding the line through the origin that is
                         perpendicular to the existing principal components. The singular vector and eigenvector for new
                         principal components can be calculated as described above. The perpendicular principal
-                        components act as the new coordinate system on which the
-                        observations can be projected.</li>
+                        components act as the new coordinate system on which the observations can be projected.
+
+                    </li>
                     <br />
-                    <li>This process is repeated for all the combinations of features. The number of principal
-                        components is usually the number of samples. The principal components that account for the most
-                        variation (determined by the eigenvalues) represent good approximations of the dataset because they contain the most
-                        information. This is how dimensions are reduced. </li>
+                    <li>This process is repeated for all combinations of features. The number of principal components is
+                        usually the number of samples. The principal components that account for the most variation
+                        (determined by the eigenvalues) represent good approximations of the dataset because they
+                        contain the most information. To reduce the number of dimensions, only the important principal
+                        components are kept.
+                    </li>
 
                     <br />
 
