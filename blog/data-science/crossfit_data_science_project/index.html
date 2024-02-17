@@ -154,99 +154,137 @@
                 <p>A machine learning model that analyzes over 1 million observations of CrossFit athletes' benchmark
                     workout data to predict ranking in the CrossFit Games</p>
 
-                <h2 id="eda">Exploratory Data Analysis</h2>
                 <style type="text/css">
-                    .tg  {border-collapse:collapse;border-spacing:0;}
-                    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-                      overflow:hidden;padding:10px 5px;word-break:normal;}
-                    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-                      font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-                    .tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
-                    .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-                    </style>
-                    <table class="tg">
+                    .tg {
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                    }
+
+                    .tg td {
+                        border-color: black;
+                        border-style: solid;
+                        border-width: 1px;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        overflow: hidden;
+                        padding: 10px 5px;
+                        word-break: normal;
+                    }
+
+                    .tg th {
+                        border-color: black;
+                        border-style: solid;
+                        border-width: 1px;
+                        font-family: Arial, sans-serif;
+                        font-size: 14px;
+                        font-weight: normal;
+                        overflow: hidden;
+                        padding: 10px 5px;
+                        word-break: normal;
+                    }
+
+                    .tg .tg-fymr {
+                        border-color: inherit;
+                        font-weight: bold;
+                        text-align: left;
+                        vertical-align: top
+                    }
+
+                    .tg .tg-0pky {
+                        border-color: inherit;
+                        text-align: left;
+                        vertical-align: top
+                    }
+                </style>
+                <table class="tg">
                     <thead>
-                      <tr>
-                        <th class="tg-fymr">#</th>
-                        <th class="tg-fymr">Benchmark Workout</th>
-                        <th class="tg-fymr">Description</th>
-                      </tr>
+                        <tr>
+                            <th class="tg-fymr">#</th>
+                            <th class="tg-fymr">Benchmark Workout</th>
+                            <th class="tg-fymr">Description</th>
+                        </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td class="tg-0pky">1</td>
-                        <td class="tg-0pky">Back Squat</td>
-                        <td class="tg-0pky"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">2</td>
-                        <td class="tg-0pky">Chad1000x</td>
-                        <td class="tg-0pky">1,000 box step-ups</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">3</td>
-                        <td class="tg-0pky">Clean &amp; Jerk</td>
-                        <td class="tg-0pky"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">4</td>
-                        <td class="tg-0pky">Deadlift</td>
-                        <td class="tg-0pky"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">5</td>
-                        <td class="tg-0pky">Fight Gone Bad</td>
-                        <td class="tg-0pky">3 Rounds For Total Reps in 17 minutes<br>1 minute Wall Ball Shots (20/14 lb)<br>1 minute Sumo Deadlift High-Pulls (75/55 lb)<br>1 minute Box Jumps (20 in)<br>1 minute Push Press (75/55 lb)<br>1 minute Row (calories)<br>1 minute Rest</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">6</td>
-                        <td class="tg-0pky">Filthy 50</td>
-                        <td class="tg-0pky">For Time<br>50 Box Jumps (24/20 in)<br>50 Jumping Pull-Ups<br>50 Kettlebell Swings (1/.75 pood)<br>50 Walking Lunge Steps<br>50 Knees-to-Elbows<br>50 Push Presses (45/35 lb)<br>50 Back Extensions<br>50 Wall Ball Shots (20/14 lb)<br>50 Burpees<br>50 Double Unders</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">7</td>
-                        <td class="tg-0pky">Fran</td>
-                        <td class="tg-0pky">21-15-9 Reps For Time<br>Thrusters (95/65 lb)<br>Pull-Ups</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">8</td>
-                        <td class="tg-0pky">Grace</td>
-                        <td class="tg-0pky">30 Clean-and-Jerks (135/95 lb)</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">9</td>
-                        <td class="tg-0pky">Helen</td>
-                        <td class="tg-0pky">3 Rounds For Time<br>400 meter Run<br>21 Kettlebell Swings (1.5/1 pood)<br>12 Pull-Ups</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">10</td>
-                        <td class="tg-0pky">L1 Benchmark</td>
-                        <td class="tg-0pky">3 Rounds for Time<br>15 Thrusters (95/65 lb) <br>12 Burpees</td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">11</td>
-                        <td class="tg-0pky">Max Pull-ups</td>
-                        <td class="tg-0pky"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">12</td>
-                        <td class="tg-0pky">Run 5K</td>
-                        <td class="tg-0pky"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">13</td>
-                        <td class="tg-0pky">Snatch</td>
-                        <td class="tg-0pky"></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-0pky">14</td>
-                        <td class="tg-0pky">Sprint 400m</td>
-                        <td class="tg-0pky"></td>
-                      </tr>
+                        <tr>
+                            <td class="tg-0pky">1</td>
+                            <td class="tg-0pky">Back Squat</td>
+                            <td class="tg-0pky"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">2</td>
+                            <td class="tg-0pky">Chad1000x</td>
+                            <td class="tg-0pky">1,000 box step-ups</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">3</td>
+                            <td class="tg-0pky">Clean &amp; Jerk</td>
+                            <td class="tg-0pky"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">4</td>
+                            <td class="tg-0pky">Deadlift</td>
+                            <td class="tg-0pky"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">5</td>
+                            <td class="tg-0pky">Fight Gone Bad</td>
+                            <td class="tg-0pky">3 Rounds For Total Reps in 17 minutes<br>1 minute Wall Ball Shots (20/14
+                                lb)<br>1 minute Sumo Deadlift High-Pulls (75/55 lb)<br>1 minute Box Jumps (20 in)<br>1
+                                minute Push Press (75/55 lb)<br>1 minute Row (calories)<br>1 minute Rest</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">6</td>
+                            <td class="tg-0pky">Filthy 50</td>
+                            <td class="tg-0pky">For Time<br>50 Box Jumps (24/20 in)<br>50 Jumping Pull-Ups<br>50
+                                Kettlebell Swings (1/.75 pood)<br>50 Walking Lunge Steps<br>50 Knees-to-Elbows<br>50
+                                Push Presses (45/35 lb)<br>50 Back Extensions<br>50 Wall Ball Shots (20/14 lb)<br>50
+                                Burpees<br>50 Double Unders</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">7</td>
+                            <td class="tg-0pky">Fran</td>
+                            <td class="tg-0pky">21-15-9 Reps For Time<br>Thrusters (95/65 lb)<br>Pull-Ups</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">8</td>
+                            <td class="tg-0pky">Grace</td>
+                            <td class="tg-0pky">30 Clean-and-Jerks (135/95 lb)</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">9</td>
+                            <td class="tg-0pky">Helen</td>
+                            <td class="tg-0pky">3 Rounds For Time<br>400 meter Run<br>21 Kettlebell Swings (1.5/1
+                                pood)<br>12 Pull-Ups</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">10</td>
+                            <td class="tg-0pky">L1 Benchmark</td>
+                            <td class="tg-0pky">3 Rounds for Time<br>15 Thrusters (95/65 lb) <br>12 Burpees</td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">11</td>
+                            <td class="tg-0pky">Max Pull-ups</td>
+                            <td class="tg-0pky"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">12</td>
+                            <td class="tg-0pky">Run 5K</td>
+                            <td class="tg-0pky"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">13</td>
+                            <td class="tg-0pky">Snatch</td>
+                            <td class="tg-0pky"></td>
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky">14</td>
+                            <td class="tg-0pky">Sprint 400m</td>
+                            <td class="tg-0pky"></td>
+                        </tr>
                     </tbody>
-                    </table>
+                </table>
 
-
+                <h2 id="eda">Exploratory Data Analysis</h2>
                 <!-- <h4 id="motivation">Motivation</h4> -->
 
 
