@@ -155,6 +155,9 @@
                 <p>A machine learning model that analyzes over 1 million observations of CrossFit athletes' benchmark
                     workout data to predict ranking in the CrossFit Games</p>
 
+                <p>Data was collected from the <a href="https://games.crossfit.com/">CrossFit Games website</a> for the
+                    2023 Games. The benchmark workouts are:</p>
+
                 <style type="text/css">
                     .tg {
                         border-collapse: collapse;
@@ -285,13 +288,27 @@
                     </tbody>
                 </table>
 
+                <p>Atheletes' profile data also has information on their affiliate gym, region, division (e.g., men,
+                    women), games level, qualifier (open, quarterfinals, semifinals, games), and rank.</p>
+
                 <h2 id="eda">Exploratory Data Analysis</h2>
 
 
                 <h4 id="correlation">Correlation</h4>
 
                 <h4 id="dataquality">Data Quality Issues</h4>
+                <b>Imbalance</b>
+                <ul>
+                    <li><code class="language-plaintext highlighter-gray">Division</code>, <code
+                            class="language-plaintext highlighter-gray">Games_Level</code>, and <code
+                            class="language-plaintext highlighter-gray">Qualifier</code> are highliy imbalanced (52%,
+                        80%, and 57%, respectively). This suggests that most competitors are in the Men's division,
+                        worldwide games level, and in the open qualifier. It makes sense that there would be more data
+                        for the open, since that is the first level of the CrossFit games. Only those that qualify will
+                        advance to the higher levels.
 
+                    </li>
+                </ul>
                 <table class="tg">
                     <thead>
                         <tr style="text-align: center;">
@@ -509,18 +526,7 @@
                     </tbody>
                 </table>
 
-                Imbalance
-                <ul>
-                    <li><code class="language-plaintext highlighter-gray">Division</code>, <code
-                            class="language-plaintext highlighter-gray">Games_Level</code>, and <code
-                            class="language-plaintext highlighter-gray">Qualifier</code> are highliy imbalanced (52%,
-                        80%, and 57%, respectively). This suggests that most competitors are in the Men's division,
-                        worldwide games level, and in the open qualifier. It makes sense that there would be more data
-                        for the open, since that is the first level of the CrossFit games. Only those that qualify will
-                        advance to the higher levels.
 
-                    </li>
-                </ul>
 
                 <hr>
 
