@@ -131,11 +131,14 @@
         <br />
         <a href="#eda">Exploratory Data Analysis</a>
         <div class="submenu">
+            <a href="#datacleaning">Data Cleaning</a><br>
+        </div>
+        <div class="submenu">
             <a href="#dataquality">Data Quality Issues</a><br>
         </div>
         <br />
         <br />
-        <a href="#divisions">Divisions</a>
+        <!-- <a href="#divisions">Divisions</a> -->
         <br />
         <br />
 
@@ -158,8 +161,8 @@
                 <p>A machine learning model that analyzes over 1 million observations of CrossFit athletes' benchmark
                     workout data to predict ranking in the CrossFit Games</p>
 
-                <p>Data was collected from the <a href="https://games.crossfit.com/">CrossFit Games website</a> for the
-                    2023 Games. The benchmark workouts are:</p>
+                <p>Data was collected from the <a href="https://games.crossfit.com/"><u>CrossFit Games website</u></a> for the
+                    2023 Games.</p>
 
                 <style type="text/css">
                     .tg {
@@ -203,6 +206,14 @@
                         vertical-align: top
                     }
                 </style>
+                
+
+                <p>Athletes' profile data also has information on their affiliate gym, region, division (e.g., men,
+                    women), games level, qualifier (open, quarterfinals, semifinals, games), and rank.</p>
+
+                <h2 id="eda">Exploratory Data Analysis</h2>
+
+                There are 14 benchmark workouts: 
                 <table class="tg">
                     <thead>
                         <tr>
@@ -291,12 +302,15 @@
                     </tbody>
                 </table>
 
-                <p>Athletes' profile data also has information on their affiliate gym, region, division (e.g., men,
-                    women), games level, qualifier (open, quarterfinals, semifinals, games), and rank.</p>
-
-                <h2 id="eda">Exploratory Data Analysis</h2>
-
-
+                <h4 id="datacleaning">Data Cleaning</h4>
+                <p> The data was cleaned as follows:
+                    <ul>
+                        <li>Removed all athletes with no benchmark information</li>
+                        <li>All weights were converted to pounds</li>
+                        <li>Invalid and unreasonable values were removed (e.g., deadlifts of 1,000,000 lbs, 400m time of 20 seconds, negative values)</li>
+                        <li>Time and weight values were standardized to a consistent format</li>
+                    </ul>
+                </p>
 
                 <h4 id="dataquality">Data Quality Issues</h4>
                 <b>Imbalance</b>
@@ -574,7 +588,7 @@
                 <h4>Dealing with Data Quality Issues</h4>
                 I keep only the Men's and Women's divisions, since the data is imbalanced with almost three-quarters of
                 the observations falling in these two divisions. To predict rankings, I split the data by qualifier
-                (open, quarterfinals, semifinals, and games). 
+                (open, quarterfinals, semifinals, and games).
                 <!-- <table class="tg">
                     <thead>
                         <tr style="text-align: right;">
