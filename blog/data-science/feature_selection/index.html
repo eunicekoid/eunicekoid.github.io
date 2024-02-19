@@ -205,14 +205,18 @@
                         if (correlationParagraph.style.display === 'none') {
                             correlationParagraph.style.display = 'block';
 
-                            // Trigger MathJax typesetting after displaying the equation
-                            MathJax.typeset();
+                            // Wait for 100ms and then trigger MathJax typesetting
+                            setTimeout(() => {
+                                MathJax.typeset();
+                            }, 100);
                         } else {
                             correlationParagraph.style.display = 'none';
                         }
                     });
                 </script>
 
+
+<br />
 
                 <ul>
                     <li>Correlation
