@@ -267,7 +267,7 @@
                     });
                 </script>
                 <br />
-
+                <br />
 
                 <b>Categorical Variables:</b><br />
                 <span id="chi-text" style="cursor: pointer; color: black;">▸ <u>Chi-Squared</u></span>
@@ -336,21 +336,24 @@
                 </script>
 
                 <br />
+                <br />
 
 
                 <h4 id="fbm-advantages">Advantages</h4>
                 <ul>
                     <li>Faster and computationally more efficient than wrapper methods because you don't have to train
                         additional models</li>
-                    <li>Contributes to dimensionality reduction and potentially improved generalizability because of a simpler model</li>
+                    <li>Contributes to dimensionality reduction and potentially improved generalizability because of a
+                        simpler model</li>
                     <li>Reduced noise in the data</li>
                     <li>Easily scalable</li>
-                    <li>Ranks the features by relevance, making it easier to select features and interpret their impact</li>
+                    <li>Ranks the features by relevance, making it easier to select features and interpret their impact
+                    </li>
                 </ul>
 
                 <h4 id="fbm-disadvantages">Disadvantages</h4>
                 <ul>
-                    <li>Does not address multicollinearity among features</li>
+                    <li>Does not address multicollinearity among features and assumes independence of features</li>
                     <ul>
                         <li>Multicollinearity happens when two or more features are high correlated, which makes it
                             tough for the model to delineate the individual contribution of each feature.
@@ -361,6 +364,10 @@
                             not capture this importance and discards the feature.</li>
 
                     </ul>
+                    <li>Does not consider the model performance, as features are selected before the model is trained.
+                        It does not adapt to the specifications of the machine learning algorithm.</li>
+                    <li>Sensitive to scale of the features. Needs to be standardized, if necessary, beforehand.</li>
+                    <li>Does not address imbalanced datasets.</li>
                 </ul>
 
                 <h2 id="wbm">Wrapper-based Methods</h2>
