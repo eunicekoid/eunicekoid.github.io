@@ -131,7 +131,7 @@
 
             <header class="post-header">
                 <h1 class="post-title">Statistics Concepts</h1>
-                <p class="post-description">Click on eaach term to see the definition. </p>
+                <p class="post-description">Click on each term to view its definition. </p>
             </header>
             <hr>
 
@@ -197,7 +197,6 @@
                         }
                     });
                 </script>
-
 
 
                 <!--Button-->
@@ -302,6 +301,27 @@
                             MathJax.typeset();
                         } else {
                             maePara.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
+                <!--Button-->
+                <button id="mse-button">mean squared error (MSE)</button>
+                <p id="mse-paragraph" style="display: none;">
+                    Evaluation metric for regression that measures the average of the squared differences between actual
+                    and predicted values. Lower MSE means better model performance.
+                    \[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
+                </p>
+                <script>
+                    const mseButton = document.getElementById('mse-button');
+                    const msePara = document.getElementById('mse-paragraph');
+                    mseButton.addEventListener('click', () => {
+                        if (msePara.style.display === 'none') {
+                            msePara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            msePara.style.display = 'none';
                         }
                     });
                 </script>
