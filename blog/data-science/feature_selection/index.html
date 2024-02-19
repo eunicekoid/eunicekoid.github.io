@@ -173,15 +173,16 @@
 
                 <h2 id="fbm">Filter-based Methods</h2>
                 <h4 id="fbm-about">About</h4>
-                Filter-based methods use statistical metrics or some criteria to assess the relevance of the features.
-                Based on the metrics, the features are included or excluded. There are several metrics that can be used:
+                <p>Filter-based methods use statistical metrics or some criteria to assess the relevance of the
+                    features.
+                    Based on the metrics, the features are included or excluded. There are several metrics that can be
+                    used:</p>
 
-                <br />
                 <br />
                 <b>Continuous Variables: </b><br>
 
                 <span id="correlation-text" style="cursor: pointer; color: black;">▶ <u>Correlation</u></span>
-              
+
                 <p id="correlation-paragraph" style="display: none;">
                     Highly correlated features are removed.
                     <br />
@@ -189,20 +190,14 @@
                     Pearson Correlation Coefficient:
                     \[ r = \frac{\sum{(X_i - \bar{X})(Y_i - \bar{Y})}}{\sqrt{\sum{(X_i - \bar{X})^2} \sum{(Y_i
                     -\bar{Y})^2}}} \]
-                    where:
-                <div align="left">
-                    \[
-                    \begin{align*}
-                    & X_i \text{ and } Y_i \text{ are the individual data points for variables } X \text{ and } Y. \\
-                    & \bar{X} \text{ and } \bar{Y} \text{ are the means of variables } X \text{ and } Y, respectively.
-                    \\
-                    & \text{The numerator represents the covariance between } X \text{ and } Y. \\
-                    & \text{The denominator is the product of the standard deviations of } X \text{ and } Y.
-                    \end{align*}
-                    \]
-                </div>
-                </p>
+                    where:<br>
 
+                    X_i and Y_i are the individual data points for variables X and Y <br>
+                    X̅ and Y̅ are the means of variables X and Y, respectively <br>
+                    The numerator represents the covariance between X and Y <br>
+                    The denominator is the product of the standard deviations of X and Y
+
+                </p>
 
                 <script>
                     const correlationText = document.getElementById('correlation-text');
@@ -223,14 +218,53 @@
                 </script>
 
 
-                <br />
+                <span id="mutualinfo-text" style="cursor: pointer; color: black;">▶ <u>Mutual Information</u></span>
+                <p id="mutualinfo-paragraph" style="display: none;">Select features with high mutual information with
+                    the target
+                </p>
 
-                <ul>
-                    <li>Correlation
-                    </li>
-                    <li>Mutual Information <!--(select features with high mutual information with the target)--></li>
-                    <li>Analysis of Variance (ANOVA)</li>
-                </ul>
+                <script>
+                    const mutualinfoText = document.getElementById('mutualinfo-text');
+                    const cmutualinfoParagraph = document.getElementById('mutualinfo-paragraph');
+
+                    mutualinfoText.addEventListener('click', () => {
+                        if (cmutualinfoParagraph.style.display === 'none') {
+                            cmutualinfoParagraph.style.display = 'block';
+
+                            // Wait for 100ms and then trigger MathJax typesetting
+                            setTimeout(() => {
+                                MathJax.typeset();
+                            }, 100);
+                        } else {
+                            cmutualinfoParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <span id="anova-text" style="cursor: pointer; color: black;">▶ <u>Analysis of Variance</u></span>
+                <p id="anova-paragraph" style="display: none;">
+                </p>
+
+                <script>
+                    const anovaText = document.getElementById('anova-text');
+                    const anovaParagraph = document.getElementById('anova-paragraph');
+
+                    anovaText.addEventListener('click', () => {
+                        if (anovaParagraph.style.display === 'none') {
+                            anovaParagraph.style.display = 'block';
+
+                            // Wait for 100ms and then trigger MathJax typesetting
+                            setTimeout(() => {
+                                MathJax.typeset();
+                            }, 100);
+                        } else {
+                            anovaParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
+
                 <b>Categorical Variables:</b><br />
                 <ul>
                     <li>Chi-Squared</li>
