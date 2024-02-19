@@ -178,7 +178,6 @@
                     Based on the metrics, the features are included or excluded. There are several metrics that can be
                     used:</p>
 
-                <br />
                 <b>Continuous Variables: </b><br>
 
                 <span id="correlation-text" style="cursor: pointer; color: black;">▸ <u>Correlation</u></span>
@@ -245,7 +244,8 @@
                 <br />
 
 
-                <span id="anova-text" style="cursor: pointer; color: black;">▸ <u>Analysis of Variance (ANOVA)</u></span>
+                <span id="anova-text" style="cursor: pointer; color: black;">▸ <u>Analysis of Variance
+                        (ANOVA)</u></span>
                 <p id="anova-paragraph" style="display: none;">
                 </p>
 
@@ -266,7 +266,6 @@
                         }
                     });
                 </script>
-                <br />
                 <br />
 
 
@@ -290,7 +289,7 @@
                         }
                     });
                 </script>
-                <br /> 
+                <br />
 
                 <span id="mutualinfo-text2" style="cursor: pointer; color: black;">▸ <u>Mutual Information</u></span>
                 <p id="mutualinfo-paragraph2" style="display: none;">Select features with high mutual information with
@@ -313,8 +312,9 @@
                 </script>
                 <br />
 
-           
-                <span id="lda-text" style="cursor: pointer; color: black;">▸ <u>Linear Discriminant Analysis (LDA)</u></span>
+
+                <span id="lda-text" style="cursor: pointer; color: black;">▸ <u>Linear Discriminant Analysis
+                        (LDA)</u></span>
                 <p id="lda-paragraph" style="display: none;">More of a dimensionality reduction technique
                     rather than pure feature selection.
                 </p>
@@ -335,11 +335,16 @@
                     });
                 </script>
 
+                <br />
 
 
                 <h4 id="fbm-advantages">Advantages</h4>
                 <ul>
-                    <li>Faster than wrapper methods because you don't have to train additional models</li>
+                    <li>Faster and computationally more efficient than wrapper methods because you don't have to train
+                        additional models</li>
+                    <li>Contributes to dimensionality reduction and potentially improved generalizability because of a simpler model</li>
+                    <li>Reduced noise in the data</li>
+                    <li>Easily scalable</li>
                 </ul>
 
                 <h4 id="fbm-disadvantages">Disadvantages</h4>
