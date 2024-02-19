@@ -365,6 +365,24 @@
                 </script>
 
                 <!--Button-->
+                <button id="rs-button">random sampling</button>
+                <p id="rs-paragraph" style="display: none;">A method of selecting a subset of data from a larger dataset
+                    where each data point has an equal probability of being selected.
+                </p>
+
+                <script>
+                    const rsButton = document.getElementById('rs-button');
+                    const rsParagraph = document.getElementById('rs-paragraph');
+                    rsButton.addEventListener('click', () => {
+                        if (rsParagraph.style.display === 'none') {
+                            rsParagraph.style.display = 'block';
+                        } else {
+                            rsParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="reg-button">regression</button>
                 <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship
                     between
@@ -396,6 +414,8 @@
                         }
                     });
                 </script>
+
+
 
                 <!--Button-->
                 <button id="skew-button">skewness</button>
@@ -443,6 +463,45 @@
                             sigParagraph.style.display = 'block';
                         } else {
                             sigParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
+                <button id="ss-button">stratified sampling</button>
+                <p id="ss-paragraph" style="display: none;">A method of selecting a subset of data from a larger dataset
+                    where the population is split into different strata according to key characteristics before random
+                    sampling is performed on each individual stratum.
+                </p>
+
+                <script>
+                    const ssButton = document.getElementById('ss-button');
+                    const ssParagraph = document.getElementById('ss-paragraph');
+                    ssButton.addEventListener('click', () => {
+                        if (ssParagraph.style.display === 'none') {
+                            ssParagraph.style.display = 'block';
+                        } else {
+                            ssParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
+                <button id="syss-button">systematic sampling</button>
+                <p id="syss-paragraph" style="display: none;">A method of selecting a subset of data from a larger
+                    dataset
+                    where a starting point is first chosen at random, and then every k<sup>th</sup> item is selected for
+                    the sample. Typically, systematic sampling is more efficient than random sampling.
+                </p>
+
+                <script>
+                    const syssButton = document.getElementById('syss-button');
+                    const syssParagraph = document.getElementById('syss-paragraph');
+                    syssButton.addEventListener('click', () => {
+                        if (syssParagraph.style.display === 'none') {
+                            syssParagraph.style.display = 'block';
+                        } else {
+                            syssParagraph.style.display = 'none';
                         }
                     });
                 </script>
