@@ -261,110 +261,116 @@
                 <!--Button-->
                 <button id="kurt-button">kurtosis</button>
                 <p id="kurt-paragraph" style="display: none;">A measure of the shape of the curve. A perfectly normal
-                    distribution is mesokurtic, where K = 0. If the peak is sharp with flat tails, the distribution is
-                    leptokurtic and K > 0; there is less variability in the distribution. If the peak is flattened with tails widely dispersed, the distribution is platykurtic and K < 0. 
-                </p>
-                <script>
-                    const kurtButton = document.getElementById('kurt-button');
-                    const kurtParagraph = document.getElementById('kurt-paragraph');
-                    kurtButton.addEventListener('click', () => {
-                        if (kurtParagraph.style.display === 'none') {
-                            kurtParagraph.style.display = 'block';
-                        } else {
-                            kurtParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                    distribution is mesokurtic, where K = 0. If the peak is tall and sharp with flat tails, the distribution is
+                    leptokurtic and K > 0; there is less variability in the distribution. If the peak is flattened with
+                    tails widely dispersed, the distribution is platykurtic and K < 0. </p>
+                        <script>
+                            const kurtButton = document.getElementById('kurt-button');
+                            const kurtParagraph = document.getElementById('kurt-paragraph');
+                            kurtButton.addEventListener('click', () => {
+                                if (kurtParagraph.style.display === 'none') {
+                                    kurtParagraph.style.display = 'block';
+                                } else {
+                                    kurtParagraph.style.display = 'none';
+                                }
+                            });
+                        </script>
 
-                <!--Button-->
-                <button id="p-value-button">p-value</button>
-                <p id="p-value-paragraph" style="display: none;">Given the null hypothesis, the p-value quantifies the
-                    extremeness in the data, indicating that the observed differences between the control (null) and
-                    treatment (alternative)
-                    groups would very unlikely be due to chance (reject the null hypothesis). The level of statistical
-                    significance is determined by alpha (the significance level).
-                </p>
-                <script>
-                    const pvalueButton = document.getElementById('p-value-button');
-                    const pvalueParagraph = document.getElementById('p-value-paragraph');
+                        <!--Button-->
+                        <button id="p-value-button">p-value</button>
+                        <p id="p-value-paragraph" style="display: none;">Given the null hypothesis, the p-value
+                            quantifies the
+                            extremeness in the data, indicating that the observed differences between the control (null)
+                            and
+                            treatment (alternative)
+                            groups would very unlikely be due to chance (reject the null hypothesis). The level of
+                            statistical
+                            significance is determined by alpha (the significance level).
+                        </p>
+                        <script>
+                            const pvalueButton = document.getElementById('p-value-button');
+                            const pvalueParagraph = document.getElementById('p-value-paragraph');
 
-                    pvalueButton.addEventListener('click', () => {
-                        if (pvalueParagraph.style.display === 'none') {
-                            pvalueParagraph.style.display = 'block';
-                        } else {
-                            pvalueParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                            pvalueButton.addEventListener('click', () => {
+                                if (pvalueParagraph.style.display === 'none') {
+                                    pvalueParagraph.style.display = 'block';
+                                } else {
+                                    pvalueParagraph.style.display = 'none';
+                                }
+                            });
+                        </script>
 
-                <!--Button-->
-                <button id="pdf-button">probability density function (pdf)</button>
-                <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a random
-                    continous variable being equal to some value.
-                    <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg" style="width: 100%;" />
-                </p>
-                <script>
-                    const pdfButton = document.getElementById('pdf-button');
-                    const pdfParagraph = document.getElementById('pdf-paragraph');
-                    pdfButton.addEventListener('click', () => {
-                        if (pdfParagraph.style.display === 'none') {
-                            pdfParagraph.style.display = 'block';
-                        } else {
-                            pdfParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                        <!--Button-->
+                        <button id="pdf-button">probability density function (pdf)</button>
+                        <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
+                            random
+                            continous variable being equal to some value.
+                            <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg" style="width: 100%;" />
+                        </p>
+                        <script>
+                            const pdfButton = document.getElementById('pdf-button');
+                            const pdfParagraph = document.getElementById('pdf-paragraph');
+                            pdfButton.addEventListener('click', () => {
+                                if (pdfParagraph.style.display === 'none') {
+                                    pdfParagraph.style.display = 'block';
+                                } else {
+                                    pdfParagraph.style.display = 'none';
+                                }
+                            });
+                        </script>
 
-                <!--Button-->
-                <button id="pmf-button">probability mass function (pmf)</button>
-                <p id="pmf-paragraph" style="display: none;">A function that describes the
-                    probability of a random discrete variable being equal to some value <sup><a
-                            href="https://books.google.com/books?id=ZfRyBS1WbAQC&pg=PT105#v=onepage&q&f=false"><small>[<u>Source</u>]</small></a></sup>.
-                    <img class="img-fluid z-dept-1" src="images/pmf.jpg" alt="pmf.jpg" style="width: 100%;" />
-                </p>
-                <script>
-                    const pmfButton = document.getElementById('pmf-button');
-                    const pmfParagraph = document.getElementById('pmf-paragraph');
-                    pmfButton.addEventListener('click', () => {
-                        if (pmfParagraph.style.display === 'none') {
-                            pmfParagraph.style.display = 'block';
-                        } else {
-                            pmfParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                        <!--Button-->
+                        <button id="pmf-button">probability mass function (pmf)</button>
+                        <p id="pmf-paragraph" style="display: none;">A function that describes the
+                            probability of a random discrete variable being equal to some value <sup><a
+                                    href="https://books.google.com/books?id=ZfRyBS1WbAQC&pg=PT105#v=onepage&q&f=false"><small>[<u>Source</u>]</small></a></sup>.
+                            <img class="img-fluid z-dept-1" src="images/pmf.jpg" alt="pmf.jpg" style="width: 100%;" />
+                        </p>
+                        <script>
+                            const pmfButton = document.getElementById('pmf-button');
+                            const pmfParagraph = document.getElementById('pmf-paragraph');
+                            pmfButton.addEventListener('click', () => {
+                                if (pmfParagraph.style.display === 'none') {
+                                    pmfParagraph.style.display = 'block';
+                                } else {
+                                    pmfParagraph.style.display = 'none';
+                                }
+                            });
+                        </script>
 
-                <!--Button-->
-                <button id="skew-button">skewness</button>
-                <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A perfectly
-                    symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode are equal).
-                    $$skewness = \frac{(mean - median)}{std}$$
-                    <br>
-                    Positive skewness: Mode < Median < Mean. The tail is pulled to the right (positive direction). There
-                        is more pileup of data on the left. <br>
-                        Negative skewness: Mean < Median < Mode. The tail is pulled to the left (negative direction).
-                            There is more pileup of data on the right. </p>
-                </p>
-                <script>
-                    const skewButton = document.getElementById('skew-button');
-                    const skewParagraph = document.getElementById('skew-paragraph');
-                    skewButton.addEventListener('click', () => {
-                        if (skewParagraph.style.display === 'none') {
-                            skewParagraph.style.display = 'block';
-                        } else {
-                            skewParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                        <!--Button-->
+                        <button id="skew-button">skewness</button>
+                        <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A
+                            perfectly
+                            symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode are
+                            equal).
+                            $$skewness = \frac{(mean - median)}{std}$$
+                            <br>
+                            Positive skewness: Mode < Median < Mean. The tail is pulled to the right (positive
+                                direction). There is more pileup of data on the left. <br>
+                                Negative skewness: Mean < Median < Mode. The tail is pulled to the left (negative
+                                    direction). There is more pileup of data on the right. </p>
+                        </p>
+                        <script>
+                            const skewButton = document.getElementById('skew-button');
+                            const skewParagraph = document.getElementById('skew-paragraph');
+                            skewButton.addEventListener('click', () => {
+                                if (skewParagraph.style.display === 'none') {
+                                    skewParagraph.style.display = 'block';
+                                } else {
+                                    skewParagraph.style.display = 'none';
+                                }
+                            });
+                        </script>
 
-                <br />
-                <!-- <hr> -->
-                <!-- Adds related posts to the end of an article -->
-                <!-- <h3 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h3>
+                        <br />
+                        <!-- <hr> -->
+                        <!-- Adds related posts to the end of an article -->
+                        <!-- <h3 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h3>
                 <p class="mb-2">Here are some more articles you might like to read next:</p>
                 <li class="my-2"> -->
-                <!-- <a class="text-gray-700 underline font-semibold hover:text-gray-800" href="/blog/2022/displaying-external-posts-on-your-al-folio-blog/">Displaying External Posts on Your al-folio Blog</a> -->
-                </li>
+                        <!-- <a class="text-gray-700 underline font-semibold hover:text-gray-800" href="/blog/2022/displaying-external-posts-on-your-al-folio-blog/">Displaying External Posts on Your al-folio Blog</a> -->
+                        </li>
 
             </article>
         </div>
