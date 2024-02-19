@@ -271,7 +271,17 @@
 
                 <b>Categorical Variables:</b><br />
                 <span id="chi-text" style="cursor: pointer; color: black;">▸ <u>Chi-Squared</u></span>
-                <p id="chi-paragraph" style="display: none;">
+                <p id="chi-paragraph" style="display: none;">Calculate the chi-square metric between
+                    the target and the numerical variable and only select the variable with the maximum chi-squared
+                    values. The intuition is that if a feature is independent to the target it is uninformative for
+                    classifying observations.
+                    <br>
+                    Chi-Squared Metric:
+                    \[ χ^2 = \Sigma ( \frac{(O_i - E_i)^}{E_i>} \]
+                    where:<br>
+                    O<sub>i</sub> is the observed frequency for category i<br>
+                    E<sub>i</sub> is the expected frequency for category i<br>
+
                 </p>
 
                 <script>
