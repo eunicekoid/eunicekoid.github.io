@@ -169,8 +169,26 @@
 
                 <br />
                 Continuous Variables:
+
+                <span id="correlation-text" style="text-decoration: cursor: pointer; color: black;">Correlation</span>
+                <p id="correlation-paragraph" style="display: none;">
+                    Highly correlated features are removed. For example, can use Pearson's correlation coefficient. 
+                </p>
+                <script>
+                    const correlationText = document.getElementById('correlation-text');
+                    const correlationParagraph = document.getElementById('correlation-paragraph');
+
+                    correlationText.addEventListener('click', () => {
+                        if (correlationParagraph.style.display === 'none') {
+                            correlationParagraph.style.display = 'block';
+                        } else {
+                            correlationParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <ul>
-                    <li>Correlation <!--(e.g., Pearson's correlation coefficient, remove highly correlated features)-->
+                    <li>Correlation 
                     </li>
                     <li>Mutual Information <!--(select features with high mutual information with the target)--></li>
                     <li>Analysis of Variance (ANOVA)</li>
