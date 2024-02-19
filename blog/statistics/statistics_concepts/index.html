@@ -242,9 +242,8 @@
                 <button id="confidence-interval-button">confidence interval</button>
                 <p id="confidence-interval-paragraph" style="display: none;">The % of the time (confidence) that the
                     estimated parameter would cover the true value of the parameter The confidence level is one minus
-                    alpha (the
-                    significance level). <br>
-                    The confidence interval is related to the sample sizel less samples makes confidence interval wider.
+                    alpha (the significance level). <br>
+                    The confidence interval is related to the sample size; less samples makes confidence interval wider.
                 </p>
                 <script>
                     const confidenceintervalButton = document.getElementById('confidence-interval-button');
@@ -288,13 +287,13 @@
 
 
                 <!--Button-->
+
+
                 <button id="kurt-button">kurtosis</button>
                 <p id="kurt-paragraph" style="display: none;">A measure of the shape of the curve. A perfectly normal
                     distribution is mesokurtic, where K = 0. If the peak is tall and sharp with flat tails, the
-                    distribution is
-                    leptokurtic and K > 0; there is less variability in the distribution. If the peak is flattened with
-                    tails widely dispersed, the distribution is platykurtic and K < 0. </p>
-                </p>
+                    distribution is leptokurtic and K > 0; there is less variability in the distribution. If the peak is
+                    flattened with tails widely dispersed, the distribution is platykurtic and K &lt; 0. </p>
                 <script>
                     const kurtButton = document.getElementById('kurt-button');
                     const kurtParagraph = document.getElementById('kurt-paragraph');
@@ -307,16 +306,15 @@
                     });
                 </script>
 
+
                 <!--Button-->
                 <button id="p-value-button">p-value</button>
                 <p id="p-value-paragraph" style="display: none;">Given the null hypothesis, the p-value
-                    quantifies the
-                    extremeness in the data, indicating that the observed differences between the control (null)
-                    and
-                    treatment (alternative)
-                    groups would very unlikely be due to chance (reject the null hypothesis). The level of
-                    statistical
-                    significance is determined by alpha (the significance level).
+                    quantifies the extremeness in the data, indicating that the observed differences between the control
+                    (null)
+                    and treatment (alternative) groups would very unlikely be due to chance (reject the null
+                    hypothesis). The level of
+                    statistical significance is determined by alpha (the significance level).
                 </p>
                 <script>
                     const pvalueButton = document.getElementById('p-value-button');
@@ -334,8 +332,7 @@
                 <!--Button-->
                 <button id="pdf-button">probability density function (pdf)</button>
                 <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
-                    random
-                    continous variable being equal to some value.
+                    random continous variable being equal to some value.
                     <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg" style="width: 100%;" />
                 </p>
                 <script>
@@ -371,10 +368,12 @@
 
                 <!--Button-->
                 <button id="reg-button">regression</button>
-                <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship between
-                    independent variables (features or predictors) and a dependent variable (target or outcome) to make
+                <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship
+                    between
+                    independent variables (features or predictors) and a dependent variable (target or outcome)
+                    to make
                     predictions and illuminate the influence of the independent variables on the target.</p>
-                </p>
+
                 <script>
                     const regButton = document.getElementById('reg-button');
                     const regParagraph = document.getElementById('reg-paragraph');
@@ -390,15 +389,13 @@
                 <!--Button-->
                 <button id="skew-button">skewness</button>
                 <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A
-                    perfectly
-                    symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode are
-                    equal).
-                    $$skewness = \frac{(mean - median)}{std}$$
+                    perfectly symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode are
+                    equal). $$skewness = \frac{(mean - median)}{std}$$
                     <br>
-                    Positive skewness: Mode < Median < Mean. The tail is pulled to the right (positive direction). There
-                        is more pileup of data on the left. <br>
-                        Negative skewness: Mean < Median < Mode. The tail is pulled to the left (negative direction).
-                            There is more pileup of data on the right. </p>
+                    Positive skewness: Mode &lt; Median &lt; Mean. The tail is pulled to the right (positive direction).
+                    There is more pileup of data on the left. <br>
+                    Negative skewness: Mean &lt; Median &lt; Mode. The tail is pulled to the left (negative direction).
+                    There is more pileup of data on the right.
                 </p>
                 <script>
                     const skewButton = document.getElementById('skew-button');
@@ -414,14 +411,18 @@
 
                 <!--Button-->
                 <button id="sig-button">significance level</button>
-                <p id="sig-paragraph" style="display: none;">The probability of incorrectly rejecting the null
-                    hypothesis (Type I error, false positive). Denoted by alpha (α). (Also see definition for confidence
+                <p id="sig-paragraph" style="display: none;">The probability of incorrectly rejecting the
+                    null
+                    hypothesis (Type I error, false positive). Denoted by alpha (α). (Also see definition
+                    for confidence
                     interval).
                     <br>
-                    Note that if you decrease the significance level, you will decrease the number of false positives
-                    (type I errors). However, the tradeoff is that you will increase the number of false negatives (type
+                    Note that if you decrease the significance level, you will decrease the number of false
+                    positives
+                    (type I errors). However, the tradeoff is that you will increase the number of false
+                    negatives (type
                     II errors).
-                </p>
+
                 </p>
                 <script>
                     const sigButton = document.getElementById('sig-button');
