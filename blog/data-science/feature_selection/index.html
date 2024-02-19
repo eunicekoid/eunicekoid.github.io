@@ -244,29 +244,6 @@
                 <br />
 
 
-                <span id="anova-text" style="cursor: pointer; color: black;">▸ <u>Analysis of Variance
-                        (ANOVA)</u></span>
-                <p id="anova-paragraph" style="display: none;">
-                </p>
-
-                <script>
-                    const anovaText = document.getElementById('anova-text');
-                    const anovaParagraph = document.getElementById('anova-paragraph');
-
-                    anovaText.addEventListener('click', () => {
-                        if (anovaParagraph.style.display === 'none') {
-                            anovaParagraph.style.display = 'block';
-
-                            // Wait for 100ms and then trigger MathJax typesetting
-                            setTimeout(() => {
-                                MathJax.typeset();
-                            }, 100);
-                        } else {
-                            anovaParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-                <br />
                 <br />
 
                 <b>Categorical Variables:</b><br />
@@ -350,6 +327,38 @@
                     });
                 </script>
 
+                <br />
+
+
+                <span id="anova-text" style="cursor: pointer; color: black;">▸ <u>Analysis of Variance
+                        (ANOVA)</u></span>
+                <p id="anova-paragraph" style="display: none;">ANOVA determines if there is a significant difference
+                    between the means of two or more groups by examining the variance between groups to ascertain
+                    whether the means' differences are statistically significant. Select the features that have
+                    statistically significant differences in means, as this implies that the categories are distinct and
+                    impact the dependent variable. Assumes that the data is normally
+                    distributed and only works with one dependent variable and one categorical independent variable
+                    (could use two-way ANOVA for multiple independent variables).
+
+                </p>
+
+                <script>
+                    const anovaText = document.getElementById('anova-text');
+                    const anovaParagraph = document.getElementById('anova-paragraph');
+
+                    anovaText.addEventListener('click', () => {
+                        if (anovaParagraph.style.display === 'none') {
+                            anovaParagraph.style.display = 'block';
+
+                            // Wait for 100ms and then trigger MathJax typesetting
+                            setTimeout(() => {
+                                MathJax.typeset();
+                            }, 100);
+                        } else {
+                            anovaParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
                 <br />
                 <br />
 
