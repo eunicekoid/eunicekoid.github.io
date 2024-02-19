@@ -222,6 +222,23 @@
                 </div> -->
 
                 <!--Button-->
+                <button id="clt-button">central limit theoren</button>As you continue to sample independent random
+                variables from a population, the sample means will be approximately normally distributed.
+                <p id="clt-paragraph" style="display: none;">
+                </p>
+                <script>
+                    const clt_Button = document.getElementById('clt-button');
+                    const clt_Paragraph = document.getElementById('clt-paragraph');
+                    clt_Button.addEventListener('click', () => {
+                        if (clt_Paragraph.style.display === 'none') {
+                            clt_Paragraph.style.display = 'block';
+                        } else {
+                            clt_Paragraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
                 <p id="confidence-interval-paragraph" style="display: none;">The % of the time (confidence) that the
                     estimated parameter would cover the true value of the parameter The confidence level is one minus
