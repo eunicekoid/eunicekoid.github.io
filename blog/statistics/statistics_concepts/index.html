@@ -397,7 +397,12 @@
                 <button id="sig-button">significance level</button>
                 <p id="sig-paragraph" style="display: none;">The probability of incorrectly rejecting the null
                     hypothesis (Type I error, false positive). Denoted by alpha. (Also see definition for confidence
-                    interval). </p>
+                    interval).
+                    <br>
+                    Note that if you decrease the significance level, you will decrease the number of false positives
+                    (type I errors). However, the tradeoff is that you will increase the number of false negatives (type
+                    II errors).
+                </p>
                 </p>
                 <script>
                     const sigButton = document.getElementById('sig-button');
