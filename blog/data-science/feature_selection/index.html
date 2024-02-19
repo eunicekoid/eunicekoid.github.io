@@ -172,10 +172,23 @@
 
                 <span id="correlation-text" style="cursor: pointer; color: black;">Correlation</span>
                 <p id="correlation-paragraph" style="display: none;">
-                    Highly correlated features are removed. 
+                    Highly correlated features are removed.
                     <br />
                     <br />
-                    
+                    Pearson Correlation Coefficient:
+                    $$ \[ r = \frac{\sum{(X_i - \bar{X})(Y_i - \bar{Y})}}{\sqrt{\sum{(X_i - \bar{X})^2} \sum{(Y_i -
+                    \bar{Y})^2}}} \]
+                    $$
+                <p>Where:</p>
+
+                <ul>
+                    <li>\( X_i \) and \( Y_i \) are the individual data points for variables \( X \) and \( Y \).</li>
+                    <li>\( \bar{X} \) and \( \bar{Y} \) are the means of variables \( X \) and \( Y \), respectively.
+                    </li>
+                    <li>The numerator represents the covariance between \( X \) and \( Y \).</li>
+                    <li>The denominator is the product of the standard deviations of \( X \) and \( Y \).</li>
+                </ul>
+
                 </p>
                 <script>
                     const correlationText = document.getElementById('correlation-text');
@@ -189,10 +202,10 @@
                         }
                     });
                 </script>
-                 
+
 
                 <ul>
-                    <li>Correlation 
+                    <li>Correlation
                     </li>
                     <li>Mutual Information <!--(select features with high mutual information with the target)--></li>
                     <li>Analysis of Variance (ANOVA)</li>
