@@ -181,7 +181,8 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric: \[ \text{Accuracy} = \frac{\text{# of correct predictions}}{\text{total # of predictions}} \]
+                    Model evaluation metric: \[ \text{Accuracy} = \frac{\text{# of correct predictions}}{\text{total #
+                    of predictions}} \]
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -422,7 +423,6 @@
                     parameter (weight) values
 
                 </p>
-
                 <script>
                     const regButton = document.getElementById('reg-button');
                     const regParagraph = document.getElementById('reg-paragraph');
@@ -435,7 +435,34 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="rmse-button">root mean squared error (RMSE)</button>
+                <p id="rmse-paragraph" style="display: none;">The square root of MSE. This helps with: <br>
+                    Interpretability: Because RMSE is expressed in the same unit as the dependent variable, it is easier
+                    to interpret and more relatable to the original scale of the data.<br>
 
+                    Outlier Sensitivity: RMSE is more sensitive to outliers than MSE, as larger errors contribute more
+                    significantly due to the squared and square root operations.<br>
+
+                    Direct Comparison: RMSE offers a direct comparison to the standard deviation of the target. If the
+                    RMSE is close to the standard deviation (the inherent variability in the original data), then it
+                    indicates that the model's predictions are capturing a similar level of variability on average as
+                    the observed data. <br>
+
+                    Balanced Assessment: By taking the square root, RMSE balances the impact of extreme errors, offering
+                    a more well-rounded evaluation of prediction accuracy in regression models.
+                </p>
+                <script>
+                    const rmse_Button = document.getElementById('rmse-button');
+                    const rmse_Paragraph = document.getElementById('rmse-paragraph');
+                    rmse_Button.addEventListener('click', () => {
+                        if (rmse_Paragraph.style.display === 'none') {
+                            rmse_Paragraph.style.display = 'block';
+                        } else {
+                            rmse_Paragraph.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="skew-button">skewness</button>
