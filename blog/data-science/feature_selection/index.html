@@ -123,7 +123,7 @@
     </header>
 
     <div class="fixedNavigation">
-        <a href="#bluf">BLUF</a> <!-- put definition here  -->
+        <a href="#bluf">BLUF</a>
         <br />
         <br />
         <a href="#fbm">Filter-based Methods</a>
@@ -147,7 +147,7 @@
         <div class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Principal Component Analysis (PCA)</h1>
+                <h1 class="post-title">Feature Selection Methods</h1>
                 <p class="post-description"></p>
             </header>
             <hr>
@@ -186,10 +186,25 @@
 
 
 
-                <h4 id="fbm-advantages">Advantages</h2>
+                <h4 id="fbm-advantages">Advantages</h4>
+                <ul>
+                    <li>Faster than wrapper methods because you don't have to train additional models</li>
+                </ul>
 
+                <h4 id="fbm-disadvantages">Disadvantages</h4>
+                <ul>
+                    <li>Does not address multicollinearity among features</li>
+                    <ul>
+                        <li>Multicollinearity happens when two or more features are high correlated, which makes it
+                            tough for the model to delineate the individual contribution of each feature.
+                            Multicollinearity should be addressed prior to using feature-based methods.</li>
+                        <li>Because filter-based methods assess features individually (univariate statistical tests),
+                            they do not consider the combined effect of highly correlated features. For example, some
+                            features may be important when combined with other features, but the univariate test does
+                            not capture this importance and discards the feature.</li>
 
-                <h4 id="fbm-disadvantages">Disadvantages</h2>
+                    </ul>
+                </ul>
 
                 <!-- <h2 id="usecases">Use Cases</h2> -->
 
