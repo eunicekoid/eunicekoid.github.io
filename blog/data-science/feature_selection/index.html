@@ -192,7 +192,8 @@
                     -\bar{Y})^2}}} \]
                     where:<br>
 
-                    <b>X<sub>i</sub></b> and <b>Y<sub>i</sub></b> are the individual data points for variables X and Y <br>
+                    <b>X<sub>i</sub></b> and <b>Y<sub>i</sub></b> are the individual data points for variables X and Y
+                    <br>
                     X̅ and Y̅ are the means of variables X and Y, respectively <br>
                     The numerator represents the covariance between X and Y <br>
                     The denominator is the product of the standard deviations of X and Y
@@ -226,18 +227,18 @@
 
                 <script>
                     const mutualinfoText = document.getElementById('mutualinfo-text');
-                    const cmutualinfoParagraph = document.getElementById('mutualinfo-paragraph');
+                    const mutualinfoParagraph = document.getElementById('mutualinfo-paragraph');
 
                     mutualinfoText.addEventListener('click', () => {
-                        if (cmutualinfoParagraph.style.display === 'none') {
-                            cmutualinfoParagraph.style.display = 'block';
+                        if (mutualinfoParagraph.style.display === 'none') {
+                            mutualinfoParagraph.style.display = 'block';
 
                             // Wait for 100ms and then trigger MathJax typesetting
                             setTimeout(() => {
                                 MathJax.typeset();
                             }, 100);
                         } else {
-                            cmutualinfoParagraph.style.display = 'none';
+                            mutualinfoParagraph.style.display = 'none';
                         }
                     });
                 </script>
@@ -265,16 +266,74 @@
                         }
                     });
                 </script>
-
+                <br />
+                <br />
 
 
                 <b>Categorical Variables:</b><br />
-                <ul>
-                    <li>Chi-Squared</li>
-                    <li>Mutual Information</li>
-                    <li>Linear Discriminant Analysis (LDA) <small><em>More of a dimensionality reduction technique
-                                rather than pure feature selection.</em></small></li>
-                </ul>
+                <span id="chi-text" style="cursor: pointer; color: black;">▸ <u>Chi-Squared</u></span>
+                <p id="chi-paragraph" style="display: none;">
+                </p>
+
+                <script>
+                    const chiText = document.getElementById('chi-text');
+                    const chiParagraph = document.getElementById('chi-paragraph');
+
+                    chiText.addEventListener('click', () => {
+                        if (chiParagraph.style.display === 'none') {
+                            chiParagraph.style.display = 'block';
+                            setTimeout(() => {
+                                MathJax.typeset();
+                            }, 100);
+                        } else {
+                            chiParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br /> 
+
+                <span id="mutualinfo-text2" style="cursor: pointer; color: black;">▸ <u>Mutual Information</u></span>
+                <p id="mutualinfo-paragraph2" style="display: none;">Select features with high mutual information with
+                    the target
+                </p>
+
+                <script>
+                    const mutualinfoText2 = document.getElementById('mutualinfo-text2');
+                    const mutualinfoParagraph2 = document.getElementById('mutualinfo-paragraph2');
+                    mutualinfoText2.addEventListener('click', () => {
+                        if (mutualinfoParagraph2.style.display === 'none') {
+                            mutualinfoParagraph2.style.display = 'block';
+                            setTimeout(() => {
+                                MathJax.typeset();
+                            }, 100);
+                        } else {
+                            mutualinfoParagraph2.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+
+           
+                <span id="lda-text" style="cursor: pointer; color: black;">▸ <u>Linear Discriminant Analysis (LDA)</u></span>
+                <p id="lda-paragraph" style="display: none;">More of a dimensionality reduction technique
+                    rather than pure feature selection.
+                </p>
+
+                <script>
+                    const ldaText = document.getElementById('lda-text');
+                    const ldaParagraph = document.getElementById('lda-paragraph');
+
+                    ldaText.addEventListener('click', () => {
+                        if (ldaParagraph.style.display === 'none') {
+                            ldaParagraph.style.display = 'block';
+                            setTimeout(() => {
+                                MathJax.typeset();
+                            }, 100);
+                        } else {
+                            ldaParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
 
 
 
