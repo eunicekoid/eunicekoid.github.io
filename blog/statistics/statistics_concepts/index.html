@@ -283,8 +283,7 @@
                 <button id="pdf-button">probability density function (pdf)</button>
                 <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a random
                     continous variable being equal to some value.
-                    <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg"
-                    style="width: 100%;" />
+                    <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg" style="width: 100%;" />
                 </p>
                 <script>
                     const pdfButton = document.getElementById('pdf-button');
@@ -313,6 +312,30 @@
                             pmfParagraph.style.display = 'block';
                         } else {
                             pmfParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
+                <button id="skew-button">skewness</button>
+                <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A perfectly
+                    symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode are equal).
+                    $$skewness = \frac{(mean - median)}{std}$$
+                <br> 
+                Positive skewness: Mode < Median < Mean. The tail is pulled to the right (positive direction). There is more pileup of data on the left. <br>
+                Negative skewness: Mean < Median < Mode. The tail is pulled to the left (negative direction). There is more pileup of data on the right.
+                </p>
+                <!-- <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg"
+                      style="width: 100%;" /> -->
+                </p>
+                <script>
+                    const skewButton = document.getElementById('skew-button');
+                    const skewParagraph = document.getElementById('skew-paragraph');
+                    skewButton.addEventListener('click', () => {
+                        if (skewParagraph.style.display === 'none') {
+                            skewParagraph.style.display = 'block';
+                        } else {
+                            skewParagraph.style.display = 'none';
                         }
                     });
                 </script>
