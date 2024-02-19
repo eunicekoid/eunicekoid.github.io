@@ -370,6 +370,24 @@
                 </script>
 
                 <!--Button-->
+                <button id="reg-button">regression</button>
+                <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship between
+                    independent variables (features or predictors) and a dependent variable (target or outcome) to make
+                    predictions and illuminate the influence of the independent variables on the target.</p>
+                </p>
+                <script>
+                    const regButton = document.getElementById('reg-button');
+                    const regParagraph = document.getElementById('reg-paragraph');
+                    regButton.addEventListener('click', () => {
+                        if (regParagraph.style.display === 'none') {
+                            regParagraph.style.display = 'block';
+                        } else {
+                            regParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="skew-button">skewness</button>
                 <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A
                     perfectly
