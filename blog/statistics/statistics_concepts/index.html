@@ -259,6 +259,34 @@
                 </script>
 
                 <!--Button-->
+                <button id="ht-button">hypothesis testing</button>
+                <p id="ht-paragraph" style="display: none;"></p>
+                <ul>
+                    <ol>
+                        <li>Define a problem statement</li>
+                        <li>Set the null hypothesis (status quo) and the alternative hypothesis (what you're testing to
+                            be true)</li>
+                        <li>Set a significance level (e.g., $\alpha$ = 5%)</li>
+                        <li>Conduct the statistical test</li>
+                        <li>Calculated the p-value and confidence interval</li>
+                        <li>Make a conclusion on whether to reject or accept the null hypothesis. If the p-value <
+                                $alpha$, then reject the null hypothesis (accept the alternative hypothesis</li>
+                    </ol>
+                </ul>
+                </p>
+                <script>
+                    const htButton = document.getElementById('ht-button');
+                    const htParagraph = document.getElementById('ht-paragraph');
+                    htButton.addEventListener('click', () => {
+                        if (htParagraph.style.display === 'none') {
+                            htParagraph.style.display = 'block';
+                        } else {
+                            htParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="kurt-button">kurtosis</button>
                 <p id="kurt-paragraph" style="display: none;">A measure of the shape of the curve. A perfectly normal
                     distribution is mesokurtic, where K = 0. If the peak is tall and sharp with flat tails, the
@@ -368,7 +396,8 @@
                 <!--Button-->
                 <button id="sig-button">significance level</button>
                 <p id="sig-paragraph" style="display: none;">The probability of incorrectly rejecting the null
-                    hypothesis (Type I error, false positive). Denoted by alpha. (Also see definition for confidence interval). </p>
+                    hypothesis (Type I error, false positive). Denoted by alpha. (Also see definition for confidence
+                    interval). </p>
                 </p>
                 <script>
                     const sigButton = document.getElementById('sig-button');
