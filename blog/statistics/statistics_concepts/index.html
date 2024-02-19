@@ -178,10 +178,11 @@
                 </style>
 
 
-                <!--Button-->
+                <!-- Button -->
                 <button id="acc-button">accuracy</button>
-                <p id="acc-paragraph" style="display: none;">Model evaluation metric: 
-                    \[ \frac{# of correct predictions}{total # of predictions} \]
+                <p id="acc-paragraph" style="display: none;">
+                    Model evaluation metric:
+                    \[ \text{Accuracy} = \frac{\text{# of correct predictions}}{\text{total \# of predictions}} \]
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -189,13 +190,15 @@
                     accButton.addEventListener('click', () => {
                         if (accPara.style.display === 'none') {
                             accPara.style.display = 'block';
+                            // Trigger MathJax typesetting after displaying the equation
+                            MathJax.typeset();
                         } else {
                             accPara.style.display = 'none';
                         }
                     });
                 </script>
 
-        
+
 
                 <!--Button-->
                 <button id="clt-button">central limit theorem</button>
@@ -280,6 +283,28 @@
                     });
                 </script>
 
+
+                <!--Button-->
+                <button id="mae-button">mean absolute error (MAE)</button>
+                <p id="mae-paragraph" style="display: none;">
+                    Evaluation metric for regression that measures the average
+                    absolute difference between the actual and predicted values. Lower MAE means better model
+                    performance.
+                    \( MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \)
+                </p>
+                <script>
+                    const maeButton = document.getElementById('mae-button');
+                    const maePara = document.getElementById('mae-paragraph');
+                    maeButton.addEventListener('click', () => {
+                        if (maePara.style.display === 'none') {
+                            maePara.style.display = 'block';
+                            // Trigger MathJax typesetting after displaying the equation
+                            MathJax.typeset();
+                        } else {
+                            maePara.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="p-value-button">p-value</button>
