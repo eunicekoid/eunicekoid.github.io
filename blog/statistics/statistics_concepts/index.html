@@ -221,6 +221,7 @@
                     </div>
                 </div> -->
 
+                <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
                 <p id="confidence-interval-paragraph" style="display: none;">The % of the time (confidence) that the
                     estimated
@@ -228,20 +229,19 @@
                     would cover the true value of the parameter The confidence level is one minus alpha (the
                     significance level).
                 </p>
-
                 <script>
                     const confidenceintervalButton = document.getElementById('confidence-interval-button');
                     const confidenceintervalParagraph = document.getElementById('confidence-interval-paragraph');
-
                     confidenceintervalButton.addEventListener('click', () => {
-                        if (pValueParagraph.style.display === 'none') {
-                            pValueParagraph.style.display = 'block';
+                        if (confidenceintervalParagraph.style.display === 'none') {
+                            confidenceintervalParagraph.style.display = 'block';
                         } else {
-                            pValueParagraph.style.display = 'none';
+                            confidenceintervalParagraph.style.display = 'none';
                         }
                     });
                 </script>
 
+                <!--Button-->
                 <button id="p-value-button">p-value</button>
                 <p id="p-value-paragraph" style="display: none;">Given the null hypothesis, the p-value quantifies the
                     extremeness in the data, indicating that the observed differences between the control (null) and
@@ -249,16 +249,15 @@
                     groups would very unlikely be due to chance (reject the null hypothesis). The level of statistical
                     significance is determined by alpha (the significance level).
                 </p>
-
                 <script>
                     const pvalueButton = document.getElementById('p-value-button');
                     const pvalueParagraph = document.getElementById('p-value-paragraph');
 
                     pvalueButton.addEventListener('click', () => {
-                        if (pValueParagraph.style.display === 'none') {
-                            pValueParagraph.style.display = 'block';
+                        if (pvalueParagraph.style.display === 'none') {
+                            pvalueParagraph.style.display = 'block';
                         } else {
-                            pValueParagraph.style.display = 'none';
+                            pvalueParagraph.style.display = 'none';
                         }
                     });
                 </script>
