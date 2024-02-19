@@ -148,7 +148,7 @@
 
 
             <article>
-                
+
 
                 <style type="text/css">
                     .tg {
@@ -220,6 +220,23 @@
                         </figure>
                     </div>
                 </div> -->
+
+                <h2>My Image</h2>
+                <button id="toggle-button">Toggle Image</button>
+                <img id="my-image" src="image.jpg" alt="My image" style="display: none;">
+
+                <script>
+                    const button = document.getElementById('toggle-button');
+                    const image = document.getElementById('my-image');
+
+                    button.addEventListener('click', () => {
+                        if (image.style.display === 'none') {
+                            image.style.display = 'block';
+                        } else {
+                            image.style.display = 'none';
+                        }
+                    });
+                </script>
 
 
                 <br />
