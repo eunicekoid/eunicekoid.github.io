@@ -279,6 +279,38 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="pdf-button">probability density function (pdf)</button>
+                <p id="pdf-paragraph" style="display: none;">For continous variables, </p>
+                <script>
+                    const pdfButton = document.getElementById('pdf-button');
+                    const pdfParagraph = document.getElementById('pdf-paragraph');
+                    pdfButton.addEventListener('click', () => {
+                        if (pdfParagraph.style.display === 'none') {
+                            pdfParagraph.style.display = 'block';
+                        } else {
+                            pdfParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
+                <button id="pmf-button">probability mass function (pmf)</button>
+                <p id="pmf-paragraph" style="display: none;">For discrete variables, the function that describes the
+                    probability of a variable being equal to some value <sup><a
+                            href="https://books.google.com/books?id=ZfRyBS1WbAQC&pg=PT105#v=onepage&q&f=false">[<u>Source</u>]</a></sup>.
+                </p>
+                <script>
+                    const pmfButton = document.getElementById('pmf-button');
+                    const pmfParagraph = document.getElementById('pmf-paragraph');
+                    pmfButton.addEventListener('click', () => {
+                        if (pmfParagraph.style.display === 'none') {
+                            pmfParagraph.style.display = 'block';
+                        } else {
+                            pmfParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <br />
                 <!-- <hr> -->
