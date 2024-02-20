@@ -218,6 +218,26 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="bayes-button">bayes theorem</button>
+                <p id="bayes-paragraph" style="display: none;">Bayes' theorem provides an iterative framework for
+                    incorporating prior probabilities by updating them with new evidence. This process allows for a more
+                    refined estimation of posterior probabilities, the probability given prior beliefs and
+                    observed data.
+
+                </p>
+                <script>
+                    const bayesButton = document.getElementById('bayes-button');
+                    const bayesParagraph = document.getElementById('bayes-paragraph');
+
+                    bayesButton.addEventListener('click', () => {
+                        if (bayesParagraph.style.display === 'none') {
+                            bayesParagraph.style.display = 'block';
+                        } else {
+                            bayesParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="clt-button">central limit theorem</button>
