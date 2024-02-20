@@ -202,7 +202,8 @@
                 <!--Button-->
                 <button id="addt-button">additive theorem of probability</button>
                 <p id="addt-paragraph" style="display: none;">
-                    The probability of event A <em>or</em> event B happening is calculated as P(A U B) = P(A) + P(B) - P(A ∩ B).
+                    The probability of event A <em>or</em> event B happening is calculated as P(A U B) = P(A) + P(B) -
+                    P(A ∩ B).
                 </p>
                 <script>
                     const addtButton = document.getElementById('addt-button');
@@ -232,6 +233,27 @@
                             clt_Paragraph.style.display = 'block';
                         } else {
                             clt_Paragraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
+                <!--Button-->
+                <button id="r2-button">coefficient of determination (R<sup>2</sup>)</button>
+                <p id="r2-paragraph" style="display: none;">
+                    R<sup>2</sup> measures how well the independent variables explain the variability in the dependent
+                    variable. If R<sup>2</sup>=1, the model perfectly predicts the dependent variable. If
+                    R<sup>2</sup>=0, the model does not explain any variability in the dependent variable. R<sup>2</sup>
+                    = SSR (explained variance) / SST (total variance) </p>
+                <script>
+                    const r2Button = document.getElementById('r2-button');
+                    const r2Para = document.getElementById('r2-paragraph');
+                    r2Button.addEventListener('click', () => {
+                        if (r2Para.style.display === 'none') {
+                            r2Para.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            r2Para.style.display = 'none';
                         }
                     });
                 </script>
