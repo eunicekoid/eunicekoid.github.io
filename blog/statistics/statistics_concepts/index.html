@@ -621,7 +621,25 @@
                         }
                     });
                 </script>
+                <!--Button-->
+                <button id="sst-button">SST (total sum of squares)</button>
+                <p id="sst-paragraph" style="display: none;">The sum of the squared differences between each observation
+                    and the mean of the dependent variable (ȳ).
+                    <img class="img-fluid z-dept-1" src="images/sst.jpg" alt="sst.jpg" style="width: 100%;" />
 
+                </p>
+                <script>
+                    const sstButton = document.getElementById('sst-button');
+                    const sstParagraph = document.getElementById('sst-paragraph');
+
+                    sstButton.addEventListener('click', () => {
+                        if (sstParagraph.style.display === 'none') {
+                            sstParagraph.style.display = 'block';
+                        } else {
+                            sstParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
                 <br />
                 <!-- <hr> -->
                 <!-- Adds related posts to the end of an article -->
