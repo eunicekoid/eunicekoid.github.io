@@ -646,7 +646,6 @@
                     where a starting point is first chosen at random, and then every k<sup>th</sup> item is selected for
                     the sample. Typically, systematic sampling is more efficient than random sampling.
                 </p>
-
                 <script>
                     const syssButton = document.getElementById('syss-button');
                     const syssParagraph = document.getElementById('syss-paragraph');
@@ -658,12 +657,12 @@
                         }
                     });
                 </script>
+
                 <!--Button-->
                 <button id="sst-button">SST (total sum of squares)</button>
                 <p id="sst-paragraph" style="display: none;">The sum of the squared differences between each observation
                     and the mean of the dependent variable (ȳ).
                     <img class="img-fluid z-dept-1" src="images/sst.jpg" alt="sst.jpg" style="width: 100%;" />
-
                 </p>
                 <script>
                     const sstButton = document.getElementById('sst-button');
@@ -677,6 +676,26 @@
                         }
                     });
                 </script>
+
+
+                <!--Button-->
+                <button id="zscore-button">z-score</button>
+                <p id="zscore-paragraph" style="display: none;">z-score = (X - μ) / σ. 
+                </p>
+                <script>
+                    const zscoreButton = document.getElementById('zscore-button');
+                    const zscoreParagraph = document.getElementById('zscore-paragraph');
+                    zscoreButton.addEventListener('click', () => {
+                        if (zscoreParagraph.style.display === 'none') {
+                            zscoreParagraph.style.display = 'block';
+                        } else {
+                            zscoreParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
+
                 <br />
                 <!-- <hr> -->
                 <!-- Adds related posts to the end of an article -->
