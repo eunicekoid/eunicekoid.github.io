@@ -190,7 +190,6 @@
                     accButton.addEventListener('click', () => {
                         if (accPara.style.display === 'none') {
                             accPara.style.display = 'block';
-                            // Trigger MathJax typesetting after displaying the equation
                             MathJax.typeset();
                         } else {
                             accPara.style.display = 'none';
@@ -549,6 +548,24 @@
                             rmse_Paragraph.style.display = 'block';
                         } else {
                             rmse_Paragraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
+                <button id="sampdist-button">sampling distribution of the sample mean</button>
+                <p id="sampdist-paragraph" style="display: none;">A normal distribution where the mean is equal to the
+                    mean of the population and the standard deviation is the population's standard deviation divided by
+                    the square root of the sample size.
+                </p>
+                <script>
+                    const sampdistButton = document.getElementById('sampdist-button');
+                    const sampdistParagraph = document.getElementById('sampdist-paragraph');
+                    sampdistButton.addEventListener('click', () => {
+                        if (sampdistParagraph.style.display === 'none') {
+                            sampdistParagraph.style.display = 'block';
+                        } else {
+                            sampdistParagraph.style.display = 'none';
                         }
                     });
                 </script>
