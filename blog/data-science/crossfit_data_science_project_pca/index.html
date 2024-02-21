@@ -165,7 +165,7 @@
                         target="blank"><u>here</u>.</a>
                 </p>
 
-                <p>View my code on GitHub: 
+                <p>View my code on GitHub:
                     <a href="https://github.com/eunicekoid/Portfolio/blob/main/CrossFit%20AI%20ML%20Project/notebooks/3.0-ek-pca.ipynb"
                         target="blank"><u>Jupyter
                             Notebook on PCA</u></a><br>
@@ -177,85 +177,33 @@
                 <h2 id="eda">Principal Component Analysis</h2>
                 <p>While PCA can reduce dimensionally and multicollinearity by removing highly correlated features, the
                     principal components are hard to interpret. It is unclear which benchmark workout contributed to
-                    each principal component. Though 97% of the variance could be preserved with using only 11 out of
-                    the 14 benchmark workouts, </p>
-
-                <iframe src="3.0-ek-pca.html" width="800" height="2000"></iframe>
-
-
-
-                <style type="text/css">
-                    .tg {
-                        border-collapse: collapse;
-                        border-spacing: 0;
-                    }
-
-                    .tg td {
-                        border-color: #d3d3d3;
-                        border-style: solid;
-                        border-width: 1px;
-                        font-size: 13px;
-                        overflow: hidden;
-                        padding: 5px 6px;
-                        word-break: normal;
-                    }
-
-                    .tg th {
-                        border-color: #d3d3d3;
-                        border-style: solid;
-                        border-width: 1px;
-                        font-size: 13px;
-                        overflow: hidden;
-                        padding: 5px 6px;
-                        word-break: normal;
-                    }
-
-                    .tg .tg-fymr {
-                        border-color: #d3d3d3;
-                        font-weight: bold;
-                        text-align: left;
-                        vertical-align: top
-                    }
-
-                    .tg .tg-0pky {
-                        border-color: #d3d3d3;
-                        text-align: left;
-                        vertical-align: top
-                    }
-                </style>
+                    each principal component. Though 97% of the variance could be retained with only 11 out of
+                    the 14 benchmark workouts, it is unclear whether PCA preserved the benchmark workouts that are
+                    actually most important for predicting ranking in the CrossFit games. PCA could have removed the
+                    features that contribute to prediction but have a low variance. Also, PCA assumes that the data is
+                    normally distributed; as shown in the figure below, not all of the benchmark workouts are normally
+                    distributed. This may affect the performance of the PCA.</p>
 
 
 
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
 
-                <!-- <table class="tg">
-                    <thead>
-                        <tr style="text-align: center;">
-                            <th></th>
-                            <th class="tg-fymr" style="text-align: center">% missing</th>
-                    </thead>
-                    <tbody>
-                        <tr style="text-align: center;">
-                            <th class="tg-fymr">Back Squat (lbs)</th>
-                            <td>8.7</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br /> -->
-
-
-                <!-- <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-              
                     <div style="flex: 1; margin-right: 10px;">
-                        <img class="img-fluid z-dept-1" src="images/boxplot_Men.png" alt="boxplot_Men.png"
+                        <img class="img-fluid z-dept-1" src="images/men-histogram.png" alt="men-histogram.png"
                             style="width: 100%;" />
                     </div>
                     <div style="flex: 1;">
                         <figure>
-                            <img class="img-fluid z-dept-1" src="images/boxplot_Women.png" alt="boxplot_Women.png"
+                            <img class="img-fluid z-dept-1" src="images/women-histogram.png" alt="women-histogram.png"
                                 style="width: 100%;" />
                         </figure>
                     </div>
-                </div> -->
+                </div>
+                <iframe src="3.0-ek-pca.html" width="800" height="2000"></iframe>
+
+
+
+
 
 
                 <br />
