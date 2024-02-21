@@ -201,9 +201,23 @@
                 </div>
 
                 <p>Because of these downside of PCA, I ended up not using PCA in this project. Next, I explore using
-                    RandomForest for this project's regression task. </p>
+                    RandomForest for this project's regression task. RandomForest could be effective at predicting
+                    rankings for the following reasons:
+                <ul>
+                    <li>It is an ensemble model that combines predictions of multiple individual decision trees to
+                        produce high predictive accuracy, better model performance, and improved generalizability to new
+                        data. </li>
+                    <li>It can handle nonlinear relationships between benchmark workouts (features) and ranking
+                        (target). The benchmark workout data is self-reported and having a higher personal record may
+                        not translate to a higher ranking.</li>
+                    <li>It provides clarity on which feature is most important for the prediction. This will give
+                        insight into the impact of different workout performance on rankings.</li>
+                    <li>It can handle highly correlated features, such as the olympic lifts. </li>
+                </ul>
+                </p>
 
-
+                <br />
+                <br />
 
                 <iframe src="3.0-ek-pca.html" width="800" height="2000"></iframe>
 
