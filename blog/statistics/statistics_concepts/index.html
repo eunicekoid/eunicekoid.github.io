@@ -201,7 +201,8 @@
                 <!--Button-->
                 <button id="addt-button">additive theorem of probability</button>
                 <p id="addt-paragraph" style="display: none;">
-                    The probability of event A <em>or</em> event B happening is calculated as \( P(A \cup B) = P(A) + P(B) - P(A \cap B) \).
+                    The probability of event A <em>or</em> event B happening is calculated as \( P(A \cup B) = P(A) +
+                    P(B) - P(A \cap B) \).
                 </p>
                 <script>
                     const addtButton = document.getElementById('addt-button');
@@ -304,7 +305,8 @@
                 <button id="cp-button">conditional probability</button>
                 <p id="cp-paragraph" style="display: none;">
                     The probability of event A happening given event B, denoted as P(A|B). It is calculated as the
-                    probability of both A and B happening \( P(A ∩ B) \) divided by the probability of B happening \( P(B) \).
+                    probability of both A and B happening \( P(A ∩ B) \) divided by the probability of B happening \(
+                    P(B) \).
                     \[ P(A|B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events hapeening at the same
                     time \( P(A \cap B) \) cannot be greater than either event happening by itself \( P(A) or P(B) \).
                 </p>
@@ -611,20 +613,12 @@
                 <button id="skew-button">skewness</button>
                 <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A
                     perfectly symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode are
-                    equal). \( \text{skewness} = \frac{(\text{mean} - \text{median})}{\text{std}} \)
+                    equal). \( skewness = \frac{(mean - median)}{std} \)
                     <br>
-                    Positive skewness:
-                <ul>
-                    <li>Mode &lt; Median &lt; Mean.</li>
-                    <li>The tail is pulled to the right (positive direction).</li>
-                    <li>There is more pileup of data on the left.</li>
-                </ul>
-                Negative skewness:
-                <ul>
-                    <li>Mean &lt; Median &lt; Mode.</li>
-                    <li>The tail is pulled to the left (negative direction).</li>
-                    <li>There is more pileup of data on the right.</li>
-                </ul>
+                    <b>Positive skewness</b>: Mode &lt; Median &lt; Mean. The tail is pulled to the right (positive direction).
+                    There is more pileup of data on the left. <br>
+                    <b>Negative skewness</b>: Mean &lt; Median &lt; Mode. The tail is pulled to the left (negative direction).
+                    There is more pileup of data on the right.
                 </p>
                 <script>
                     const skewButton = document.getElementById('skew-button');
@@ -724,7 +718,8 @@
                 <br />
                 <!--Button-->
                 <button id="zscore-button">z-score</button>
-                <p id="zscore-paragraph" style="display: none;">\( \text{z-score} = \frac{X - \mu}{ \sigma } \). Indicates the number of standard
+                <p id="zscore-paragraph" style="display: none;">\( \text{z-score} = \frac{X - \mu}{ \sigma } \).
+                    Indicates the number of standard
                     deviations X is away from the mean (μ) for a distribution.
                 </p>
                 <script>
