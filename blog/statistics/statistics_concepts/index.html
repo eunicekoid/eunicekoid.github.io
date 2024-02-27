@@ -471,6 +471,26 @@
                 </script>
 
                 <!--Button-->
+                <button id="poisson-button">poisson distribution</button>
+                <p id="poisson-paragraph" style="display: none;">For discrete variables. Number of occurences (X) in a given time period, where the constant rate of occurences is \( \lambda \).
+                    \[ P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\]
+
+                    where \( \mu = k \) and \( \sigma = \lambda \)
+                </p>
+                <script>
+                    const poissonButton = document.getElementById('poisson-button');
+                    const poissonParagraph = document.getElementById('poisson-paragraph');
+
+                    poissonButton.addEventListener('click', () => {
+                        if (poissonParagraph.style.display === 'none') {
+                            poissonParagraph.style.display = 'block';
+                        } else {
+                            poissonParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="pdf-button">probability density function (pdf)</button>
                 <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
                     random continous variable being equal to some value.
