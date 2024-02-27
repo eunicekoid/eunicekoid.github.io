@@ -327,7 +327,7 @@
                 <button id="confidence-interval-button">confidence interval</button>
                 <p id="confidence-interval-paragraph" style="display: none;">The % of the time (confidence) that the
                     estimated parameter would cover the true value of the parameter The confidence level is one minus
-                    alpha (the significance level). <br>
+                    alpha (the significance level). <br><br>
                     The confidence interval is related to the sample size; less samples makes confidence interval wider.
                 </p>
                 <script>
@@ -559,19 +559,19 @@
 
                 <!--Button-->
                 <button id="rmse-button">root mean squared error (RMSE)</button>
-                <p id="rmse-paragraph" style="display: none;">The square root of MSE. This metric helps with: <br>
-                    Interpretability: Because RMSE is expressed in the same unit as the dependent variable, it is easier
-                    to interpret and more relatable to the original scale of the data.<br>
+                <p id="rmse-paragraph" style="display: none;">The square root of MSE. This metric helps with: <br><br>
+                    <b>Interpretability</b>: Because RMSE is expressed in the same unit as the dependent variable, it is easier
+                    to interpret and more relatable to the original scale of the data.<br><br>
 
-                    Outlier Sensitivity: RMSE is more sensitive to outliers than MSE, as larger errors contribute more
-                    significantly due to the squared and square root operations.<br>
+                    <b>Outlier Sensitivity</b>: RMSE is more sensitive to outliers than MSE, as larger errors contribute more
+                    significantly due to the squared and square root operations.<br><br>
 
-                    Direct Comparison: RMSE offers a direct comparison to the standard deviation of the target. If the
+                    <b>Direct Comparison</b>: RMSE offers a direct comparison to the standard deviation of the target. If the
                     RMSE is close to the standard deviation (the inherent variability in the original data), then it
                     indicates that the model's predictions are capturing a similar level of variability on average as
-                    the observed data. <br>
+                    the observed data. <br><br>
 
-                    Balanced Assessment: By taking the square root, RMSE balances the impact of extreme errors, offering
+                    <b>Balanced Assessment</b>: By taking the square root, RMSE balances the impact of extreme errors, offering
                     a more well-rounded evaluation of prediction accuracy in regression models.
                 </p>
                 <script>
@@ -585,8 +585,6 @@
                         }
                     });
                 </script>
-
-
                 <br />
                 <br />
 
