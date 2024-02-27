@@ -242,7 +242,8 @@
                 <!--Button-->
                 <button id="binomial-button">binomial distribution</button>
                 <p id="binomial-paragraph" style="display: none;">For discrete variables. \[ k \] successes in \[ n \] trials. <br>
-                    \[ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \]
+                    \[ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \] <br>
+                    where \[ \mu = np \] and \[ \sigma^2 = np(1-p) \]
                 </p>
                 <script>
                     const binomialButton = document.getElementById('binomial-button');
