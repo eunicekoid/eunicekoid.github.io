@@ -181,7 +181,8 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
+                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
+                    predictions}}{\text{total number of predictions}} \)
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -283,10 +284,10 @@
                 <p id="r2-paragraph" style="display: none;">
                     R<sup>2</sup> measures how well the independent variables explain the variability in the dependent
                     variable. <br><br>
-                    
+
                     If R<sup>2</sup>=1, the model perfectly predicts the dependent variable. <br>
                     If R<sup>2</sup>=0, the model does not explain any variability in the dependent variable. <br><br>
-                    
+
                     R<sup>2</sup> = SSR (explained variance) / SST (total variance) </p>
                 <script>
                     const r2Button = document.getElementById('r2-button');
@@ -310,7 +311,8 @@
                     probability of both A and B happening \( P(A ∩ B) \) divided by the probability of B happening \(
                     P(B) \).
                     \[ P(A|B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events happening at the same
-                    time \( P(A \cap B) \) cannot be greater than either event happening by itself \( P(A) \) or \( P(B) \).
+                    time \( P(A \cap B) \) cannot be greater than either event happening by itself \( P(A) \) or \( P(B)
+                    \).
                 </p>
                 <script>
                     const cpButton = document.getElementById('cp-button');
@@ -359,7 +361,8 @@
                     3. Decide on a significance level (e.g., α = 5%)<br>
                     4. Conduct the statistical test<br>
                     5. Calculate the p-value and confidence interval<br>
-                    6. Conclude whether to reject or accept the null hypothesis. If the p-value &lt; α, reject the null hypothesis (accept the alternative hypothesis)
+                    6. Conclude whether to reject or accept the null hypothesis. If the p-value &lt; α, reject the null
+                    hypothesis (accept the alternative hypothesis)
 
                 </p>
                 <script>
@@ -381,8 +384,10 @@
                 <p id="kurt-paragraph" style="display: none;">A measure of the shape of the curve. <br><br>
 
                     A perfectly normal distribution is mesokurtic, where K = 0. <br><br>
-                    If the peak is tall and sharp with flat tails, the distribution is leptokurtic and K > 0; there is less variability in the distribution. <br><br>
-                    If the peak is flattened with tails widely dispersed, the distribution is platykurtic and K &lt; 0. </p>
+                    If the peak is tall and sharp with flat tails, the distribution is leptokurtic and K > 0; there is
+                    less variability in the distribution. <br><br>
+                    If the peak is flattened with tails widely dispersed, the distribution is platykurtic and K &lt; 0.
+                </p>
                 <script>
                     const kurtButton = document.getElementById('kurt-button');
                     const kurtParagraph = document.getElementById('kurt-paragraph');
@@ -472,7 +477,8 @@
 
                 <!--Button-->
                 <button id="poisson-button">poisson distribution</button>
-                <p id="poisson-paragraph" style="display: none;">For discrete variables. Number of occurences (X) in a given time period, where the constant rate of occurences is \( \lambda \).
+                <p id="poisson-paragraph" style="display: none;">For discrete variables. Number of occurences (X) in a
+                    given time period, where the constant rate of occurences is \( \lambda \).
                     \[ P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\]
 
                     where \( \mu = k \) and \( \sigma = \lambda \)
@@ -557,7 +563,8 @@
                     predictions and illuminate the influence of the independent variables on the target.
                     <br />
                     <br />
-                    <b>Multiple Regression</b>: Two or more independent variables to predict one dependent variable <br />
+                    <b>Multiple Regression</b>: Two or more independent variables to predict one dependent variable
+                    <br />
                     <b>Linear Regression</b>: The relationship between the independent and dependent
                     variables are fitted with a linear equation <br />
                     <b>Polynominal Regression</b>: The relationship between the independent and
@@ -582,18 +589,22 @@
                 <!--Button-->
                 <button id="rmse-button">root mean squared error (RMSE)</button>
                 <p id="rmse-paragraph" style="display: none;">The square root of MSE. This metric helps with: <br><br>
-                    <b>Interpretability</b>: Because RMSE is expressed in the same unit as the dependent variable, it is easier
+                    <b>Interpretability</b>: Because RMSE is expressed in the same unit as the dependent variable, it is
+                    easier
                     to interpret and more relatable to the original scale of the data.<br><br>
 
-                    <b>Outlier Sensitivity</b>: RMSE is more sensitive to outliers than MSE, as larger errors contribute more
+                    <b>Outlier Sensitivity</b>: RMSE is more sensitive to outliers than MSE, as larger errors contribute
+                    more
                     significantly due to the squared and square root operations.<br><br>
 
-                    <b>Direct Comparison</b>: RMSE offers a direct comparison to the standard deviation of the target. If the
+                    <b>Direct Comparison</b>: RMSE offers a direct comparison to the standard deviation of the target.
+                    If the
                     RMSE is close to the standard deviation (the inherent variability in the original data), then it
                     indicates that the model's predictions are capturing a similar level of variability on average as
                     the observed data. <br><br>
 
-                    <b>Balanced Assessment</b>: By taking the square root, RMSE balances the impact of extreme errors, offering
+                    <b>Balanced Assessment</b>: By taking the square root, RMSE balances the impact of extreme errors,
+                    offering
                     a more well-rounded evaluation of prediction accuracy in regression models.
                 </p>
                 <script>
@@ -735,6 +746,30 @@
 
                 <br />
                 <br />
+
+                <!--Button-->
+                <button id="uniform-button">uniform distribution</button>
+                <p id="uniform-paragraph" style="display: none;">Continuous variables. Constant probability of \(X\) falling between \(a\) and \(b\). 
+                    \[ f(x) = \frac{1}{b-a} \]
+
+                    where \( \mu = \frac{a+b}{2} \) and \( \sigma = \frac{(b-a)^2}{12} \)
+                </p>
+                <script>
+                    const uniformButton = document.getElementById('uniform-button');
+                    const uniformParagraph = document.getElementById('uniform-paragraph');
+
+                    uniformButton.addEventListener('click', () => {
+                        if (uniformParagraph.style.display === 'none') {
+                            uniformParagraph.style.display = 'block';
+                        } else {
+                            uniformParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+
                 <!--Button-->
                 <button id="zscore-button">z-score</button>
                 <p id="zscore-paragraph" style="display: none;">\( \text{z-score} = \frac{X - \mu}{ \sigma } \).
