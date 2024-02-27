@@ -239,13 +239,30 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="binomial-button">binomial distribution</button>
+                <p id="binomial-paragraph" style="display: none;">For discrete variables. \[ k \] successes in \[ n \] trials. <br>
+                    \[ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \]
+                </p>
+                <script>
+                    const binomialButton = document.getElementById('binomial-button');
+                    const binomialParagraph = document.getElementById('binomial-paragraph');
+                    binomialButton.addEventListener('click', () => {
+                        if (binomialParagraph.style.display === 'none') {
+                            binomialParagraph.style.display = 'block';
+                        } else {
+                            binomialParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
                 <br />
                 <br />
 
                 <!--Button-->
                 <button id="clt-button">central limit theorem</button>
                 <p id="clt-paragraph" style="display: none;">As the sample size (n) increases,
-                    the sample means will approach a normal distribution regardless of the distribution of the original dataset.
+                    the sample means will approach a normal distribution regardless of the distribution of the original
+                    dataset.
                 </p>
                 <script>
                     const clt_Button = document.getElementById('clt-button');
@@ -325,6 +342,7 @@
 
                 <br />
                 <br />
+
 
                 <!--Button-->
                 <button id="ht-button">hypothesis testing</button>
