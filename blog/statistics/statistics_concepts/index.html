@@ -181,8 +181,7 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
-                    predictions}}{\text{total number of predictions}} \)
+                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -350,6 +349,28 @@
                 <br />
                 <br />
 
+                <!--Button-->
+                <button id="exp-button">exponential distribution</button>
+                <p id="exp-paragraph" style="display: none;">For continuous variables. Probability of the interval
+                    length between Poisson eevents with a set parameter of \( \lambda \).
+
+                    \[ f(x) = \lambda \exp{-\lambda x} \]
+                </p>
+                <script>
+                    const expButton = document.getElementById('exp-button');
+                    const expParagraph = document.getElementById('exp-paragraph');
+
+                    expButton.addEventListener('click', () => {
+                        if (expParagraph.style.display === 'none') {
+                            expParagraph.style.display = 'block';
+                        } else {
+                            expParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
 
                 <!--Button-->
                 <button id="ht-button">hypothesis testing</button>
@@ -749,7 +770,8 @@
 
                 <!--Button-->
                 <button id="uniform-button">uniform distribution</button>
-                <p id="uniform-paragraph" style="display: none;">Continuous variables. Constant probability of \(X\) falling between \(a\) and \(b\). 
+                <p id="uniform-paragraph" style="display: none;">For continuous variables. Constant probability of \(X\)
+                    falling between \(a\) and \(b\).
                     \[ f(x) = \frac{1}{b-a} \]
 
                     where \( \mu = \frac{a+b}{2} \) and \( \sigma = \frac{(b-a)^2}{12} \)
