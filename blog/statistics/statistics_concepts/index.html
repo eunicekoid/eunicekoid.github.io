@@ -225,6 +225,10 @@
                     refined estimation of posterior probabilities, the probability given prior beliefs and
                     observed data.
 
+                    \[ P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\]
+
+                    where \( P(B) = P(B|A) \cdot P(A) + P(B|A') \cdot P(A') \)
+
                 </p>
                 <script>
                     const bayesButton = document.getElementById('bayes-button');
