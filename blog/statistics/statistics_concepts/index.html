@@ -472,6 +472,29 @@
                 <br />
                 <br />
 
+                 <!--Button-->
+                 <button id="normal-button">normal distribution</button>
+                 <p id="normal-paragraph" style="display: none;">
+ 
+                 \[ f(x; \mu, \sigma) = \frac{1}{ \sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} \]
+
+ 
+                 </p>
+                 <script>
+                     const normalButton = document.getElementById('normal-button');
+                     const normalParagraph = document.getElementById('normal-paragraph');
+                     normalButton.addEventListener('click', () => {
+                         if (normalParagraph.style.display === 'none') {
+                            normalParagraph.style.display = 'block';
+                         } else {
+                            normalParagraph.style.display = 'none';
+                         }
+                     });
+                 </script>
+
+                <br />
+                <br />
+
                 <!--Button-->
                 <button id="p-value-button">p-value</button>
                 <p id="p-value-paragraph" style="display: none;">The p-value measures the evidence against the null
