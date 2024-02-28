@@ -650,27 +650,27 @@
 
                 <!--Button-->
                 <button id="randvar-button">random variable</button>
-                <p id="randvar-paragraph" style="display: none;">
+                <div id="randvar-paragraph" style="display: none;">
                     Quantity with a probability distribution.
-                <table border=".1">
-                    <tr>
-                        <td>DISCRETE</td>
-                        <td>CONTINUOUS</td>
-                    </tr>
-                    <tr>
-                        <td>probability mass function (pmf): \( f_x(x) \)</td>
-                        <td>probability density function (pdf): \( f_x(x) \)</td>
-                    </tr>
-                    <tr>
-                        <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
-                        <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
-                    </tr>
-                    <tr>
-                        <td>CDF: \( F_x(x) = \sum_{k \leq x} p(k) \)</td>
-                        <td>CDF: \( F_x(x) = \int_{-\infty}^{\infty} p(y) \, dy \)</td>
-                    </tr>
-                </table>
-                </p>
+                    <table border=".1" style="padding: 2px;">
+                        <tr>
+                            <td><b>DISCRETE</b></td>
+                            <td><b>CONTINUOUS</b></td>
+                        </tr>
+                        <tr>
+                            <td>probability mass function (pmf): \( f_x(x) \)</td>
+                            <td>probability density function (pdf): \( f_x(x) \)</td>
+                        </tr>
+                        <tr>
+                            <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
+                            <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
+                        </tr>
+                        <tr>
+                            <td>CDF: \( F_x(x) = \sum_{k \leq x} p(k) \)</td>
+                            <td>CDF: \( F_x(x) = \int_{-\infty}^{\infty} p(y) \, dy \)</td>
+                        </tr>
+                    </table>
+                </div>
                 <script>
                     const randvarButton = document.getElementById('randvar-button');
                     const randvarPara = document.getElementById('randvar-paragraph');
@@ -683,6 +683,7 @@
                         }
                     });
                 </script>
+
 
 
                 <!--Button-->
