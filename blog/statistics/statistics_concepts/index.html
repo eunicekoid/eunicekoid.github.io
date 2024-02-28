@@ -429,6 +429,26 @@
                 <br />
 
                 <!--Button-->
+                <button id="ltp-button">law of total probability</button>
+                <p id="ltp-paragraph" style="display: none;">
+                    \[ P(A) = P(A|B_1) \cdot P(B_1) + ... + P(A|B_n) \cdot P(B_n) \]
+                </p>
+                <script>
+                    const ltpButton = document.getElementById('ltp-button');
+                    const ltpPara = document.getElementById('ltp-paragraph');
+                    ltpButton.addEventListener('click', () => {
+                        if (ltpPara.style.display === 'none') {
+                            ltpPara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            ltpPara.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+                <!--Button-->
                 <button id="mae-button">mean absolute error (MAE)</button>
                 <p id="mae-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average
