@@ -181,8 +181,7 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
-                    predictions}}{\text{total number of predictions}} \)
+                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -436,9 +435,9 @@
                     <div style="margin: 0 auto; padding: 6px; display: inline-block;">
                         <table border=".1">
                             <tr>
-                                <td><b>Continuous PDF</b></td>
-                                <td><b>\( \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dx \, dy
-                                        = 1 \)</b></td>
+                                <td>Continuous PDF<< /td>
+                                <td>\( \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dx \, dy
+                                    = 1 \)</td>
                             </tr>
                             <tr>
                                 <td>Marginal PDF for X (integrate y)</td>
@@ -526,14 +525,18 @@
                     from state \( i \) to \( j \).
                     <br>
                     \[
-                    P = 
+                    P =
                     \begin{bmatrix}
-                        P_{11} & P_{12} & \dots & P_{1n} \\
-                        P_{21} & P_{22} & \dots & P_{2n} \\
-                        \vdots & \vdots & \ddots & \vdots \\
-                        P_{n1} & P_{n2} & \dots & P_{nn}
+                    P_{11} & P_{12} & \dots & P_{1n} \\
+                    P_{21} & P_{22} & \dots & P_{2n} \\
+                    \vdots & \vdots & \ddots & \vdots \\
+                    P_{n1} & P_{n2} & \dots & P_{nn}
                     \end{bmatrix}
                     \]
+                    <br><br>
+                    The stationary distribution is the probability distribution that remains unchanged after each time
+                    step, represented by the vector \( \pi = (\pi_1, \pi_2, \ldots, \pi_n) \) where \( \pi P = \pi \).
+                    The elements of the vector \( \pi \) add up to 1 \( \sum_{i=1}^{n} \pi_i = 1 \)
                 </p>
                 <script>
                     const markovButton = document.getElementById('markov-button');
@@ -675,7 +678,7 @@
                 <!--Button-->
                 <button id="pdf-button">probability density function (pdf)</button>
                 <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
-                    random continous variable being equal to some value.
+                    random continuous variable being equal to some value.
                     <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg" style="width: 100%;" />
                 </p>
                 <script>
