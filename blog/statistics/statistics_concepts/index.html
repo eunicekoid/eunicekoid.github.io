@@ -518,6 +518,24 @@
                 <br />
 
                 <!--Button-->
+                <button id="markov-button">markov chains</button>
+                <p id="markov-paragraph" style="display: none;">
+                    
+                </p>
+                <script>
+                    const markovButton = document.getElementById('markov-button');
+                    const markovPara = document.getElementById('markov-paragraph');
+                    markovButton.addEventListener('click', () => {
+                        if (markovPara.style.display === 'none') {
+                            markovPara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            markovPara.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="mae-button">mean absolute error (MAE)</button>
                 <p id="mae-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average
@@ -723,7 +741,7 @@
                                 <td>CDF: \( F_x(x) = \int_{-\infty}^{\infty} p(y) \, dy \)</td>
                             </tr>
                         </table>
-                        <br> <br>
+                        <br>
                         CDFs are monotonically increasing.
                         <br> <br>
                     </div>
