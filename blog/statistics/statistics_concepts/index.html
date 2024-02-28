@@ -181,7 +181,8 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
+                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
+                    predictions}}{\text{total number of predictions}} \)
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -453,7 +454,7 @@
                                 <td>\( f_x(x) = \int_{-\infty}^{\infty} f_Y(y) \cdot f_{X|Y}(x|y) \, dy \)</td>
                             </tr>
                         </table>
-                        <br> 
+                        <br>
                     </div>
                 </div>
 
@@ -520,7 +521,19 @@
                 <!--Button-->
                 <button id="markov-button">markov chains</button>
                 <p id="markov-paragraph" style="display: none;">
-                    
+                    The probability of the next state depends on the previous state. The transition matrix \( P \) for a
+                    Markov chain is a square matrix where each entry \( P_{ij}\) is the probability of transitioning
+                    from state \( i \) to \( j \).
+                    <br>
+                    \[
+                    P = 
+                    \begin{bmatrix}
+                        P_{11} & P_{12} & \dots & P_{1n} \\
+                        P_{21} & P_{22} & \dots & P_{2n} \\
+                        \vdots & \vdots & \ddots & \vdots \\
+                        P_{n1} & P_{n2} & \dots & P_{nn}
+                    \end{bmatrix}
+                    \]
                 </p>
                 <script>
                     const markovButton = document.getElementById('markov-button');
@@ -743,7 +756,7 @@
                         </table>
                         <br>
                         CDFs are monotonically increasing.
-                        <br> 
+                        <br>
                     </div>
                 </div>
                 <script>
