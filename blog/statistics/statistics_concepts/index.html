@@ -429,550 +429,580 @@
                 <br />
                 <br />
 
-                 <!--Button-->
-                 <button id="jointpd-button">joint probability distributions</button>
-                 <div id="jointpd-paragraph" style="display: none;">
-                     <table border=".1" style="padding: 6px; margin: 0 auto;">
-                         <tr>
-                             <td><b>Continuous PDF</b></td>
-                             <td><b>CONTINUOUS</b></td>
-                         </tr>
-                         <tr>
-                             <td>probability mass function (pmf): \( f_x(x) \)</td>
-                             <td>probability density function (pdf): \( f_x(x) \)</td>
-                         </tr>
-                         <tr>
-                             <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
-                             <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
-                         </tr>
-                         <tr>
-                             <td>CDF: \( F_x(x) = \sum_{k \leq x} p(k) \)</td>
-                             <td>CDF: \( F_x(x) = \int_{-\infty}^{\infty} p(y) \, dy \)</td>
-                         </tr>
-                     </table>
-                     <br>
-                     <br>
-                 </div>
-                 <script>
-                     const jointpdButton = document.getElementById('jointpd-button');
-                     const jointpdPara = document.getElementById('jointpd-paragraph');
-                     jointpdButton.addEventListener('click', () => {
-                         if (jointpdPara.style.display === 'none') {
-                            jointpdPara.style.display = 'block';
-                             MathJax.typeset();
-                         } else {
-                            jointpdPara.style.display = 'none';
-                         }
-                     });
-                 </script>
-                 <br />
-                 <br />
-
                 <!--Button-->
-                <button id="kurt-button">kurtosis</button>
-                <p id="kurt-paragraph" style="display: none;">A measure of the shape of the curve. <br><br>
+                <button id="jointpd-button">joint probability distributions</button>
+                <div id="jointpd-paragraph" style="display: none;">
+                    <div id="randvar-paragraph" style="display: none;">
+                        Quantity with a probability distribution.<br><br>
+                        <div style="margin: 0 auto; padding: 6px; display: inline-block;">
+                            <table border=".1">
+                                <tr>
+                                    <td><b>DISCRETE</b></td>
+                                    <td><b>CONTINUOUS</b></td>
+                                </tr>
+                                <tr>
+                                    <td>probability mass function (pmf): \( f_x(x) \)</td>
+                                    <td>probability density function (pdf): \( f_x(x) \)</td>
+                                </tr>
+                                <tr>
+                                    <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
+                                    <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
+                                </tr>
+                                <tr>
+                                    <td>CDF: \( F_x(x) = \sum_{k \leq x} p(k) \)</td>
+                                    <td>CDF: \( F_x(x) = \int_{-\infty}^{\infty} p(y) \, dy \)</td>
+                                </tr>
+                            </table>
+                            <br> <br>
+                        </div>
+                    </div>
 
-                    A perfectly normal distribution is mesokurtic, where K = 0. <br><br>
-                    If the peak is tall and sharp with flat tails, the distribution is leptokurtic and K > 0; there is
-                    less variability in the distribution. <br><br>
-                    If the peak is flattened with tails widely dispersed, the distribution is platykurtic and K &lt; 0.
-                </p>
-                <script>
-                    const kurtButton = document.getElementById('kurt-button');
-                    const kurtParagraph = document.getElementById('kurt-paragraph');
-                    kurtButton.addEventListener('click', () => {
-                        if (kurtParagraph.style.display === 'none') {
-                            kurtParagraph.style.display = 'block';
-                        } else {
-                            kurtParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-                <br />
-                <br />
-
-                <!--Button-->
-                <button id="ltp-button">law of total probability</button>
-                <p id="ltp-paragraph" style="display: none;">
-                    \[ P(A) = P(A|B_1) \cdot P(B_1) + ... + P(A|B_n) \cdot P(B_n) \]
-                </p>
-                <script>
-                    const ltpButton = document.getElementById('ltp-button');
-                    const ltpPara = document.getElementById('ltp-paragraph');
-                    ltpButton.addEventListener('click', () => {
-                        if (ltpPara.style.display === 'none') {
-                            ltpPara.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            ltpPara.style.display = 'none';
-                        }
-                    });
-                </script>
-                <br />
-                <br />
-
-                <!--Button-->
-                <button id="mae-button">mean absolute error (MAE)</button>
-                <p id="mae-paragraph" style="display: none;">
-                    Evaluation metric for regression that measures the average
-                    absolute difference between the actual and predicted values. Lower MAE means better model
-                    performance.
-                    \[ MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \]
-                </p>
-                <script>
-                    const maeButton = document.getElementById('mae-button');
-                    const maePara = document.getElementById('mae-paragraph');
-                    maeButton.addEventListener('click', () => {
-                        if (maePara.style.display === 'none') {
-                            maePara.style.display = 'block';
-                            // Trigger MathJax typesetting after displaying the equation
-                            MathJax.typeset();
-                        } else {
-                            maePara.style.display = 'none';
-                        }
-                    });
-                </script>
-
-
-                <!--Button-->
-                <button id="mse-button">mean squared error (MSE)</button>
-                <p id="mse-paragraph" style="display: none;">
-                    Evaluation metric for regression that measures the average of the squared differences between actual
-                    and predicted values. Lower MSE means better model performance. The MSE represents unexplained
-                    variance, the portion of variability in the dependent variable that is not explained by the model's
-                    independent variables.
-                    \[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
-                </p>
-                <script>
-                    const mseButton = document.getElementById('mse-button');
-                    const msePara = document.getElementById('mse-paragraph');
-                    mseButton.addEventListener('click', () => {
-                        if (msePara.style.display === 'none') {
-                            msePara.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            msePara.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <br />
-                <br />
-
-                <!--Button-->
-                <button id="normal-button">normal distribution</button>
-                <p id="normal-paragraph" style="display: none;">
-
-                    \( f(x; \mu, \sigma) = \frac{1}{ \sqrt{2\pi\sigma^2}} exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)
-                    \)
-
-
-                </p>
-                <script>
-                    const normalButton = document.getElementById('normal-button');
-                    const normalParagraph = document.getElementById('normal-paragraph');
-                    normalButton.addEventListener('click', () => {
-                        if (normalParagraph.style.display === 'none') {
-                            normalParagraph.style.display = 'block';
-                        } else {
-                            normalParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <br />
-                <br />
-
-                <!--Button-->
-                <button id="p-value-button">p-value</button>
-                <p id="p-value-paragraph" style="display: none;">The p-value measures the evidence against the null
-                    hypothesis; smaller p-values indicate stronger evidence opposing the null hypothesis.
-                    Given the null hypothesis is true, the p-value quantifies the extremeness in the data, indicating
-                    that the observed differences between the control
-                    (null)
-                    and treatment (alternative) groups would very unlikely be due to chance (reject the null
-                    hypothesis). In other words, the p-value is the probability of observing the results given the null
-                    hypothesis is true. The level of
-                    statistical significance is determined by alpha (the significance level).
-                </p>
-                <script>
-                    const pvalueButton = document.getElementById('p-value-button');
-                    const pvalueParagraph = document.getElementById('p-value-paragraph');
-
-                    pvalueButton.addEventListener('click', () => {
-                        if (pvalueParagraph.style.display === 'none') {
-                            pvalueParagraph.style.display = 'block';
-                        } else {
-                            pvalueParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="poisson-button">poisson distribution</button>
-                <p id="poisson-paragraph" style="display: none;">For discrete variables. Number of occurences \(X\) in a
-                    given time period, where the constant rate of occurences is \( \lambda \).
-                    \[ P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\]
-
-                    where \( \mu = k \) and \( \sigma = \lambda \)
-                </p>
-                <script>
-                    const poissonButton = document.getElementById('poisson-button');
-                    const poissonParagraph = document.getElementById('poisson-paragraph');
-
-                    poissonButton.addEventListener('click', () => {
-                        if (poissonParagraph.style.display === 'none') {
-                            poissonParagraph.style.display = 'block';
-                        } else {
-                            poissonParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="pdf-button">probability density function (pdf)</button>
-                <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
-                    random continous variable being equal to some value.
-                    <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg" style="width: 100%;" />
-                </p>
-                <script>
-                    const pdfButton = document.getElementById('pdf-button');
-                    const pdfParagraph = document.getElementById('pdf-paragraph');
-                    pdfButton.addEventListener('click', () => {
-                        if (pdfParagraph.style.display === 'none') {
-                            pdfParagraph.style.display = 'block';
-                        } else {
-                            pdfParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="pmf-button">probability mass function (pmf)</button>
-                <p id="pmf-paragraph" style="display: none;">A function that describes the
-                    probability of a random discrete variable being equal to some value <sup><a
-                            href="https://books.google.com/books?id=ZfRyBS1WbAQC&pg=PT105#v=onepage&q&f=false"><small>[<u>Source</u>]</small></a></sup>.
-                    <img class="img-fluid z-dept-1" src="images/pmf.jpg" alt="pmf.jpg" style="width: 100%;" />
-                </p>
-                <script>
-                    const pmfButton = document.getElementById('pmf-button');
-                    const pmfParagraph = document.getElementById('pmf-paragraph');
-                    pmfButton.addEventListener('click', () => {
-                        if (pmfParagraph.style.display === 'none') {
-                            pmfParagraph.style.display = 'block';
-                        } else {
-                            pmfParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <br />
-                <br />
-
-                <!--Button-->
-                <button id="rs-button">random sampling</button>
-                <p id="rs-paragraph" style="display: none;">A method of selecting a subset of data from a larger dataset
-                    where each data point has an equal probability of being selected.
-                </p>
-
-                <script>
-                    const rsButton = document.getElementById('rs-button');
-                    const rsParagraph = document.getElementById('rs-paragraph');
-                    rsButton.addEventListener('click', () => {
-                        if (rsParagraph.style.display === 'none') {
-                            rsParagraph.style.display = 'block';
-                        } else {
-                            rsParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="randvar-button">random variable</button>
-                <div id="randvar-paragraph" style="display: none;">
-                    Quantity with a probability distribution.<br><br>
-                    <div style="margin: 0 auto; padding: 6px; display: inline-block;">
-                        <table border=".1">
-                        <tr>
-                            <td><b>DISCRETE</b></td>
-                            <td><b>CONTINUOUS</b></td>
-                        </tr>
-                        <tr>
-                            <td>probability mass function (pmf): \( f_x(x) \)</td>
-                            <td>probability density function (pdf): \( f_x(x) \)</td>
-                        </tr>
-                        <tr>
-                            <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
-                            <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
-                        </tr>
-                        <tr>
-                            <td>CDF: \( F_x(x) = \sum_{k \leq x} p(k) \)</td>
-                            <td>CDF: \( F_x(x) = \int_{-\infty}^{\infty} p(y) \, dy \)</td>
-                        </tr>
-                    </table>
-                </div>
-                </div>
-                <br> <br> 
-                <script>
-                    const randvarButton = document.getElementById('randvar-button');
-                    const randvarPara = document.getElementById('randvar-paragraph');
-                    randvarButton.addEventListener('click', () => {
-                        if (randvarPara.style.display === 'none') {
-                            randvarPara.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            randvarPara.style.display = 'none';
-                        }
-                    });
-                </script>
-
-
-
-                <!--Button-->
-                <button id="reg-button">regression</button>
-                <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship
-                    between
-                    independent variables (features or predictors) and a dependent variable (target or outcome)
-                    to make
-                    predictions and illuminate the influence of the independent variables on the target.
+                    <script>
+                        const jointpdButton = document.getElementById('jointpd-button');
+                        const jointpdPara = document.getElementById('jointpd-paragraph');
+                        jointpdButton.addEventListener('click', () => {
+                            if (jointpdPara.style.display === 'none') {
+                                jointpdPara.style.display = 'block';
+                                MathJax.typeset();
+                            } else {
+                                jointpdPara.style.display = 'none';
+                            }
+                        });
+                    </script>
                     <br />
                     <br />
-                    <b>Multiple Regression</b>: Two or more independent variables to predict one dependent variable
+
+                    <!--Button-->
+                    <button id="kurt-button">kurtosis</button>
+                    <p id="kurt-paragraph" style="display: none;">A measure of the shape of the curve. <br><br>
+
+                        A perfectly normal distribution is mesokurtic, where K = 0. <br><br>
+                        If the peak is tall and sharp with flat tails, the distribution is leptokurtic and K > 0; there
+                        is
+                        less variability in the distribution. <br><br>
+                        If the peak is flattened with tails widely dispersed, the distribution is platykurtic and K &lt;
+                        0.
+                    </p>
+                    <script>
+                        const kurtButton = document.getElementById('kurt-button');
+                        const kurtParagraph = document.getElementById('kurt-paragraph');
+                        kurtButton.addEventListener('click', () => {
+                            if (kurtParagraph.style.display === 'none') {
+                                kurtParagraph.style.display = 'block';
+                            } else {
+                                kurtParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
                     <br />
-                    <b>Linear Regression</b>: The relationship between the independent and dependent
-                    variables are fitted with a linear equation <br />
-                    <b>Polynominal Regression</b>: The relationship between the independent and
-                    dependent variables are fitted with a polynomial equation such as quadratic or cubic <br />
-                    <b>Ridge and Lasso Regression</b>: Regularization technique to handle collinearity (high correlation
-                    among features) to prevent overfitting. It introduces additional information to penalize extreme
-                    parameter (weight) values
+                    <br />
 
-                </p>
-                <script>
-                    const regButton = document.getElementById('reg-button');
-                    const regParagraph = document.getElementById('reg-paragraph');
-                    regButton.addEventListener('click', () => {
-                        if (regParagraph.style.display === 'none') {
-                            regParagraph.style.display = 'block';
-                        } else {
-                            regParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                    <!--Button-->
+                    <button id="ltp-button">law of total probability</button>
+                    <p id="ltp-paragraph" style="display: none;">
+                        \[ P(A) = P(A|B_1) \cdot P(B_1) + ... + P(A|B_n) \cdot P(B_n) \]
+                    </p>
+                    <script>
+                        const ltpButton = document.getElementById('ltp-button');
+                        const ltpPara = document.getElementById('ltp-paragraph');
+                        ltpButton.addEventListener('click', () => {
+                            if (ltpPara.style.display === 'none') {
+                                ltpPara.style.display = 'block';
+                                MathJax.typeset();
+                            } else {
+                                ltpPara.style.display = 'none';
+                            }
+                        });
+                    </script>
+                    <br />
+                    <br />
 
-                <!--Button-->
-                <button id="rmse-button">root mean squared error (RMSE)</button>
-                <p id="rmse-paragraph" style="display: none;">The square root of MSE. This metric helps with: <br><br>
-                    <b>Interpretability</b>: Because RMSE is expressed in the same unit as the dependent variable, it is
-                    easier
-                    to interpret and more relatable to the original scale of the data.<br><br>
-
-                    <b>Outlier Sensitivity</b>: RMSE is more sensitive to outliers than MSE, as larger errors contribute
-                    more
-                    significantly due to the squared and square root operations.<br><br>
-
-                    <b>Direct Comparison</b>: RMSE offers a direct comparison to the standard deviation of the target.
-                    If the
-                    RMSE is close to the standard deviation (the inherent variability in the original data), then it
-                    indicates that the model's predictions are capturing a similar level of variability on average as
-                    the observed data. <br><br>
-
-                    <b>Balanced Assessment</b>: By taking the square root, RMSE balances the impact of extreme errors,
-                    offering
-                    a more well-rounded evaluation of prediction accuracy in regression models.
-                </p>
-                <script>
-                    const rmse_Button = document.getElementById('rmse-button');
-                    const rmse_Paragraph = document.getElementById('rmse-paragraph');
-                    rmse_Button.addEventListener('click', () => {
-                        if (rmse_Paragraph.style.display === 'none') {
-                            rmse_Paragraph.style.display = 'block';
-                        } else {
-                            rmse_Paragraph.style.display = 'none';
-                        }
-                    });
-                </script>
-                <br />
-                <br />
-
-                <!--Button-->
-                <button id="sampdist-button">sampling distribution of the sample mean</button>
-                <p id="sampdist-paragraph" style="display: none;">A normal distribution where the mean is equal to the
-                    mean of the population and the standard deviation is the population's standard deviation divided by
-                    the square root of the sample size.
-                </p>
-                <script>
-                    const sampdistButton = document.getElementById('sampdist-button');
-                    const sampdistParagraph = document.getElementById('sampdist-paragraph');
-                    sampdistButton.addEventListener('click', () => {
-                        if (sampdistParagraph.style.display === 'none') {
-                            sampdistParagraph.style.display = 'block';
-                        } else {
-                            sampdistParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="skew-button">skewness</button>
-                <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A
-                    perfectly symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode are
-                    equal). \( skewness = \frac{(mean - median)}{std} \)
-                    <br><br>
-                    <b>Positive skewness</b>: Mode &lt; Median &lt; Mean. The tail is pulled to the right (+ direction).
-                    There is more pileup of data on the left. <br>
-                    <b>Negative skewness</b>: Mean &lt; Median &lt; Mode. The tail is pulled to the left (- direction).
-                    There is more pileup of data on the right.
-                </p>
-                <script>
-                    const skewButton = document.getElementById('skew-button');
-                    const skewParagraph = document.getElementById('skew-paragraph');
-                    skewButton.addEventListener('click', () => {
-                        if (skewParagraph.style.display === 'none') {
-                            skewParagraph.style.display = 'block';
-                        } else {
-                            skewParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                    <!--Button-->
+                    <button id="mae-button">mean absolute error (MAE)</button>
+                    <p id="mae-paragraph" style="display: none;">
+                        Evaluation metric for regression that measures the average
+                        absolute difference between the actual and predicted values. Lower MAE means better model
+                        performance.
+                        \[ MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \]
+                    </p>
+                    <script>
+                        const maeButton = document.getElementById('mae-button');
+                        const maePara = document.getElementById('mae-paragraph');
+                        maeButton.addEventListener('click', () => {
+                            if (maePara.style.display === 'none') {
+                                maePara.style.display = 'block';
+                                // Trigger MathJax typesetting after displaying the equation
+                                MathJax.typeset();
+                            } else {
+                                maePara.style.display = 'none';
+                            }
+                        });
+                    </script>
 
 
-                <!--Button-->
-                <button id="sig-button">significance level</button>
-                <p id="sig-paragraph" style="display: none;">The probability of incorrectly rejecting the
-                    null hypothesis (Type I error, false positive). Denoted by alpha (α). (Also see definition
-                    for confidence interval).
-                    <br><br>
-                    Note that if you decrease the significance level, you will decrease the number of false
-                    positives (type I errors). However, the tradeoff is that you will increase the number of false
-                    negatives (type II errors).
+                    <!--Button-->
+                    <button id="mse-button">mean squared error (MSE)</button>
+                    <p id="mse-paragraph" style="display: none;">
+                        Evaluation metric for regression that measures the average of the squared differences between
+                        actual
+                        and predicted values. Lower MSE means better model performance. The MSE represents unexplained
+                        variance, the portion of variability in the dependent variable that is not explained by the
+                        model's
+                        independent variables.
+                        \[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
+                    </p>
+                    <script>
+                        const mseButton = document.getElementById('mse-button');
+                        const msePara = document.getElementById('mse-paragraph');
+                        mseButton.addEventListener('click', () => {
+                            if (msePara.style.display === 'none') {
+                                msePara.style.display = 'block';
+                                MathJax.typeset();
+                            } else {
+                                msePara.style.display = 'none';
+                            }
+                        });
+                    </script>
 
-                </p>
-                <script>
-                    const sigButton = document.getElementById('sig-button');
-                    const sigParagraph = document.getElementById('sig-paragraph');
-                    sigButton.addEventListener('click', () => {
-                        if (sigParagraph.style.display === 'none') {
-                            sigParagraph.style.display = 'block';
-                        } else {
-                            sigParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                    <br />
+                    <br />
 
-                <!--Button-->
-                <button id="ss-button">stratified sampling</button>
-                <p id="ss-paragraph" style="display: none;">A method of selecting a subset of data from a larger dataset
-                    where the population is split into different strata according to key characteristics before random
-                    sampling is performed on each individual stratum. This is beneficial if the strata have a high
-                    degree of variation.
-                </p>
+                    <!--Button-->
+                    <button id="normal-button">normal distribution</button>
+                    <p id="normal-paragraph" style="display: none;">
 
-                <script>
-                    const ssButton = document.getElementById('ss-button');
-                    const ssParagraph = document.getElementById('ss-paragraph');
-                    ssButton.addEventListener('click', () => {
-                        if (ssParagraph.style.display === 'none') {
-                            ssParagraph.style.display = 'block';
-                        } else {
-                            ssParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="syss-button">systematic sampling</button>
-                <p id="syss-paragraph" style="display: none;">A method of selecting a subset of data from a larger
-                    dataset
-                    where a starting point is first chosen at random, and then every k<sup>th</sup> item is selected for
-                    the sample. Typically, systematic sampling is more efficient than random sampling.
-                </p>
-                <script>
-                    const syssButton = document.getElementById('syss-button');
-                    const syssParagraph = document.getElementById('syss-paragraph');
-                    syssButton.addEventListener('click', () => {
-                        if (syssParagraph.style.display === 'none') {
-                            syssParagraph.style.display = 'block';
-                        } else {
-                            syssParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="sst-button">SST (total sum of squares)</button>
-                <p id="sst-paragraph" style="display: none;">The sum of the squared differences between each observation
-                    and the mean of the dependent variable \( \hat{y} \).
-                    <img class="img-fluid z-dept-1" src="images/sst.jpg" alt="sst.jpg" style="width: 100%;" />
-                </p>
-                <script>
-                    const sstButton = document.getElementById('sst-button');
-                    const sstParagraph = document.getElementById('sst-paragraph');
-
-                    sstButton.addEventListener('click', () => {
-                        if (sstParagraph.style.display === 'none') {
-                            sstParagraph.style.display = 'block';
-                        } else {
-                            sstParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <br />
-                <br />
-
-                <!--Button-->
-                <button id="uniform-button">uniform distribution</button>
-                <p id="uniform-paragraph" style="display: none;">For continuous variables. Constant probability of \(X\)
-                    falling between \(a\) and \(b\).
-                    \[ f(x) = \frac{1}{b-a} \]
-
-                    where \( \mu = \frac{a+b}{2} \) and \( \sigma = \frac{(b-a)^2}{12} \)
-                </p>
-                <script>
-                    const uniformButton = document.getElementById('uniform-button');
-                    const uniformParagraph = document.getElementById('uniform-paragraph');
-
-                    uniformButton.addEventListener('click', () => {
-                        if (uniformParagraph.style.display === 'none') {
-                            uniformParagraph.style.display = 'block';
-                        } else {
-                            uniformParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-                <br />
-                <br />
+                        \( f(x; \mu, \sigma) = \frac{1}{ \sqrt{2\pi\sigma^2}} exp\left(-\frac{(x -
+                        \mu)^2}{2\sigma^2}\right)
+                        \)
 
 
-                <!--Button-->
-                <button id="zscore-button">z-score</button>
-                <p id="zscore-paragraph" style="display: none;">\( \text{z-score} = \frac{X - \mu}{ \sigma } \).
-                    Indicates the number of standard
-                    deviations X is away from the mean (μ) for a distribution.
-                </p>
-                <script>
-                    const zscoreButton = document.getElementById('zscore-button');
-                    const zscoreParagraph = document.getElementById('zscore-paragraph');
-                    zscoreButton.addEventListener('click', () => {
-                        if (zscoreParagraph.style.display === 'none') {
-                            zscoreParagraph.style.display = 'block';
-                        } else {
-                            zscoreParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                    </p>
+                    <script>
+                        const normalButton = document.getElementById('normal-button');
+                        const normalParagraph = document.getElementById('normal-paragraph');
+                        normalButton.addEventListener('click', () => {
+                            if (normalParagraph.style.display === 'none') {
+                                normalParagraph.style.display = 'block';
+                            } else {
+                                normalParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <br />
+                    <br />
+
+                    <!--Button-->
+                    <button id="p-value-button">p-value</button>
+                    <p id="p-value-paragraph" style="display: none;">The p-value measures the evidence against the null
+                        hypothesis; smaller p-values indicate stronger evidence opposing the null hypothesis.
+                        Given the null hypothesis is true, the p-value quantifies the extremeness in the data,
+                        indicating
+                        that the observed differences between the control
+                        (null)
+                        and treatment (alternative) groups would very unlikely be due to chance (reject the null
+                        hypothesis). In other words, the p-value is the probability of observing the results given the
+                        null
+                        hypothesis is true. The level of
+                        statistical significance is determined by alpha (the significance level).
+                    </p>
+                    <script>
+                        const pvalueButton = document.getElementById('p-value-button');
+                        const pvalueParagraph = document.getElementById('p-value-paragraph');
+
+                        pvalueButton.addEventListener('click', () => {
+                            if (pvalueParagraph.style.display === 'none') {
+                                pvalueParagraph.style.display = 'block';
+                            } else {
+                                pvalueParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="poisson-button">poisson distribution</button>
+                    <p id="poisson-paragraph" style="display: none;">For discrete variables. Number of occurences \(X\)
+                        in a
+                        given time period, where the constant rate of occurences is \( \lambda \).
+                        \[ P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\]
+
+                        where \( \mu = k \) and \( \sigma = \lambda \)
+                    </p>
+                    <script>
+                        const poissonButton = document.getElementById('poisson-button');
+                        const poissonParagraph = document.getElementById('poisson-paragraph');
+
+                        poissonButton.addEventListener('click', () => {
+                            if (poissonParagraph.style.display === 'none') {
+                                poissonParagraph.style.display = 'block';
+                            } else {
+                                poissonParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="pdf-button">probability density function (pdf)</button>
+                    <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
+                        random continous variable being equal to some value.
+                        <img class="img-fluid z-dept-1" src="images/pdf.jpg" alt="pdf.jpg" style="width: 100%;" />
+                    </p>
+                    <script>
+                        const pdfButton = document.getElementById('pdf-button');
+                        const pdfParagraph = document.getElementById('pdf-paragraph');
+                        pdfButton.addEventListener('click', () => {
+                            if (pdfParagraph.style.display === 'none') {
+                                pdfParagraph.style.display = 'block';
+                            } else {
+                                pdfParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="pmf-button">probability mass function (pmf)</button>
+                    <p id="pmf-paragraph" style="display: none;">A function that describes the
+                        probability of a random discrete variable being equal to some value <sup><a
+                                href="https://books.google.com/books?id=ZfRyBS1WbAQC&pg=PT105#v=onepage&q&f=false"><small>[<u>Source</u>]</small></a></sup>.
+                        <img class="img-fluid z-dept-1" src="images/pmf.jpg" alt="pmf.jpg" style="width: 100%;" />
+                    </p>
+                    <script>
+                        const pmfButton = document.getElementById('pmf-button');
+                        const pmfParagraph = document.getElementById('pmf-paragraph');
+                        pmfButton.addEventListener('click', () => {
+                            if (pmfParagraph.style.display === 'none') {
+                                pmfParagraph.style.display = 'block';
+                            } else {
+                                pmfParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <br />
+                    <br />
+
+                    <!--Button-->
+                    <button id="rs-button">random sampling</button>
+                    <p id="rs-paragraph" style="display: none;">A method of selecting a subset of data from a larger
+                        dataset
+                        where each data point has an equal probability of being selected.
+                    </p>
+
+                    <script>
+                        const rsButton = document.getElementById('rs-button');
+                        const rsParagraph = document.getElementById('rs-paragraph');
+                        rsButton.addEventListener('click', () => {
+                            if (rsParagraph.style.display === 'none') {
+                                rsParagraph.style.display = 'block';
+                            } else {
+                                rsParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="randvar-button">random variable</button>
+                    <div id="randvar-paragraph" style="display: none;">
+                        Quantity with a probability distribution.<br><br>
+                        <div style="margin: 0 auto; padding: 6px; display: inline-block;">
+                            <table border=".1">
+                                <tr>
+                                    <td><b>DISCRETE</b></td>
+                                    <td><b>CONTINUOUS</b></td>
+                                </tr>
+                                <tr>
+                                    <td>probability mass function (pmf): \( f_x(x) \)</td>
+                                    <td>probability density function (pdf): \( f_x(x) \)</td>
+                                </tr>
+                                <tr>
+                                    <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
+                                    <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
+                                </tr>
+                                <tr>
+                                    <td>CDF: \( F_x(x) = \sum_{k \leq x} p(k) \)</td>
+                                    <td>CDF: \( F_x(x) = \int_{-\infty}^{\infty} p(y) \, dy \)</td>
+                                </tr>
+                            </table>
+                            <br> <br>
+                        </div>
+                    </div>
+                    <script>
+                        const randvarButton = document.getElementById('randvar-button');
+                        const randvarPara = document.getElementById('randvar-paragraph');
+                        randvarButton.addEventListener('click', () => {
+                            if (randvarPara.style.display === 'none') {
+                                randvarPara.style.display = 'block';
+                                MathJax.typeset();
+                            } else {
+                                randvarPara.style.display = 'none';
+                            }
+                        });
+                    </script>
 
 
 
-                <br />
-                <!-- <hr> -->
-                <!-- Adds related posts to the end of an article -->
-                <!-- <h3 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h3>
+                    <!--Button-->
+                    <button id="reg-button">regression</button>
+                    <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship
+                        between
+                        independent variables (features or predictors) and a dependent variable (target or outcome)
+                        to make
+                        predictions and illuminate the influence of the independent variables on the target.
+                        <br />
+                        <br />
+                        <b>Multiple Regression</b>: Two or more independent variables to predict one dependent variable
+                        <br />
+                        <b>Linear Regression</b>: The relationship between the independent and dependent
+                        variables are fitted with a linear equation <br />
+                        <b>Polynominal Regression</b>: The relationship between the independent and
+                        dependent variables are fitted with a polynomial equation such as quadratic or cubic <br />
+                        <b>Ridge and Lasso Regression</b>: Regularization technique to handle collinearity (high
+                        correlation
+                        among features) to prevent overfitting. It introduces additional information to penalize extreme
+                        parameter (weight) values
+
+                    </p>
+                    <script>
+                        const regButton = document.getElementById('reg-button');
+                        const regParagraph = document.getElementById('reg-paragraph');
+                        regButton.addEventListener('click', () => {
+                            if (regParagraph.style.display === 'none') {
+                                regParagraph.style.display = 'block';
+                            } else {
+                                regParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="rmse-button">root mean squared error (RMSE)</button>
+                    <p id="rmse-paragraph" style="display: none;">The square root of MSE. This metric helps with:
+                        <br><br>
+                        <b>Interpretability</b>: Because RMSE is expressed in the same unit as the dependent variable,
+                        it is
+                        easier
+                        to interpret and more relatable to the original scale of the data.<br><br>
+
+                        <b>Outlier Sensitivity</b>: RMSE is more sensitive to outliers than MSE, as larger errors
+                        contribute
+                        more
+                        significantly due to the squared and square root operations.<br><br>
+
+                        <b>Direct Comparison</b>: RMSE offers a direct comparison to the standard deviation of the
+                        target.
+                        If the
+                        RMSE is close to the standard deviation (the inherent variability in the original data), then it
+                        indicates that the model's predictions are capturing a similar level of variability on average
+                        as
+                        the observed data. <br><br>
+
+                        <b>Balanced Assessment</b>: By taking the square root, RMSE balances the impact of extreme
+                        errors,
+                        offering
+                        a more well-rounded evaluation of prediction accuracy in regression models.
+                    </p>
+                    <script>
+                        const rmse_Button = document.getElementById('rmse-button');
+                        const rmse_Paragraph = document.getElementById('rmse-paragraph');
+                        rmse_Button.addEventListener('click', () => {
+                            if (rmse_Paragraph.style.display === 'none') {
+                                rmse_Paragraph.style.display = 'block';
+                            } else {
+                                rmse_Paragraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+                    <br />
+                    <br />
+
+                    <!--Button-->
+                    <button id="sampdist-button">sampling distribution of the sample mean</button>
+                    <p id="sampdist-paragraph" style="display: none;">A normal distribution where the mean is equal to
+                        the
+                        mean of the population and the standard deviation is the population's standard deviation divided
+                        by
+                        the square root of the sample size.
+                    </p>
+                    <script>
+                        const sampdistButton = document.getElementById('sampdist-button');
+                        const sampdistParagraph = document.getElementById('sampdist-paragraph');
+                        sampdistButton.addEventListener('click', () => {
+                            if (sampdistParagraph.style.display === 'none') {
+                                sampdistParagraph.style.display = 'block';
+                            } else {
+                                sampdistParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="skew-button">skewness</button>
+                    <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A
+                        perfectly symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode
+                        are
+                        equal). \( skewness = \frac{(mean - median)}{std} \)
+                        <br><br>
+                        <b>Positive skewness</b>: Mode &lt; Median &lt; Mean. The tail is pulled to the right (+
+                        direction).
+                        There is more pileup of data on the left. <br>
+                        <b>Negative skewness</b>: Mean &lt; Median &lt; Mode. The tail is pulled to the left (-
+                        direction).
+                        There is more pileup of data on the right.
+                    </p>
+                    <script>
+                        const skewButton = document.getElementById('skew-button');
+                        const skewParagraph = document.getElementById('skew-paragraph');
+                        skewButton.addEventListener('click', () => {
+                            if (skewParagraph.style.display === 'none') {
+                                skewParagraph.style.display = 'block';
+                            } else {
+                                skewParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+
+                    <!--Button-->
+                    <button id="sig-button">significance level</button>
+                    <p id="sig-paragraph" style="display: none;">The probability of incorrectly rejecting the
+                        null hypothesis (Type I error, false positive). Denoted by alpha (α). (Also see definition
+                        for confidence interval).
+                        <br><br>
+                        Note that if you decrease the significance level, you will decrease the number of false
+                        positives (type I errors). However, the tradeoff is that you will increase the number of false
+                        negatives (type II errors).
+
+                    </p>
+                    <script>
+                        const sigButton = document.getElementById('sig-button');
+                        const sigParagraph = document.getElementById('sig-paragraph');
+                        sigButton.addEventListener('click', () => {
+                            if (sigParagraph.style.display === 'none') {
+                                sigParagraph.style.display = 'block';
+                            } else {
+                                sigParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="ss-button">stratified sampling</button>
+                    <p id="ss-paragraph" style="display: none;">A method of selecting a subset of data from a larger
+                        dataset
+                        where the population is split into different strata according to key characteristics before
+                        random
+                        sampling is performed on each individual stratum. This is beneficial if the strata have a high
+                        degree of variation.
+                    </p>
+
+                    <script>
+                        const ssButton = document.getElementById('ss-button');
+                        const ssParagraph = document.getElementById('ss-paragraph');
+                        ssButton.addEventListener('click', () => {
+                            if (ssParagraph.style.display === 'none') {
+                                ssParagraph.style.display = 'block';
+                            } else {
+                                ssParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="syss-button">systematic sampling</button>
+                    <p id="syss-paragraph" style="display: none;">A method of selecting a subset of data from a larger
+                        dataset
+                        where a starting point is first chosen at random, and then every k<sup>th</sup> item is selected
+                        for
+                        the sample. Typically, systematic sampling is more efficient than random sampling.
+                    </p>
+                    <script>
+                        const syssButton = document.getElementById('syss-button');
+                        const syssParagraph = document.getElementById('syss-paragraph');
+                        syssButton.addEventListener('click', () => {
+                            if (syssParagraph.style.display === 'none') {
+                                syssParagraph.style.display = 'block';
+                            } else {
+                                syssParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <!--Button-->
+                    <button id="sst-button">SST (total sum of squares)</button>
+                    <p id="sst-paragraph" style="display: none;">The sum of the squared differences between each
+                        observation
+                        and the mean of the dependent variable \( \hat{y} \).
+                        <img class="img-fluid z-dept-1" src="images/sst.jpg" alt="sst.jpg" style="width: 100%;" />
+                    </p>
+                    <script>
+                        const sstButton = document.getElementById('sst-button');
+                        const sstParagraph = document.getElementById('sst-paragraph');
+
+                        sstButton.addEventListener('click', () => {
+                            if (sstParagraph.style.display === 'none') {
+                                sstParagraph.style.display = 'block';
+                            } else {
+                                sstParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+                    <br />
+                    <br />
+
+                    <!--Button-->
+                    <button id="uniform-button">uniform distribution</button>
+                    <p id="uniform-paragraph" style="display: none;">For continuous variables. Constant probability of
+                        \(X\)
+                        falling between \(a\) and \(b\).
+                        \[ f(x) = \frac{1}{b-a} \]
+
+                        where \( \mu = \frac{a+b}{2} \) and \( \sigma = \frac{(b-a)^2}{12} \)
+                    </p>
+                    <script>
+                        const uniformButton = document.getElementById('uniform-button');
+                        const uniformParagraph = document.getElementById('uniform-paragraph');
+
+                        uniformButton.addEventListener('click', () => {
+                            if (uniformParagraph.style.display === 'none') {
+                                uniformParagraph.style.display = 'block';
+                            } else {
+                                uniformParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+                    <br />
+                    <br />
+
+
+                    <!--Button-->
+                    <button id="zscore-button">z-score</button>
+                    <p id="zscore-paragraph" style="display: none;">\( \text{z-score} = \frac{X - \mu}{ \sigma } \).
+                        Indicates the number of standard
+                        deviations X is away from the mean (μ) for a distribution.
+                    </p>
+                    <script>
+                        const zscoreButton = document.getElementById('zscore-button');
+                        const zscoreParagraph = document.getElementById('zscore-paragraph');
+                        zscoreButton.addEventListener('click', () => {
+                            if (zscoreParagraph.style.display === 'none') {
+                                zscoreParagraph.style.display = 'block';
+                            } else {
+                                zscoreParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+
+
+
+                    <br />
+                    <!-- <hr> -->
+                    <!-- Adds related posts to the end of an article -->
+                    <!-- <h3 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h3>
                 <p class="mb-2">Here are some more articles you might like to read next:</p>
                 <li class="my-2"> -->
-                <!-- <a class="text-gray-700 underline font-semibold hover:text-gray-800" href="/blog/2022/displaying-external-posts-on-your-al-folio-blog/">Displaying External Posts on Your al-folio Blog</a> -->
-                </li>
+                    <!-- <a class="text-gray-700 underline font-semibold hover:text-gray-800" href="/blog/2022/displaying-external-posts-on-your-al-folio-blog/">Displaying External Posts on Your al-folio Blog</a> -->
+                    </li>
 
             </article>
         </div>
