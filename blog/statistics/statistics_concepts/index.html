@@ -181,7 +181,8 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
+                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
+                    predictions}}{\text{total number of predictions}} \)
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -383,7 +384,7 @@
 
                     \[ f(x; \lambda) = \lambda e^{-\lambda x} \]
 
-                    where \( \mu = \frac{1}{\lambda} \) and \( \sigma^2 = \frac{1}{\lambda^2} \) 
+                    where \( \mu = \frac{1}{\lambda} \) and \( \sigma^2 = \frac{1}{\lambda^2} \)
                 </p>
                 <script>
                     const expButton = document.getElementById('exp-button');
@@ -411,7 +412,8 @@
                     3. Decide on a significance level (e.g., α = 5%)<br>
                     4. Conduct the statistical test<br>
                     5. Calculate the p-value and confidence interval<br>
-                    6. Conclude whether to reject or accept the null hypothesis. If the p-value &lt; α, reject the null hypothesis 
+                    6. Conclude whether to reject or accept the null hypothesis. If the p-value &lt; α, reject the null
+                    hypothesis
 
                 </p>
                 <script>
@@ -519,25 +521,26 @@
                 <br />
                 <br />
 
-                 <!--Button-->
-                 <button id="normal-button">normal distribution</button>
-                 <p id="normal-paragraph" style="display: none;">
- 
-                 \( f(x; \mu, \sigma) = \frac{1}{ \sqrt{2\pi\sigma^2}} exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right) \)
+                <!--Button-->
+                <button id="normal-button">normal distribution</button>
+                <p id="normal-paragraph" style="display: none;">
 
- 
-                 </p>
-                 <script>
-                     const normalButton = document.getElementById('normal-button');
-                     const normalParagraph = document.getElementById('normal-paragraph');
-                     normalButton.addEventListener('click', () => {
-                         if (normalParagraph.style.display === 'none') {
+                    \( f(x; \mu, \sigma) = \frac{1}{ \sqrt{2\pi\sigma^2}} exp\left(-\frac{(x - \mu)^2}{2\sigma^2}\right)
+                    \)
+
+
+                </p>
+                <script>
+                    const normalButton = document.getElementById('normal-button');
+                    const normalParagraph = document.getElementById('normal-paragraph');
+                    normalButton.addEventListener('click', () => {
+                        if (normalParagraph.style.display === 'none') {
                             normalParagraph.style.display = 'block';
-                         } else {
+                        } else {
                             normalParagraph.style.display = 'none';
-                         }
-                     });
-                 </script>
+                        }
+                    });
+                </script>
 
                 <br />
                 <br />
@@ -645,6 +648,47 @@
                         }
                     });
                 </script>
+
+                <!--Button-->
+                <button id="randvar-button">random variable</button>
+                <p id="randvar-paragraph" style="display: none;">
+                    Quantity with a probability distribution.
+                <table border=".1">
+                    <tr>
+                        <td>DISCRETE</td>
+                        <td>CONTINUOUS</td>
+                    </tr>
+                    <tr>
+                        <td>probability mass function (pmf): \( f_x(x) \)</td>
+                        <td>probability density function (pdf): \( f_x(x) \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
+                        <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
+                    </tr>
+                    <tr>
+                        <td>Row 4, Column 1</td>
+                        <td>Row 4, Column 2</td>
+                    </tr>
+                    <tr>
+                        <td>Row 5, Column 1</td>
+                        <td>Row 5, Column 2</td>
+                    </tr>
+                </table>
+                </p>
+                <script>
+                    const randvarButton = document.getElementById('randvar-button');
+                    const randvarPara = document.getElementById('randvar-paragraph');
+                    randvarButton.addEventListener('click', () => {
+                        if (randvarPara.style.display === 'none') {
+                            randvarPara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            randvarPara.style.display = 'none';
+                        }
+                    });
+                </script>
+
 
                 <!--Button-->
                 <button id="reg-button">regression</button>
