@@ -750,7 +750,7 @@
                             </tr>
                             <tr>
                                 <td>\( \sum_{x \in X} f_x(x) = 1 \)</td>
-                                <td>\( \int_{-\infty}^{\infty} f_x(x) \, dx = 1 \)</td>
+                                <td>\( \int_{-\infty}^{\infty} f_X(x) \, dx = 1 \)</td>
                             </tr>
                             <tr>
                                 <td>CDF: \( F_x(x) = \sum_{k \leq x} p(k) \)</td>
@@ -763,19 +763,23 @@
                         <br>
                     </div>
                         <p>For any random variable \( X \) discrete or continuous, the expected value (mean) is:
-                            \[ \mu = E[X] = \int_{-\infty}^{\infty} xf_x(x) \, dx \]
+                            \[ \mu = E[X] = \int_{-\infty}^{\infty} xf_X(x) \, dx \]
                         </p>
                         <p>The variance and standard deviations, respectively, are:
                             \[ Var(X) = E[(X-E[X])^2] = E[X^2]-(E[X])^2 \]
                             \[ \sigma = \sqrt{Var(X)} \]
                         </p>
                         <p>
-                            The covarance of two random variables X and Y is the linear relationship between them.
+                            The covarance of two random variables \( X \) and \( Y \) is the linear relationship between them.
                             \[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY]-E[X]E[Y] \]
                         </p>
                         <p>
                             The correlation between X and Y is the normalization of covariance, denoted by \( \rho \).
                             \[ \rho(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} \]
+                        </p>
+                        <p>
+                            The expected value of \( X \), conditional upon \( Y = y\):
+                            \[ E[X|Y=y] = \int_{-\infty}^{\infty} xf_{X|Y}(x\y) \, dx  \]
                         </p>
                 </div>
                 <script>
