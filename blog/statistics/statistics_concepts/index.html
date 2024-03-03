@@ -762,9 +762,10 @@
                         <br>
                         <br>
                     </div>
-                        <p>For any random variable discrete or continuous, the expected value (mean) is the integral of
-                            the random variable multiplied by its probability density function:
+                        <p>For any random variable \( X \) discrete or continuous, the expected value (mean) is:
                             \[ \mu = E[X] = \int_{-\infty}^{\infty} xf_x(x) \, dx \]
+                        </p>
+                        <p>The variance and standard deviations, respectively, are:
                             \[ Var(X) = E[(X-E[X])^2] = E[X^2]-(E[X])^2 \]
                             \[ \sigma = \sqrt{Var(X)} \]
                         </p>
@@ -772,7 +773,10 @@
                             The covarance of two random variables X and Y is the linear relationship between them.
                             \[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY]-E[X]E[Y] \]
                         </p>
-                    
+                        <p>
+                            The correlation between X and Y is the normalization of covariance, denoted by \( \rho \).
+                            \[ \rho(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} \]
+                        </p>
                 </div>
                 <script>
                     const randvarButton = document.getElementById('randvar-button');
