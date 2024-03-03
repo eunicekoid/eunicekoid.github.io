@@ -761,14 +761,18 @@
                         CDFs are monotonically increasing.
                         <br>
                         <br>
-
-                        <p>For any random variable discrete or continuous, the expected value (mean) is the integral of the random variable multiplied by its probability density function:
-                        \[ \mu = E[X] = \int_{-\infty}^{\infty} xf_x(x) \, dx  \]
-                        \[ Var(X) = E[(X-E[X])^2] = = E[X^2]-(E[X])^2 \]
-                        \[ \sigma = \sqrt{Var(X)} \]
-
-                        </p>
                     </div>
+                        <p>For any random variable discrete or continuous, the expected value (mean) is the integral of
+                            the random variable multiplied by its probability density function:
+                            \[ \mu = E[X] = \int_{-\infty}^{\infty} xf_x(x) \, dx \]
+                            \[ Var(X) = E[(X-E[X])^2] = E[X^2]-(E[X])^2 \]
+                            \[ \sigma = \sqrt{Var(X)} \]
+                        </p>
+                        <p>
+                            The covarance of two random variables X and Y is the linear relationship between them.
+                            \[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY]-E[X]E[Y] \]
+                        </p>
+                    
                 </div>
                 <script>
                     const randvarButton = document.getElementById('randvar-button');
