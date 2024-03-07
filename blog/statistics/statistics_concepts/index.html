@@ -400,6 +400,29 @@
 
                 <br />
                 <br />
+                
+                    <!--Button-->
+                    <button id="geo-button">geometric distribution</button>
+                    <p id="geo-paragraph" style="display: none;">
+                        <br><br>
+                        <!-- <img class="img-fluid z-dept-1" src="images/uniform.jpeg" alt="uniform.jpeg" style="width: 80%;" /> -->
+    
+                    </p>
+                    <script>
+                        const geoButton = document.getElementById('geo-button');
+                        const geoParagraph = document.getElementById('geo-paragraph');
+    
+                        geoButton.addEventListener('click', () => {
+                            if (geoParagraph.style.display === 'none') {
+                                geoParagraph.style.display = 'block';
+                            } else {
+                                geoParagraph.style.display = 'none';
+                            }
+                        });
+                    </script>
+                    <br />
+                    <br />
+
 
                 <!--Button-->
                 <button id="ht-button">hypothesis testing</button>
@@ -496,6 +519,27 @@
                 </script>
                 <br />
                 <br />
+
+                  <!--Button-->
+                  <button id="lln-button">law of large numbers</button>
+                  <p id="lln-paragraph" style="display: none;">
+                      <br><br>
+                      <!-- <img class="img-fluid z-dept-1" src="images/uniform.jpeg" alt="uniform.jpeg" style="width: 80%;" /> -->
+  
+                  </p>
+                  <script>
+                      const llnButton = document.getElementById('lln-button');
+                      const llnParagraph = document.getElementById('lln-paragraph');
+  
+                      llnButton.addEventListener('click', () => {
+                          if (llnParagraph.style.display === 'none') {
+                            llnParagraph.style.display = 'block';
+                          } else {
+                            llnParagraph.style.display = 'none';
+                          }
+                      });
+                  </script>
+                 
 
                 <!--Button-->
                 <button id="ltp-button">law of total probability</button>
