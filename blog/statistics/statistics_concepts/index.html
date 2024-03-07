@@ -598,6 +598,24 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="mult-button">multiplication rule of probability</button>
+                <p id="mult-paragraph" style="display: none;">
+                    General rule: \( P(A \cap B) = P(A) P(B|A) \)
+                </p>
+                <script>
+                    const multButton = document.getElementById('mult-button');
+                    const multPara = document.getElementById('mult-paragraph');
+                    multButton.addEventListener('click', () => {
+                        if (multPara.style.display === 'none') {
+                            multPara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            multPara.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
