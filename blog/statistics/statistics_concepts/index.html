@@ -794,6 +794,22 @@
                     });
                 </script>
 
+                 <!--Button-->
+                 <button id="power-button">power</button>
+                 <p id="power-paragraph" style="display: none;">\( 1 - \beta \)
+                 </p>
+                 <script>
+                     const powerButton = document.getElementById('power-button');
+                     const powerParagraph = document.getElementById('power-paragraph');
+                     powerButton.addEventListener('click', () => {
+                         if (powerParagraph.style.display === 'none') {
+                            powerParagraph.style.display = 'block';
+                         } else {
+                            powerParagraph.style.display = 'none';
+                         }
+                     });
+                 </script>
+
                 <!--Button-->
                 <button id="pdf-button">probability density function (pdf)</button>
                 <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
