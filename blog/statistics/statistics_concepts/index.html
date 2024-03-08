@@ -1161,6 +1161,38 @@
                         }
                     });
                 </script>
+
+                <!--Button-->
+                <button id="type1-button">type I error</button>
+                <p id="type1-paragraph" style="display: none;">False positives. You reject the null hypothesis when you should not have. 
+                </p>
+                <script>
+                    const type1Button = document.getElementById('type1-button');
+                    const type1Paragraph = document.getElementById('type1-paragraph');
+                    type1Button.addEventListener('click', () => {
+                        if (type1Paragraph.style.display === 'none') {
+                            type1Paragraph.style.display = 'block';
+                        } else {
+                            type1Paragraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                 <!--Button-->
+                 <button id="type2-button">type II error</button>
+                 <p id="type2-paragraph" style="display: none;">False negatives. You incorrectly accept the null hypothesis. 
+                 </p>
+                 <script>
+                     const type2Button = document.getElementById('type2-button');
+                     const type2Paragraph = document.getElementById('type2-paragraph');
+                     type2Button.addEventListener('click', () => {
+                         if (type2Paragraph.style.display === 'none') {
+                            type2Paragraph.style.display = 'block';
+                         } else {
+                            type2Paragraph.style.display = 'none';
+                         }
+                     });
+                 </script>
                 <br />
                 <br />
 
