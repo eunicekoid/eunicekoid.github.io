@@ -250,16 +250,15 @@
                     p & \text{if } x = 1 \\
                     1 - p & \text{if } x = 0 \\
                     0 & \text{otherwise}
-                  \end{cases}
-                   \]
-                   \[ f(x,p) = p^x (1-p)^{1-x}, x \in \{0, 1\} \]
+                    \end{cases}
+                    \]
+                    \[ f(x,p) = p^x (1-p)^{1-x}, x \in \{0, 1\} \]
 
-                   \[ CDF = F(x, p) = \begin{cases}
-                   0 & \text{if } x < 0 \\
-                   1 - p & \text{if } 0 \leq x < 1 \\
-                   1 & \text{if } x \geq 1
-                 \end{cases} \]
-                    <img class="img-fluid z-dept-1" src="images/bernoulli.jpeg" alt="bernoulli.jpeg" style="width: 90%;" />
+                    \[ CDF = F(x, p) = \begin{cases}
+                    0 & \text{if } x
+                    < 0 \\ 1 - p & \text{if } 0 \leq x < 1 \\ 1 & \text{if } x \geq 1 \end{cases} \] <img
+                        class="img-fluid z-dept-1" src="images/bernoulli.jpeg" alt="bernoulli.jpeg"
+                        style="width: 90%;" />
 
                 </p>
                 <script>
@@ -274,7 +273,7 @@
                         }
                     });
                 </script>
-             
+
 
                 <!--Button-->
                 <button id="binomial-button">binomial distribution</button>
@@ -282,7 +281,8 @@
                     trials.
                     \[ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \] where \( \mu = np \) and \( \sigma^2 = np(1-p) \)
                     <br><br>
-                    <img class="img-fluid z-dept-1" src="images/binomial.jpeg" alt="binomial.jpeg" style="width: 90%;" />
+                    <img class="img-fluid z-dept-1" src="images/binomial.jpeg" alt="binomial.jpeg"
+                        style="width: 90%;" />
 
                 </p>
                 <script>
@@ -293,6 +293,35 @@
                             binomialParagraph.style.display = 'block';
                         } else {
                             binomialParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
+                <!--Button-->
+                <button id="bonferroni-button">bonferroni correction</button>
+                <p id="bonferroni-paragraph" style="display: none;">
+                    The bonferroni correction helps control false positives (type I errors). With increasing statistical
+                    tests, the likelihood of observing at least one significant result by chance increases. The
+                    bonferroni correction (\( \alpha_{bonf} \)) adjusts the significance level (\( \alpha \)) for each
+                    individual statistical test to maintain an overall desired \alpha across all tests. <br><br>
+
+                    \( \alpha_{bonf} = \frac{\alpha}{k} \) where \( k \) is the number of hypothesis tests. Compare
+                    p-values to \( \alpha_{bonf} \).<br><br>
+
+                    By using the Bonferroni correction, the likelihood of incorrectly rejecting the null
+                    hypothesis reduces. However, it comes at the cost of increased type II errors (false negatives),
+                    making it a conservative correction method.
+
+                </p>
+                <script>
+                    const bonferroniButton = document.getElementById('bonferroni-button');
+                    const bonferroniParagraph = document.getElementById('bonferroni-paragraph');
+                    bonferroniButton.addEventListener('click', () => {
+                        if (bonferroniParagraph.style.display === 'none') {
+                            bonferroniParagraph.style.display = 'block';
+                        } else {
+                            bonferroniParagraph.style.display = 'none';
                         }
                     });
                 </script>
@@ -378,7 +407,8 @@
                     value of a sample parameter is contained within the interval 95% of the time for a large sample
                     size. The confidence level is one minus
                     alpha (the significance level). <br><br>
-                    The confidence interval is related to the sample size; less samples makes confidence interval wider. <br><br>
+                    The confidence interval is related to the sample size; less samples makes confidence interval wider.
+                    <br><br>
                     If zero is in the confidence interval, do not reject the null hypothesis.<br>
                     \( \mu \pm z_{/alpha / 2} \frac{\sigma}{\sqrt{n}} \)
                 </p>
@@ -428,7 +458,8 @@
                     \[ f(x; \lambda) = \lambda e^{-\lambda x} \]
 
                     where \( \mu = \frac{1}{\lambda} \) and \( \sigma^2 = \frac{1}{\lambda^2} \) <br><br>
-                    <img class="img-fluid z-dept-1" src="images/exponential.jpg" alt="exponential.jpeg" style="width: 70%;" />
+                    <img class="img-fluid z-dept-1" src="images/exponential.jpg" alt="exponential.jpeg"
+                        style="width: 70%;" />
                 </p>
                 <script>
                     const expButton = document.getElementById('exp-button');
@@ -680,7 +711,8 @@
                 <button id="mse-button">mean squared error (MSE)</button>
                 <p id="mse-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average of the squared differences between
-                    actual and predicted values. Lower MSE means better model performance. The MSE represents unexplained
+                    actual and predicted values. Lower MSE means better model performance. The MSE represents
+                    unexplained
                     variance, the portion of variability in the dependent variable that is not explained by the
                     model's independent variables.
                     \[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
@@ -794,21 +826,23 @@
                     });
                 </script>
 
-                 <!--Button-->
-                 <button id="power-button">power</button>
-                 <p id="power-paragraph" style="display: none;">\( 1 - \beta \). Usually larger sample sizes have larger power. Generally, set up a test where the power is high (e.g., 80%), and use this to figure out the sample size needed.
-                 </p>
-                 <script>
-                     const powerButton = document.getElementById('power-button');
-                     const powerParagraph = document.getElementById('power-paragraph');
-                     powerButton.addEventListener('click', () => {
-                         if (powerParagraph.style.display === 'none') {
+                <!--Button-->
+                <button id="power-button">power</button>
+                <p id="power-paragraph" style="display: none;">\( 1 - \beta \). Usually larger sample sizes have larger
+                    power. Generally, set up a test where the power is high (e.g., 80%), and use this to figure out the
+                    sample size needed.
+                </p>
+                <script>
+                    const powerButton = document.getElementById('power-button');
+                    const powerParagraph = document.getElementById('power-paragraph');
+                    powerButton.addEventListener('click', () => {
+                        if (powerParagraph.style.display === 'none') {
                             powerParagraph.style.display = 'block';
-                         } else {
+                        } else {
                             powerParagraph.style.display = 'none';
-                         }
-                     });
-                 </script>
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="pdf-button">probability density function (pdf)</button>
@@ -1076,7 +1110,8 @@
                 <button id="ss-button">stratified sampling</button>
                 <p id="ss-paragraph" style="display: none;">A method of selecting a subset of data from a larger
                     dataset where the population is split into different strata according to key characteristics before
-                    random sampling is performed on each individual stratum. This is beneficial if the strata have a high
+                    random sampling is performed on each individual stratum. This is beneficial if the strata have a
+                    high
                     degree of variation.
                 </p>
 
@@ -1095,7 +1130,8 @@
                 <!--Button-->
                 <button id="syss-button">systematic sampling</button>
                 <p id="syss-paragraph" style="display: none;">A method of selecting a subset of data from a larger
-                    dataset where a starting point is first chosen at random, and then every k<sup>th</sup> item is selected
+                    dataset where a starting point is first chosen at random, and then every k<sup>th</sup> item is
+                    selected
                     for the sample. Typically, systematic sampling is more efficient than random sampling.
                 </p>
                 <script>
@@ -1147,19 +1183,29 @@
                                 <td><b>&nbsp;Chi-squared test</b></td>
                             </tr>
                             <tr>
-                                <td>&nbsp;• Assumes the test statistic is normally distributed under the null hypothesis <br>&nbsp;• Use for a large sample size (CLT) <br>&nbsp;• \( \sigma^2 \) is known</td>
-                                <td>&nbsp;• Student t-distribution. Usually has larger tails (more extreme) than a normal
-                                    distribution. <br>&nbsp;• Use for a small sample size <br>&nbsp;• \( \sigma^2 \) is unknown, use the sample variance \( s^2 \)</td>
-                                <td>&nbsp;• Assess goodness of fit and whether two categorical variables are independent</td>
+                                <td>&nbsp;• Assumes the test statistic is normally distributed under the null hypothesis
+                                    <br>&nbsp;• Use for a large sample size (CLT) <br>&nbsp;• \( \sigma^2 \) is known
+                                </td>
+                                <td>&nbsp;• Student t-distribution. Usually has larger tails (more extreme) than a
+                                    normal
+                                    distribution. <br>&nbsp;• Use for a small sample size <br>&nbsp;• \( \sigma^2 \) is
+                                    unknown, use the sample variance \( s^2 \)</td>
+                                <td>&nbsp;• Assess goodness of fit and whether two categorical variables are independent
+                                </td>
                             </tr>
                             <tr>
                                 <td>&nbsp;\( Z = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1) \)</td>
-                                <td>&nbsp;\( t = \frac{\bar{X} - \mu_0}{s \ \sqrt{n}} \sim t_{n-1} \) <br> <br> &nbsp;\( s^2 =
-                                    \frac{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}{n-1} \)<br> <br><small>&nbsp;\(n-1\) is the
+                                <td>&nbsp;\( t = \frac{\bar{X} - \mu_0}{s \ \sqrt{n}} \sim t_{n-1} \) <br> <br> &nbsp;\(
+                                    s^2 =
+                                    \frac{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}{n-1} \)<br> <br><small>&nbsp;\(n-1\)
+                                        is the
                                         degree of freedom</small></td>
-                                <td>&nbsp;\( \chi^2 = \sum\limits_i \frac{(O_i - E_i)^2}{E_i} \) <br> <small>&nbsp;\( O_i \):
-                                        observed frequency for each category <br> &nbsp;\( E_i \): expected frequency for each
-                                        category </small> <br> <br> <small>&nbsp;Contingency table: table of counts where the
+                                <td>&nbsp;\( \chi^2 = \sum\limits_i \frac{(O_i - E_i)^2}{E_i} \) <br> <small>&nbsp;\(
+                                        O_i \):
+                                        observed frequency for each category <br> &nbsp;\( E_i \): expected frequency
+                                        for each
+                                        category </small> <br> <br> <small>&nbsp;Contingency table: table of counts
+                                        where the
                                         columns are variables and rows are the values.</small></td>
                             </tr>
                         </table>
@@ -1180,7 +1226,8 @@
 
                 <!--Button-->
                 <button id="type1-button">type I error</button>
-                <p id="type1-paragraph" style="display: none;">False positives. You reject the null hypothesis when you should not have. 
+                <p id="type1-paragraph" style="display: none;">False positives. You reject the null hypothesis when you
+                    should not have.
                 </p>
                 <script>
                     const type1Button = document.getElementById('type1-button');
@@ -1194,21 +1241,22 @@
                     });
                 </script>
 
-                 <!--Button-->
-                 <button id="type2-button">type II error</button>
-                 <p id="type2-paragraph" style="display: none;">False negatives. You incorrectly accept the null hypothesis. 
-                 </p>
-                 <script>
-                     const type2Button = document.getElementById('type2-button');
-                     const type2Paragraph = document.getElementById('type2-paragraph');
-                     type2Button.addEventListener('click', () => {
-                         if (type2Paragraph.style.display === 'none') {
+                <!--Button-->
+                <button id="type2-button">type II error</button>
+                <p id="type2-paragraph" style="display: none;">False negatives. You incorrectly accept the null
+                    hypothesis.
+                </p>
+                <script>
+                    const type2Button = document.getElementById('type2-button');
+                    const type2Paragraph = document.getElementById('type2-paragraph');
+                    type2Button.addEventListener('click', () => {
+                        if (type2Paragraph.style.display === 'none') {
                             type2Paragraph.style.display = 'block';
-                         } else {
+                        } else {
                             type2Paragraph.style.display = 'none';
-                         }
-                     });
-                 </script>
+                        }
+                    });
+                </script>
                 <br />
                 <br />
 
