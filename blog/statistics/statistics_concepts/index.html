@@ -252,6 +252,7 @@
                     0 & \text{otherwise}
                   \end{cases}
                    \]
+                   \[ f(x,p) = p^x (1-p)^{1-x}, x \in \{0, 1\} \]
 
                    \[ CDF = F(x, p) = \begin{cases}
                    0 & \text{if } x < 0 \\
@@ -280,6 +281,9 @@
                 <p id="binomial-paragraph" style="display: none;">For discrete variables. \( k \) successes in \( n \)
                     trials.
                     \[ P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k} \] where \( \mu = np \) and \( \sigma^2 = np(1-p) \)
+
+                    <img class="img-fluid z-dept-1" src="images/binomial.jpeg" alt="binomial.jpeg" style="width: 90%;" />
+
                 </p>
                 <script>
                     const binomialButton = document.getElementById('binomial-button');
