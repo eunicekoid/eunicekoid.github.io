@@ -244,6 +244,38 @@
                 </script>
 
                 <!--Button-->
+                <button id="bernoulli-button">bernoulli distribution</button>
+                <p id="bernoulli-paragraph" style="display: none;">
+                    \[ PMF = f(x, p) = \begin{cases}
+                    p & \text{if } x = 1 \\
+                    1 - p & \text{if } x = 0 \\
+                    0 & \text{otherwise}
+                  \end{cases}
+                   \]
+
+                   \[ CDF = F(x, p) = \begin{cases}
+                   0 & \text{if } x < 0 \\
+                   1 - p & \text{if } 0 \leq x < 1 \\
+                   1 & \text{if } x \geq 1
+                 \end{cases} \]
+                    <!-- <img class="img-fluid z-dept-1" src="images/uniform.jpeg" alt="uniform.jpeg" style="width: 70%;" /> -->
+
+                </p>
+                <script>
+                    const bernoulliButton = document.getElementById('bernoulli-button');
+                    const bernoulliParagraph = document.getElementById('bernoulli-paragraph');
+
+                    bernoulliButton.addEventListener('click', () => {
+                        if (bernoulliParagraph.style.display === 'none') {
+                            bernoulliParagraph.style.display = 'block';
+                        } else {
+                            bernoulliParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+             
+
+                <!--Button-->
                 <button id="binomial-button">binomial distribution</button>
                 <p id="binomial-paragraph" style="display: none;">For discrete variables. \( k \) successes in \( n \)
                     trials.
@@ -542,7 +574,7 @@
                 <p id="lln-paragraph" style="display: none;">
                     As the number of samples increases, the sample mean converges to the population mean.
 
-                    \[ \bar{X}_n = \frac{X_1 + ... + X_n}{n} \rightarrow \mu \text{, as } n \text{approaches} \infty
+                    \[ \bar{X}_n = \frac{X_1 + ... + X_n}{n} \rightarrow \mu, n \rightarrow \infty
                     \]
 
                 </p>
