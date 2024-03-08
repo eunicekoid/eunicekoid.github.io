@@ -181,7 +181,8 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
+                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
+                    predictions}}{\text{total number of predictions}} \)
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -266,10 +267,12 @@
                 <!--Button-->
                 <button id="clt-button">central limit theorem</button>
                 <p id="clt-paragraph" style="display: none;">As the sample size (n) increases,
-                    the sample means of any random variable will approach a normal distribution regardless of the distribution of the original
+                    the sample means of any random variable will approach a normal distribution regardless of the
+                    distribution of the original
                     dataset.
 
-                    \[ \bar{X}_n = \frac{X_1 + ... + X_n}{n} \rightarrow \sim N \left( \mu, \frac{\sigma^2}{n} \right) \]
+                    \[ \bar{X}_n = \frac{X_1 + ... + X_n}{n} \rightarrow \sim N \left( \mu, \frac{\sigma^2}{n} \right)
+                    \]
                 </p>
                 <script>
                     const clt_Button = document.getElementById('clt-button');
@@ -335,8 +338,8 @@
 
                 <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
-                <p id="confidence-interval-paragraph" style="display: none;">The % of the time (confidence) that the
-                    estimated parameter would cover the true value of the parameter The confidence level is one minus
+                <p id="confidence-interval-paragraph" style="display: none;">For a 95% confidence interval, the true
+                    value of a sample parameter is contained within the interval 95% of the time for a large sample size. The confidence level is one minus
                     alpha (the significance level). <br><br>
                     The confidence interval is related to the sample size; less samples makes confidence interval wider.
                 </p>
@@ -402,28 +405,28 @@
 
                 <br />
                 <br />
-                
-                    <!--Button-->
-                    <button id="geo-button">geometric distribution</button>
-                    <p id="geo-paragraph" style="display: none;">
-                        <br><br>
-                        <!-- <img class="img-fluid z-dept-1" src="images/uniform.jpeg" alt="uniform.jpeg" style="width: 80%;" /> -->
-    
-                    </p>
-                    <script>
-                        const geoButton = document.getElementById('geo-button');
-                        const geoParagraph = document.getElementById('geo-paragraph');
-    
-                        geoButton.addEventListener('click', () => {
-                            if (geoParagraph.style.display === 'none') {
-                                geoParagraph.style.display = 'block';
-                            } else {
-                                geoParagraph.style.display = 'none';
-                            }
-                        });
-                    </script>
-                    <br />
-                    <br />
+
+                <!--Button-->
+                <button id="geo-button">geometric distribution</button>
+                <p id="geo-paragraph" style="display: none;">
+                    <br><br>
+                    <!-- <img class="img-fluid z-dept-1" src="images/uniform.jpeg" alt="uniform.jpeg" style="width: 80%;" /> -->
+
+                </p>
+                <script>
+                    const geoButton = document.getElementById('geo-button');
+                    const geoParagraph = document.getElementById('geo-paragraph');
+
+                    geoButton.addEventListener('click', () => {
+                        if (geoParagraph.style.display === 'none') {
+                            geoParagraph.style.display = 'block';
+                        } else {
+                            geoParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
 
 
                 <!--Button-->
@@ -522,26 +525,26 @@
                 <br />
                 <br />
 
-                  <!--Button-->
-                  <button id="lln-button">law of large numbers</button>
-                  <p id="lln-paragraph" style="display: none;">
-                      <br><br>
-                      <!-- <img class="img-fluid z-dept-1" src="images/uniform.jpeg" alt="uniform.jpeg" style="width: 80%;" /> -->
-  
-                  </p>
-                  <script>
-                      const llnButton = document.getElementById('lln-button');
-                      const llnParagraph = document.getElementById('lln-paragraph');
-  
-                      llnButton.addEventListener('click', () => {
-                          if (llnParagraph.style.display === 'none') {
+                <!--Button-->
+                <button id="lln-button">law of large numbers</button>
+                <p id="lln-paragraph" style="display: none;">
+                    <br><br>
+                    <!-- <img class="img-fluid z-dept-1" src="images/uniform.jpeg" alt="uniform.jpeg" style="width: 80%;" /> -->
+
+                </p>
+                <script>
+                    const llnButton = document.getElementById('lln-button');
+                    const llnParagraph = document.getElementById('lln-paragraph');
+
+                    llnButton.addEventListener('click', () => {
+                        if (llnParagraph.style.display === 'none') {
                             llnParagraph.style.display = 'block';
-                          } else {
+                        } else {
                             llnParagraph.style.display = 'none';
-                          }
-                      });
-                  </script>
-                 
+                        }
+                    });
+                </script>
+
 
                 <!--Button-->
                 <button id="ltp-button">law of total probability</button>
@@ -826,25 +829,26 @@
                         <br>
                         <br>
                     </div>
-                        <p>For any random variable \( X \) discrete or continuous, the expected value (mean) is:
-                            \[ \mu = E[X] = \int_{-\infty}^{\infty} xf_X(x) \, dx \]
-                        </p>
-                        <p>The variance and standard deviations, respectively, are:
-                            \[ Var(X) = E[(X-E[X])^2] = E[X^2]-(E[X])^2 \]
-                            \[ \sigma = \sqrt{Var(X)} \]
-                        </p>
-                        <p>
-                            The covarance of two random variables \( X \) and \( Y \) is the linear relationship between them.
-                            \[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY]-E[X]E[Y] \]
-                        </p>
-                        <p>
-                            The correlation between X and Y is the normalization of covariance, denoted by \( \rho \).
-                            \[ \rho(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} \]
-                        </p>
-                        <p>
-                            The expected value of \( X \), conditional upon \( Y = y\):
-                            \[ E[X|Y=y] = \int_{-\infty}^{\infty} xf_{X|Y}(x|y) \, dx  \]
-                        </p>
+                    <p>For any random variable \( X \) discrete or continuous, the expected value (mean) is:
+                        \[ \mu = E[X] = \int_{-\infty}^{\infty} xf_X(x) \, dx \]
+                    </p>
+                    <p>The variance and standard deviations, respectively, are:
+                        \[ Var(X) = E[(X-E[X])^2] = E[X^2]-(E[X])^2 \]
+                        \[ \sigma = \sqrt{Var(X)} \]
+                    </p>
+                    <p>
+                        The covarance of two random variables \( X \) and \( Y \) is the linear relationship between
+                        them.
+                        \[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY]-E[X]E[Y] \]
+                    </p>
+                    <p>
+                        The correlation between X and Y is the normalization of covariance, denoted by \( \rho \).
+                        \[ \rho(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} \]
+                    </p>
+                    <p>
+                        The expected value of \( X \), conditional upon \( Y = y\):
+                        \[ E[X|Y=y] = \int_{-\infty}^{\infty} xf_{X|Y}(x|y) \, dx \]
+                    </p>
                 </div>
                 <script>
                     const randvarButton = document.getElementById('randvar-button');
@@ -1070,7 +1074,8 @@
 
                 <!--Button-->
                 <button id="uniform-button">uniform distribution</button>
-                <p id="uniform-paragraph" style="display: none;">\( U[a,b] \) For continuous variables. Constant probability of
+                <p id="uniform-paragraph" style="display: none;">\( U[a,b] \) For continuous variables. Constant
+                    probability of
                     \(X\)
                     falling between \(a\) and \(b\).
                     \[ f(x) = \frac{1}{b-a} \]
