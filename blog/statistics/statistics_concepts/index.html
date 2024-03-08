@@ -685,6 +685,40 @@
                 </script>
 
                 <!--Button-->
+                <button id="mle-button">maximum likelihood estimation (MLE)</button>
+                <p id="mle-paragraph" style="display: none;">
+                </p>
+                <script>
+                    const mleButton = document.getElementById('mle-button');
+                    const mlePara = document.getElementById('mle-paragraph');
+                    mleButton.addEventListener('click', () => {
+                        if (mlePara.style.display === 'none') {
+                            mlePara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            mlePara.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
+                <button id="map-button">maximum a posteriori (MAP) estimation</button>
+                <p id="map-paragraph" style="display: none;">
+                </p>
+                <script>
+                    const mapButton = document.getElementById('map-button');
+                    const mapPara = document.getElementById('map-paragraph');
+                    mapButton.addEventListener('click', () => {
+                        if (mapPara.style.display === 'none') {
+                            mapPara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            mapPara.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="mae-button">mean absolute error (MAE)</button>
                 <p id="mae-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average
