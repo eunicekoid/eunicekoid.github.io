@@ -340,7 +340,8 @@
                 <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
                 <p id="confidence-interval-paragraph" style="display: none;">For a 95% confidence interval, the true
-                    value of a sample parameter is contained within the interval 95% of the time for a large sample size. The confidence level is one minus
+                    value of a sample parameter is contained within the interval 95% of the time for a large sample
+                    size. The confidence level is one minus
                     alpha (the significance level). <br><br>
                     The confidence interval is related to the sample size; less samples makes confidence interval wider.
                 </p>
@@ -433,21 +434,26 @@
                 <!--Button-->
                 <button id="ht-button">hypothesis testing</button>
                 <p id="ht-paragraph" style="display: none;">
-                    Using measurements of a population's probability distribution to test whether the data supports a hypothesis.<br><br>
+                    Using measurements of a population's probability distribution to test whether the data supports a
+                    hypothesis.<br><br>
 
                     1. Define a problem statement<br>
-                    2. Set the null hypothesis \(H_0 \) (status quo) and the alternative hypothesis \(H_a \) (what you're testing to
-                    be true; assumes the measured parameters are statistically different after treatment compared to \(H_0 \))<br>
+                    2. Set the null hypothesis \(H_0 \) (status quo) and the alternative hypothesis \(H_a \) (what
+                    you're testing to
+                    be true; assumes the measured parameters are statistically different after treatment compared to
+                    \(H_0 \))<br>
                     3. Decide on a significance level (e.g., α = 5%)<br>
                     4. Conduct the statistical test<br>
-                    5. Calculate the p-value (probability of observing the test results under \(H_0 \) and confidence interval<br>
+                    5. Calculate the p-value (probability of observing the test results under \(H_0 \) and confidence
+                    interval<br>
                     6. Conclude whether to reject or accept \(H_0 \). If the p-value &lt; α, reject the null
                     hypothesis<br><br>
 
                     If \( \mu \) is the parameter of interest, <br>
-                        a <b>one-tailed</b> test is where \( H_0: \mu = \mu_0 \) and \( H_a: \mu < \mu_0 \) or \( \mu > \mu_o \);<br>
+                    a <b>one-tailed</b> test is where \( H_0: \mu = \mu_0 \) and \( H_a: \mu < \mu_0 \) or \( \mu> \mu_o
+                        \);<br>
                         a <b>two-tailed</b> test is where \( H_0: \mu = \mu_0 \) and \( H_a: \mu \neq \mu_0 \).<br><br>
-                    This is the basis of A/B testing.
+                        This is the basis of A/B testing.
 
                 </p>
                 <script>
@@ -535,7 +541,7 @@
                 <!--Button-->
                 <button id="lln-button">law of large numbers</button>
                 <p id="lln-paragraph" style="display: none;">
-                    As the number of samples increases, the sample mean converges to the population mean. 
+                    As the number of samples increases, the sample mean converges to the population mean.
 
                     \[ \bar{X}_n = \frac{X_1 + ... + X_n}{n} \rightarrow \mu \text{, as } n \text{approaches} \infty
                     \]
@@ -955,7 +961,8 @@
                     by
                     the square root of the sample size.<br><br>
 
-                    As the sample size increases, the sample distribution of the sample mean becomes normally distributed.
+                    As the sample size increases, the sample distribution of the sample mean becomes normally
+                    distributed.
                 </p>
                 <script>
                     const sampdistButton = document.getElementById('sampdist-button');
@@ -1086,7 +1093,35 @@
 
                 <!--Button-->
                 <button id="teststat-button">test statistics</button>
-                <p id="teststat-paragraph" style="display: none;">The test statistic is a numerical value that assumes that the parameter of interest follows a specific sampling distribution under the null hypothesis. This value helps establish whether the null hypothesis should be accepted or rejected.
+                <p id="teststat-paragraph" style="display: none;">The test statistic is a numerical value that assumes
+                    that the parameter of interest follows a specific sampling distribution under the null hypothesis.
+                    This value helps establish whether the null hypothesis should be accepted or rejected.
+
+                <div style="margin: 0 auto; padding: 6px; display: inline-block;">
+                    <table border=".1">
+                        <tr>
+                            <td><b>Z-test</b></td>
+                            <td><b>t-test</b></td>
+                            <td><b>Chi-squared test</b></td>
+                        </tr>
+                        <tr>
+                            <td>Assumes the test statistic is normally distributed under the null hypothesis</td>
+                            <td>Student t-distribution. Usually has larger tails (more extreme) than a normal distribution.</td>
+                        </tr>
+                        <tr>
+                            <td>Use for a large sample size (central limit theorem)</td>
+                            <td>Use for a small sample size</td>
+                        </tr>
+                        <tr>
+                            <td>\( \sigma^2 \) is known</td>
+                            <td>\( \sigma^2 \) is unknown, so use the sample variance \( s^2 \)</td>
+                        </tr>
+                        <tr>
+                            <td>\( Z = \frac{\bar{X} - \mu_0}{\sigma / \sqrt(n)} \sim N(0,1) \)</td>
+                            <td>\( t = \frac{\bar{X} - \mu_0}{s \ \sqrt(n)} \sim t_{n-1} \) <br> \( s^2 = \frac{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}{n-1} \)<br> \(n-1\) is the degree of freedom</td>
+                        </tr>
+                    </table>
+                </div>
 
                 </p>
                 <script>
