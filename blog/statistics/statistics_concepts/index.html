@@ -445,7 +445,7 @@
                     hypothesis<br><br>
 
                     If \( \mu \) is the parameter of interest, <br>
-                        a <b>one-tailed</b> test is where \( H_0: \mu = \mu_0 \) and \( H_a: \mu < \mu_0 or \mu > \mu_o \);<br>
+                        a <b>one-tailed</b> test is where \( H_0: \mu = \mu_0 \) and \( H_a: \mu < \mu_0 \) or \( \mu > \mu_o \);<br>
                         a <b>two-tailed</b> test is where \( H_0: \mu = \mu_0 \) and \( H_a: \mu \neq \mu_0 \).<br><br>
                     This is the basis of A/B testing.
 
@@ -1081,6 +1081,26 @@
                     });
                 </script>
 
+                <br />
+                <br />
+
+                <!--Button-->
+                <button id="teststat-button">test statistics</button>
+                <p id="teststat-paragraph" style="display: none;">The test statistic is a numerical value that assumes that the parameter of interest follows a specific sampling distribution under the null hypothesis. This value helps establish whether the null hypothesis should be accepted or rejected.
+
+                </p>
+                <script>
+                    const teststatButton = document.getElementById('teststat-button');
+                    const teststatParagraph = document.getElementById('teststat-paragraph');
+
+                    teststatButton.addEventListener('click', () => {
+                        if (teststatParagraph.style.display === 'none') {
+                            teststatParagraph.style.display = 'block';
+                        } else {
+                            teststatParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
                 <br />
                 <br />
 
