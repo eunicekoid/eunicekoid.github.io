@@ -225,9 +225,9 @@
                     refined estimation of posterior probabilities, the probability given prior beliefs and
                     observed data.
 
-                    \[ P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}\]
+                    \[ P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}\]
 
-                    where \( P(B) = P(B|A) \cdot P(A) + P(B|A') \cdot P(A') \)
+                    where \( P(B) = P(B \mid A) \cdot P(A) + P(B \mid A') \cdot P(A') \)
 
                 </p>
                 <script>
@@ -380,10 +380,10 @@
                 <!--Button-->
                 <button id="cp-button">conditional probability</button>
                 <p id="cp-paragraph" style="display: none;">
-                    The probability of event A happening given event B, denoted as \( P(A|B) \). It is calculated as the
+                    The probability of event A happening given event B, denoted as \( P(A \mid B) \). It is calculated as the
                     probability of both A and B happening \( P(A ∩ B) \) divided by the probability of B happening \(
                     P(B) \).
-                    \[ P(A|B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events happening at the same
+                    \[ P(A \mid B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events happening at the same
                     time \( P(A \cap B) \) cannot be greater than either event happening by itself \( P(A) \) or \( P(B)
                     \).
                 </p>
@@ -567,7 +567,7 @@
                             </tr>
                             <tr>
                                 <td>Conditional PDF</td>
-                                <td>\( f_x(x) = \int_{-\infty}^{\infty} f_Y(y) \cdot f_{X|Y}(x|y) \, dy \)</td>
+                                <td>\( f_x(x) = \int_{-\infty}^{\infty} f_Y(y) \cdot f_{X \mid Y}(x \mid y) \, dy \)</td>
                             </tr>
                         </table>
                         <br>
@@ -640,7 +640,7 @@
                 <!--Button-->
                 <button id="ltp-button">law of total probability</button>
                 <p id="ltp-paragraph" style="display: none;">
-                    \[ P(A) = P(A|B_1) \cdot P(B_1) + ... + P(A|B_n) \cdot P(B_n) \]
+                    \[ P(A) = P(A \mid B_1) \cdot P(B_1) + ... + P(A \mid B_n) \cdot P(B_n) \]
                 </p>
                 <script>
                     const ltpButton = document.getElementById('ltp-button');
@@ -698,7 +698,7 @@
                     of the model parameters that maximize the likelihood function which measures the probability of
                     observing the observed data under the assumed statistical model.
                     <br><br>
-                    \( L( \theta |X) = P(X| \theta ) = \prod_{i=1}^{n} f(x_i \mid \theta) \). The likelihood function is
+                    \( L( \theta  \mid X) = P(X \mid  \theta ) = \prod_{i=1}^{n} f(x_i \mid \theta) \). The likelihood function is
                     the probability of observing data \( X \), assumed to be independent and identically distributed,
                     with parameter values \( \theta \). Oftentimes, the log likelihood function is used for simplicity
                     and because the log function is monotonically increasing \( log L(\theta) = \sum_{i=1}^{n} log f_x(x_i
@@ -707,6 +707,14 @@
                     \( \hat{\theta}_{MLE} = argmax L( \theta) \). The maximum likelihood estimation maximizes the
                     likelihood function. \( \hat{\theta}_{MLE} \) are the parameter vaues that make the observed data \(
                     X \) most probable under the assumed statistical model.
+                    <br><br>
+                    <br><br>
+                    <small>
+                        <b>Derivation for uniform distribution</b><br>
+                        \( f(x \mid a,b ) = \frac{1}{b-a} \) <br>
+                        \( L( \theta ) = \prod_{i=1}^{n} f(x_i \mid a,b )  = \prod_{i=1}^{n} \frac{1}{b-a} \) 
+                    </small>
+
                 </p>
                 <script>
                     const mleButton = document.getElementById('mle-button');
@@ -744,7 +752,7 @@
                     Evaluation metric for regression that measures the average
                     absolute difference between the actual and predicted values. Lower MAE means better model
                     performance.
-                    \[ MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| \]
+                    \[ MAE = \frac{1}{n} \sum_{i=1}^{n}  \mid y_i - \hat{y}_i \mid  \]
                 </p>
                 <script>
                     const maeButton = document.getElementById('mae-button');
@@ -787,7 +795,7 @@
                 <!--Button-->
                 <button id="mult-button">multiplication rule of probability</button>
                 <p id="mult-paragraph" style="display: none;">
-                    General rule: \( P(A \cap B) = P(A) \cdot P(B|A) \)
+                    General rule: \( P(A \cap B) = P(A) \cdot P(B \mid A) \)
                 </p>
                 <script>
                     const multButton = document.getElementById('mult-button');
@@ -1005,7 +1013,7 @@
                     </p>
                     <p>
                         The expected value of \( X \), conditional upon \( Y = y\):
-                        \[ E[X|Y=y] = \int_{-\infty}^{\infty} xf_{X|Y}(x|y) \, dx \]
+                        \[ E[X \mid Y=y] = \int_{-\infty}^{\infty} xf_{X \mid Y}(x \mid y) \, dx \]
                     </p>
                 </div>
                 <script>
@@ -1324,7 +1332,7 @@
                     probability of
                     \(X\)
                     falling between \(a\) and \(b\).
-                    \[ f(x) = \frac{1}{b-a} \]
+                    \[ f(x  \mid  a,b) = \frac{1}{b-a} \]
 
                     where \( \mu = \frac{a+b}{2} \) and \( \sigma^2 = \frac{(b-a)^2}{12} \)
                     <br><br>
