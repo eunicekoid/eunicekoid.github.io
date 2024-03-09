@@ -704,7 +704,7 @@
                     and because the log function is monotonically increasing \( log L(\theta) = \sum_{i=1}^{n} log f_x(x_i
                     \mid \theta) \)
                     <br><br>
-                    \( \hat{\theta}_{MLE} = argmax L( \theta) \). The maximum likelihood estimation maximizes the
+                    \( \hat{\theta}_{MLE} = argmax\ L( \theta) \). The maximum likelihood estimation maximizes the
                     likelihood function. \( \hat{\theta}_{MLE} \) are the parameter vaues that make the observed data \(
                     X \) most probable under the assumed statistical model.
                     <br><br>
@@ -726,12 +726,12 @@
                         Find the MLE of \( p \), the proportion of males <br>
                         \( f(x; p) = p^x (1-p)^{1-x} \), 0 < p < 1 <br>
                         \( L(p) = \prod_{i=1}^{n} p^x (1-p)^{1-x} = p^{X_1} (1-p)^{1-X_1} \cdot p^{X_2} (1-p)^{1-X_2} \cdot ... \cdot p^{X_n} (1-p)^{1-X_n} = p^{\sum_{i=1}^n x_i }(1-p)^{n- \sum_{i=1}^n x_i }\)<br>
-                        \( log L(p) = \sum x_i log &nbsp; p + (n- \sum x_i) log (1-p) \) <br>
+                        \( log L(p) = \sum x_i log\ p + (n- \sum x_i) log (1-p) \) <br>
                         \( \frac{dlog L(p)}{dp} = \sum x_i \frac{1}{p} - (n- \sum x_i) \frac{1}{1-p} = 0 \)<br>
                         \( \sum x_i (1-p) - (n - \sum x_i) p = \sum x_i - \sum x_i p - np + \sum x_i p = 0 \)<br>
                         \( \sum x_i - np = 0  \)<br>
                         \( \hat{p} = \frac{\sum x_i}{n} \)<br><br>
-                        Remember that \( \frac{d}{dx} log_a x = \frac{1}{x \cdot ln &nbsp; a} \) and \( \frac{d}{dx}ln &nbsp; x = \frac{1}{x} \)
+                        Remember that \( \frac{d}{dx} log_a x = \frac{1}{x \cdot ln\ a} \) and \( \frac{d}{dx}ln\ x = \frac{1}{x} \)
                     </small>
 
                 </p>
@@ -750,7 +750,11 @@
 
                 <!--Button-->
                 <button id="map-button">maximum a posteriori (MAP) estimation</button>
-                <p id="map-paragraph" style="display: none;">
+                <p id="map-paragraph" style="display: none;">A Bayesian method for estimating model parameters based on prior distribution and observed data. MAP finds the parameter values by maximizing the posterior probability distribution given the observed data, combining prior knowledge and new evidence to update the parameters.<br><br>
+                    Start with \( P(\theta) \), the prior distribution.<br>
+                    The likelihood function is \( P (X \mid \theta \) (same as in MLE)<br>
+                    The posterior distribution is \( P(\theta \mid X) \) which, according to Bayes' theorem, is proportional to the product of the likelihood and prior probability \( P(\theta \mid X) \propto P(X \mid \theta) \cdot P(\theta) \) <br>
+                    \( \theta_{MAP} = argmax\ g(\theta)\quad f(x_1,...,x_n \mid \theta ) \)
                 </p>
                 <script>
                     const mapButton = document.getElementById('map-button');
