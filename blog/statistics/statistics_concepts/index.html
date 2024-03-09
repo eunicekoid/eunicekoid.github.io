@@ -181,7 +181,8 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
+                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
+                    predictions}}{\text{total number of predictions}} \)
                 </p>
                 <script>
                     const accButton = document.getElementById('acc-button');
@@ -527,8 +528,9 @@
                         \);<br>
                         a <b>two-tailed</b> test is where \( H_0: \mu = \mu_0 \) and \( H_a: \mu \neq \mu_0 \).<br><br>
                         This is the basis of A/B testing.
-                    <br><br>
-                    <img class="img-fluid z-dept-1" src="images/ztestbernoulli.jpeg" alt="ztestbernoulli.jpeg" style="width: 80%;" />
+                        <br><br>
+                        <img class="img-fluid z-dept-1" src="images/ztestbernoulli.jpeg" alt="ztestbernoulli.jpeg"
+                            style="width: 80%;" />
 
                 </p>
                 <script>
@@ -693,9 +695,20 @@
                 <!--Button-->
                 <button id="mle-button">maximum likelihood estimation (MLE)</button>
                 <p id="mle-paragraph" style="display: none;">
-                    A method of fitting parameters to distributions (estimating parameters of a model). MLE finds values of the model parameters that maximize the likelihood function which measures the probability of observing the observed data under the assumed statistical model.
-
-                    \( L( \theta |X) = P(X| \theta ) \). The likelihood function is the probability of observing data \( X \) with parameter values \( \theta \). 
+                    A method of fitting parameters to distributions (estimating parameters of a model). MLE finds values
+                    of the model parameters that maximize the likelihood function which measures the probability of
+                    observing the observed data under the assumed statistical model.
+                    <br><br>
+                    \( L( \theta |X) = P(X| \theta ) = \prod_{i=1}^{n} f(x_i \mid \theta) \). The likelihood function is
+                    the probability of observing data \( X \), assumed to be independent and identically distributed,
+                    with parameter values \( \theta \). Oftentimes, the log likelihood function is used for simplicity
+                    and because the log function is monotonically increasing \( log L(\theta) = \sum_{i=1}^{n} log f_x(x_i
+                    \mid \theta) \)
+                    \)
+                    <br><br>
+                    \( \hat{\theta}_{MLE} = argmax L( \theta) \). The maximum likelihood estimation maximizes the
+                    likelihood function. \( \hat{\theta}_{MLE} \) are the parameter vaues that make the observed data \(
+                    X \) most probable under the assumed statistical model.
                 </p>
                 <script>
                     const mleButton = document.getElementById('mle-button');
@@ -849,7 +862,8 @@
 
                 <!--Button-->
                 <button id="poisson-button">poisson distribution</button>
-                <p id="poisson-paragraph" style="display: none;">\( X \sim Po(\lambda) \) For discrete variables. Number of occurences \(X\)
+                <p id="poisson-paragraph" style="display: none;">\( X \sim Po(\lambda) \) For discrete variables. Number
+                    of occurences \(X\)
                     in a
                     given time period, where the constant rate of occurences is \( \lambda \).
                     \[ P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!}\]
