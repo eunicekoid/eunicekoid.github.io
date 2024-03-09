@@ -708,12 +708,17 @@
                     likelihood function. \( \hat{\theta}_{MLE} \) are the parameter vaues that make the observed data \(
                     X \) most probable under the assumed statistical model.
                     <br><br>
-                    <br><br>
                     <small>
                         <b>Derivation for uniform distribution</b><br>
                         \( f(x \mid a,b ) = \frac{1}{b-a} \) <br>
                         \( L( \theta ) = \prod_{i=1}^{n} f(x_i \mid a,b )  = \prod_{i=1}^{n} \frac{1}{b-a} = \frac{1}{(b-a)^n} \) <br>
                         \( ln L( \theta ) = -n ln (b-a) \) <br>
+                        Partial derivative with respect to \( a \): \( \frac{\partial ln L }{\partial a} = \frac{n}{b-a} \) <br>
+                        Partial derivative with respect to \( b \): \( \frac{\partial ln L }{\partial b} = - \frac{n}{b-a} \) <br>
+                        Setting the partial derivatives to zero is not possible because \( n \) and \( b-a \) are positive. Therefore, consider the boundary conditions of the observed data. The MLE for \( a \) and \( b \) is the minimum and maximum observed values in the sample, respectively. <br>
+                        \( \hat{a}_{MLE} = min(X_1, X_2, ... , X_n) \)<br>
+                        \( \hat{b}_{MLE} = max(X_1, X_2, ... , X_n) \)<br>
+
                     </small>
 
                 </p>
