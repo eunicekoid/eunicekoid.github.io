@@ -709,7 +709,7 @@
                     X \) most probable under the assumed statistical model.
                     <br><br>
                     <small>
-                        <b>Derivation for uniform distribution</b><br>
+                        <b>Derivation for a uniform distribution</b><br>
                         \( f(x \mid a,b ) = \frac{1}{b-a} \) <br>
                         \( L( \theta ) = \prod_{i=1}^{n} f(x_i \mid a,b )  = \prod_{i=1}^{n} \frac{1}{b-a} = \frac{1}{(b-a)^n} \) <br>
                         \( ln L( \theta ) = -n ln (b-a) \) <br>
@@ -718,6 +718,14 @@
                         Setting the partial derivatives to zero is not possible because \( n \) and \( b-a \) are positive. Therefore, consider the boundary conditions of the observed data. The MLE for \( a \) and \( b \) is the minimum and maximum observed values in the sample, respectively. <br>
                         \( \hat{a}_{MLE} = min(X_1, X_2, ... , X_n) \)<br>
                         \( \hat{b}_{MLE} = max(X_1, X_2, ... , X_n) \)<br>
+                    </small>
+                    <br><br>
+                    <small>
+                        <b>Derivation for a bernoulli distribution</b><br>
+                        Random sample \( X ~ Bern(p) = X_1, X_2, ... , X_n \) where \( X_i = 0 \) indicates male, and \(  X_i = 1 \) indicates female <br>
+                        Find the MLE of \( p \), the proportion of males <br>
+                        \( f(x; p) = p^x (1-p)^{1-x} \), 0 < p < 1 <br>
+
                     </small>
 
                 </p>
