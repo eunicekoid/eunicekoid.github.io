@@ -701,7 +701,7 @@
                     \( L( \theta  \mid X) = P(X \mid  \theta ) = \prod_{i=1}^{n} f(x_i \mid \theta) \). The likelihood function is
                     the probability of observing data \( X \), assumed to be independent and identically distributed,
                     with parameter values \( \theta \). Oftentimes, the log likelihood function is used for simplicity
-                    and because the log function is monotonically increasing \( log L(\theta) = \sum_{i=1}^{n} log f_x(x_i
+                    and because the log function is monotonically increasing \( log\ L(\theta) = \sum_{i=1}^{n} log f_x(x_i
                     \mid \theta) \)
                     <br><br>
                     \( \hat{\theta}_{MLE} = argmax\ L( \theta) \). The maximum likelihood estimation maximizes the
@@ -713,8 +713,8 @@
                         \( f(x \mid a,b ) = \frac{1}{b-a} \) <br>
                         \( L( \theta ) = \prod_{i=1}^{n} f(x_i \mid a,b )  = \prod_{i=1}^{n} \frac{1}{b-a} = \frac{1}{(b-a)^n} \) <br>
                         \( ln L( \theta ) = -n \cdot ln (b-a) \) <br>
-                        Partial derivative with respect to \( a \): \( \frac{\partial ln L }{\partial a} = \frac{n}{b-a} \) <br>
-                        Partial derivative with respect to \( b \): \( \frac{\partial ln L }{\partial b} = - \frac{n}{b-a} \) <br>
+                        Partial derivative with respect to \( a \): \( \frac{\partial\ ln L }{\partial a} = \frac{n}{b-a} \) <br>
+                        Partial derivative with respect to \( b \): \( \frac{\partial\ ln L }{\partial b} = - \frac{n}{b-a} \) <br>
                         Setting the partial derivatives to zero is not possible because \( n \) and \( b-a \) are positive. Therefore, consider the boundary conditions of the observed data. The MLE for \( a \) and \( b \) is the minimum and maximum observed values in the sample, respectively. <br>
                         \( \hat{a}_{MLE} = min(X_1, X_2, ... , X_n) \)<br>
                         \( \hat{b}_{MLE} = max(X_1, X_2, ... , X_n) \)<br>
@@ -726,8 +726,8 @@
                         Find the MLE of \( p \), the proportion of males <br>
                         \( f(x; p) = p^x (1-p)^{1-x} \), 0 < p < 1 <br>
                         \( L(p) = \prod_{i=1}^{n} p^x (1-p)^{1-x} = p^{X_1} (1-p)^{1-X_1} \cdot p^{X_2} (1-p)^{1-X_2} \cdot ... \cdot p^{X_n} (1-p)^{1-X_n} = p^{\sum_{i=1}^n x_i }(1-p)^{n- \sum_{i=1}^n x_i }\)<br>
-                        \( log L(p) = \sum x_i log\ p + (n- \sum x_i) log (1-p) \) <br>
-                        \( \frac{dlog L(p)}{dp} = \sum x_i \frac{1}{p} - (n- \sum x_i) \frac{1}{1-p} = 0 \)<br>
+                        \( log\ L(p) = \sum x_i log\ p + (n- \sum x_i) log (1-p) \) <br>
+                        \( \frac{d\ log\ L(p)}{dp} = \sum x_i \frac{1}{p} - (n- \sum x_i) \frac{1}{1-p} = 0 \)<br>
                         \( \sum x_i (1-p) - (n - \sum x_i) p = \sum x_i - \sum x_i p - np + \sum x_i p = 0 \)<br>
                         \( \sum x_i - np = 0  \)<br>
                         \( \hat{p} = \frac{\sum x_i}{n} \)<br><br>
