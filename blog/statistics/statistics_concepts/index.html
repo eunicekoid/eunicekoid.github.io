@@ -693,6 +693,9 @@
                 <!--Button-->
                 <button id="mle-button">maximum likelihood estimation (MLE)</button>
                 <p id="mle-paragraph" style="display: none;">
+                    A method of fitting parameters to distributions (estimating parameters of a model). MLE finds values of the model parameters that maximize the likelihood function which measures the probability of observing the observed data under the assumed statistical model.
+
+                    \( L( \theta |X) = P(X| \theta ) \). The likelihood function is the probability of observing data \( X \) with parameter values \( \theta \). 
                 </p>
                 <script>
                     const mleButton = document.getElementById('mle-button');
