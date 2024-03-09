@@ -765,7 +765,7 @@
                         Maximize the posterior distribution to find the MAP estimate \(\hat{\mu}_{MAP} = argmax\ P(\mu \mid X) \) <br>
                         Use the log for simplicity: \(ln\ P(\mu \mid X) = constant + \sum_{i=1}^n \left( - \frac{(X_i-\mu)^2}{2 \sigma^2} \right) - \frac{(\mu - mu_0)^2}{2 \tau^2} \)<br>
                         Take the derivative of \( \hat{\mu}_{MAP}\) and set it to zero to find the maximum. <br>
-                        \( \frac{d}{d\mu} \ln P(\mu \mid X) = \sum_{i=1}^{n} \frac{(X_i - \mu)}{\sigma^2} + \frac{(\mu - \mu_0)}{\tau^2} \) <br>
+                        \( \frac{d}{d\mu} \ln P(\mu \mid X) = \sum_{i=1}^{n} \frac{(X_i - \mu)}{\sigma^2} + \frac{(\mu - \mu_0)}{\tau^2} = \sum_{i=1}^{n} \frac{(X_i - \hat{\mu}_{\text{MAP}})}{\sigma^2} + \frac{(\hat{\mu}_{\text{MAP}} - \mu_0)}{\tau^2} = 0 \) <br>
 
                     </small>
                 </p>
