@@ -725,13 +725,13 @@
                         Random sample \( X ~ Bern(p) = X_1, X_2, ... , X_n \) where \( X_i = 0 \) indicates male, and \(  X_i = 1 \) indicates female <br>
                         Find the MLE of \( p \), the proportion of males <br>
                         \( f(x; p) = p^x (1-p)^{1-x} \), 0 < p < 1 <br>
-                        \( L(p) = \prod_{i=1}^{n} p^x (1-p)^{1-x} = p^{\sum_{i=1}^n x_i }(1-p)^{n- \sum_{i=1}^n x_i }\)<br>
+                        \( L(p) = \prod_{i=1}^{n} p^x (1-p)^{1-x} = p^{X_1} (1-p)^{1-X_1} \cdot p^{X_2} (1-p)^{1-X_2} \cdot ... \cdot p^{X_n} (1-p)^{1-X_n} = p^{\sum_{i=1}^n x_i }(1-p)^{n- \sum_{i=1}^n x_i }\)<br>
                         \( log. L(p) = \sum x_i log p + (n- \sum x_i) log (1-p) \) <br>
                         \( \frac{dlog L(p)}{dp} = \sum x_i \frac{1}{p} - (n- \sum x_i) \frac{1}{1-p} = 0 \)<br>
                         \( \sum x_i (1-p) - (n - \sum x_i) p = \sum x_i - \sum x_i p - np + \sum x_i p = 0 \)<br>
                         \( \sum x_i - np = 0  \)<br>
-                        \( \hat{p} = \frac{\sum x_i}{n} \)
-
+                        \( \hat{p} = \frac{\sum x_i}{n} \)<br><br>
+                        Remember that \( \frac{d}{dx} log_a x = \frac{1}{x \cdot ln a} \) and \( \frac{d}{dx}ln x = \frac{1}{x} \)
                     </small>
 
                 </p>
