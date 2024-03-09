@@ -762,7 +762,8 @@
                         The likelihood function is \( f(X \mid \mu) = \prod_{i=1}^n f(x_i \mid \mu ) = \prod_{i=1}^n \frac{1}{\sqrt{2 \pi \sigma}} exp(- \frac{(X_i - \mu)^2}{2 \sigma^2}) \) <br>
                         Assume a prior distribution for \( \mu \); for example, a normal distribution \( \frac{1}{\sqrt{2 \pi \tau}} exp(- \frac{(\mu - \mu_0)^2}{2 \tau^2})\) ( \( \mu \) is the prior mean; \(\tau \) is the prior standard deviation) <br>
                         The posterior distribution is \( P(\mu \mid X) \propto f(X \mid \mu ) \cdot g(\mu) = \prod_{i=1}^n \frac{1}{\sqrt{2 \pi \sigma}} exp(- \frac{(X_i - \mu)^2}{2 \sigma^2}) \cdot \frac{1}{\sqrt{2 \pi \tau}} exp(- \frac{(\mu - \mu_0)^2}{2 \tau^2})\) <br>
-
+                        Maximize the posterior distribution to find the MAP estimate \(\hat{\mu}_{MAP} = argmax\ P(\mu \mid X) \) <br>
+                        
                     </small>
                 </p>
                 <script>
