@@ -593,29 +593,29 @@
                 <br />
 
                
- <!--Button-->
- <button id="cp-button">law of conditional probability</button>
- <p id="cp-paragraph" style="display: none;">
-     The probability of event A happening given event B, denoted as \( P(A \mid B) \). It is calculated as the
-     probability of both A and B happening \( P(A ∩ B) \) divided by the probability of B happening \(
-     P(B) \).
-     \[ P(A \mid B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events happening at the same
-     time \( P(A \cap B) \) cannot be greater than either event happening by itself \( P(A) \) or \( P(B)
-     \).<br><br>
-     
- </p>
- <script>
-     const cpButton = document.getElementById('cp-button');
-     const cpPara = document.getElementById('cp-paragraph');
-     cpButton.addEventListener('click', () => {
-         if (cpPara.style.display === 'none') {
-             cpPara.style.display = 'block';
-             MathJax.typeset();
-         } else {
-             cpPara.style.display = 'none';
-         }
-     });
- </script>
+                <!--Button-->
+                <button id="cp-button">law of conditional probability</button>
+                <p id="cp-paragraph" style="display: none;">
+                    The probability of event A happening given event B, denoted as \( P(A \mid B) \). It is calculated as the
+                    probability of both A and B happening \( P(A ∩ B) \) divided by the probability of B happening \(
+                    P(B) \).
+                    \[ P(A \mid B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events happening at the same
+                    time \( P(A \cap B) \) cannot be greater than either event happening by itself \( P(A) \) or \( P(B)
+                    \).<br><br>
+                    
+                </p>
+                <script>
+                    const cpButton = document.getElementById('cp-button');
+                    const cpPara = document.getElementById('cp-paragraph');
+                    cpButton.addEventListener('click', () => {
+                        if (cpPara.style.display === 'none') {
+                            cpPara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            cpPara.style.display = 'none';
+                        }
+                    });
+                </script>
 
 
                 <!--Button-->
