@@ -377,7 +377,7 @@
 
 
 
-                
+
 
                 <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
@@ -545,7 +545,8 @@
                             </tr>
                             <tr>
                                 <td>Conditional PDF</td>
-                                <td>\( f_x(x) = \int_{-\infty}^{\infty} f_Y(y) \cdot f_{X \mid Y}(x \mid y) \, dy \)</td>
+                                <td>\( f_x(x) = \int_{-\infty}^{\infty} f_Y(y) \cdot f_{X \mid Y}(x \mid y) \, dy \)
+                                </td>
                             </tr>
                         </table>
                         <br>
@@ -592,17 +593,19 @@
                 <br />
                 <br />
 
-               
+
                 <!--Button-->
                 <button id="cp-button">law of conditional probability</button>
                 <p id="cp-paragraph" style="display: none;">
-                    The probability of event A happening given event B, denoted as \( P(A \mid B) \). It is calculated as the
+                    The probability of event A happening given event B, denoted as \( P(A \mid B) \). It is calculated
+                    as the
                     probability of both A and B happening \( P(A ∩ B) \) divided by the probability of B happening \(
                     P(B) \).
-                    \[ P(A \mid B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events happening at the same
+                    \[ P(A \mid B) = \frac{P(A ∩ B)}{P(B)} \] Note that the probability of two events happening at the
+                    same
                     time \( P(A \cap B) \) cannot be greater than either event happening by itself \( P(A) \) or \( P(B)
                     \).<br><br>
-                    
+
                 </p>
                 <script>
                     const cpButton = document.getElementById('cp-button');
@@ -703,10 +706,12 @@
                     of the model parameters that maximize the likelihood function which measures the probability of
                     observing the observed data under the assumed statistical model.
                     <br><br>
-                    \( L( \theta  \mid X) = P(X \mid  \theta ) = \prod_{i=1}^{n} f(x_i \mid \theta) \). The likelihood function is
+                    \( L( \theta \mid X) = P(X \mid \theta ) = \prod_{i=1}^{n} f(x_i \mid \theta) \). The likelihood
+                    function is
                     the probability of observing data \( X \), assumed to be independent and identically distributed,
                     with parameter values \( \theta \). Oftentimes, the log likelihood function is used for simplicity
-                    and because the log function is monotonically increasing \( log\ L(\theta) = \sum_{i=1}^{n} log f_x(x_i
+                    and because the log function is monotonically increasing \( log\ L(\theta) = \sum_{i=1}^{n} log
+                    f_x(x_i
                     \mid \theta) \)
                     <br><br>
                     \( \hat{\theta}_{MLE} = argmax\ L( \theta) \). The maximum likelihood estimation maximizes the
@@ -716,27 +721,36 @@
                     <small>
                         <b>Derivation for a uniform distribution</b><br>
                         \( f(x \mid a,b ) = \frac{1}{b-a} \) <br>
-                        \( L( \theta ) = \prod_{i=1}^{n} f(x_i \mid a,b )  = \prod_{i=1}^{n} \frac{1}{b-a} = \frac{1}{(b-a)^n} \) <br>
+                        \( L( \theta ) = \prod_{i=1}^{n} f(x_i \mid a,b ) = \prod_{i=1}^{n} \frac{1}{b-a} =
+                        \frac{1}{(b-a)^n} \) <br>
                         \( ln\ L( \theta ) = -n \cdot ln (b-a) \) <br>
-                        Partial derivative with respect to \( a \): \( \frac{\partial\ ln L }{\partial a} = \frac{n}{b-a} \) <br>
-                        Partial derivative with respect to \( b \): \( \frac{\partial\ ln L }{\partial b} = - \frac{n}{b-a} \) <br>
-                        Setting the partial derivatives to zero is not possible because \( n \) and \( b-a \) are positive. Therefore, consider the boundary conditions of the observed data. The MLE for \( a \) and \( b \) is the minimum and maximum observed values in the sample, respectively. <br>
+                        Partial derivative with respect to \( a \): \( \frac{\partial\ ln L }{\partial a} =
+                        \frac{n}{b-a} \) <br>
+                        Partial derivative with respect to \( b \): \( \frac{\partial\ ln L }{\partial b} = -
+                        \frac{n}{b-a} \) <br>
+                        Setting the partial derivatives to zero is not possible because \( n \) and \( b-a \) are
+                        positive. Therefore, consider the boundary conditions of the observed data. The MLE for \( a \)
+                        and \( b \) is the minimum and maximum observed values in the sample, respectively. <br>
                         \( \hat{a}_{MLE} = min(X_1, X_2, ... , X_n) \)<br>
                         \( \hat{b}_{MLE} = max(X_1, X_2, ... , X_n) \)<br>
                     </small>
                     <br>
                     <small>
                         <b>Derivation for a bernoulli distribution</b><br>
-                        Random sample \( X ~ Bern(p) = X_1, X_2, ... , X_n \) where \( X_i = 0 \) indicates male, and \(  X_i = 1 \) indicates female <br>
+                        Random sample \( X ~ Bern(p) = X_1, X_2, ... , X_n \) where \( X_i = 0 \) indicates male, and \(
+                        X_i = 1 \) indicates female <br>
                         Find the MLE of \( p \), the proportion of males <br>
                         \( f(x; p) = p^x (1-p)^{1-x} \), 0 < p < 1 <br>
-                        \( L(p) = \prod_{i=1}^{n} p^x (1-p)^{1-x} = p^{X_1} (1-p)^{1-X_1} \cdot p^{X_2} (1-p)^{1-X_2} \cdot ... \cdot p^{X_n} (1-p)^{1-X_n} = p^{\sum_{i=1}^n x_i }(1-p)^{n- \sum_{i=1}^n x_i }\)<br>
-                        \( log\ L(p) = \sum x_i log\ p + (n- \sum x_i) log (1-p) \) <br>
-                        \( \frac{d\ log\ L(p)}{dp} = \sum x_i \frac{1}{p} - (n- \sum x_i) \frac{1}{1-p} = 0 \)<br>
-                        \( \sum x_i (1-p) - (n - \sum x_i) p = \sum x_i - \sum x_i p - np + \sum x_i p = 0 \)<br>
-                        \( \sum x_i - np = 0  \)<br>
-                        \( \hat{p} = \frac{\sum x_i}{n} \)<br><br>
-                        Remember that \( \frac{d}{dx} log_a x = \frac{1}{x \cdot ln\ a} \) and \( \frac{d}{dx}ln\ x = \frac{1}{x} \)
+                            \( L(p) = \prod_{i=1}^{n} p^x (1-p)^{1-x} = p^{X_1} (1-p)^{1-X_1} \cdot p^{X_2}
+                            (1-p)^{1-X_2} \cdot ... \cdot p^{X_n} (1-p)^{1-X_n} = p^{\sum_{i=1}^n x_i }(1-p)^{n-
+                            \sum_{i=1}^n x_i }\)<br>
+                            \( log\ L(p) = \sum x_i log\ p + (n- \sum x_i) log (1-p) \) <br>
+                            \( \frac{d\ log\ L(p)}{dp} = \sum x_i \frac{1}{p} - (n- \sum x_i) \frac{1}{1-p} = 0 \)<br>
+                            \( \sum x_i (1-p) - (n - \sum x_i) p = \sum x_i - \sum x_i p - np + \sum x_i p = 0 \)<br>
+                            \( \sum x_i - np = 0 \)<br>
+                            \( \hat{p} = \frac{\sum x_i}{n} \)<br><br>
+                            Remember that \( \frac{d}{dx} log_a x = \frac{1}{x \cdot ln\ a} \) and \( \frac{d}{dx}ln\ x
+                            = \frac{1}{x} \)
                     </small>
 
                 </p>
@@ -755,28 +769,50 @@
 
                 <!--Button-->
                 <button id="map-button">maximum a posteriori (MAP) estimation</button>
-                <p id="map-paragraph" style="display: none;">A Bayesian method for estimating model parameters based on prior distribution and observed data. MAP finds the parameter values by maximizing the posterior probability distribution given the observed data, combining prior knowledge and new evidence to update the parameters.<br><br>
+                <p id="map-paragraph" style="display: none;">A Bayesian method for estimating model parameters based on
+                    prior distribution and observed data. MAP finds the parameter values by maximizing the posterior
+                    probability distribution given the observed data, combining prior knowledge and new evidence to
+                    update the parameters.<br><br>
                     Start with \( P(\theta) \), the prior distribution.<br>
                     The likelihood function is \( P (X \mid \theta) \) (same as in MLE)<br>
-                    The posterior distribution is \( P(\theta \mid X) \) which, according to Bayes' theorem, is proportional to the product of the likelihood and prior probability \( P(\theta \mid X) \propto P(X \mid \theta) \cdot P(\theta) \) <br>
-                    \( \theta_{MAP} = argmax\ P(\theta \mid X )= argmax\ g(\theta)\ f(x_1,...,x_n \mid \theta ) \) where \( g(\theta) \) is the prior distribution for parameter \( \theta \) and \( f(x_1,...,x_n \mid \theta ) \) is the likelihood function, the probability of observing \( X \) given parameter \( \theta \). <br><br>
+                    The posterior distribution is \( P(\theta \mid X) \) which, according to Bayes' theorem, is
+                    proportional to the product of the likelihood and prior probability \( P(\theta \mid X) \propto P(X
+                    \mid \theta) \cdot P(\theta) \) <br>
+                    \( \theta_{MAP} = argmax\ P(\theta \mid X )= argmax\ g(\theta)\ f(x_1,...,x_n \mid \theta ) \) where
+                    \( g(\theta) \) is the prior distribution for parameter \( \theta \) and \( f(x_1,...,x_n \mid
+                    \theta ) \) is the likelihood function, the probability of observing \( X \) given parameter \(
+                    \theta \). <br><br>
 
                     <small>
                         <b>Derivation for a normal distribution</b><br>
                         Ramdom variable \( X = X_1, X_2, ..., X_n \)<br>
-                        The likelihood function is \( f(X \mid \mu) = \prod_{i=1}^n f(x_i \mid \mu ) = \prod_{i=1}^n \frac{1}{\sqrt{2 \pi \sigma}} exp \left(- \frac{(X_i - \mu)^2}{2 \sigma^2} \right) \) <br>
-                        Assume a prior distribution for \( \mu \); for example, a normal distribution \( \frac{1}{\sqrt{2 \pi \tau}} exp \left( - \frac{(\mu - \mu_0)^2}{2 \tau^2} \right )\) (\(\mu_0 \) is the prior mean; \(\tau \) is the prior standard deviation) <br>
-                        The posterior distribution is \( P(\mu \mid X) \propto f(X \mid \mu ) \cdot g(\mu) = \prod_{i=1}^n \frac{1}{\sqrt{2 \pi \sigma}} exp \left(- \frac{(X_i - \mu)^2}{2 \sigma^2} \right) \cdot \frac{1}{\sqrt{2 \pi \tau}} exp \left(- \frac{(\mu - \mu_0)^2}{2 \tau^2} \right) \) <br>
-                        Maximize the posterior distribution to find the MAP estimate \(\hat{\mu}_{MAP} = argmax\ P(\mu \mid X) \) <br>
-                        Use the log for simplicity: \(ln\ P(\mu \mid X) = constant + \sum_{i=1}^n \left( - \frac{(X_i-\mu)^2}{2 \sigma^2} \right) - \frac{(\mu - \mu_0)^2}{2 \tau^2} \)<br>
+                        The likelihood function is \( f(X \mid \mu) = \prod_{i=1}^n f(x_i \mid \mu ) = \prod_{i=1}^n
+                        \frac{1}{\sqrt{2 \pi \sigma}} exp \left(- \frac{(X_i - \mu)^2}{2 \sigma^2} \right) \) <br>
+                        Assume a prior distribution for \( \mu \); for example, a normal distribution \(
+                        \frac{1}{\sqrt{2 \pi \tau}} exp \left( - \frac{(\mu - \mu_0)^2}{2 \tau^2} \right )\) (\(\mu_0 \)
+                        is the prior mean; \(\tau \) is the prior standard deviation) <br>
+                        The posterior distribution is \( P(\mu \mid X) \propto f(X \mid \mu ) \cdot g(\mu) =
+                        \prod_{i=1}^n \frac{1}{\sqrt{2 \pi \sigma}} exp \left(- \frac{(X_i - \mu)^2}{2 \sigma^2} \right)
+                        \cdot \frac{1}{\sqrt{2 \pi \tau}} exp \left(- \frac{(\mu - \mu_0)^2}{2 \tau^2} \right) \) <br>
+                        Maximize the posterior distribution to find the MAP estimate \(\hat{\mu}_{MAP} = argmax\ P(\mu
+                        \mid X) \) <br>
+                        Use the log for simplicity: \(ln\ P(\mu \mid X) = constant + \sum_{i=1}^n \left( -
+                        \frac{(X_i-\mu)^2}{2 \sigma^2} \right) - \frac{(\mu - \mu_0)^2}{2 \tau^2} \)<br>
                         Take the derivative of \( \hat{\mu}_{MAP}\) and set it to zero to find the maximum. <br>
-                        \( \frac{d}{d\mu} \ln P(\mu \mid X) = \sum_{i=1}^{n} \frac{(X_i - \mu)}{\sigma^2} + \frac{(\mu - \mu_0)}{\tau^2} = \sum_{i=1}^{n} \frac{(X_i - \hat{\mu}_{\text{MAP}})}{\sigma^2} + \frac{(\hat{\mu}_{\text{MAP}} - \mu_0)}{\tau^2} = 0 \) <br>
-                        \( \frac{\sum_{i=1}^n (X_i - \hat{\mu}_{MAP} ) \tau^2 + (\hat{\mu}_{MAP}- \mu_0) \sigma^2}{\sigma^2 \tau^2} =0 \) <br>
+                        \( \frac{d}{d\mu} \ln P(\mu \mid X) = \sum_{i=1}^{n} \frac{(X_i - \mu)}{\sigma^2} + \frac{(\mu -
+                        \mu_0)}{\tau^2} = \sum_{i=1}^{n} \frac{(X_i - \hat{\mu}_{\text{MAP}})}{\sigma^2} +
+                        \frac{(\hat{\mu}_{\text{MAP}} - \mu_0)}{\tau^2} = 0 \) <br>
+                        \( \frac{\sum_{i=1}^n (X_i - \hat{\mu}_{MAP} ) \tau^2 + (\hat{\mu}_{MAP}- \mu_0)
+                        \sigma^2}{\sigma^2 \tau^2} =0 \) <br>
                         \( \sum_{i=1}^n (X_i - \hat{\mu}_{MAP}) \tau^2 + (\hat{\mu}_{MAP} - \mu_0) \sigma^2 = 0 \) <br>
-                        \( \sum_{i=1}^n X_i \tau^2 - \sum_{i=1}^n \hat{\mu}_{MAP} \tau^2 + \hat{\mu}_{MAP} \sigma^2 - \mu_0 \sigma^2 = 0 \) <br>
-                        \( \sum_{i=1}^n X_i \tau^2 =  \sum_{i=1}^n \hat{\mu}_{MAP} \tau^2 - \hat{\mu}_{MAP} \sigma^2 + \mu_0 \sigma^2  \) <br>
-                        \( \sum_{i=1}^n X_i \tau^2 = \hat{\mu}_{MAP} ( \sum_{i=1}^n  \tau^2 - \sigma^2 ) + \mu_0 \sigma^2  \) <br>
-                        \(  \hat{\mu}_{MAP} = \frac{\sum_{i=1}^n X_i \tau^2 - \mu_0 \sigma^2 }{\sum_{i=1}^n  \tau^2 - \sigma^2} \)
+                        \( \sum_{i=1}^n X_i \tau^2 - \sum_{i=1}^n \hat{\mu}_{MAP} \tau^2 + \hat{\mu}_{MAP} \sigma^2 -
+                        \mu_0 \sigma^2 = 0 \) <br>
+                        \( \sum_{i=1}^n X_i \tau^2 = \sum_{i=1}^n \hat{\mu}_{MAP} \tau^2 - \hat{\mu}_{MAP} \sigma^2 +
+                        \mu_0 \sigma^2 \) <br>
+                        \( \sum_{i=1}^n X_i \tau^2 = \hat{\mu}_{MAP} ( \sum_{i=1}^n \tau^2 - \sigma^2 ) + \mu_0 \sigma^2
+                        \) <br>
+                        \( \hat{\mu}_{MAP} = \frac{\sum_{i=1}^n X_i \tau^2 - \mu_0 \sigma^2 }{\sum_{i=1}^n \tau^2 -
+                        \sigma^2} \)
                     </small>
                 </p>
                 <script>
@@ -798,7 +834,7 @@
                     Evaluation metric for regression that measures the average
                     absolute difference between the actual and predicted values. Lower MAE means better model
                     performance.
-                    \[ MAE = \frac{1}{n} \sum_{i=1}^{n}  \mid y_i - \hat{y}_i \mid  \]
+                    \[ MAE = \frac{1}{n} \sum_{i=1}^{n} \mid y_i - \hat{y}_i \mid \]
                 </p>
                 <script>
                     const maeButton = document.getElementById('mae-button');
@@ -1300,14 +1336,18 @@
                                 </td>
                                 <td>&nbsp;• Student t-distribution. Usually has larger tails (more extreme) than a
                                     normal
-                                    distribution. <br>&nbsp;• Use for a small sample size <br>&nbsp;• \( \sigma^2 \) is
+                                    distribution. <br>&nbsp;• Use for a small sample size (too small to invoke CLT but
+                                    underlying data is normal) <br>&nbsp;• \( \sigma^2 \) is
                                     unknown, use the sample variance \( s^2 \)</td>
                                 <td>&nbsp;• Assess goodness of fit and whether two categorical variables are independent
                                 </td>
                             </tr>
                             <tr>
                                 <td>&nbsp;\( Z = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1) \)</td>
-                                <td>&nbsp;\( t = \frac{\bar{X} - \mu_0}{s \ \sqrt{n}} \sim t_{n-1} \) (one-sample)<br> <br> &nbsp;\(
+                                <td>&nbsp;\( t = \frac{\bar{X} - \mu_0}{s / \sqrt{n}} \sim t_{n-1} \) (one-sample)<br>
+                                    <br>&nbsp; \( t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2
+                                    )}{\sqrt{\frac{s_1^2}{\sqrt{n_1}} + \frac{s_2^2}\sqrt{{n_2}}}}
+                                    \) <br><br>&nbsp;\(
                                     s^2 =
                                     \frac{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}{n-1} \)<br> <br><small>&nbsp;\(n-1\)
                                         is the
@@ -1378,7 +1418,7 @@
                     probability of
                     \(X\)
                     falling between \(a\) and \(b\).
-                    \[ f(x  \mid  a,b) = \frac{1}{b-a} \]
+                    \[ f(x \mid a,b) = \frac{1}{b-a} \]
 
                     where \( \mu = \frac{a+b}{2} \) and \( \sigma^2 = \frac{(b-a)^2}{12} \)
                     <br><br>
