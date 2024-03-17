@@ -416,6 +416,23 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="covariance-button">correlation</button>
+                <p id="covariance-paragraph" style="display: none;">Measures the linear relationship between two variables \( X \) and \( Y \)
+                    \[ Cov(X,Y) = E[(X-E[X])(Y-E[Y])] = E[XY]= E[X]E[Y] \]
+                </p>
+                <script>
+                    const covarianceButton = document.getElementById('covariance-button');
+                    const covarianceParagraph = document.getElementById('covariance-paragraph');
+                    covarianceButton.addEventListener('click', () => {
+                        if (covarianceParagraph.style.display === 'none') {
+                            covarianceParagraph.style.display = 'block';
+                        } else {
+                            covarianceParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
