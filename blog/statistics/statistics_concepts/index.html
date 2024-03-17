@@ -375,10 +375,6 @@
                     });
                 </script>
 
-
-
-
-
                 <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
                 <p id="confidence-interval-paragraph" style="display: none;">For a 95% confidence interval, the true
@@ -401,6 +397,25 @@
                         }
                     });
                 </script>
+
+
+                <!--Button-->
+                <button id="correlation-button">correlation</button>
+                <p id="correlation-paragraph" style="display: none;">The extent that variables \( X \) and \( Y \) are linearly related; the scaled covariance of \( X \) and \( Y \) to a dimensionless number between -1 and 1.
+                    \[ \rho(X,Y) = \frac{Cov(X, Y)}{\sqrt{Var(X) \cdot Var(Y) }} \]
+                </p>
+                <script>
+                    const correlationButton = document.getElementById('correlation-button');
+                    const correlationParagraph = document.getElementById('correlation-paragraph');
+                    correlationButton.addEventListener('click', () => {
+                        if (correlationParagraph.style.display === 'none') {
+                            correlationParagraph.style.display = 'block';
+                        } else {
+                            correlationParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
