@@ -384,7 +384,7 @@
                     Principal components are the eigenvectors of an m\(\times\)n matrix that contains the samples (n samples, m variables).<br><br>
 
                     1. Create an m\(\times\)n matrix that contains the samples<br>
-                    2. Find matrix \(B\). Standardize the samples so that the mean is zero \(x_i-\mu\)<br>
+                    2. Calculate matrix \(B\) which is an m\(\times\)n matrix whose <i>i</i>th column is \(\vec{x}_i - \vec{\mu}\). \(B = |\vec{x}_1 - \vec{\mu}| ...|\vec{x}_n - \vec{\mu}|\) Standardize the samples so that the mean is zero \(x_i-\mu\)<br>
                     3. Calculate \(S\), the covariance matrix. \(S = \frac{1}{n-1}BB^T\) <small>symmetric, diagonals are variances</small><br>
                     4. Find the eigenvalues and orthogonal eigenvectors 
                     &nbsp; \(\lambda_i\): largest explains the most variation<br>
