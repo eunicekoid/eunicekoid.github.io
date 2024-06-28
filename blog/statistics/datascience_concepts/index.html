@@ -486,9 +486,10 @@
                 <!--Button-->
                 <button id="exp-button">exponential distribution</button>
                 <p id="exp-paragraph" style="display: none;">For continuous variables. Probability of the interval
-                    length between Poisson eevents with a set parameter of \( \lambda \).
+                    length between Poisson events with a set parameter of \( \lambda \).
 
-                    \[ f(x; \lambda) = \lambda e^{-\lambda x} \]
+                    \[ f(x; \lambda) = \lambda e^{-\lambda x}   where x \geq 0 \]
+                    \[ F(x; \lambda) = 1 - e^(-\lambda x)     where \geq 0\]
 
                     where \( \mu = \frac{1}{\lambda} \) and \( \sigma^2 = \frac{1}{\lambda^2} \) <br><br>
                     <img class="img-fluid z-dept-1" src="images/exponential.jpg" alt="exponential.jpeg"
