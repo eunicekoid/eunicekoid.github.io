@@ -304,6 +304,23 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="cook-button">cook's distance</button>
+                <p id="cook-paragraph" style="display: none;">
+                   Estimates the influence of any given data point. Considers residual and leverage (how far the point difference from other X values). A method to identify outliers; remove points beyond a certain threshold
+                <script>
+                    const cookB = document.getElementById('cook-button');
+                    const cookP = document.getElementById('cook-paragraph');
+
+                    cookB.addEventListener('click', () => {
+                        if (cookP.style.display === 'none') {
+                            cookP.style.display = 'block';
+                        } else {
+                            cookP.style.display = 'none';
+                        }
+                    });
+                </script>
+
 
                 <!--Button-->
                 <button id="cv-button">cross validation</button>
