@@ -400,6 +400,26 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="confusion-button">confusion matrix</button>
+                <p id="confusion-paragraph" style="display: none;">
+                   <img
+                        class="img-fluid z-dept-1" src="images/confusion_matrix.png" alt="confusion_matrix.png"
+                        style="width: 90%;" />
+
+                </p>
+                <script>
+                    const confusionButton = document.getElementById('confusion-button');
+                    const confusionParagraph = document.getElementById('confusion-paragraph');
+
+                    confusionButton.addEventListener('click', () => {
+                        if (confusionParagraph.style.display === 'none') {
+                            confusionParagraph.style.display = 'block';
+                        } else {
+                            confusionParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="correlation-button">correlation</button>
