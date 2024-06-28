@@ -179,6 +179,29 @@
 
 
                 <!-- Button -->
+                <button id="eigen-button">eigenvalue & eigenvector</button>
+                <p id="eigen-paragraph" style="display: none;">
+                    <img
+                        class="img-fluid z-dept-1" src="images/eigen.png" alt="eigen.png"
+                        style="width: 80%;" />
+                </p>
+                <script>
+                    const eigenButton = document.getElementById('eigen-button');
+                    const eigenPara = document.getElementById('eigen-paragraph');
+                    eigenButton.addEventListener('click', () => {
+                        if (eigenPara.style.display === 'none') {
+                            eigenPara.style.display = 'block';
+                            eigenPara.typeset();
+                        } else {
+                            eigenPara.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+
+                <!-- Button -->
                 <button id="dependence-button">linear independence vs. dependence</button>
                 <p id="dependence-paragraph" style="display: none;">
                     <img
