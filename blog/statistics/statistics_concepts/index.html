@@ -426,7 +426,14 @@
                 <!--Button-->
                 <button id="expectation-button">expectation</button>
                 <p id="expectation-paragraph" style="display: none;">
-                    \[ E(x) = \int_-\inf^\inf x f(x) dx \]
+                    \[ E(x) = \int_-\infty^\infty x f(x) dx \]
+                    \[ = \int_-\infty^0 F(x)dx + \inf_0^\infty (1- F(x))dx \]
+                    \[ = \int_0^1 X* (p)dp\]
+                    \[ \int_0^\infty P(X > x) dx\]
+                    <br><br>
+                    \[ E(x) = \sum_{x=0}^\infty x P(X=x) \]
+                    <br><br>
+                    \[E(aX+b) = aE(x) + b\]
                 <script>
                     const expectationB = document.getElementById('expectation-button');
                     const expectationP = document.getElementById('expectation-paragraph');
