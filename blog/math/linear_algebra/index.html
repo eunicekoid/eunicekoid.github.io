@@ -197,7 +197,30 @@
                         }
                     });
                 </script>
+                <br />
+                <br />
 
+
+                <!-- Button -->
+                <button id="span-button">span</button>
+                <p id="span-paragraph" style="display: none;">
+                    The span of \( \vec{v} \) and \( \vec{w} \) is the set of all their linear combinations (\( a\vec{v} + v\vec{w}\)), where \(a \) and \(b \) can be any real number. <br><br>
+
+                    Also known as the column space of (\( a\vec{v} + v\vec{w}\))
+                    
+                </p>
+                <script>
+                    const spanButton = document.getElementById('span-button');
+                    const spanPara = document.getElementById('span-paragraph');
+                    spanButton.addEventListener('click', () => {
+                        if (spanPara.style.display === 'none') {
+                            spanPara.style.display = 'block';
+                            spanPara.typeset();
+                        } else {
+                            spanPara.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 
 
