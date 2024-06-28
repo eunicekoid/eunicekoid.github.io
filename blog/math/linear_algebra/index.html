@@ -178,6 +178,28 @@
                 </style>
 
                 <!-- Button -->
+                <button id="colspace-button">colum space</button>
+                <p id="colspace-paragraph" style="display: none;"> The column space of matrix A, <i>Col(A)</i>, is:<br>
+                    • the set of all possible outputs of \( A\vec{v}\) <br>
+                    • the span of \(A \)'s colum vectors (all linear combinations of \(A\)'s colum vectors) <br>
+                    • always has the zero vector
+                </p>
+                <script>
+                    const colspaceB = document.getElementById('colspace-button');
+                    const colspaceP = document.getElementById('colspace-paragraph');
+                    colspaceB.addEventListener('click', () => {
+                        if (colspaceP.style.display === 'none') {
+                            colspaceP.style.display = 'block';
+                            colspaceP.typeset();
+                        } else {
+                            colspaceP.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+                <!-- Button -->
                 <button id="det-button">determinant</button>
                 <p id="det-paragraph" style="display: none;">
 
@@ -294,7 +316,7 @@
                 <br />
 
                 <!-- Button -->
-                <button id="ortho-button">orthonormalityr</button>
+                <button id="ortho-button">orthonormality</button>
                 <p id="ortho-paragraph" style="display: none;">
                     \( \vec{u}\) and \( \vec{v}\) are orthogonal if \( \vec{u}^T\vec{v} = 0\)
                 </p>
