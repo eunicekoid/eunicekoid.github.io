@@ -401,7 +401,7 @@
                 <!--Button-->
                 <button id="consistent-button">consistent</button>
                 <p id="consistent-paragraph" style="display: none;">An estimator is consistent if as the sample size increases, the estimator's sampling distribution converges towards the true parameter. <br><br>
-                    
+
                 </p>
                 <script>
                     const consistentB = document.getElementById('consistent-button');
@@ -421,6 +421,12 @@
                 <button id="correlation-button">correlation</button>
                 <p id="correlation-paragraph" style="display: none;">The extent that variables \( X \) and \( Y \) are linearly related; the scaled covariance of \( X \) and \( Y \) to a dimensionless number between -1 and 1.
                     \[ \rho(X,Y) = \frac{Cov(X, Y)}{\sqrt{Var(X) \cdot Var(Y) }} \]
+
+                    Random variables X and Y are not correlated if their covariance is zero. <br><br>
+
+                    An example of uncorrelated but independent variables are if:
+                    \( X = -1, 0, or 1 \) and \(Y = 1 \) if \(X = 0 \) and \(Y=0\) if \(X \neq 0\)<br>
+                    \(Cov(X,Y)=0\) and \(P(Y=y | X=x) \neq P|Y=y) \) so \(X\) and \(Y\) are not independent, since \(Y\) depends on \(X\).
                 </p>
                 <script>
                     const correlationButton = document.getElementById('correlation-button');
