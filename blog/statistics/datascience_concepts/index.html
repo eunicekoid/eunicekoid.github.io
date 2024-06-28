@@ -181,7 +181,7 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    Model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
+                    A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
                     
                     <small>(not good for imbalanced datasets)</small>
                 </p>
@@ -1047,6 +1047,27 @@
                     });
                 </script>
 
+                <!-- Button -->
+                <button id="precision-button">precision</button>
+                <p id="precision-paragraph" style="display: none;">
+                    A classification model evaluation metric. \( \text{Precision} = \frac{\text{# true positives}}{\text{(# true positives + # false positives)}} \)
+                    <br>tradeoff with Recall
+                    
+                    
+                </p>
+                <script>
+                    const precisionButton = document.getElementById('precision-button');
+                    const precisionPara = document.getElementById('precision-paragraph');
+                    precisionButton.addEventListener('click', () => {
+                        if (precisionPara.style.display === 'none') {
+                            precisionPara.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            precisionPara.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <!--Button-->
                 <button id="pdf-button">probability density function (pdf)</button>
                 <p id="pdf-paragraph" style="display: none;">A function that describes the probability of a
@@ -1284,6 +1305,23 @@
                 </script>
 
                 <!--Button-->
+                <button id="sensitivity-button">sensitivity</button>
+                <p id="sensitivity-paragraph" style="display: none;">
+                    A classification model evaluation metric also known as <i>recall</i> or the <i>true positive rate</i>. \( \text{Sensitivity} = \frac{\text{# true positives}}{\text{(# false true + # false negatives)}} \)
+                </p>
+                <script>
+                    const sensitivityButton = document.getElementById('sensitivity-button');
+                    const sensitivityButton = document.getElementById('sensitivity-paragraph');
+                    sensitivityButton.addEventListener('click', () => {
+                        if (sensitivityButton.style.display === 'none') {
+                            sensitivityButton.style.display = 'block';
+                        } else {
+                            sensitivityButton.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="skew-button">skewness</button>
                 <p id="skew-paragraph" style="display: none;">A measure of symmetry of a distribution. A
                     perfectly symmetrical distribution has a skewness coefficient of 0 (the mean, median, and mode
@@ -1309,6 +1347,22 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="specificity-button">specificity</button>
+                <p id="specificity-paragraph" style="display: none;">
+                    A classification model evaluation metric. \( \text{Specificity} = \frac{\text{# false positives}}{\text{(# false positives + # true negatives)}} \)
+                </p>
+                <script>
+                    const specificityButton = document.getElementById('specificity-button');
+                    const specificityButton = document.getElementById('specificity-paragraph');
+                    specificityButton.addEventListener('click', () => {
+                        if (specificityButton.style.display === 'none') {
+                            specificityButton.style.display = 'block';
+                        } else {
+                            specificityButton.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="sig-button">significance level</button>
