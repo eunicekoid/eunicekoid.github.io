@@ -177,6 +177,32 @@
                     }
                 </style>
 
+                <!-- Button -->
+                <button id="det-button">determinant</button>
+                <p id="det-paragraph" style="display: none;">
+
+                    How much the area / volume of the region created by the vectors changes after the transformation <br><br>
+
+•	Det = 0 if transformation reduces dimension for 2x2 to a point/line, for 3x3 to a plane <br>
+•	Det = 0: the columns of the matrix are linearly dependent <br>
+•	Use right-hand rule for orientation in 3D <br>
+•	\( det(M_1 M_2) = det(M_1) det(M_2) \)
+                   
+                </p>
+                <script>
+                    const detButton = document.getElementById('det-button');
+                    const detPara = document.getElementById('det-paragraph');
+                    detButton.addEventListener('click', () => {
+                        if (detPara.style.display === 'none') {
+                            detPara.style.display = 'block';
+                            detPara.typeset();
+                        } else {
+                            detPara.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
 
                 <!-- Button -->
                 <button id="eigen-button">eigenvalue & eigenvector</button>
