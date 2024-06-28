@@ -426,8 +426,8 @@
                 <!--Button-->
                 <button id="expectation-button">expectation</button>
                 <p id="expectation-paragraph" style="display: none;">
-                    \[ E(x) = \int_-\infty^\infty x f(x) dx \]
-                    \[ = \int_-\infty^0 F(x)dx + \inf_0^\infty (1- F(x))dx \]
+                    \[ E(x) = \int_{-\infty}^{\infty} x f(x) dx \]
+                    \[ = \int_{-\infty}^0 F(x)dx + \int_0^\infty (1- F(x))dx \]
                     \[ = \int_0^1 X* (p)dp\]
                     \[ \int_0^\infty P(X > x) dx\]
                     <br><br>
@@ -983,6 +983,10 @@
                 <p id="power-paragraph" style="display: none;">\( 1 - \beta \). The probability of correctly rejecting the null hypothesis; in other words, the probability of avoiding a type II error (false negative). The higher the power, the higher the probability of detecting a true change (correctly accepting the alternative hypothesis). Usually larger sample sizes have larger
                     power. Generally, set up an experiment where the power is high (e.g., 80%), and use this to figure out the
                     sample size needed. Analyze the power eith respect to \( \alpha \) and effect size. 
+
+                    <img class="img-fluid z-dept-1" src="images/power.png" alt="power.png" style="width: 80%;" />
+                    <img class="img-fluid z-dept-1" src="images/power2.png" alt="power.png" style="width: 80%;" />
+
                 </p>
                 <script>
                     const powerButton = document.getElementById('power-button');
