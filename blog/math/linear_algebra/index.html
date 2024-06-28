@@ -178,7 +178,7 @@
                 </style>
 
                 <!-- Button -->
-                <button id="colspace-button">colum space</button>
+                <button id="colspace-button">column space</button>
                 <p id="colspace-paragraph" style="display: none;"> The column space of matrix A, <i>Col(A)</i>, is:<br>
                     • the set of all possible outputs of \( A\vec{v}\) <br>
                     • the span of \(A \)'s colum vectors (all linear combinations of \(A\)'s colum vectors) <br>
@@ -309,6 +309,29 @@
                             dependencePara.typeset();
                         } else {
                             dependencePara.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+                <!-- Button -->
+                <button id="nullsp-button">null space</button>
+                <p id="nullsp-paragraph" style="display: none;"> 
+                The space that gets squished to a lower dimension (space of all vectors that becomes null - lands on the zero vector) <br><br>
+                
+                if \(A\) is an m\(\times\)n matrix, then \( N(A) = { \vec{x} \exists \mathbb{R}^n | A\vec{x} = 0 } ; \vec{0} \exists \mathbb{R}&m \)
+                 
+                </p>
+                <script>
+                    const nullspB = document.getElementById('nullsp-button');
+                    const nullspP = document.getElementById('nullsp-paragraph');
+                    nullspB.addEventListener('click', () => {
+                        if (nullspP.style.display === 'none') {
+                            nullspP.style.display = 'block';
+                            nullspP.typeset();
+                        } else {
+                            nullspP.style.display = 'none';
                         }
                     });
                 </script>
