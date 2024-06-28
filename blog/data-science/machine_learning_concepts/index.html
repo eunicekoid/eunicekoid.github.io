@@ -339,6 +339,32 @@
                         }
                     });
                 </script>
+
+                <!--Button-->
+                <button id="multicollinearity-button">multicollinearity</button>
+                <p id="multicollinearity-paragraph" style="display: none;">
+                    When predictors are highly correlated with each other so it's hard to distinguish the true underlying weights. <br><br>
+                    Multicollinearity can be assessed with the Variance Inflation Factor (VIF). It quantifies how much the estimated coefficients are inflated when multicollinearity exists. A VIF of 1 means there is no correlated. >1 means there is correlation. 5-10 means there is high multicollinearity. <br><br>
+                    Multicollinearity can be removed by: <br>
+                    • removing correlated variables<br>
+                    • linearly combine variables<br>
+                    • PCA (dimensionality reduction)<br>
+                    • PLS (partial least squares) <br>
+                    • regularization methods (ridge or lasso)
+                </p>
+                <script>
+                    const multicollinearityB = document.getElementById('multicollinearity-button');
+                    const multicollinearityP = document.getElementById('multicollinearity-paragraph');
+                    multicollinearityB.addEventListener('click', () => {
+                        if (multicollinearityP.style.display === 'none') {
+                            multicollinearityP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            multicollinearityP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
