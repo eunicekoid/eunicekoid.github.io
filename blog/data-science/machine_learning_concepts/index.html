@@ -607,6 +607,37 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="svm-button">support vector machines</button>
+                <p id="svm-paragraph" style="display: none;">
+                    A max-margin supervised classification model that forms a hyperplane that linearly separates the training data. The margin between the decision boundary (hyperplane) to any training point (usually the support vectors) is maximized. The margin can be linear or nonlinear. <br><br>
+                    
+                    SVM works well: <br>
+                    • for high dimensional spaces<br>
+                    • when there is a clear hyperplane <br> 
+                    • for nonlinear decision boundary <br><br>
+
+                    SVM does not work well: <br>
+                    • on large datasets (high computational complexity)<br>
+                    • when target classes overlap (no clear decision boundaries)<br>
+                    • SVM is also hard to interpret/explain and is sensitive to outliers
+
+                </p>    
+                <script>
+                    const svmB = document.getElementById('svm-button');
+                    const svmP = document.getElementById('svm-paragraph');
+
+                    svmB.addEventListener('click', () => {
+                        if (svmP.style.display === 'none') {
+                            svmP.style.display = 'block';
+                        } else {
+                            svmP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
+
                 <br />
                 <!-- <hr> -->
                 <!-- Adds related posts to the end of an article -->
