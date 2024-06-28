@@ -603,6 +603,28 @@
                 <br />
 
                 <!--Button-->
+                <button id="independence-button">independence (random variables)</button>
+                <p id="independence-paragraph" style="display: none;">
+                   1) \[ P(X = x, Y=y) = P(X=x)\cdot P(Y-y) \] <br>
+                   2) \[ P(X=x | Y=y) = P(X = x) \] <br>
+                   3) \[ P(Y=y | X = x) = P(Y=y)\] 
+
+                </p>
+                <script>
+                    const independenceButton = document.getElementById('independence-button');
+                    const independenceParagraph = document.getElementById('independence-paragraph');
+                    independenceButton.addEventListener('click', () => {
+                        if (independenceParagraph.style.display === 'none') {
+                            independenceParagraph.style.display = 'block';
+                        } else {
+                            independenceParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+                <!--Button-->
                 <button id="jointpd-button">joint probability distributions</button>
                 <div id="jointpd-paragraph" style="display: none; text-align: left;">
                     <div style="margin: 0 auto; padding: 6px; display: inline-block;">
