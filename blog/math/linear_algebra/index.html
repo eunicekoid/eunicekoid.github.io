@@ -358,6 +358,34 @@
                 <br />
                 <br />
 
+                <!-- Button -->
+                <button id="pc-button">principal components</button>
+                <p id="pc-paragraph" style="display: none;">
+                    Principal components are the eigenvectors of an m\(\times\)n matrix that contains the samples (n samples, m variables).<br><br>
+
+                    1. Create an m\(\times\)n matrix that contains the samples<br>
+                    2. Find matrix \(B\). Standardize the samples so that the mean is zero \(x_i-\mu\)<br>
+                    3. Calculate \(S\), the covariance matrix. \(S = \frac{1}{n-1}BB^T\) <small>symmetric, diagonals are variances</small><br>
+                    4. Find the eigenvalues and orthogonal eigenvectors 
+                    &nbsp; \(\lambda_i\): largest explains the most variation<br>
+                    &nbsp; \(\vec{u_i}\) are eigenvectors - the principal components
+
+                </p>
+                <script>
+                    const pcB = document.getElementById('pc-button');
+                    const pcP = document.getElementById('pc-paragraph');
+                    pcB.addEventListener('click', () => {
+                        if (pcP.style.display === 'none') {
+                            pcP.style.display = 'block';
+                            pcP.typeset();
+                        } else {
+                            pcP.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
                  <!-- Button -->
                  <button id="rank-button">rank</button>
                  <p id="rank-paragraph" style="display: none;">
