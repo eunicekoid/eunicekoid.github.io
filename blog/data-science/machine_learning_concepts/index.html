@@ -229,7 +229,37 @@
                 <br />
 
                 
+                <!-- Button -->
+                <button id="clustering-button">clustering</button>
+                <p id="clustering-paragraph" style="display: none;">
+                    An unsupervised machine learning approach to group comparable data points by certain traits. <br><br>
 
+                    <b>K-means Clustering</b><br>
+                    • Partitions data into <i>k</i> clusters and then arbitrarily selects centroids of those clusters <br>
+                    • Updates the groups by assigning points to closest cluster, updating the centroids, and then repeat until convergence<br><br>
+
+
+                    <b>Hierarchical Clustering</b><br>
+                    • Assigns data points to clusters and adds nearest points until there's one cluster left <br>
+                    • Dendogram - more interpretable <br><br>
+
+                    <b>Density Clustering (DBSCAN)</b><br>
+                    • Groups points together that have high density - have many neighbors <br>
+                    • Good at detecting outliers
+
+                </p>
+                <script>
+                    const clusteringB = document.getElementById('clustering-button');
+                    const clusteringP = document.getElementById('clustering-paragraph');
+                    clusteringB.addEventListener('click', () => {
+                        if (bclusteringPvP.style.display === 'none') {
+                            clusteringP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            clusteringP.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="r2-button">coefficient of determination (R<sup>2</sup>)</button>
