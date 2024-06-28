@@ -356,6 +356,31 @@
                  <br />
                  <br />
 
+
+                 <!--Button-->
+                 <button id="ig-button">information gain</button>
+                 <p id="ig-paragraph" style="display: none;"> In a decision tree, maximize IG recursively on all branches <br>
+                    For some feature \(X\) on which we want to split, \( IG(X,Y) = H(Y) - H(Y|X)\) <br>
+                    \(IG(X,Y)\) is the reduction in uncertainty in \(Y\) by splitting on \(X\)<br>
+                    \(H(Y)\) is the entropy from initial training labels
+                 </p>
+                 <script>
+                     const igB = document.getElementById('ig-button');
+                     const igP = document.getElementById('ig-paragraph');
+ 
+                     igB.addEventListener('click', () => {
+                         if (igP.style.display === 'none') {
+                            igP.style.display = 'block';
+                         } else {
+                            igP.style.display = 'none';
+                         }
+                     });
+                 </script>
+ 
+                 <br />
+                 <br />
+
+
                  <!--Button-->
                 <button id="mae-button">mean absolute error (MAE)</button>
                 <p id="mae-paragraph" style="display: none;">
