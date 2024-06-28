@@ -320,7 +320,7 @@
                 <p id="nullsp-paragraph" style="display: none;"> 
                 The space that gets squished to a lower dimension (space of all vectors that becomes null - lands on the zero vector) <br><br>
                 
-                if \(A\) is an m\(\times\)n matrix, then \( N(A) = { \vec{x} \exists \mathbb{R}^n | A\vec{x} = 0 } ; \vec{0} \exists \mathbb{R}&m \)
+                if \(A\) is an m\(\times\)n matrix, then \( N(A) = { \vec{x} ∈ \mathbb{R}^n | A\vec{x} = 0 } ; \vec{0} ∈ \mathbb{R}&m \)
                  
                 </p>
                 <script>
@@ -358,7 +358,25 @@
                 <br />
                 <br />
 
-
+                 <!-- Button -->
+                 <button id="rank-button">rank</button>
+                 <p id="rank-paragraph" style="display: none;">
+                     The number of dimensions in the column space of a matrix.
+                 </p>
+                 <script>
+                     const rankB = document.getElementById('sprankan-button');
+                     const rankP = document.getElementById('rank-paragraph');
+                     rankB.addEventListener('click', () => {
+                         if (rankP.style.display === 'none') {
+                            rankP.style.display = 'block';
+                            rankP.typeset();
+                         } else {
+                            rankP.style.display = 'none';
+                         }
+                     });
+                 </script>
+                 <br />
+                 <br />
 
                 <!-- Button -->
                 <button id="span-button">span</button>
