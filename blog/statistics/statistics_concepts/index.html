@@ -353,7 +353,27 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="chi-button">chi-squared distribution</button>
+                <p id="chi-paragraph" style="display: none;"> Measures the extent to which results depart form the null expectation of independence. <br><br>
+                    Also measures the extent to which a set of observed values "fits" a specified distribution (goodness-of-fit test). It is useful for determining whether multiple treatments (an A/B/C test) differ from one another in their effects.
 
+                    \[ \chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}\]
+                    where \(O_i\) is the observed frequency for each category, and \(E_i\) is the expected frequency for each category. <br><br>
+
+                    A low chi-square value for a set of counts indicates that they closely follow the expected distribution. A high chi-square indicates that they differ markedly from what is expected.
+                </p>
+                <script>
+                    const chiB = document.getElementById('chi-button');
+                    const chiP = document.getElementById('chi-paragraph');
+                    chiB.addEventListener('click', () => {
+                        if (chiP.style.display === 'none') {
+                            chiP.style.display = 'block';
+                        } else {
+                            chiP.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
@@ -414,9 +434,6 @@
                         }
                     });
                 </script>
-
-                <br />
-                <br />
 
                 <!--Button-->
                 <button id="count-button">counting</button>
