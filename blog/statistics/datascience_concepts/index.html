@@ -484,6 +484,23 @@
                 <br />
 
                 <!--Button-->
+                <button id="expectation-button">expectation</button>
+                <p id="expectation-paragraph" style="display: none;">
+                    \[ E(x) = \int_-\inf^\inf x f(x) dx \]
+                <script>
+                    const expectationB = document.getElementById('expectation-button');
+                    const expectationP = document.getElementById('expectation-paragraph');
+
+                    expectationB.addEventListener('click', () => {
+                        if (expectationP.style.display === 'none') {
+                            expectationP.style.display = 'block';
+                        } else {
+                            expectationP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="exp-button">exponential distribution</button>
                 <p id="exp-paragraph" style="display: none;">For continuous variables. Memoryless. Probability of the interval
                     length between Poisson events with a set parameter of \( \lambda \). For example, time between website visits and time to failure.
