@@ -179,21 +179,21 @@
 
 
                 <!-- Button -->
-                <button id="acc-button">accuracy</button>
-                <p id="acc-paragraph" style="display: none;">
-                    A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
-                    
-                    <small>(not good for imbalanced datasets)</small>
+                <button id="dependence-button">linear independence vs. dependence</button>
+                <p id="dependence-paragraph" style="display: none;">
+                    <img
+                        class="img-fluid z-dept-1" src="images/dep_indep.png" alt="dep_indep.png"
+                        style="width: 90%;" />
                 </p>
                 <script>
-                    const accButton = document.getElementById('acc-button');
-                    const accPara = document.getElementById('acc-paragraph');
-                    accButton.addEventListener('click', () => {
-                        if (accPara.style.display === 'none') {
-                            accPara.style.display = 'block';
-                            MathJax.typeset();
+                    const dependenceButton = document.getElementById('dependence-button');
+                    const dependencePara = document.getElementById('dependence-paragraph');
+                    dependenceButton.addEventListener('click', () => {
+                        if (dependencePara.style.display === 'none') {
+                            dependencePara.style.display = 'block';
+                            dependencePara.typeset();
                         } else {
-                            accPara.style.display = 'none';
+                            dependencePara.style.display = 'none';
                         }
                     });
                 </script>
