@@ -378,6 +378,30 @@
                  <br />
                  <br />
 
+                 <!-- Button -->
+                <button id="svd-button">singular value decomposition</button>
+                <p id="svd-paragraph" style="display: none;"> The decomposition of non-square matrices into eigenvectors:
+
+                    <br><br>
+                    \( A = U \Sum V^T \)
+
+                    <br><br>
+                    where \(U\) is m \(\times \) n and \(V\) is n \(\times \) n 
+                </p>
+                <script>
+                    const svdB = document.getElementById('svd-button');
+                    const svdP = document.getElementById('svd-paragraph');
+                    svdB.addEventListener('click', () => {
+                        if (svdP.style.display === 'none') {
+                            svdP.style.display = 'block';
+                            svdP.typeset();
+                        } else {
+                            svdP.style.display = 'none';
+                        }
+                    });
+                </script>
+                
+
                 <!-- Button -->
                 <button id="span-button">span</button>
                 <p id="span-paragraph" style="display: none;">
