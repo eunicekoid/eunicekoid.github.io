@@ -398,6 +398,23 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="consistent-button">consistent</button>
+                <p id="consistent-paragraph" style="display: none;">An estimator is consistent if as the sample size increases, the estimator's sampling distribution converges towards the true parameter. <br><br>
+                    
+                </p>
+                <script>
+                    const consistentB = document.getElementById('consistent-button');
+                    const consistentP = document.getElementById('consistent-paragraph');
+                    consistentB.addEventListener('click', () => {
+                        if (consistentP.style.display === 'none') {
+                            consistentP.style.display = 'block';
+                        } else {
+                            consistentP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                
 
                 <!--Button-->
