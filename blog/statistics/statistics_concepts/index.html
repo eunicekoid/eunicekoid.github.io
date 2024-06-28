@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Eunice Koid | Data Science Concepts</title>
+    <title>Eunice Koid | Statistics Concepts</title>
     <meta name="author" content="Eunice Koid" />
     <meta name="description" content="" />
     <meta name="keywords" content="data-science, statistics" />
@@ -130,7 +130,7 @@
         <div class="post">
 
             <header class="post-header">
-                <h1 class="post-title">Data Science Concepts</h1>
+                <h1 class="post-title">Statistics Concepts</h1>
                 <p class="post-description">Click on each term to view its definition. </p>
             </header>
             <hr>
@@ -178,25 +178,6 @@
                 </style>
 
 
-                <!-- Button -->
-                <button id="acc-button">accuracy</button>
-                <p id="acc-paragraph" style="display: none;">
-                    A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
-                    
-                    <small>(not good for imbalanced datasets)</small>
-                </p>
-                <script>
-                    const accButton = document.getElementById('acc-button');
-                    const accPara = document.getElementById('acc-paragraph');
-                    accButton.addEventListener('click', () => {
-                        if (accPara.style.display === 'none') {
-                            accPara.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            accPara.style.display = 'none';
-                        }
-                    });
-                </script>
 
 
                 <!--Button-->
@@ -354,28 +335,6 @@
                 </script>
 
 
-                <!--Button-->
-                <button id="r2-button">coefficient of determination (R<sup>2</sup>)</button>
-                <p id="r2-paragraph" style="display: none;">
-                    R<sup>2</sup> measures how well the independent variables explain the variability in the dependent
-                    variable. <br><br>
-
-                    If R<sup>2</sup>=1, the model perfectly predicts the dependent variable. <br>
-                    If R<sup>2</sup>=0, the model does not explain any variability in the dependent variable. <br><br>
-
-                    R<sup>2</sup> = SSR (explained variance) / SST (total variance) </p>
-                <script>
-                    const r2Button = document.getElementById('r2-button');
-                    const r2Para = document.getElementById('r2-paragraph');
-                    r2Button.addEventListener('click', () => {
-                        if (r2Para.style.display === 'none') {
-                            r2Para.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            r2Para.style.display = 'none';
-                        }
-                    });
-                </script>
 
                 <!--Button-->
                 <button id="confidence-interval-button">confidence interval</button>
@@ -400,26 +359,7 @@
                     });
                 </script>
 
-                <!--Button-->
-                <button id="confusion-button">confusion matrix</button>
-                <p id="confusion-paragraph" style="display: none;">
-                   <img
-                        class="img-fluid z-dept-1" src="images/confusion_matrix.png" alt="confusion_matrix.png"
-                        style="width: 90%;" />
-
-                </p>
-                <script>
-                    const confusionButton = document.getElementById('confusion-button');
-                    const confusionParagraph = document.getElementById('confusion-paragraph');
-
-                    confusionButton.addEventListener('click', () => {
-                        if (confusionParagraph.style.display === 'none') {
-                            confusionParagraph.style.display = 'block';
-                        } else {
-                            confusionParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+               
 
                 <!--Button-->
                 <button id="correlation-button">correlation</button>
