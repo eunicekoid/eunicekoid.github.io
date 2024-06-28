@@ -468,27 +468,7 @@
                 <br />
                 <br />
 
-                <!--Button-->
-                <button id="f1-button">F1 score</button>
-                <p id="f1-paragraph" style="display: none;">A classification model evaluation metric, good for imbalanced datasets> 
-                    \[ F_1 = 2 \times \frac{\text{precision} \times \text{recall}}{\text{precision} + \text{recall}}  \]
-                    Optimize for the F1 score to balance precision vs. recall.
-                </p>
-                <script>
-                    const f1Button = document.getElementById('f1-button');
-                    const f1Paragraph = document.getElementById('f1-paragraph');
-
-                    f1Button.addEventListener('click', () => {
-                        if (f1Paragraph.style.display === 'none') {
-                            f1Paragraph.style.display = 'block';
-                        } else {
-                            f1Paragraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <br />
-                <br />
+               
 
                 <!--Button-->
                 <button id="geo-button">geometric distribution</button>
@@ -889,51 +869,7 @@
                     });
                 </script>
 
-                <!--Button-->
-                <button id="mae-button">mean absolute error (MAE)</button>
-                <p id="mae-paragraph" style="display: none;">
-                    Evaluation metric for regression that measures the average
-                    absolute difference between the actual and predicted values. Lower MAE means better model
-                    performance.
-                    \[ MAE = \frac{1}{n} \sum_{i=1}^{n} \mid y_i - \hat{y}_i \mid \]
-                </p>
-                <script>
-                    const maeButton = document.getElementById('mae-button');
-                    const maePara = document.getElementById('mae-paragraph');
-                    maeButton.addEventListener('click', () => {
-                        if (maePara.style.display === 'none') {
-                            maePara.style.display = 'block';
-                            // Trigger MathJax typesetting after displaying the equation
-                            MathJax.typeset();
-                        } else {
-                            maePara.style.display = 'none';
-                        }
-                    });
-                </script>
-
-
-                <!--Button-->
-                <button id="mse-button">mean squared error (MSE)</button>
-                <p id="mse-paragraph" style="display: none;">
-                    Evaluation metric for regression that measures the average of the squared differences between
-                    actual and predicted values. Lower MSE means better model performance. The MSE represents
-                    unexplained
-                    variance, the portion of variability in the dependent variable that is not explained by the
-                    model's independent variables.
-                    \[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
-                </p>
-                <script>
-                    const mseButton = document.getElementById('mse-button');
-                    const msePara = document.getElementById('mse-paragraph');
-                    mseButton.addEventListener('click', () => {
-                        if (msePara.style.display === 'none') {
-                            msePara.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            msePara.style.display = 'none';
-                        }
-                    });
-                </script>
+                
 
                 <!--Button-->
                 <button id="mult-button">multiplication rule of probability</button>
@@ -1053,26 +989,7 @@
                     });
                 </script>
 
-                <!-- Button -->
-                <button id="precision-button">precision</button>
-                <p id="precision-paragraph" style="display: none;">
-                    A classification model evaluation metric. \( \text{Precision} = \frac{\text{# true positives}}{\text{(# true positives + # false positives)}} \)
-                    <br>tradeoff with Recall
-                    
-                    
-                </p>
-                <script>
-                    const precisionButton = document.getElementById('precision-button');
-                    const precisionPara = document.getElementById('precision-paragraph');
-                    precisionButton.addEventListener('click', () => {
-                        if (precisionPara.style.display === 'none') {
-                            precisionPara.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            precisionPara.style.display = 'none';
-                        }
-                    });
-                </script>
+              
 
                 <!--Button-->
                 <button id="pdf-button">probability density function (pdf)</button>
@@ -1196,96 +1113,7 @@
 
 
 
-                <!--Button-->
-                <button id="reg-button">regression</button>
-                <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship
-                    between independent variables (features or predictors) and a dependent variable (target or outcome)
-                    to make predictions and illuminate the influence of the independent variables on the target.
-                    <br />
-                    <br />
-                    <b>Multiple Regression</b>: Two or more independent variables to predict one dependent variable
-                    <br />
-                    <b>Linear Regression</b>: The relationship between the independent and dependent
-                    variables are fitted with a linear equation <br />
-                    <b>Polynominal Regression</b>: The relationship between the independent and
-                    dependent variables are fitted with a polynomial equation such as quadratic or cubic <br />
-                    <b>Ridge and Lasso Regression</b>: Regularization technique to handle collinearity (high
-                    correlation
-                    among features) to prevent overfitting. It introduces additional information to penalize extreme
-                    parameter (weight) values
-                </p>
-                <script>
-                    const regButton = document.getElementById('reg-button');
-                    const regParagraph = document.getElementById('reg-paragraph');
-                    regButton.addEventListener('click', () => {
-                        if (regParagraph.style.display === 'none') {
-                            regParagraph.style.display = 'block';
-                        } else {
-                            regParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="rocauc-button">ROC curve & AUC</button>
-                <p id="rocauc-paragraph" style="display: none;">
-                    The receiver operating characteristic (ROC) curve shows a classification model's performance across all classification thresholds. The area under the curve (AUC) is the area under the ROC. An AUC of 1 means the model performed perfectly. An AUC of 0.5 means that the model performed as well as random guessing. 
-                   <img
-                        class="img-fluid z-dept-1" src="images/roc_auc.png" alt="roc_auc.png"
-                        style="width: 90%;" />
-
-                </p>
-                <script>
-                    const rocaucButton = document.getElementById('rocauc-button');
-                    const rocaucParagraph = document.getElementById('rocauc-paragraph');
-
-                    rocaucButton.addEventListener('click', () => {
-                        if (rocaucParagraph.style.display === 'none') {
-                            rocaucParagraph.style.display = 'block';
-                        } else {
-                            rocaucParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
-
-                <!--Button-->
-                <button id="rmse-button">root mean squared error (RMSE)</button>
-                <p id="rmse-paragraph" style="display: none;">The square root of MSE. This metric helps with:
-                    <br><br>
-                    <b>Interpretability</b>: Because RMSE is expressed in the same unit as the dependent variable,
-                    it is easier
-                    to interpret and more relatable to the original scale of the data.<br><br>
-
-                    <b>Outlier Sensitivity</b>: RMSE is more sensitive to outliers than MSE, as larger errors
-                    contribute more
-                    significantly due to the squared and square root operations.<br><br>
-
-                    <b>Direct Comparison</b>: RMSE offers a direct comparison to the standard deviation of the
-                    target.
-                    If the
-                    RMSE is close to the standard deviation (the inherent variability in the original data), then it
-                    indicates that the model's predictions are capturing a similar level of variability on average
-                    as
-                    the observed data. <br><br>
-
-                    <b>Balanced Assessment</b>: By taking the square root, RMSE balances the impact of extreme
-                    errors,
-                    offering
-                    a more well-rounded evaluation of prediction accuracy in regression models.
-                </p>
-                <script>
-                    const rmse_Button = document.getElementById('rmse-button');
-                    const rmse_Paragraph = document.getElementById('rmse-paragraph');
-                    rmse_Button.addEventListener('click', () => {
-                        if (rmse_Paragraph.style.display === 'none') {
-                            rmse_Paragraph.style.display = 'block';
-                        } else {
-                            rmse_Paragraph.style.display = 'none';
-                        }
-                    });
-                </script>
-                <br />
-                <br />
+                
 
                 <!--Button-->
                 <button id="sampdist-button">sampling distribution of the sample mean</button>
@@ -1311,21 +1139,7 @@
                 </script>
 
     
-                <!--Button-->
-                <button id="sensitivity-button">sensitivity</button>
-                <p id="sensitivity-paragraph" style="display: none;">A classification model evaluation metric also known as <i>recall</i> or the <i>true positive rate</i>. \( \text{Sensitivity} = \frac{\text{# true positives}}{\text{(# true positives + # false negatives)}} \)
-                </p>
-                <script>
-                    const sensitivityButton = document.getElementById('sensitivity-button');
-                    const sensitivityParagraph = document.getElementById('sensitivity-paragraph');
-                    sensitivityButton.addEventListener('click', () => {
-                        if (sensitivityParagraph.style.display === 'none') {
-                        sensitivityParagraph.style.display = 'block';
-                        } else {
-                        sensitivityParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+               
 
 
                 <!--Button-->
@@ -1354,21 +1168,7 @@
                     });
                 </script>
 
-                <!--Button-->
-                <button id="specificity-button">specificity</button>
-                <p id="specificity-paragraph" style="display: none;">A classification model evaluation metric. \( \text{Specificity} = \frac{\text{# false positives}}{\text{(# false positives + # true negatives)}} \)
-                </p>
-                <script>
-                    const specificityButton = document.getElementById('specificity-button');
-                    const specificityParagraph = document.getElementById('specificity-paragraph');
-                    specificityButton.addEventListener('click', () => {
-                        if (specificityParagraph.style.display === 'none') {
-                        specificityParagraph.style.display = 'block';
-                        } else {
-                        specificityParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+               
 
 
                 <!--Button-->
@@ -1433,25 +1233,7 @@
                     });
                 </script>
 
-                <!--Button-->
-                <button id="sst-button">SST (total sum of squares)</button>
-                <p id="sst-paragraph" style="display: none;">The sum of the squared differences between each
-                    observation
-                    and the mean of the dependent variable \( \hat{y} \).
-                    <img class="img-fluid z-dept-1" src="images/sst.jpg" alt="sst.jpg" style="width: 70%;" />
-                </p>
-                <script>
-                    const sstButton = document.getElementById('sst-button');
-                    const sstParagraph = document.getElementById('sst-paragraph');
-
-                    sstButton.addEventListener('click', () => {
-                        if (sstParagraph.style.display === 'none') {
-                            sstParagraph.style.display = 'block';
-                        } else {
-                            sstParagraph.style.display = 'none';
-                        }
-                    });
-                </script>
+                
                 <br />
                 <br />
 
