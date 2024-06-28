@@ -517,14 +517,14 @@
                     Optimize for the F1 score to balance precision vs. recall.
                 </p>
                 <script>
-                    const expButton = document.getElementById('exp-button');
-                    const expParagraph = document.getElementById('exp-paragraph');
+                    const f1Button = document.getElementById('f1-button');
+                    const f1Paragraph = document.getElementById('f1-paragraph');
 
-                    expButton.addEventListener('click', () => {
-                        if (expParagraph.style.display === 'none') {
-                            expParagraph.style.display = 'block';
+                    f1Button.addEventListener('click', () => {
+                        if (f1Paragraph.style.display === 'none') {
+                            f1Paragraph.style.display = 'block';
                         } else {
-                            expParagraph.style.display = 'none';
+                            f1Paragraph.style.display = 'none';
                         }
                     });
                 </script>
