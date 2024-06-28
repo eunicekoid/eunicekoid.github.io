@@ -216,7 +216,7 @@
                 <!-- Button -->
                 <button id="eigen-button">eigenvalue & eigenvector</button>
                 <p id="eigen-paragraph" style="display: none;">
-                    <img class="img-fluid z-dept-1" src="images/eigen.png" alt="eigen.png" style="width: 50%;" />
+                    <img class="img-fluid z-dept-1" src="images/eigen.png" alt="eigen.png" style="width: 30%;" />
                 </p>
                 <script>
                     const eigenButton = document.getElementById('eigen-button');
@@ -276,7 +276,7 @@
                 <button id="dependence-button">linear independence vs. dependence</button>
                 <p id="dependence-paragraph" style="display: none;">
                     <img class="img-fluid z-dept-1" src="images/dep_indep.png" alt="dep_indep.png"
-                        style="width: 70%;" />
+                        style="width: 60%;" />
                 </p>
                 <script>
                     const dependenceButton = document.getElementById('dependence-button');
@@ -292,6 +292,27 @@
                 </script>
                 <br />
                 <br />
+
+                <!-- Button -->
+                <button id="ortho-button">orthonormalityr</button>
+                <p id="ortho-paragraph" style="display: none;">
+                    \( \vec{u}\) and \( \vec{v}\) are orthogonal if \( \vec{u}^T\vec{v} = 0\)
+                </p>
+                <script>
+                    const orthoB = document.getElementById('ortho-button');
+                    const orthoP = document.getElementById('ortho-paragraph');
+                    orthoB.addEventListener('click', () => {
+                        if (orthoP.style.display === 'none') {
+                            orthoP.style.display = 'block';
+                            orthoP.typeset();
+                        } else {
+                            orthoP.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
 
 
                 <!-- Button -->
