@@ -426,6 +426,23 @@
                 </script>
 
                 <!--Button-->
+                <button id="rss-button">residual sum of squares</button>
+                <p id="rss-paragraph" style="display: none;">Unexplained variance from a model. For example, in a linear regression, parameter \(\beta\) is found by minimizing RSS. <br>
+                    \(RSS(\beta) = (y - X\beta)T(y-X\beta) \)
+                </p>
+                <script>
+                    const rssB = document.getElementById('rss-button');
+                    const rssP = document.getElementById('rss-paragraph');
+                    rssB.addEventListener('click', () => {
+                        if (rssP.style.display === 'none') {
+                            rssP.style.display = 'block';
+                        } else {
+                            rssP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="rocauc-button">ROC curve & AUC</button>
                 <p id="rocauc-paragraph" style="display: none;">
                     The receiver operating characteristic (ROC) curve shows a classification model's performance across all classification thresholds. The area under the curve (AUC) is the area under the ROC. An AUC of 1 means the model performed perfectly. An AUC of 0.5 means that the model performed as well as random guessing. 
@@ -540,6 +557,25 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="selection-button">subset selection</button>
+                <p id="selection-paragraph" style="display: none;">
+                    Stepwise Selection <br>
+                    &nbsp; • <b>Forward</b>: Start with an empty model and add the most useful predictors iteratively <br>
+                    &nbsp; • <b>Backward</b>: Start with a full model and remove least useful predictors iteratively 
+                </p>
+                <script>
+                    const selectionB = document.getElementById('selection-button');
+                    const selectionP = document.getElementById('selection-paragraph');
+
+                    selectionB.addEventListener('click', () => {
+                        if (selectionP.style.display === 'none') {
+                            selectionP.style.display = 'block';
+                        } else {
+                            selectionP.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <br />
                 <!-- <hr> -->
