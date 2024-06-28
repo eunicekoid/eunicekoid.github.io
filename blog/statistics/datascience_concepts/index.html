@@ -1200,6 +1200,28 @@
                 </script>
 
                 <!--Button-->
+                <button id="rocauc-button">ROC curve & AUC</button>
+                <p id="rocauc-paragraph" style="display: none;">
+                    The receiver operating characteristic (ROC) curve shows a classification model's performance across all classification thresholds. The area under the curve (AUC) is the area under the ROC. An AUC of 1 means the model performed perfectly. An AUC of 0.5 means that the model performed as well as random guessing. 
+                   <img
+                        class="img-fluid z-dept-1" src="images/roc_auc.png" alt="roc_auc.png"
+                        style="width: 90%;" />
+
+                </p>
+                <script>
+                    const rocaucButton = document.getElementById('rocauc-button');
+                    const rocaucParagraph = document.getElementById('rocauc-paragraph');
+
+                    rocaucButton.addEventListener('click', () => {
+                        if (rocaucParagraph.style.display === 'none') {
+                            rocaucParagraph.style.display = 'block';
+                        } else {
+                            rocaucParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="rmse-button">root mean squared error (RMSE)</button>
                 <p id="rmse-paragraph" style="display: none;">The square root of MSE. This metric helps with:
                     <br><br>
