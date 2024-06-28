@@ -257,6 +257,25 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="bias-button">bias</button>
+                <p id="bias-paragraph" style="display: none;">
+                    How close the model's predictions are to actuals. Want a small bias. An unbiased estimator is when its expectation is the true underlying parameter value.
+
+                </p>
+                <script>
+                    const biasB = document.getElementById('bias-button');
+                    const biasP = document.getElementById('bias-paragraph');
+
+                    biasB.addEventListener('click', () => {
+                        if (biasP.style.display === 'none') {
+                            biasP.style.display = 'block';
+                        } else {
+                            biasP.style.display = 'none';
+                        }
+                    });
+                </script>
+
 
                 <!--Button-->
                 <button id="binomial-button">binomial distribution</button>
