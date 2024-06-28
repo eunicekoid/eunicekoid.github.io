@@ -181,13 +181,22 @@
                 <button id="det-button">determinant</button>
                 <p id="det-paragraph" style="display: none;">
 
-                    How much the area / volume of the region created by the vectors changes after the transformation <br><br>
+                    How much the area / volume of the region created by the vectors changes after the transformation
+                    <br><br>
+                    \[
+                    A = \begin{bmatrix}
+                    a & b \\
+                    c & d
+                    \end{bmatrix}
+                    \]
 
-•	Det = 0 if transformation reduces dimension for 2x2 to a point/line, for 3x3 to a plane <br>
-•	Det = 0: the columns of the matrix are linearly dependent <br>
-•	Use right-hand rule for orientation in 3D <br>
-•	\( det(M_1 M_2) = det(M_1) det(M_2) \)
-                   
+                    \[ determinant = ad-bc \]
+
+                    • Det = 0 if transformation reduces dimension for 2x2 to a point/line, for 3x3 to a plane <br>
+                    • Det = 0: the columns of the matrix are linearly dependent <br>
+                    • Use right-hand rule for orientation in 3D <br>
+                    • \( det(M_1 M_2) = det(M_1) det(M_2) \)
+
                 </p>
                 <script>
                     const detButton = document.getElementById('det-button');
@@ -207,9 +216,7 @@
                 <!-- Button -->
                 <button id="eigen-button">eigenvalue & eigenvector</button>
                 <p id="eigen-paragraph" style="display: none;">
-                    <img
-                        class="img-fluid z-dept-1" src="images/eigen.png" alt="eigen.png"
-                        style="width: 50%;" />
+                    <img class="img-fluid z-dept-1" src="images/eigen.png" alt="eigen.png" style="width: 50%;" />
                 </p>
                 <script>
                     const eigenButton = document.getElementById('eigen-button');
@@ -228,11 +235,48 @@
 
 
                 <!-- Button -->
+                <button id="inverse-button">inverse of a matrix</button>
+                <p id="inverse-paragraph" style="display: none;">
+
+                    \[ A A^{-1} = I \]
+
+                    where \( I \) is the identity matrix such as
+                    \[
+                    \mathbf{I}_3 = \begin{bmatrix}
+                    1 & 0 & 0 \\
+                    0 & 1 & 0 \\
+                    0 & 0 & 1
+                    \end{bmatrix}
+                    \]
+
+                    \[
+                    A^{-1} = \frac{1}{|A|} \begin{bmatrix}
+                    d & -b \\
+                    -c & a
+                    \end{bmatrix}
+                    \] where \(|A|\) is the determinant of A
+                </p>
+                <script>
+                    const inverseButton = document.getElementById('inverse-button');
+                    const inversePara = document.getElementById('inverse-paragraph');
+                    inverseButton.addEventListener('click', () => {
+                        if (inversePara.style.display === 'none') {
+                            inversePara.style.display = 'block';
+                            inversePara.typeset();
+                        } else {
+                            inversePara.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+
+                <!-- Button -->
                 <button id="dependence-button">linear independence vs. dependence</button>
                 <p id="dependence-paragraph" style="display: none;">
-                    <img
-                        class="img-fluid z-dept-1" src="images/dep_indep.png" alt="dep_indep.png"
-                        style="width: 80%;" />
+                    <img class="img-fluid z-dept-1" src="images/dep_indep.png" alt="dep_indep.png"
+                        style="width: 70%;" />
                 </p>
                 <script>
                     const dependenceButton = document.getElementById('dependence-button');
@@ -253,12 +297,13 @@
                 <!-- Button -->
                 <button id="span-button">span</button>
                 <p id="span-paragraph" style="display: none;">
-                    The span of \( \vec{v} \) and \( \vec{w} \) is the set of all their linear combinations (\( a\vec{v} + v\vec{w}\)), where \(a \) and \(b \) can be any real number. <br><br>
+                    The span of \( \vec{v} \) and \( \vec{w} \) is the set of all their linear combinations (\( a\vec{v}
+                    + v\vec{w}\)), where \(a \) and \(b \) can be any real number. <br><br>
 
                     Also known as the column space of (\( a\vec{v} + v\vec{w}\))<br><br>
 
                     Note that a set is all points where the tip of the vector (\( a\vec{v} + v\vec{w}\)) sits.
-                    
+
                 </p>
                 <script>
                     const spanButton = document.getElementById('span-button');
@@ -273,7 +318,7 @@
                     });
                 </script>
 
-                
+
 
 
 
