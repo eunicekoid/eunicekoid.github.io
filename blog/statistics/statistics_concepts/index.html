@@ -895,7 +895,24 @@
                     });
                 </script>
 
-                
+                <!--Button-->
+                <button id="mgf-button">moment generating function (MGF)</button>
+                <p id="mgf-paragraph" style="display: none;"> Let \(X\) be a random variable with CDF \(F_x\).<br><br>
+                    \(M_x(t) = E [ e^{tX} ] \)<br>
+                    \(M(0) = 1\)
+                </p>
+                <script>
+                    const mgfB = document.getElementById('mgf-button');
+                    const mgfP = document.getElementById('mgf-paragraph');
+                    mgfB.addEventListener('click', () => {
+                        if (mgfP.style.display === 'none') {
+                            mgfP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            mgfP.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!--Button-->
                 <button id="mult-button">multiplication rule of probability</button>
