@@ -276,6 +276,35 @@
                     });
                 </script>
 
+
+                <!--Button-->
+                <button id="cv-button">cross validation</button>
+                <p id="cv-paragraph" style="display: none;">
+                Cross validation is a method of splitting the data into training and test subsets to avoid testing and training on the same data. Doing so may cause overfitting which decrease the model's performance. <br><br>
+                
+                <b>k-fold cross validation</b><br><br>
+                1. Randomly divide the data into <i>folds</i> of equal size <br>
+                2. Train the model on all folds except for one, which is the validation set on which the model is evaluated. For each training run, change the validation fold. <br>
+                3. Average the <i>k</i> validation errors to get an estimate of the true error.
+
+                </p>
+                <script>
+                    const cvB = document.getElementById('cv-button');
+                    const cvP = document.getElementById('cv-paragraph');
+
+                    cvB.addEventListener('click', () => {
+                        if (cvP.style.display === 'none') {
+                            cvP.style.display = 'block';
+                        } else {
+                            cvP.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+
+
                  <!--Button-->
                  <button id="f1-button">F1 score</button>
                  <p id="f1-paragraph" style="display: none;">A classification model evaluation metric, good for imbalanced datasets> 
@@ -427,8 +456,8 @@
 
                 <!--Button-->
                 <button id="rss-button">residual sum of squares</button>
-                <p id="rss-paragraph" style="display: none;">Unexplained variance from a model. For example, in a linear regression, parameter \(\beta\) is found by minimizing RSS. <br>
-                    \(RSS(\beta) = (y - X\beta)T(y-X\beta) \)
+                <p id="rss-paragraph" style="display: none;">Unexplained variance from a model. For example, in a linear regression, parameter \(\beta\) is found by minimizing RSS. Also known as Sum of Square Errors (SSE). <br>
+                    \(RSS(\beta) = (y - X\beta)^T(y-X\beta) \)
                 </p>
                 <script>
                     const rssB = document.getElementById('rss-button');
