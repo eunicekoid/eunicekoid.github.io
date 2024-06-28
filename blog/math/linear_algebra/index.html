@@ -312,6 +312,26 @@
                         }
                     });
                 </script>
+
+                 <!-- Button -->
+                 <button id="linreg-button">linear regression</button>
+                 <p id="linreg-paragraph" style="display: none;">
+                     <img class="img-fluid z-dept-1" src="images/linreg.png" alt="linreg.png"
+                         style="width: 80%;" />
+                 </p>
+                 <script>
+                     const linregB = document.getElementById('linreg-button');
+                     const linregP = document.getElementById('linreg-paragraph');
+                     linregB.addEventListener('click', () => {
+                         if (linregP.style.display === 'none') {
+                            linregP.style.display = 'block';
+                            linregP.typeset();
+                         } else {
+                            linregP.style.display = 'none';
+                         }
+                     });
+                 </script>
+
                 <br />
                 <br />
 
