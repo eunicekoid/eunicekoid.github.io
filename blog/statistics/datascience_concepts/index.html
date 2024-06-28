@@ -1364,6 +1364,23 @@
                     });
                 </script> -->
 
+                  <!--Button-->
+                  <button id="specificity-button">specificity</button>
+                  <p id="specificity-paragraph" style="display: none;">A classification model evaluation metric. \( \text{Specificity} = \frac{\text{# false positives}}{\text{(# false positives + # true negatives)}} \)
+                  </p>
+                  <script>
+                      const specificityButton = document.getElementById('specificity-button');
+                      const specificityParagraph = document.getElementById('specificity-paragraph');
+                      specificityButton.addEventListener('click', () => {
+                          if (specificityParagraph.style.display === 'none') {
+                            specificityParagraph.style.display = 'block';
+                          } else {
+                            specificityParagraph.style.display = 'none';
+                          }
+                      });
+                  </script>
+
+
                 <!--Button-->
                 <button id="sig-button">significance level</button>
                 <p id="sig-paragraph" style="display: none;">The probability of incorrectly rejecting the
