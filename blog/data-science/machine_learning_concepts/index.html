@@ -398,6 +398,27 @@
                  <br />
                  <br />
 
+                 <!--Button-->
+                 <button id="lime-button">LIME</button>
+                 <p id="lime-paragraph" style="display: none;"> Local Interpretable Model-Agnostic Explanation <br><br>
+                    Uses sparse linear models built around various predictions to understand how any model performs in that local vicinity.
+                 </p>
+                 <script>
+                     const limeB = document.getElementById('lime-button');
+                     const limeP = document.getElementById('lime-paragraph');
+ 
+                     limeB.addEventListener('click', () => {
+                         if (limeP.style.display === 'none') {
+                            limeP.style.display = 'block';
+                         } else {
+                            limeP.style.display = 'none';
+                         }
+                     });
+                 </script>
+ 
+                 <br />
+                 <br />
+
 
                  <!--Button-->
                 <button id="mae-button">mean absolute error (MAE)</button>
