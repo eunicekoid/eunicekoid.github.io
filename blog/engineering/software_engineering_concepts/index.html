@@ -1,28 +1,17 @@
----
-<!-- layout: Post -->
-title: Eunice Koid | Engineering
-tags: [engineering]
----
-
-
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Head -->
-
-<head> <!-- Metadata, OpenGraph and Schema.org -->
 
 
+<head>
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Eunice Koid | Engineering Blogs</title>
+    <title>Eunice Koid | Software Engineering Concepts</title>
     <meta name="author" content="Eunice Koid" />
-    <meta name="description" content="
-" />
-    <meta name="keywords" content="engineering" />
-
+    <meta name="description" content="" />
+    <meta name="keywords" content="software-engineering" />
 
 
     <!-- Bootstrap & MDB -->
@@ -45,10 +34,10 @@ tags: [engineering]
     <!-- Styles -->
 
     <link rel="shortcut icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◼️</text></svg>">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://eunicekoid.github.io/blog/">
+    <link rel="canonical" href="https://eunicekoid.github.io/">
 
     <!-- Dark Mode -->
 
@@ -57,7 +46,26 @@ tags: [engineering]
 
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/dark_mode.js"></script>
+    <style>
+        body {
+            margin-left: 2px;
+        }
 
+        .fixedNavigation {
+            position: fixed;
+            top: 1000;
+            width: 275px;
+            left: 10;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+        }
+
+        .submenu {
+            margin-left: 3px;
+            font-size: 11px;
+        }
+    </style>
 
 </head>
 
@@ -97,8 +105,8 @@ tags: [engineering]
                         </li>
 
                         <!-- Blog -->
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/blog/">blog<span class="sr-only">(current)</span></a>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/blog/">blog</a>
                         </li>
 
                         <!-- Toogle theme mode -->
@@ -114,46 +122,117 @@ tags: [engineering]
         </nav>
     </header>
 
+
+
     <!-- Content -->
     <div class="container mt-5">
+        <!-- page.html -->
         <div class="post">
 
             <header class="post-header">
-                <h1 class="post-title"><i class="fas fa-tag fa-sm"></i>engineering </a>
-                <p class="post-description"> an archive of posts on topics related to engineering </p>
+                <h1 class="post-title">Software Engineering Concepts</h1>
+                <p class="post-description">Click on each term to view its definition. </p>
             </header>
+            <hr>
+
 
             <article>
-                <div class="table-responsive">
-                    <table class="table table-sm table-borderless">
+                <style type="text/css">
+                    .tg {
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                    }
 
-                        <tr>
-                            <th scope="row">software-engineering</th>
-                            <td>
-                                <a class="post-link" href="/blog/engineering/software_engineering_concepts/">Software Engineering Concepts</a>
-                            </td>
-                        </tr>
+                    .tg td {
+                        border-color: #d3d3d3;
+                        border-style: solid;
+                        border-width: 1px;
+                        font-size: 13px;
+                        overflow: hidden;
+                        padding: 5px 6px;
+                        word-break: normal;
+                    }
 
-                    </table>
-                </div>
+                    .tg th {
+                        border-color: #d3d3d3;
+                        border-style: solid;
+                        border-width: 1px;
+                        font-size: 13px;
+                        overflow: hidden;
+                        padding: 5px 6px;
+                        word-break: normal;
+                    }
+
+                    .tg .tg-fymr {
+                        border-color: #d3d3d3;
+                        font-weight: bold;
+                        text-align: left;
+                        vertical-align: top
+                    }
+
+                    .tg .tg-0pky {
+                        border-color: #d3d3d3;
+                        text-align: left;
+                        vertical-align: top
+                    }
+                </style>
+
+
+                <!-- Button -->
+                <button id="bigo-button">big-o</button>
+                <p id="bigo-paragraph" style="display: none;">
+                    Describes the best-case runtime scenario, the asymptotic lower bound of an algorithm
+                </p>
+                <script>
+                    const bigoB = document.getElementById('bigo-button');
+                    const bigoP = document.getElementById('bigo-paragraph');
+                    bigoB.addEventListener('click', () => {
+                        if (bigoP.style.display === 'none') {
+                            bigoP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            bigoP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+               
+
+
+
+                <br />
+        
+
             </article>
-
         </div>
-
     </div>
 
     <!-- Footer -->
-    <!-- <footer class="fixed-bottom">
+    <footer class="fixed-bottom">
         <div class="container mt-0">
-            © Copyright 2022 Eunice Koid. Powered by <a href="https://jekyllrb.com/" target="_blank"
-                rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio"
-                target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a
-                href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.
+            <!-- © Copyright 2022 Eunice Koid. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. -->
 
         </div>
-    </footer> -->
+    </footer>
 
     <!-- JavaScripts -->
+    <script>
+        function toggleNavigation() {
+            var navigation = document.querySelector('.fixedNavigation');
+            if (window.innerWidth <= 1400) {
+                navigation.style.display = 'none';
+            } else {
+                navigation.style.display = 'block';
+            }
+        }
+
+        // Initial call to set the initial state on page load
+        toggleNavigation();
+
+        // Attach the function to the resize event
+        window.addEventListener('resize', toggleNavigation);
+    </script>
+
     <!-- jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
