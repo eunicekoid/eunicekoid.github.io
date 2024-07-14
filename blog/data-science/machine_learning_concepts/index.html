@@ -1086,6 +1086,24 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="shap-button">SHAP</button>
+                <p id="shap-paragraph" style="display: none;">Shapley Additive Explanation
+                    <br><br>
+                    SHAP values show the average marginal contribution of a feature over all possible combinations of inputs. 
+                </p>
+                <script>
+                    const shapB = document.getElementById('shap-button');
+                    const shapP = document.getElementById('shap-paragraph');
+                    shapB.addEventListener('click', () => {
+                        if (shapP.style.display === 'none') {
+                            shapP.style.display = 'block';
+                        } else {
+                            shapP.style.display = 'none';
+                        }
+                    });
+                </script>
+
 
                 <!--Button-->
                 <button id="specificity-button">specificity</button>
