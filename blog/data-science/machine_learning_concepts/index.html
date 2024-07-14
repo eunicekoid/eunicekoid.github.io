@@ -259,13 +259,37 @@
                     });
                 </script>
 
+                <!-- Button -->
+                <button id="boosting-button">boosting</button>
+                <p id="boosting-paragraph" style="display: none;">
+                    Boosting is An ensemble learning technique that combines the predictions of multiple weak learners
+                    (models that are slightly better than random guessing) to produce a strong learner with better
+                    performance.
+                    Boosting trains weak learners <i>sequentially</i> where each subsequent learner focuses on
+                    addressing the mistakes of the previous model.
+
+
+                </p>
+                <script>
+                    const boostingB = document.getElementById('boosting-button');
+                    const boostingP = document.getElementById('boosting-paragraph');
+                    boostingB.addEventListener('click', () => {
+                        if (boostingP.style.display === 'none') {
+                            boostingP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            boostingP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
                 <!--Button-->
                 <button id="classification-button">classification models</button>
-                <p id="classification-paragraph" style="display: none;"> 
-                
+                <div id="teststat-paragraph" style="display: none; text-align: left;">
+
                     <div style="margin: 0 auto; padding: 10px; display: inline-block;">
                         <table border=".1">
                             <tr>
@@ -276,13 +300,14 @@
                                 <td>&nbsp;Joint Distribution of \(X\) and \(Y\) <br> \(P(X,Y) = P(Y|X)P(X) \)
                                 </td>
                                 <td>&nbsp;\( \hat{y} = argmax_k P(Y = k|x) \) </td>
-                                
+
                             </tr>
-                        
+
                         </table>
-                        Determine decision boundary between classes by maximizing the posterior probability distribution.
+                        Determine decision boundary between classes by maximizing the posterior probability
+                        distribution.
                     </div>
-                </p>
+                </div>
                 <script>
                     const classificationB = document.getElementById('classification-button');
                     const classificationP = document.getElementById('classification-paragraph');
