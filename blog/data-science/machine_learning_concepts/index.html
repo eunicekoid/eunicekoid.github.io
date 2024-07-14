@@ -863,6 +863,39 @@
                         }
                     });
                 </script>
+
+                <!-- Button -->
+                <button id="pca-button">principal component analysis</button>
+                <p id="pca-paragraph" style="display: none;">
+                    PCA combines highly correlated data into principal components which capture the most variance. 
+                    It looks for linear combos of each row vector to explain variance in \(X\).
+                    <br><br>
+
+                    1.	Find component with max variance <br>
+                    2.	Find 2nd component uncorrelated to the 1st with 2nd highest variance <br>
+                    3.	Some <i>k</i> dimensions such that y\(_1\),…,y\(_k\) explains the majority of <i>k</i> variance, <i>k</i> \(<\)\(<\)\(<\) <i>p</i> <br>
+                    4.	Eigendecomposition of covariance matrix of \(X\)
+                    <br><br>
+                    Eigenvectors are the principal components. Eigenvalues are the magnitude of variance.
+                    <br><br>
+                    Find \(\vec{w}\) such that \(y_i = w_i^T x = \sum_{j=1}^p w_{ij}x_j \)
+
+
+                </p>
+                <script>
+                    const pcaB = document.getElementById('pca-button');
+                    const pcaP = document.getElementById('pca-paragraph');
+                    pcaB.addEventListener('click', () => {
+                        if (pcaP.style.display === 'none') {
+                            pcaP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            pcaP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
                 <br />
                 <br />
 
