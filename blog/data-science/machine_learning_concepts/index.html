@@ -197,6 +197,27 @@
                         }
                     });
                 </script>
+
+                <!-- Button -->
+                <button id="ada-button">ada boost</button>
+                <p id="ada-paragraph" style="display: none;">
+                    Adaptive boosting is an ensemble method that sequentially combines decision trees with a single split and sets weights uniformly for all data points.
+                    The data points are reweighted at each iteration depending on whether it was correctly classfied or not. The weighted predictions of each classifier are combined at the end to obtain a final prediction.
+                </p>
+                <script>
+                    const adaB = document.getElementById('ada-button');
+                    const adaP = document.getElementById('ada-paragraph');
+                    adaB.addEventListener('click', () => {
+                        if (adaP.style.display === 'none') {
+                            adaP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            adaP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
                 <br />
                 <br />
 
@@ -296,13 +317,15 @@
                                 <td><b>&nbsp;Discriminative Models</b></td>
                             </tr>
                             <tr>
-                                <td>&nbsp;Joint Distribution of \(X\) and \(Y\) <br> \(P(X,Y) = P(Y|X)P(X) \)
+                                <td>&nbsp;Joint Distribution of \(X\) and \(Y\) &nbsp;<br> &nbsp;\(P(X,Y) = P(Y|X)P(X) \)
                                 </td>
-                                <td>&nbsp;\( \hat{y} = argmax_k P(Y = k|x) \) </td>
+                                <td>&nbsp;\( \hat{y} = argmax_k P(Y = k|x) \)&nbsp; </td>
 
                             </tr>
 
                         </table>
+                        <br>
+                        Determine decision boundary between classes by maximizing the posterior probability distribution. 
                     </div>
                 </div>
                 <script>
