@@ -181,7 +181,7 @@
                 <!-- Button -->
                 <button id="bigo-button">big-o</button>
                 <p id="bigo-paragraph" style="display: none;">
-                    Describes the best-case runtime scenario, the asymptotic lower bound of an algorithm
+                    Describes the worst-case runtime scenario, the asymptotic upper bound of an algorithm
                 </p>
                 <script>
                     const bigoB = document.getElementById('bigo-button');
@@ -196,12 +196,28 @@
                     });
                 </script>
 
-               
+                <!-- Button -->
+                <button id="bigomega-button">big-omega</button>
+                <p id="bigomega-paragraph" style="display: none;">
+                    Describes the best-case runtime scenario, the asymptotic lower bound of an algorithm
+                </p>
+                <script>
+                    const bigomegaB = document.getElementById('bigomega-button');
+                    const bigomegaP = document.getElementById('bigomega-paragraph');
+                    bigomegaB.addEventListener('click', () => {
+                        if (bigomegaP.style.display === 'none') {
+                            bigomegaP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            bigomegaP.style.display = 'none';
+                        }
+                    });
+                </script>
 
 
 
                 <br />
-        
+
 
             </article>
         </div>
