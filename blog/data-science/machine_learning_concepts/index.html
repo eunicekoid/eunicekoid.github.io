@@ -181,8 +181,9 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
-                    
+                    A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
+                    predictions}}{\text{total number of predictions}} \)
+
                     <small>(not good for imbalanced datasets)</small>
                 </p>
                 <script>
@@ -203,15 +204,19 @@
                 <!-- Button -->
                 <button id="bv-button">bias-variance tradeoff</button>
                 <p id="bv-paragraph" style="display: none;">
-                    Bias is how close the model's predictions are to actual data. A high bias model oversimplifies the data and therefore underfits the data. <br><br> 
-                    
-                    Variance is the model's sensitivity to fluctuations - how much prediction error changes based on training inputs. High variance models overfit the data; they tend to perform well on training set but not on validation or test sets. To counter overfitting (reduce variance: <br>
+                    Bias is how close the model's predictions are to actual data. A high bias model oversimplifies the
+                    data and therefore underfits the data. <br><br>
+
+                    Variance is the model's sensitivity to fluctuations - how much prediction error changes based on
+                    training inputs. High variance models overfit the data; they tend to perform well on training set
+                    but not on validation or test sets. To counter overfitting (reduce variance: <br>
                     • feature selection<br>
                     • regulatization<br>
                     • dimensionality reduction<br>
                     • subset selection (best subset selection, stepwise selection) <br><br>
 
-                    When modeling, the tradeoff between high bias/low variance and high variance/low bias needs to be balanced. 
+                    When modeling, the tradeoff between high bias/low variance and high variance/low bias needs to be
+                    balanced.
                 </p>
                 <script>
                     const bvB = document.getElementById('bv-button');
@@ -226,60 +231,96 @@
                     });
                 </script>
 
-                 <!-- Button -->
-                 <button id="bagging-button">bagging</button>
-                 <p id="bagging-paragraph" style="display: none;">
-                    Short for Bootstrap Aggregating, bagging is a machine learning ensemble technique designed to improve the stability and accuracy of machine learning algorithms. 
-                    Multiple models (often called "weak learners") are trained and combined to produce a stronger overall model.
-                    Multiple subsets of the original training data are created using bootstrap sampling (randomly sampling with replacement). 
-                    A separate model is trained on each of these bootstrapped subsets. Since each subset is different, each model will have slight variations.
-                    Once all the models are trained, their predictions are combined. For regression tasks, this is usually done by averaging the predictions. For classification tasks, it is often done by majority voting.
-                 </p>
-                 <script>
-                     const baggingB = document.getElementById('bagging-button');
-                     const baggingP = document.getElementById('bagging-paragraph');
-                     baggingB.addEventListener('click', () => {
-                         if (baggingP.style.display === 'none') {
-                            baggingP.style.display = 'block';
-                             MathJax.typeset();
-                         } else {
-                            baggingP.style.display = 'none';
-                         }
-                     });
-                 </script>
-
-                <br />
-                <br />
-
-                
                 <!-- Button -->
-<button id="clustering-button">clustering</button>
-<p id="clustering-paragraph" style="display: none;">
-    An unsupervised machine learning approach to group comparable data points by certain traits. <br><br>
+                <button id="bagging-button">bagging</button>
+                <p id="bagging-paragraph" style="display: none;">
+                    Short for Bootstrap Aggregating, bagging is a machine learning ensemble technique designed to
+                    improve the stability and accuracy of machine learning algorithms.
+                    Multiple models (often called "weak learners") are trained and combined to produce a stronger
+                    overall model.
+                    Multiple subsets of the original training data are created using bootstrap sampling (randomly
+                    sampling with replacement).
+                    A separate model is trained on each of these bootstrapped subsets. Since each subset is different,
+                    each model will have slight variations.
+                    Once all the models are trained, their predictions are combined. For regression tasks, this is
+                    usually done by averaging the predictions. For classification tasks, it is often done by majority
+                    voting.
+                </p>
+                <script>
+                    const baggingB = document.getElementById('bagging-button');
+                    const baggingP = document.getElementById('bagging-paragraph');
+                    baggingB.addEventListener('click', () => {
+                        if (baggingP.style.display === 'none') {
+                            baggingP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            baggingP.style.display = 'none';
+                        }
+                    });
+                </script>
 
-    <b>K-means Clustering</b><br>
-    • Partitions data into <i>k</i> clusters and then arbitrarily selects centroids of those clusters <br>
-    • Updates the groups by assigning points to closest cluster, updating the centroids, and then repeat until convergence<br><br>
+                <br />
+                <br />
 
-    <b>Hierarchical Clustering</b><br>
-    • Assigns data points to clusters and adds nearest points until there's one cluster left <br>
-    • Dendogram - more interpretable <br><br>
+                <!--Button-->
+                <button id="classification-button">classification models</button>
+                <p id="classification-paragraph" style="display: none;"> 
+                    <table>
+                        <tr>
+                            <th>**Generative Models**</th>
+                            <th>**Discriminative Models**</th>
+                        </tr>
+                        <tr>
+                            <td>Joint Distribution of \(X\) and \(Y\) <br> \(P(X,Y) = P(Y|X)P(X) \)</td>
+                            <td>\( \hat{y} = argmax_k P(Y = k|x) \)</td>
+                        </tr>
+                        
+                    </table>
+                </p>
+                <script>
+                    const classificationB = document.getElementById('classification-button');
+                    const classificationP = document.getElementById('classification-paragraph');
 
-    <b>Density Clustering (DBSCAN)</b><br>
-    • Groups points together that have high density - have many neighbors <br>
-    • Good at detecting outliers
-</p>
-<script>
-    const clusteringB = document.getElementById('clustering-button');
-    const clusteringP = document.getElementById('clustering-paragraph');
-    clusteringB.addEventListener('click', () => {
-        if (clusteringP.style.display === 'none') {
-            clusteringP.style.display = 'block';
-        } else {
-            clusteringP.style.display = 'none';
-        }
-    });
-</script>
+                    classificationB.addEventListener('click', () => {
+                        if (classificationP.style.display === 'none') {
+                            classificationP.style.display = 'block';
+                        } else {
+                            classificationP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!-- Button -->
+                <button id="clustering-button">clustering</button>
+                <p id="clustering-paragraph" style="display: none;">
+                    An unsupervised machine learning approach to group comparable data points by certain traits.
+                    <br><br>
+
+                    <b>K-means Clustering</b><br>
+                    • Partitions data into <i>k</i> clusters and then arbitrarily selects centroids of those clusters
+                    <br>
+                    • Updates the groups by assigning points to closest cluster, updating the centroids, and then repeat
+                    until convergence<br><br>
+
+                    <b>Hierarchical Clustering</b><br>
+                    • Assigns data points to clusters and adds nearest points until there's one cluster left <br>
+                    • Dendogram - more interpretable <br><br>
+
+                    <b>Density Clustering (DBSCAN)</b><br>
+                    • Groups points together that have high density - have many neighbors <br>
+                    • Good at detecting outliers
+                </p>
+                <script>
+                    const clusteringB = document.getElementById('clustering-button');
+                    const clusteringP = document.getElementById('clustering-paragraph');
+                    clusteringB.addEventListener('click', () => {
+                        if (clusteringP.style.display === 'none') {
+                            clusteringP.style.display = 'block';
+                        } else {
+                            clusteringP.style.display = 'none';
+                        }
+                    });
+                </script>
 
 
                 <!--Button-->
@@ -305,12 +346,11 @@
                     });
                 </script>
 
-                
+
                 <!--Button-->
                 <button id="confusion-button">confusion matrix</button>
                 <p id="confusion-paragraph" style="display: none;">
-                   <img
-                        class="img-fluid z-dept-1" src="images/confusion_matrix.png" alt="confusion_matrix.png"
+                    <img class="img-fluid z-dept-1" src="images/confusion_matrix.png" alt="confusion_matrix.png"
                         style="width: 90%;" />
 
                 </p>
@@ -330,7 +370,9 @@
                 <!--Button-->
                 <button id="cook-button">cook's distance</button>
                 <p id="cook-paragraph" style="display: none;">
-                   Estimates the influence of any given data point. Considers residual and leverage (how far the point difference from other X values). A method to identify outliers; remove points beyond a certain threshold
+                    Estimates the influence of any given data point. Considers residual and leverage (how far the point
+                    difference from other X values). A method to identify outliers; remove points beyond a certain
+                    threshold
                 </p>
                 <script>
                     const cookB = document.getElementById('cook-button');
@@ -349,13 +391,16 @@
                 <!--Button-->
                 <button id="cv-button">cross validation</button>
                 <p id="cv-paragraph" style="display: none;">
-                Cross validation is a method of splitting the data into training and test subsets to avoid testing and training on the same data. Doing so may cause overfitting which decrease the model's performance. <br><br>
-                
-                <b>k-fold cross validation</b><br>
-                1. Randomly divide the data into <i>folds</i> of equal size <br>
-                2. Train the model on all folds except for one, which is the validation set on which the model is evaluated. <br>
-                &nbsp; &nbsp; For each training run, change the validation fold. <br>
-                3. Average the <i>k</i> validation errors to get an estimate of the true error.
+                    Cross validation is a method of splitting the data into training and test subsets to avoid testing
+                    and training on the same data. Doing so may cause overfitting which decrease the model's
+                    performance. <br><br>
+
+                    <b>k-fold cross validation</b><br>
+                    1. Randomly divide the data into <i>folds</i> of equal size <br>
+                    2. Train the model on all folds except for one, which is the validation set on which the model is
+                    evaluated. <br>
+                    &nbsp; &nbsp; For each training run, change the validation fold. <br>
+                    3. Average the <i>k</i> validation errors to get an estimate of the true error.
 
                 </p>
                 <script>
@@ -372,10 +417,12 @@
                 </script>
                 <br />
                 <br />
-                
+
                 <!--Button-->
                 <button id="decisiontree-button">decision trees</button>
-                <p id="decisiontree-paragraph" style="display: none;"> A supervised machine learning model that can be used for classification or regression problems. The algorithm is trained in a greedy and recursive fashion starting at a root node and making binary splits in features that lead to minimal error. 
+                <p id="decisiontree-paragraph" style="display: none;"> A supervised machine learning model that can be
+                    used for classification or regression problems. The algorithm is trained in a greedy and recursive
+                    fashion starting at a root node and making binary splits in features that lead to minimal error.
                 </p>
                 <script>
                     const decisiontreeB = document.getElementById('decisiontree-button');
@@ -394,75 +441,78 @@
                 <br />
 
 
-                 <!--Button-->
-                 <button id="f1-button">F1 score</button>
-                 <p id="f1-paragraph" style="display: none;">A classification model evaluation metric, good for imbalanced datasets> 
-                     \[ F_1 = 2 \times \frac{\text{precision} \times \text{recall}}{\text{precision} + \text{recall}}  \]
-                     Optimize for the F1 score to balance precision vs. recall.
-                 </p>
-                 <script>
-                     const f1Button = document.getElementById('f1-button');
-                     const f1Paragraph = document.getElementById('f1-paragraph');
- 
-                     f1Button.addEventListener('click', () => {
-                         if (f1Paragraph.style.display === 'none') {
-                             f1Paragraph.style.display = 'block';
-                         } else {
-                             f1Paragraph.style.display = 'none';
-                         }
-                     });
-                 </script>
- 
-                 <br />
-                 <br />
+                <!--Button-->
+                <button id="f1-button">F1 score</button>
+                <p id="f1-paragraph" style="display: none;">A classification model evaluation metric, good for
+                    imbalanced datasets>
+                    \[ F_1 = 2 \times \frac{\text{precision} \times \text{recall}}{\text{precision} + \text{recall}} \]
+                    Optimize for the F1 score to balance precision vs. recall.
+                </p>
+                <script>
+                    const f1Button = document.getElementById('f1-button');
+                    const f1Paragraph = document.getElementById('f1-paragraph');
+
+                    f1Button.addEventListener('click', () => {
+                        if (f1Paragraph.style.display === 'none') {
+                            f1Paragraph.style.display = 'block';
+                        } else {
+                            f1Paragraph.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
 
 
-                 <!--Button-->
-                 <button id="ig-button">information gain</button>
-                 <p id="ig-paragraph" style="display: none;"> In a decision tree, maximize IG recursively on all branches <br>
+                <!--Button-->
+                <button id="ig-button">information gain</button>
+                <p id="ig-paragraph" style="display: none;"> In a decision tree, maximize IG recursively on all branches
+                    <br>
                     For some feature \(X\) on which we want to split, \( IG(X,Y) = H(Y) - H(Y|X)\) <br>
                     \(IG(X,Y)\) is the reduction in uncertainty in \(Y\) by splitting on \(X\)<br>
                     \(H(Y)\) is the entropy from initial training labels
-                 </p>
-                 <script>
-                     const igB = document.getElementById('ig-button');
-                     const igP = document.getElementById('ig-paragraph');
- 
-                     igB.addEventListener('click', () => {
-                         if (igP.style.display === 'none') {
+                </p>
+                <script>
+                    const igB = document.getElementById('ig-button');
+                    const igP = document.getElementById('ig-paragraph');
+
+                    igB.addEventListener('click', () => {
+                        if (igP.style.display === 'none') {
                             igP.style.display = 'block';
-                         } else {
+                        } else {
                             igP.style.display = 'none';
-                         }
-                     });
-                 </script>
- 
-                 <br />
-                 <br />
+                        }
+                    });
+                </script>
 
-                 <!--Button-->
-                 <button id="lime-button">LIME</button>
-                 <p id="lime-paragraph" style="display: none;"> Local Interpretable Model-Agnostic Explanation <br><br>
-                    Uses sparse linear models built around various predictions to understand how any model performs in that local vicinity.
-                 </p>
-                 <script>
-                     const limeB = document.getElementById('lime-button');
-                     const limeP = document.getElementById('lime-paragraph');
- 
-                     limeB.addEventListener('click', () => {
-                         if (limeP.style.display === 'none') {
+                <br />
+                <br />
+
+                <!--Button-->
+                <button id="lime-button">LIME</button>
+                <p id="lime-paragraph" style="display: none;"> Local Interpretable Model-Agnostic Explanation <br><br>
+                    Uses sparse linear models built around various predictions to understand how any model performs in
+                    that local vicinity.
+                </p>
+                <script>
+                    const limeB = document.getElementById('lime-button');
+                    const limeP = document.getElementById('lime-paragraph');
+
+                    limeB.addEventListener('click', () => {
+                        if (limeP.style.display === 'none') {
                             limeP.style.display = 'block';
-                         } else {
+                        } else {
                             limeP.style.display = 'none';
-                         }
-                     });
-                 </script>
- 
-                 <br />
-                 <br />
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
 
 
-                 <!--Button-->
+                <!--Button-->
                 <button id="mae-button">mean absolute error (MAE)</button>
                 <p id="mae-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average
@@ -511,8 +561,11 @@
                 <!--Button-->
                 <button id="multicollinearity-button">multicollinearity</button>
                 <p id="multicollinearity-paragraph" style="display: none;">
-                    When predictors are highly correlated with each other so it's hard to distinguish the true underlying weights. <br><br>
-                    Multicollinearity can be assessed with the Variance Inflation Factor (VIF). It quantifies how much the estimated coefficients are inflated when multicollinearity exists. A VIF of 1 means there is no correlated. >1 means there is correlation. 5-10 means there is high multicollinearity. <br><br>
+                    When predictors are highly correlated with each other so it's hard to distinguish the true
+                    underlying weights. <br><br>
+                    Multicollinearity can be assessed with the Variance Inflation Factor (VIF). It quantifies how much
+                    the estimated coefficients are inflated when multicollinearity exists. A VIF of 1 means there is no
+                    correlated. >1 means there is correlation. 5-10 means there is high multicollinearity. <br><br>
                     Multicollinearity can be removed by: <br>
                     • removing correlated variables<br>
                     • linearly combine variables<br>
@@ -536,13 +589,14 @@
                 <br />
                 <br />
 
-                   <!-- Button -->
+                <!-- Button -->
                 <button id="precision-button">precision</button>
                 <p id="precision-paragraph" style="display: none;">
-                    A classification model evaluation metric. \( \text{Precision} = \frac{\text{# true positives}}{\text{(# true positives + # false positives)}} \)
+                    A classification model evaluation metric. \( \text{Precision} = \frac{\text{# true
+                    positives}}{\text{(# true positives + # false positives)}} \)
                     <br>tradeoff with Recall
-                    
-                    
+
+
                 </p>
                 <script>
                     const precisionButton = document.getElementById('precision-button');
@@ -563,7 +617,9 @@
                 <!--Button-->
                 <button id="rf-button">random forest</button>
                 <p id="rf-paragraph" style="display: none;">
-                    Random forest is an ensemble bagging method that averages decision trees. A random subset of features is considered for each split. Its advantages are that it helps overcome decision trees' proneness to overfitting, has quicker training time, and more interpretable.
+                    Random forest is an ensemble bagging method that averages decision trees. A random subset of
+                    features is considered for each split. Its advantages are that it helps overcome decision trees'
+                    proneness to overfitting, has quicker training time, and more interpretable.
                 </p>
                 <script>
                     const rfB = document.getElementById('rf-button');
@@ -609,7 +665,9 @@
 
                 <!--Button-->
                 <button id="rss-button">residual sum of squares</button>
-                <p id="rss-paragraph" style="display: none;">Unexplained variance from a model. For example, in a linear regression, parameter \(\beta\) is found by minimizing RSS. Also known as Sum of Square Errors (SSE). <br>
+                <p id="rss-paragraph" style="display: none;">Unexplained variance from a model. For example, in a linear
+                    regression, parameter \(\beta\) is found by minimizing RSS. Also known as Sum of Square Errors
+                    (SSE). <br>
                     \(RSS(\beta) = (y - X\beta)^T(y-X\beta) \)
                 </p>
                 <script>
@@ -627,10 +685,11 @@
                 <!--Button-->
                 <button id="rocauc-button">ROC curve & AUC</button>
                 <p id="rocauc-paragraph" style="display: none;">
-                    The receiver operating characteristic (ROC) curve shows a classification model's performance across all classification thresholds. The area under the curve (AUC) is the area under the ROC. An AUC of 1 means the model performed perfectly. An AUC of 0.5 means that the model performed as well as random guessing. 
-                   <img
-                        class="img-fluid z-dept-1" src="images/roc_auc.png" alt="roc_auc.png"
-                        style="width: 90%;" />
+                    The receiver operating characteristic (ROC) curve shows a classification model's performance across
+                    all classification thresholds. The area under the curve (AUC) is the area under the ROC. An AUC of 1
+                    means the model performed perfectly. An AUC of 0.5 means that the model performed as well as random
+                    guessing.
+                    <img class="img-fluid z-dept-1" src="images/roc_auc.png" alt="roc_auc.png" style="width: 90%;" />
 
                 </p>
                 <script>
@@ -686,40 +745,44 @@
                 <br />
 
 
-                 <!--Button-->
-                 <button id="sensitivity-button">sensitivity</button>
-                 <p id="sensitivity-paragraph" style="display: none;">A classification model evaluation metric also known as <i>recall</i> or the <i>true positive rate</i>. \( \text{Sensitivity} = \frac{\text{# true positives}}{\text{(# true positives + # false negatives)}} \)
-                 </p>
-                 <script>
-                     const sensitivityButton = document.getElementById('sensitivity-button');
-                     const sensitivityParagraph = document.getElementById('sensitivity-paragraph');
-                     sensitivityButton.addEventListener('click', () => {
-                         if (sensitivityParagraph.style.display === 'none') {
-                         sensitivityParagraph.style.display = 'block';
-                         } else {
-                         sensitivityParagraph.style.display = 'none';
-                         }
-                     });
-                 </script>
+                <!--Button-->
+                <button id="sensitivity-button">sensitivity</button>
+                <p id="sensitivity-paragraph" style="display: none;">A classification model evaluation metric also known
+                    as <i>recall</i> or the <i>true positive rate</i>. \( \text{Sensitivity} = \frac{\text{# true
+                    positives}}{\text{(# true positives + # false negatives)}} \)
+                </p>
+                <script>
+                    const sensitivityButton = document.getElementById('sensitivity-button');
+                    const sensitivityParagraph = document.getElementById('sensitivity-paragraph');
+                    sensitivityButton.addEventListener('click', () => {
+                        if (sensitivityParagraph.style.display === 'none') {
+                            sensitivityParagraph.style.display = 'block';
+                        } else {
+                            sensitivityParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
 
 
-                 <!--Button-->
-                 <button id="specificity-button">specificity</button>
-                 <p id="specificity-paragraph" style="display: none;">A classification model evaluation metric. \( \text{Specificity} = \frac{\text{# false positives}}{\text{(# false positives + # true negatives)}} \)
-                 </p>
-                 <script>
-                     const specificityButton = document.getElementById('specificity-button');
-                     const specificityParagraph = document.getElementById('specificity-paragraph');
-                     specificityButton.addEventListener('click', () => {
-                         if (specificityParagraph.style.display === 'none') {
-                         specificityParagraph.style.display = 'block';
-                         } else {
-                         specificityParagraph.style.display = 'none';
-                         }
-                     });
-                 </script>
+                <!--Button-->
+                <button id="specificity-button">specificity</button>
+                <p id="specificity-paragraph" style="display: none;">A classification model evaluation metric. \(
+                    \text{Specificity} = \frac{\text{# false positives}}{\text{(# false positives + # true negatives)}}
+                    \)
+                </p>
+                <script>
+                    const specificityButton = document.getElementById('specificity-button');
+                    const specificityParagraph = document.getElementById('specificity-paragraph');
+                    specificityButton.addEventListener('click', () => {
+                        if (specificityParagraph.style.display === 'none') {
+                            specificityParagraph.style.display = 'block';
+                        } else {
+                            specificityParagraph.style.display = 'none';
+                        }
+                    });
+                </script>
 
-                 <!--Button-->
+                <!--Button-->
                 <button id="sst-button">SST (total sum of squares)</button>
                 <p id="sst-paragraph" style="display: none;">The sum of the squared differences between each
                     observation
@@ -743,8 +806,9 @@
                 <button id="selection-button">subset selection</button>
                 <p id="selection-paragraph" style="display: none;">
                     Stepwise Selection <br>
-                    &nbsp; • <b>Forward</b>: Start with an empty model and add the most useful predictors iteratively <br>
-                    &nbsp; • <b>Backward</b>: Start with a full model and remove least useful predictors iteratively 
+                    &nbsp; • <b>Forward</b>: Start with an empty model and add the most useful predictors iteratively
+                    <br>
+                    &nbsp; • <b>Backward</b>: Start with a full model and remove least useful predictors iteratively
                 </p>
                 <script>
                     const selectionB = document.getElementById('selection-button');
@@ -762,11 +826,13 @@
                 <!--Button-->
                 <button id="svm-button">support vector machines</button>
                 <p id="svm-paragraph" style="display: none;">
-                    A max-margin supervised classification model that forms a hyperplane that linearly separates the training data. The margin between the decision boundary (hyperplane) to any training point (usually the support vectors) is maximized. The margin can be linear or nonlinear. <br><br>
-                    
+                    A max-margin supervised classification model that forms a hyperplane that linearly separates the
+                    training data. The margin between the decision boundary (hyperplane) to any training point (usually
+                    the support vectors) is maximized. The margin can be linear or nonlinear. <br><br>
+
                     SVM works well: <br>
                     • for high dimensional spaces<br>
-                    • when there is a clear hyperplane <br> 
+                    • when there is a clear hyperplane <br>
                     • for nonlinear decision boundary <br><br>
 
                     SVM does not work well: <br>
@@ -774,7 +840,7 @@
                     • when target classes overlap (no clear decision boundaries)<br>
                     • SVM is also hard to interpret/explain and is sensitive to outliers
 
-                </p>    
+                </p>
                 <script>
                     const svmB = document.getElementById('svm-button');
                     const svmP = document.getElementById('svm-paragraph');
