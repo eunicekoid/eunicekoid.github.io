@@ -425,8 +425,8 @@
                     <br><br>
                     \( Adjusted R^2 = 1 - \frac{(1-R^2)(N-1)}{N-p-1} \) <br>
                     &nbsp;&nbsp;where R<sup>2</sup> is the sample R-squared value <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N is the total sample size  <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p is the number of independent variables
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N is the total sample size  <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p is the number of independent variables
                     <br><br>
                     Generally, R<sup>2</sup> increases when you add more features, but that does not mean it's a better model. It could be overfitted.
                 </p>
@@ -987,6 +987,38 @@
                     });
                 </script>
 
+
+                <br />
+                <br />
+
+                <!--Button-->
+                <button id="qq-button">qq plot</button>
+                <p id="qq-paragraph" style="display: none;">
+                    A QQ (Quantile-Quantile) plot is a graphical tool used to assess if a dataset follows a particular theoretical distribution, such as a normal distribution. This is important because many statistical tests and machine learning algorithms assume normality of the data.
+                    <br><br>
+                    Quantiles are points taken at regular intervals from the cumulative distribution function (CDF) of a distribution. For a normal distribution, these quantiles would correspond to z-scores.
+                    <br><br>
+                    1. Generate Theoretical Quantiles: For the distribution you’re comparing against (e.g., normal distribution), generate theoretical quantiles. <br>
+                    2. Generate Sample Quantiles: Sort the data and compute the quantiles from the sample (standardized residuals). <br>
+                    3. Plot the Quantiles: Plot the sample quantiles on the y-axis against the theoretical quantiles on the x-axis.
+                    <br><br>
+                    Interpretation: <br>
+                    &nbsp; • Straight Line: If the data follows the theoretical distribution, the points will lie approximately on a straight line. <br>
+                    &nbsp; • Deviation from Line: Systematic deviations from the line indicate departures from the theoretical distribution.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Upward/Downward Curvature: This indicates skewness (asymmetry).<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • S-Shaped Curve: This indicates heavier or lighter tails (kurtosis) than the theoretical distribution.
+                </p>
+                <script>
+                    const qqB = document.getElementById('qq-button');
+                    const qqP = document.getElementById('qq-paragraph');
+                    qqB.addEventListener('click', () => {
+                        if (qqP.style.display === 'none') {
+                            qqP.style.display = 'block';
+                        } else {
+                            qqP.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <br />
                 <br />
