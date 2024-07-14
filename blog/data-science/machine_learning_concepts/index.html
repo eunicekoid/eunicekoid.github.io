@@ -514,6 +514,29 @@
                 <br />
                 <br />
 
+                <!--Button-->
+                <button id="glm-button">generalized linear models</button>
+                <p id="glm-paragraph" style="display: none;">Linear regression that allows residuals to not be normally distributed
+                <br>
+                <img class="img-fluid z-dept-1" src="images/glm.png" alt="glm.png" style="width: 80%;" />
+
+                </p>
+                <script>
+                    const glmB = document.getElementById('glm-button');
+                    const glmP = document.getElementById('glm-paragraph');
+
+                    glmB.addEventListener('click', () => {
+                        if (glmP.style.display === 'none') {
+                            glmP.style.display = 'block';
+                        } else {
+                            glmP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
+
 
                 <!--Button-->
                 <button id="ig-button">information gain</button>
