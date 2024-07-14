@@ -647,6 +647,35 @@
                 <br />
                 <br />
 
+                <!--Button-->
+                <button id="htuning-button">hyperparameter tuning</button>
+                <p id="htuning-paragraph" style="display: none;">Process to find the optimal hyperparameters for a model.
+
+                    <br><br>
+
+                    <b>Grid Search</b><br>
+                    &nbsp; • Form a grid that is a cartesian product of parameters <br>
+                    &nbsp; • Try all combinations to see which yields the best results <br>
+                    &nbsp; • Computationally expensive
+                    <br><br>
+                    <b>Random Search</b><br>
+                    &nbsp; • Define distribution for each parameter <br>
+                    &nbsp; • Randomly sample from the joint distribution over all parameters
+
+                </p>
+                <script>
+                    const htuningB = document.getElementById('htuning-button');
+                    const htuningP = document.getElementById('htuning-paragraph');
+
+                    ihtuningBgB.addEventListener('click', () => {
+                        if (htuningP.style.display === 'none') {
+                            htuningP.style.display = 'block';
+                        } else {
+                            htuningP.style.display = 'none';
+                        }
+                    });
+                </script>
+
 
                 <!--Button-->
                 <button id="ig-button">information gain</button>
