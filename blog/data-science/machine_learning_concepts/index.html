@@ -543,7 +543,7 @@
                 <br />
 
                 <!--Button-->
-                <button id="glm-button">generalized linear models (glm)</button>
+                <button id="glm-button">generalized linear models (GLM)</button>
                 <p id="glm-paragraph" style="display: none;">Linear regression that allows residuals to not be normally distributed
                 <br>
                 <img class="img-fluid z-dept-1" src="images/glm.png" alt="glm.png" style="width: 70%;" />
@@ -716,6 +716,33 @@
                             MathJax.typeset();
                         } else {
                             multicollinearityP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
+
+
+                <!--Button-->
+                <button id="naive-button">naive bayes</button>
+                <p id="naive-paragraph" style="display: none;">
+                    A supervised machine learning algorithm used for classification problems that applies Bayes' Theorem with a naive assumption of independence between features.
+                    In other words, it decouples the class conditional feature distributions by assuming that the presence of a particular feature in a class is independent of all other features. Each feature's distribution can be independently estimated as a 1-D distribution \( P(X_1...X_n|Y)=\prod_{i=1}^n P(X_i|Y) \). Apply the conditional independence assumption and Bayes' Theorem gives the classification rule \( \hat{y}=argmax_{y_i} P(Y=y_i)\prod^j P(X_j|Y=y_i)\). 
+                    <br><br>
+                    For any machine learning model with <i>k</i> features, there are 2\(^k\) possible feature interactions. You would need that many data points for a good model. However, the conditional independence assumption of Naive Bayes requires only <i>k</i> data points. 
+
+                    
+                </p>
+                <script>
+                    const naiveB = document.getElementById('naive-button');
+                    const naiveP = document.getElementById('naive-paragraph');
+                    naiveB.addEventListener('click', () => {
+                        if (naiveP.style.display === 'none') {
+                            naiveP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            naiveP.style.display = 'none';
                         }
                     });
                 </script>
