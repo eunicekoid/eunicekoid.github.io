@@ -709,10 +709,6 @@
                 <br />
 
 
-                <br />
-                <br />
-
-
                 <!--Button-->
                 <button id="ig-button">information gain</button>
                 <p id="ig-paragraph" style="display: none;"> In a decision tree, maximize IG recursively on all branches
@@ -816,7 +812,7 @@
                 <button id="mae-button">mean absolute error (MAE)</button>
                 <p id="mae-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average
-                    absolute difference between the actual and predicted values. Lower MAE means better model
+                    absolute difference between the actual and predicted values (the resideuals). Lower MAE means better model
                     performance.
                     \[ MAE = \frac{1}{n} \sum_{i=1}^{n} \mid y_i - \hat{y}_i \mid \]
                 </p>
@@ -839,11 +835,15 @@
                 <button id="mse-button">mean squared error (MSE)</button>
                 <p id="mse-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average of the squared differences between
-                    actual and predicted values. Lower MSE means better model performance. The MSE represents
+                    actual and predicted values (the variance of residuals). 
+                    <br>
+                    Lower MSE means better model performance. The MSE represents
                     unexplained
                     variance, the portion of variability in the dependent variable that is not explained by the
-                    model's independent variables.
+                    model's independent variables. Goodness of fit metric for liear regression. 
                     \[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
+
+                    MSE is more sensitive to outliers than MAE because it penalizes large errors more. 
                 </p>
                 <script>
                     const mseButton = document.getElementById('mse-button');
