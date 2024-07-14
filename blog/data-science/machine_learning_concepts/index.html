@@ -181,8 +181,7 @@
                 <!-- Button -->
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
-                    A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct
-                    predictions}}{\text{total number of predictions}} \)
+                    A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
 
                     <small>(not good for imbalanced datasets)</small>
                 </p>
@@ -267,8 +266,6 @@
                     performance.
                     Boosting trains weak learners <i>sequentially</i> where each subsequent learner focuses on
                     addressing the mistakes of the previous model.
-
-
                 </p>
                 <script>
                     const boostingB = document.getElementById('boosting-button');
@@ -286,10 +283,12 @@
                 <br />
                 <br />
 
-                <!--Button-->
-                <button id="classification-button">classification models</button>
-                <div id="teststat-paragraph" style="display: none; text-align: left;">
 
+
+                <!--Button-->
+                <button id="classstypes-button">classification model types</button>
+                <div id="classstypes-paragraph" style="display: none; text-align: left;">
+                    
                     <div style="margin: 0 auto; padding: 10px; display: inline-block;">
                         <table border=".1">
                             <tr>
@@ -304,65 +303,17 @@
                             </tr>
 
                         </table>
-                        Determine decision boundary between classes by maximizing the posterior probability
-                        distribution.
                     </div>
                 </div>
                 <script>
-                    const classificationB = document.getElementById('classification-button');
-                    const classificationP = document.getElementById('classification-paragraph');
+                    const classstypesB = document.getElementById('classstypes-button');
+                    const classstypesP = document.getElementById('classstypes-paragraph');
 
-                    classificationB.addEventListener('click', () => {
-                        if (classificationP.style.display === 'none') {
-                            classificationP.style.display = 'block';
+                    classstypesB.addEventListener('click', () => {
+                        if (classstypesP.style.display === 'none') {
+                            classstypesP.style.display = 'block';
                         } else {
-                            classificationP.style.display = 'none';
-                        }
-                    });
-
-
-                </script>
-
-
-                <!--Button-->
-                <button id="teststat-button">test statistics</button>
-                <div id="teststat-paragraph" style="display: none; text-align: left;">
-                    
-                    <div style="margin: 0 auto; padding: 10px; display: inline-block;">
-                        <table border=".1">
-                            <tr>
-                                <td><b>&nbsp;Z-test</b></td>
-                                <td><b>&nbsp;t-test</b></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;• Assumes the test statistic is normally distributed under the null hypothesis
-                                    <br>&nbsp;• Use for a large sample size (CLT) <br>&nbsp;• \( \sigma^2 \) is known
-                                </td>
-                                <td>&nbsp;• Student t-distribution. Usually has larger tails <small>(more extreme)</small> than normal distributions. <br>&nbsp;• Use for a small sample size<br>&nbsp;<small> (cannot invoke CLT but
-                                    underlying data is normal)</small> <br>&nbsp;• \( \sigma^2 \) is
-                                    unknown, use the sample variance \( s^2 \)<br> &nbsp;• As df increases, t-dist approaches standard normal (\( Z \))  </td>
-                                
-                            </tr>
-                            <tr>
-                                <td>&nbsp;\( Z = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}} \sim N(0,1) \)</td>
-                                <td>&nbsp;\( t = \frac{\bar{X} - \mu_0}{s / \sqrt{n}} \sim t_{n-1} \) (one-sample)<br>
-                                    <br>&nbsp;\(t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}} \)(two-sample)
-                                    <br><br>&nbsp; \(t = \frac{b- \beta}{SE(b)}\) <small>where \( SE(\bar{x}) = \frac{s}{\sqrt{n}}\)</small>(regression)
-                                    <br><br>&nbsp;\(s^2 =\frac{\sum\limits_{i=1}^{n} (x_i - \bar{x})^2}{n-1} \)<br> <br><small>&nbsp;\(n-1\) is the degree of freedom</small></td>
-                                
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <script>
-                    const teststatButton = document.getElementById('teststat-button');
-                    const teststatParagraph = document.getElementById('teststat-paragraph');
-
-                    teststatButton.addEventListener('click', () => {
-                        if (teststatParagraph.style.display === 'none') {
-                            teststatParagraph.style.display = 'block';
-                        } else {
-                            teststatParagraph.style.display = 'none';
+                            classstypesP.style.display = 'none';
                         }
                     });
                 </script>
