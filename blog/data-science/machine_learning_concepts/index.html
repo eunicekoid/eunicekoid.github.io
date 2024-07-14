@@ -349,7 +349,26 @@
                 </script>
                 <br />
                 <br />
+                
+                <!--Button-->
+                <button id="decisiontree-button">Decision Trees</button>
+                <p id="decisiontree-paragraph" style="display: none;"> A supervised machine learning model that can be used for classification or regression problems. The algorithm is trained in a greedy and recursive fashion starting at a root node and making binary splits in features that lead to minimal error. 
+                </p>
+                <script>
+                    const decisiontreeB = document.getElementById('decisiontree-button');
+                    const decisiontreeP = document.getElementById('decisiontree-paragraph');
 
+                    decisiontreeB.addEventListener('click', () => {
+                        if (decisiontreeP.style.display === 'none') {
+                            decisiontreeP.style.display = 'block';
+                        } else {
+                            decisiontreeP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
 
 
                  <!--Button-->
