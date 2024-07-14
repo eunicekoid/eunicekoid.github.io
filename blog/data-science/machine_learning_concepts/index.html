@@ -225,6 +225,25 @@
                         }
                     });
                 </script>
+
+                 <!-- Button -->
+                 <button id="bagging-button">bagging</button>
+                 <p id="bagging-paragraph" style="display: none;">
+                     
+                 </p>
+                 <script>
+                     const baggingB = document.getElementById('bagging-button');
+                     const baggingP = document.getElementById('bagging-paragraph');
+                     baggingB.addEventListener('click', () => {
+                         if (baggingP.style.display === 'none') {
+                            baggingP.style.display = 'block';
+                             MathJax.typeset();
+                         } else {
+                            baggingP.style.display = 'none';
+                         }
+                     });
+                 </script>
+
                 <br />
                 <br />
 
