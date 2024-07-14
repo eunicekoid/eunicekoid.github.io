@@ -808,7 +808,7 @@
                 <button id="rf-button">random forest</button>
                 <p id="rf-paragraph" style="display: none;">
                     Random forest is an ensemble bagging method that averages decision trees. A random subset of
-                    features is considered for each split. Its advantages are that it helps overcome decision trees'
+                    features is considered for each iteration. Its advantages are that it helps overcome decision trees'
                     proneness to overfitting, has quicker training time, and more interpretable.
                 </p>
                 <script>
@@ -1040,6 +1040,27 @@
                             svmP.style.display = 'block';
                         } else {
                             svmP.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+                <!--Button-->
+                <button id="xgb-button">XGBoost</button>
+                <p id="xgb-paragraph" style="display: none;">
+                    eXtreme Gradient Boosting (XGBoost) is a supervised ensemble method that uses sequential boosting, combining multiple weak learners (often decision trees) sequentially to create a strong learner. It uses gradients to identify the shortcomings of previous models. 
+
+                </p>
+                <script>
+                    const xgbB = document.getElementById('xgb-button');
+                    const xgbP = document.getElementById('xgb-paragraph');
+
+                    xgbB.addEventListener('click', () => {
+                        if (xgbP.style.display === 'none') {
+                            xgbP.style.display = 'block';
+                        } else {
+                            xgbP.style.display = 'none';
                         }
                     });
                 </script>
