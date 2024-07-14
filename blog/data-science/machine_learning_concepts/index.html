@@ -558,6 +558,34 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="logreg-button">logistic regression</button>
+                <p id="logreg-paragraph" style="display: none;"> 
+                    A supervised machine learning algorithm for binary classification.
+                    It predicts the likelihood of a binary outcome based on input variables using a logistic (sigmoid) function to map inputs to probabilities.
+
+                    <br><br>
+                    Pros: <br>
+                    &nbsp; • high explainability <br>
+                    &nbsp; • quick to compute
+                    <br><br>
+                    Cons: <br>
+                    &nbsp; • high bias, low variance (prone to underfit, assumes linear boundary layer) <br>
+                    &nbsp; • weights, \(\beta \) terms, are not accurate if input variables are correlated
+                </p>
+                <script>
+                    const logregB = document.getElementById('logreg-button');
+                    const logregP = document.getElementById('logreg-paragraph');
+
+                    logregB.addEventListener('click', () => {
+                        if (logregP.style.display === 'none') {
+                            logregP.style.display = 'block';
+                        } else {
+                            logregP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
