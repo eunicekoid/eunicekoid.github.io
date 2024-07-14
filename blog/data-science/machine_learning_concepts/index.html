@@ -229,7 +229,11 @@
                  <!-- Button -->
                  <button id="bagging-button">bagging</button>
                  <p id="bagging-paragraph" style="display: none;">
-                     
+                    Short for Bootstrap Aggregating, bagging is a machine learning ensemble technique designed to improve the stability and accuracy of machine learning algorithms. 
+                    Multiple models (often called "weak learners") are trained and combined to produce a stronger overall model.
+                    Multiple subsets of the original training data are created using bootstrap sampling (randomly sampling with replacement). 
+                    A separate model is trained on each of these bootstrapped subsets. Since each subset is different, each model will have slight variations.
+                    Once all the models are trained, their predictions are combined. For regression tasks, this is usually done by averaging the predictions. For classification tasks, it is often done by majority voting.
                  </p>
                  <script>
                      const baggingB = document.getElementById('bagging-button');
