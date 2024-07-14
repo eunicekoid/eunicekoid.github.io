@@ -729,6 +729,25 @@
                 <br />
 
                 <!--Button-->
+                <button id="learning-button">learning curve</button>
+                <p id="learning-paragraph" style="display: none;"> Plots model learning performance over time. Y-axis is an evaluation metric (e.g., accuracy, F1 score, etc.). X-axis is iterations over time. 
+                    <br><br>
+                    The model is overfitted if the validation error does not improve over time. If both training and validation errors do not improve over time, then the model is underfitted.
+                </p>
+                <script>
+                    const learningB = document.getElementById('learning-button');
+                    const learningP = document.getElementById('learning-paragraph');
+
+                    learningB.addEventListener('click', () => {
+                        if (learningP.style.display === 'none') {
+                            learningP.style.display = 'block';
+                        } else {
+                            learningP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="lime-button">LIME</button>
                 <p id="lime-paragraph" style="display: none;"> Local Interpretable Model-Agnostic Explanation <br><br>
                     Uses sparse linear models built around various predictions to understand how any model performs in
