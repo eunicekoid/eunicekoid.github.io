@@ -731,6 +731,16 @@
                     In other words, it decouples the class conditional feature distributions by assuming that the presence of a particular feature in a class is independent of all other features. Each feature's distribution can be independently estimated as a 1-D distribution \( P(X_1...X_n|Y)=\prod_{i=1}^n P(X_i|Y) \). Apply the conditional independence assumption and Bayes' Theorem gives the classification rule \( \hat{y}=argmax_{y_i} P(Y=y_i)\prod^j P(X_j|Y=y_i)\). 
                     <br><br>
                     For any machine learning model with <i>k</i> features, there are 2\(^k\) possible feature interactions. You would need that many data points for a good model. However, the conditional independence assumption of Naive Bayes requires only <i>k</i> data points. 
+                    <br><br>
+                    Assumptions \(P(Y|X)\):<br>
+                    &nbsp; • Each \(x_i\) is independent of any other \(x_j\) given \(Y\) for any pair of features \(x_i\) and \(x_j\)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; This is generally not true because features tend to be correlated.
+                    &nbsp; • Each feature is given the same weight
+                    <br><br>
+                    Pros: <br>
+                    &nbsp; • Requires a small amount of training data<br>
+                    &nbsp; • Computationally fast <br>
+                    &nbsp; • Scalable
 
                     
                 </p>
