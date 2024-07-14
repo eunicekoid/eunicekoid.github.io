@@ -626,6 +626,25 @@
                         }
                     });
                 </script>
+
+                <!--Button-->
+                <button id="itm-button">inverse transform method</button>
+                <p id="itm-paragraph" style="display: none;">
+                    A technique to generate random samples from a given probability distribution. For example, \(X\) is a uniform random variable with a number between 0 and 1 indicating probability. We want to transform it to \(Y\). What is \(T\), the transformation, such that \(T(X) = Y\)?
+
+                </p>
+                <script>
+                    const itmB = document.getElementById('itm-button');
+                    const itmP = document.getElementById('itm-paragraph');
+                    itmB.addEventListener('click', () => {
+                        if (itmP.style.display === 'none') {
+                            itmP.style.display = 'block';
+                        } else {
+                            itmP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
