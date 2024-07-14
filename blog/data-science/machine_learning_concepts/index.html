@@ -265,17 +265,23 @@
                 <!--Button-->
                 <button id="classification-button">classification models</button>
                 <p id="classification-paragraph" style="display: none;"> 
-                    <table>
-                        <tr>
-                            <th>**Generative Models**</th>
-                            <th>**Discriminative Models**</th>
-                        </tr>
-                        <tr>
-                            <td>Joint Distribution of \(X\) and \(Y\) <br> \(P(X,Y) = P(Y|X)P(X) \)</td>
-                            <td>\( \hat{y} = argmax_k P(Y = k|x) \)</td>
-                        </tr>
+                
+                    <div style="margin: 0 auto; padding: 10px; display: inline-block;">
+                        <table border=".1">
+                            <tr>
+                                <td><b>&nbsp;Generative Models</b></td>
+                                <td><b>&nbsp;Discriminative Models</b></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;Joint Distribution of \(X\) and \(Y\) <br> \(P(X,Y) = P(Y|X)P(X) \)
+                                </td>
+                                <td>&nbsp;\( \hat{y} = argmax_k P(Y = k|x) \) </td>
+                                
+                            </tr>
                         
-                    </table>
+                        </table>
+                        Determine decision boundary between classes by maximizing the posterior probability distribution.
+                    </div>
                 </p>
                 <script>
                     const classificationB = document.getElementById('classification-button');
