@@ -609,7 +609,12 @@
                 <button id="logreg-button">logistic regression</button>
                 <p id="logreg-paragraph" style="display: none;"> 
                     A supervised machine learning algorithm for binary classification.
-                    It predicts the likelihood of a binary outcome based on input variables using a logistic (sigmoid) function to map inputs to probabilities.
+                    It predicts the likelihood of a binary outcome based on input variables using a logistic (sigmoid) function to map linear outputs to probabilities. <br>
+                    Sigmoid \( S(x) = \frac{1}{1+e^{-x \beta}} \) <br>
+                    &nbsp; where \(x\) are predictor variables <br>
+                    &nbsp; and \(\beta\) is a vector of weights <br>
+                    <br>
+                    \(P (\hat{Y} = 1|X) = S(X \beta) \)
 
                     <br><br>
                     Pros: <br>
