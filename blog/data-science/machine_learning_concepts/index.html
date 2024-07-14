@@ -455,7 +455,9 @@
 
                     <b>leave one out corss validation (LOOCV)</b> <br>
                     A special case of k-fold cross validation where <i>k</i> equals the size of the dataset (<i>n</i>). The model tests every single data point during cross validation. Computationally expensive.
-
+                    <br><br>
+                    <b>Cross validation for time series data</b><br>
+                    Time series data is not randomly distributed so standard k-fold CV cannot be used. Data from the future cannot be used to train data from the past. Use historical data until a given point in time, and vary that point in time from beginning to end. 
                 </p>
                 <script>
                     const cvB = document.getElementById('cv-button');
