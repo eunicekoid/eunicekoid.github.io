@@ -648,6 +648,27 @@
                 <br />
 
                 <!--Button-->
+                <button id="heteroscedasticity-button">heteroscedasticity</button>
+                <p id="heteroscedasticity-paragraph" style="display: none;">
+                    Residuals are NOT identically distributed; the variance of residuals is not constant. This causes bias in parameter estimates for linear regression and similar models. 
+                    <br><br>
+                    Plot the residuals against independent variable to help visualize if there is heteroscedasticity. 
+
+                </p>
+                <script>
+                    const heteroscedasticityB = document.getElementById('heteroscedasticity-button');
+                    const heteroscedasticityP = document.getElementById('heteroscedasticity-paragraph');
+
+                    heteroscedasticityB.addEventListener('click', () => {
+                        if (heteroscedasticityP.style.display === 'none') {
+                            heteroscedasticityP.style.display = 'block';
+                        } else {
+                            heteroscedasticityP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="htuning-button">hyperparameter tuning</button>
                 <p id="htuning-paragraph" style="display: none;">Process to find the optimal hyperparameters for a model.
 
@@ -675,6 +696,10 @@
                         }
                     });
                 </script>
+                <br />
+                <br />
+
+
                 <br />
                 <br />
 
