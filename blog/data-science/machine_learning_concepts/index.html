@@ -559,6 +559,24 @@
                 <br />
                 <br />
 
+
+                <!--Button-->
+                <button id="rf-button">random forest</button>
+                <p id="rf-paragraph" style="display: none;">
+                    Random forest is an ensemble bagging method that averages decision trees. A random subset of features is considered for each split. Its advantages are that it helps overcome decision trees' proneness to overfitting, has quicker training time, and more interpretable.
+                </p>
+                <script>
+                    const rfB = document.getElementById('rf-button');
+                    const rfP = document.getElementById('rf-paragraph');
+                    rfB.addEventListener('click', () => {
+                        if (rfP.style.display === 'none') {
+                            rfP.style.display = 'block';
+                        } else {
+                            rfP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <!--Button-->
                 <button id="reg-button">regression</button>
                 <p id="reg-paragraph" style="display: none;">A technique for quantifying the relationship
