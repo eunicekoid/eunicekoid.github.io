@@ -347,18 +347,32 @@
                     <br><br>
 
                     <b>K-means Clustering</b><br>
-                    • Partitions data into <i>k</i> clusters and then arbitrarily selects centroids of those clusters
+                    &nbsp; • Partitions data into <i>k</i> clusters and then arbitrarily selects centroids of those clusters
                     <br>
-                    • Updates the groups by assigning points to closest cluster, updating the centroids, and then repeat
+                    &nbsp; • Updates the groups by assigning points to closest cluster, updating the centroids, and then repeat
                     until convergence<br><br>
 
                     <b>Hierarchical Clustering</b><br>
-                    • Assigns data points to clusters and adds nearest points until there's one cluster left <br>
-                    • Dendogram - more interpretable <br><br>
+                    &nbsp; • Assigns data points to clusters and adds nearest points until there's one cluster left <br>
+                    &nbsp; • Dendogram - more interpretable <br><br>
 
                     <b>Density Clustering (DBSCAN)</b><br>
-                    • Groups points together that have high density - have many neighbors <br>
-                    • Good at detecting outliers
+                    &nbsp; • Groups points together that have high density - have many neighbors <br>
+                    &nbsp; • Good at detecting outliers 
+                    <br><br>
+
+                    <b>Gaussian Mixture Models (GMM)</b><br>
+                    &nbsp; • Clusters data points based on their distribution<br>
+                    &nbsp; • Assumes the data comes from a mixture of <i>k</i> Gaussian distributions with different means and variances. Each Gaussian distribution in the mixture represents a cluster within the data. <br>
+                    &nbsp; • Estimates parameters (e.g., mean, variance) of these Gaussian distributions to best fit the data <br>
+                    &nbsp; • Set <i>k</i> in advance; GMM tries to learn the true value of <i>k</i> <br>
+                    &nbsp; • More flexible than k-means (takes into account mean and variance); low dimensional data with arbitrary shapes
+
+
+
+
+
+
                 </p>
                 <script>
                     const clusteringB = document.getElementById('clustering-button');
@@ -543,6 +557,9 @@
 
                 <br />
                 <br />
+
+
+                
 
                 <!--Button-->
                 <button id="glm-button">generalized linear models (GLM)</button>
