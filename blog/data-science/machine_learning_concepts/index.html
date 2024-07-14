@@ -957,6 +957,36 @@
                 </script>
 
                 <!--Button-->
+                <button id="regularization-button">regularization</button>
+                <p id="regularization-paragraph" style="display: none;">
+                    Regularization is a technique used in machine learning and statistical modeling to prevent overfitting and improve the generalization of models. 
+                    It does so by adding a penalty to the loss function of a model, discouraging it from fitting the training data too closely and instead promoting simpler models that generalize better to unseen data.
+
+                    <br><br>
+                    <b>L1 (Lasso) Regularization</b><br>
+                    &nbsp; • Penalty: absolute value of coefficient to the objective function <br>
+                    &nbsp; • Can be used to feature selection because stricter than L2 (coefficient \(\rightarrow\) 0)
+                    <br><br>
+                    <b>L2 (Ridge) Regularization</b><br>
+                    &nbsp; • Penalty: squared magnitude of the coefficient 
+                    <br><br>
+                    <b>Elastic Net</b><br>
+                    &nbsp; • Linear combination of L1 and L2
+                    
+                </p>
+                <script>
+                    const regularizationB = document.getElementById('regularization-button');
+                    const regularizationP = document.getElementById('regularization-paragraph');
+                    regularizationB.addEventListener('click', () => {
+                        if (regularizationP.style.display === 'none') {
+                            regularizationP.style.display = 'block';
+                        } else {
+                            regularizationP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <!--Button-->
                 <button id="rss-button">residual sum of squares</button>
                 <p id="rss-paragraph" style="display: none;">Unexplained variance from a model. For example, in a linear
                     regression, parameter \(\beta\) is found by minimizing RSS. Also known as Sum of Square Errors
