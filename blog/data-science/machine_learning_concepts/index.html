@@ -414,12 +414,21 @@
                 <button id="r2-button">coefficient of determination (R<sup>2</sup>)</button>
                 <p id="r2-paragraph" style="display: none;">
                     R<sup>2</sup> measures how well the independent variables explain the variability in the dependent
-                    variable. <br><br>
+                    variable (the proportion of variability explained by the model). <br><br>
 
                     If R<sup>2</sup>=1, the model perfectly predicts the dependent variable. <br>
                     If R<sup>2</sup>=0, the model does not explain any variability in the dependent variable. <br><br>
 
                     R<sup>2</sup> = SSR (explained variance) / SST (total variance) </p>
+                    <br><br>
+                    R<sup>2</sup> only works for simple linear regression. For multiple linear regression, R<sup>2</sup> increases as the number of independent variables increases, even if the independent variable is insignificant. In this case, use the Adjusted R-Squared metric.
+                    <br><br>
+                    \( Adjusted R^2 = 1 - \frac{(1-R^2)(N-1)}{N-p-1} \) <br>
+                    &nbsp;&nbsp;where R<sup>2</sup> is the sample R-squared value <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N is the total sample size  <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p is the number of independent variables
+                    <br><br>
+                    Generally, R<sup>2</sup> increases when you add more features, but that does not mean it's a better model. It could be overfitted.
                 <script>
                     const r2Button = document.getElementById('r2-button');
                     const r2Para = document.getElementById('r2-paragraph');
