@@ -614,6 +614,17 @@
 
                     \( x_{t+1} = x_t - \alpha_t \nabla f(x_t) \)<br>
                     &nbsp; where f(x_t) is the cost function. This equation shows that at each iteration, the gradient moves in the opposite of the gradient (negative sign). 
+                    <br><br>
+
+                    <b>Stochastic GD</b><br>
+                    &nbsp; • Instead of using all the data like normal GD, computes the gradient using a single sample at each step. <br>
+                    &nbsp; • More time efficient
+                    
+                    <br><br>
+                    <b>Batch GD</b><br>
+                    &nbsp; • Uses fixed small number of batches of data points per time step <br>
+                    &nbsp; • More time efficient <br>
+                    &nbsp; • Avoid getting stuck at a local minimum or saddle point
 
 
 
