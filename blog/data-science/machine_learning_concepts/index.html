@@ -490,6 +490,30 @@
                 <br />
                 <br />
 
+                <!--Button-->
+                <button id="entropy-button">entropy</button>
+                <p id="entropy-paragraph" style="display: none;"> Quantifies uncertainty in a random variable assuming \(k\) states <br>
+                    Entropy \(H(Y) = \sum_{i=1}^k P(Y = k) log(PY=k)\) <br>
+                    Higher entropy means closer to uniform distribution than a skewed one.<br><br>
+                    Example: Gini index
+                </p>
+                <script>
+                    const entropyB = document.getElementById('entropy-button');
+                    const entropyP = document.getElementById('entropy-paragraph');
+
+                    entropyB.addEventListener('click', () => {
+                        if (entropyP.style.display === 'none') {
+                            entropyP.style.display = 'block';
+                        } else {
+                            entropyP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
+
+
 
                 <!--Button-->
                 <button id="f1-button">F1 score</button>
@@ -515,10 +539,10 @@
                 <br />
 
                 <!--Button-->
-                <button id="glm-button">generalized linear models</button>
+                <button id="glm-button">generalized linear models (glm)</button>
                 <p id="glm-paragraph" style="display: none;">Linear regression that allows residuals to not be normally distributed
                 <br>
-                <img class="img-fluid z-dept-1" src="images/glm.png" alt="glm.png" style="width: 80%;" />
+                <img class="img-fluid z-dept-1" src="images/glm.png" alt="glm.png" style="width: 70%;" />
 
                 </p>
                 <script>
