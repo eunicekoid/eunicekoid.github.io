@@ -443,6 +443,35 @@
                     });
                 </script>
 
+                <!--Button-->
+                <button id="confounding-button">confounding</button>
+                <p id="confounding-paragraph" style="display: none;">
+                    
+                    When a variable affects the relationship between dependent & independent variables. 
+                    Causes invalid correlations (e.g., multicollinearity). 
+            <br><br>
+            Can happen when:<br>
+                    - there is selection bias in data collection (e.g. group imbalance) <br>
+                    - there is omitted variable bias either during choices made during 
+                      modeling or data generation issues
+                      <br><br>
+            Address with:<br>
+                    - Stratification <br>
+                    - Chi-square test (test associations & significance)
+                </p>
+                <script>
+                    const confoundingB = document.getElementById('confounding-button');
+                    const confoundingP = document.getElementById('confounding-paragraph');
+
+                    confoundingB.addEventListener('click', () => {
+                        if (confoundingP.style.display === 'none') {
+                            confoundingP.style.display = 'block';
+                        } else {
+                            confoundingP.style.display = 'none';
+                        }
+                    });
+                </script>
+
 
                 <!--Button-->
                 <button id="confusion-button">confusion matrix</button>
