@@ -182,7 +182,7 @@
                 <button id="acc-button">accuracy</button>
                 <p id="acc-paragraph" style="display: none;">
                     A classification model evaluation metric. \( \text{Accuracy} = \frac{\text{number of correct predictions}}{\text{total number of predictions}} \)
-
+                    <br><br>
                     <small>(not good for imbalanced datasets)</small>
                 </p>
                 <script>
@@ -201,8 +201,11 @@
                 <!-- Button -->
                 <button id="ada-button">ada boost</button>
                 <p id="ada-paragraph" style="display: none;">
-                    Adaptive boosting is an ensemble method that sequentially combines decision trees with a single split and sets weights uniformly for all data points.
-                    The data points are reweighted at each iteration depending on whether it was correctly classfied or not. The weighted predictions of each classifier are combined at the end to obtain a final prediction.
+                    Adaptive boosting is an ensemble method that sequentially combines decision trees with a single
+                    split and sets weights uniformly for all data points.
+                    The data points are reweighted at each iteration depending on whether it was correctly classfied or
+                    not. The weighted predictions of each classifier are combined at the end to obtain a final
+                    prediction.
                 </p>
                 <script>
                     const adaB = document.getElementById('ada-button');
@@ -221,52 +224,54 @@
                 <br />
                 <br />
 
-                 <!-- Button -->
-                 <button id="backpropogation-button">backpropogation</button>
-                 <p id="backpropogation-paragraph" style="display: none;">
-                    An algorithm that efficiently calculates the gradient of the cost function of the neural network with respect to the parameters. The gradients are used to update the parameters, thereby improving the model. 
-                 </p>
-                 <script>
-                     const backpropogationB = document.getElementById('backpropogation-button');
-                     const backpropogationP = document.getElementById('backpropogation-paragraph');
-                     backpropogationB.addEventListener('click', () => {
-                         if (backpropogationP.style.display === 'none') {
+                <!-- Button -->
+                <button id="backpropogation-button">backpropogation</button>
+                <p id="backpropogation-paragraph" style="display: none;">
+                    An algorithm that efficiently calculates the gradient of the cost function of the neural network
+                    with respect to the parameters. The gradients are used to update the parameters, thereby improving
+                    the model.
+                </p>
+                <script>
+                    const backpropogationB = document.getElementById('backpropogation-button');
+                    const backpropogationP = document.getElementById('backpropogation-paragraph');
+                    backpropogationB.addEventListener('click', () => {
+                        if (backpropogationP.style.display === 'none') {
                             backpropogationP.style.display = 'block';
-                             MathJax.typeset();
-                         } else {
+                            MathJax.typeset();
+                        } else {
                             backpropogationP.style.display = 'none';
-                         }
-                     });
-                 </script>
+                        }
+                    });
+                </script>
 
 
-                 <!-- Button -->
-                 <button id="bagging-button">bagging</button>
-                 <p id="bagging-paragraph" style="display: none;">
-                     Short for Bootstrap Aggregating, bagging is a machine learning ensemble technique designed to
-                     improve the stability and accuracy of machine learning algorithms.
-                     Multiple models (often called "weak learners") are trained and combined to produce a stronger
-                     overall model.
-                     Multiple subsets of the original training data are created using bootstrap sampling (randomly
-                     sampling with replacement).
-                     A separate model is trained on each of these bootstrapped subsets. Since each subset is different,
-                     each model will have slight variations.
-                     Once all the models are trained, their predictions are combined. For regression tasks, this is
-                     usually done by averaging the predictions. For classification tasks, it is often done by majority
-                     voting.
-                 </p>
-                 <script>
-                     const baggingB = document.getElementById('bagging-button');
-                     const baggingP = document.getElementById('bagging-paragraph');
-                     baggingB.addEventListener('click', () => {
-                         if (baggingP.style.display === 'none') {
-                             baggingP.style.display = 'block';
-                             MathJax.typeset();
-                         } else {
-                             baggingP.style.display = 'none';
-                         }
-                     });
-                 </script>
+                <!-- Button -->
+                <button id="bagging-button">bagging</button>
+                <p id="bagging-paragraph" style="display: none;">
+                    Short for Bootstrap Aggregating, bagging is a machine learning ensemble technique designed to
+                    improve the stability and accuracy of machine learning algorithms.
+                    Multiple models (often called "weak learners") are trained and combined to produce a stronger
+                    overall model.
+                    Multiple subsets of the original training data are created using bootstrap sampling (randomly
+                    sampling with replacement).
+                    A separate model is trained on each of these bootstrapped subsets. Since each subset is different,
+                    each model will have slight variations.
+                    Once all the models are trained, their predictions are combined. For regression tasks, this is
+                    usually done by averaging the predictions. For classification tasks, it is often done by majority
+                    voting.
+                </p>
+                <script>
+                    const baggingB = document.getElementById('bagging-button');
+                    const baggingP = document.getElementById('bagging-paragraph');
+                    baggingB.addEventListener('click', () => {
+                        if (baggingP.style.display === 'none') {
+                            baggingP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            baggingP.style.display = 'none';
+                        }
+                    });
+                </script>
 
                 <!-- Button -->
                 <button id="bv-button">bias-variance tradeoff</button>
@@ -298,7 +303,7 @@
                     });
                 </script>
 
-               
+
 
                 <!-- Button -->
                 <button id="boosting-button">boosting</button>
@@ -330,7 +335,7 @@
                 <!--Button-->
                 <button id="classstypes-button">classification model types</button>
                 <div id="classstypes-paragraph" style="display: none; text-align: left;">
-                    
+
                     <div style="margin: 0 auto; padding: 10px; display: inline-block;">
                         <table border=".1">
                             <tr>
@@ -338,7 +343,8 @@
                                 <td><b>&nbsp;Discriminative Models</b></td>
                             </tr>
                             <tr>
-                                <td>&nbsp;Joint Distribution of \(X\) and \(Y\) &nbsp;<br> &nbsp;\(P(X,Y) = P(Y|X)P(X) \)
+                                <td>&nbsp;Joint Distribution of \(X\) and \(Y\) &nbsp;<br> &nbsp;\(P(X,Y) = P(Y|X)P(X)
+                                    \)
                                 </td>
                                 <td>&nbsp;\( \hat{y} = argmax_k P(Y = k|x) \)&nbsp; </td>
 
@@ -346,7 +352,8 @@
 
                         </table>
                         <br>
-                        Determine decision boundary between classes by maximizing the posterior probability distribution. 
+                        Determine decision boundary between classes by maximizing the posterior probability
+                        distribution.
                     </div>
                 </div>
                 <script>
@@ -365,13 +372,16 @@
                 <button id="clustering-button">clustering</button>
                 <p id="clustering-paragraph" style="display: none;">
                     An unsupervised machine learning approach to group comparable data points by certain traits.<br>
-                    Points in a cluster have high intra-cluster similarity. Points in different clusters have low inter-cluster similarity.
+                    Points in a cluster have high intra-cluster similarity. Points in different clusters have low
+                    inter-cluster similarity.
                     <br><br>
 
                     <b>K-means Clustering</b><br>
-                    &nbsp; • Partitions data into <i>k</i> clusters and then arbitrarily selects centroids of those clusters
+                    &nbsp; • Partitions data into <i>k</i> clusters and then arbitrarily selects centroids of those
+                    clusters
                     <br>
-                    &nbsp; • Updates the groups by assigning points to closest cluster, updating the centroids, and then repeat
+                    &nbsp; • Updates the groups by assigning points to closest cluster, updating the centroids, and then
+                    repeat
                     until convergence<br><br>
 
                     <b>Hierarchical Clustering</b><br>
@@ -380,16 +390,20 @@
 
                     <b>Density Clustering (DBSCAN)</b><br>
                     &nbsp; • Groups points together that have high density - have many neighbors <br>
-                    &nbsp; • Good at detecting outliers 
+                    &nbsp; • Good at detecting outliers
                     <br><br>
 
                     <b>Gaussian Mixture Models (GMM)</b><br>
                     &nbsp; • Clusters data points based on their distribution<br>
-                    &nbsp; • Assumes the data comes from a mixture of <i>k</i> Gaussian distributions with different means and variances. 
-                    &nbsp;&nbsp;&nbsp;&nbsp; Each Gaussian distribution in the mixture represents a cluster within the data. <br>
-                    &nbsp; • Estimates parameters (e.g., mean, variance) of these Gaussian distributions to best fit the data <br>
+                    &nbsp; • Assumes the data comes from a mixture of <i>k</i> Gaussian distributions with different
+                    means and variances.
+                    &nbsp;&nbsp;&nbsp;&nbsp; Each Gaussian distribution in the mixture represents a cluster within the
+                    data. <br>
+                    &nbsp; • Estimates parameters (e.g., mean, variance) of these Gaussian distributions to best fit the
+                    data <br>
                     &nbsp; • Set <i>k</i> in advance; GMM tries to learn the true value of <i>k</i> <br>
-                    &nbsp; • More flexible than k-means (takes into account mean and variance); low dimensional data with arbitrary shapes
+                    &nbsp; • More flexible than k-means (takes into account mean and variance); low dimensional data
+                    with arbitrary shapes
 
 
 
@@ -419,16 +433,21 @@
                     If R<sup>2</sup>=1, the model perfectly predicts the dependent variable. <br>
                     If R<sup>2</sup>=0, the model does not explain any variability in the dependent variable. <br><br>
 
-                    R<sup>2</sup> = SSR (explained variance) / SST (total variance) 
+                    R<sup>2</sup> = SSR (explained variance) / SST (total variance)
                     <br><br>
-                    R<sup>2</sup> only works for simple linear regression. For multiple linear regression, R<sup>2</sup> increases as the number of independent variables increases, even if the independent variable is insignificant. In this case, use the Adjusted R-Squared metric.
+                    R<sup>2</sup> only works for simple linear regression. For multiple linear regression, R<sup>2</sup>
+                    increases as the number of independent variables increases, even if the independent variable is
+                    insignificant. In this case, use the Adjusted R-Squared metric.
                     <br><br>
                     \( Adjusted R^2 = 1 - \frac{(1-R^2)(N-1)}{N-p-1} \) <br>
                     &nbsp;&nbsp;where R<sup>2</sup> is the sample R-squared value <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N is the total sample size  <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p is the number of independent variables
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; N is the total sample size
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p is the number of
+                    independent variables
                     <br><br>
-                    Generally, R<sup>2</sup> increases when you add more features, but that does not mean it's a better model. It could be overfitted.
+                    Generally, R<sup>2</sup> increases when you add more features, but that does not mean it's a better
+                    model. It could be overfitted.
                 </p>
                 <script>
                     const r2Button = document.getElementById('r2-button');
@@ -446,16 +465,16 @@
                 <!--Button-->
                 <button id="confounding-button">confounding</button>
                 <p id="confounding-paragraph" style="display: none;">
-                    
-                    When a variable affects the relationship between dependent & independent variables. 
-                    Causes invalid correlations (e.g., multicollinearity). 
-            <br><br>
-            Can happen when:<br>
+
+                    When a variable affects the relationship between dependent & independent variables.
+                    Causes invalid correlations (e.g., multicollinearity).
+                    <br><br>
+                    Can happen when:<br>
                     - there is selection bias in data collection (e.g. group imbalance) <br>
-                    - there is omitted variable bias either during choices made during 
-                      modeling or data generation issues
-                      <br><br>
-            Address with:<br>
+                    - there is omitted variable bias either during choices made during
+                    modeling or data generation issues
+                    <br><br>
+                    Address with:<br>
                     - Stratification <br>
                     - Chi-square test (test associations & significance)
                 </p>
@@ -530,10 +549,13 @@
                     <br><br>
 
                     <b>leave one out corss validation (LOOCV)</b> <br>
-                    A special case of k-fold cross validation where <i>k</i> equals the size of the dataset (<i>n</i>). The model tests every single data point during cross validation. Computationally expensive.
+                    A special case of k-fold cross validation where <i>k</i> equals the size of the dataset (<i>n</i>).
+                    The model tests every single data point during cross validation. Computationally expensive.
                     <br><br>
                     <b>Cross validation for time series data</b><br>
-                    Time series data is not randomly distributed so standard k-fold CV cannot be used. Data from the future cannot be used to train data from the past. Use historical data until a given point in time, and vary that point in time from beginning to end. 
+                    Time series data is not randomly distributed so standard k-fold CV cannot be used. Data from the
+                    future cannot be used to train data from the past. Use historical data until a given point in time,
+                    and vary that point in time from beginning to end.
                 </p>
                 <script>
                     const cvB = document.getElementById('cv-button');
@@ -574,7 +596,8 @@
 
                 <!--Button-->
                 <button id="entropy-button">entropy</button>
-                <p id="entropy-paragraph" style="display: none;"> Quantifies uncertainty in a random variable assuming \(k\) states <br>
+                <p id="entropy-paragraph" style="display: none;"> Quantifies uncertainty in a random variable assuming
+                    \(k\) states <br>
                     Entropy \(H(Y) = \sum_{i=1}^k P(Y = k) log(PY=k)\) <br>
                     Higher entropy means closer to uniform distribution than a skewed one.<br><br>
                     Example: Gini index
@@ -621,13 +644,14 @@
                 <br />
 
 
-                
+
 
                 <!--Button-->
                 <button id="glm-button">generalized linear models (GLM)</button>
-                <p id="glm-paragraph" style="display: none;">Linear regression that allows residuals to not be normally distributed
-                <br>
-                <img class="img-fluid z-dept-1" src="images/glm.png" alt="glm.png" style="width: 70%;" />
+                <p id="glm-paragraph" style="display: none;">Linear regression that allows residuals to not be normally
+                    distributed
+                    <br>
+                    <img class="img-fluid z-dept-1" src="images/glm.png" alt="glm.png" style="width: 70%;" />
 
                 </p>
                 <script>
@@ -643,23 +667,32 @@
                     });
                 </script>
 
-                 <!--Button-->
-                 <button id="gd-button">gradient descent</button>
-                 <p id="gd-paragraph" style="display: none;">
-                    An optimization algorithm used to minimize the cost function (error) in machine learning models. <br>
-                    It starts by taking an initial guess of model parameters. Then, it iteratively adjusts the parameters by taking small steps in the direct of steepest descent of the cost function. The steps are determined by the hyperparameter learning rate (\(\alpha\)). 
-                    At each iteration, gradient descent calculates the gradient of the cost function with respect to each parameter. The gradient indicates the direction and rate of fastest increase of the cost function. It then updates the parameters in the opposite direction of the gradient (because we want to minimize the cost function), scaled by the learning rate.
-                    This process continues iteratively until the algorithm converges to a point where further adjustments to the parameters do not significantly reduce the cost function anymore.<br><br>
+                <!--Button-->
+                <button id="gd-button">gradient descent</button>
+                <p id="gd-paragraph" style="display: none;">
+                    An optimization algorithm used to minimize the cost function (error) in machine learning models.
+                    <br>
+                    It starts by taking an initial guess of model parameters. Then, it iteratively adjusts the
+                    parameters by taking small steps in the direct of steepest descent of the cost function. The steps
+                    are determined by the hyperparameter learning rate (\(\alpha\)).
+                    At each iteration, gradient descent calculates the gradient of the cost function with respect to
+                    each parameter. The gradient indicates the direction and rate of fastest increase of the cost
+                    function. It then updates the parameters in the opposite direction of the gradient (because we want
+                    to minimize the cost function), scaled by the learning rate.
+                    This process continues iteratively until the algorithm converges to a point where further
+                    adjustments to the parameters do not significantly reduce the cost function anymore.<br><br>
 
                     \( x_{t+1} = x_t - \alpha_t \nabla f(x_t) \)<br>
                     &nbsp; where \(f(x_t)\) is the cost function. <br>
-                    &nbsp; This equation shows that at each iteration, the gradient moves in the opposite of the gradient (negative sign). 
+                    &nbsp; This equation shows that at each iteration, the gradient moves in the opposite of the
+                    gradient (negative sign).
                     <br><br>
 
                     <b>Stochastic GD</b><br>
-                    &nbsp; • Instead of using all the data like normal GD, computes the gradient using a single sample at each step. <br>
+                    &nbsp; • Instead of using all the data like normal GD, computes the gradient using a single sample
+                    at each step. <br>
                     &nbsp; • More time efficient
-                    
+
                     <br><br>
                     <b>Batch GD</b><br>
                     &nbsp; • Uses fixed small number of batches of data points per time step <br>
@@ -668,20 +701,20 @@
 
 
 
-        
-                 </p>
-                 <script>
-                     const gdB = document.getElementById('gd-button');
-                     const gdP = document.getElementById('gd-paragraph');
- 
-                     gdB.addEventListener('click', () => {
-                         if (gdP.style.display === 'none') {
+
+                </p>
+                <script>
+                    const gdB = document.getElementById('gd-button');
+                    const gdP = document.getElementById('gd-paragraph');
+
+                    gdB.addEventListener('click', () => {
+                        if (gdP.style.display === 'none') {
                             gdP.style.display = 'block';
-                         } else {
+                        } else {
                             gdP.style.display = 'none';
-                         }
-                     });
-                 </script>
+                        }
+                    });
+                </script>
 
                 <br />
                 <br />
@@ -689,9 +722,10 @@
                 <!--Button-->
                 <button id="heteroscedasticity-button">heteroscedasticity</button>
                 <p id="heteroscedasticity-paragraph" style="display: none;">
-                    Residuals are NOT identically distributed; the variance of residuals is not constant. This causes bias in parameter estimates for linear regression and similar models. 
+                    Residuals are NOT identically distributed; the variance of residuals is not constant. This causes
+                    bias in parameter estimates for linear regression and similar models.
                     <br><br>
-                    Plot the residuals against independent variable to help visualize if there is heteroscedasticity. 
+                    Plot the residuals against independent variable to help visualize if there is heteroscedasticity.
 
                 </p>
                 <script>
@@ -709,7 +743,8 @@
 
                 <!--Button-->
                 <button id="htuning-button">hyperparameter tuning</button>
-                <p id="htuning-paragraph" style="display: none;">Process to find the optimal hyperparameters for a model.
+                <p id="htuning-paragraph" style="display: none;">Process to find the optimal hyperparameters for a
+                    model.
 
                     <br><br>
 
@@ -765,9 +800,11 @@
 
                 <!--Button-->
                 <button id="learning-button">learning curve</button>
-                <p id="learning-paragraph" style="display: none;"> Plots model learning performance over time. Y-axis is an evaluation metric (e.g., accuracy, F1 score, etc.). X-axis is iterations over time. 
+                <p id="learning-paragraph" style="display: none;"> Plots model learning performance over time. Y-axis is
+                    an evaluation metric (e.g., accuracy, F1 score, etc.). X-axis is iterations over time.
                     <br><br>
-                    The model is overfitted if the validation error does not improve over time. If both training and validation errors do not improve over time, then the model is underfitted.
+                    The model is overfitted if the validation error does not improve over time. If both training and
+                    validation errors do not improve over time, then the model is underfitted.
                 </p>
                 <script>
                     const learningB = document.getElementById('learning-button');
@@ -803,9 +840,10 @@
 
                 <!--Button-->
                 <button id="logreg-button">logistic regression</button>
-                <p id="logreg-paragraph" style="display: none;"> 
+                <p id="logreg-paragraph" style="display: none;">
                     A supervised machine learning algorithm for binary classification.
-                    It predicts the likelihood of a binary outcome based on input variables using a logistic (sigmoid) function to map linear outputs to probabilities. <br>
+                    It predicts the likelihood of a binary outcome based on input variables using a logistic (sigmoid)
+                    function to map linear outputs to probabilities. <br>
                     Sigmoid \( S(x) = \frac{1}{1+e^{-x \beta}} \) <br>
                     &nbsp; where \(x\) are predictor variables <br>
                     &nbsp; and \(\beta\) is a vector of weights <br>
@@ -842,7 +880,8 @@
                 <button id="mae-button">mean absolute error (MAE)</button>
                 <p id="mae-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average
-                    absolute difference between the actual and predicted values (the resideuals). Lower MAE means better model
+                    absolute difference between the actual and predicted values (the resideuals). Lower MAE means better
+                    model
                     performance.
                     \[ MAE = \frac{1}{n} \sum_{i=1}^{n} \mid y_i - \hat{y}_i \mid \]
                 </p>
@@ -865,15 +904,15 @@
                 <button id="mse-button">mean squared error (MSE)</button>
                 <p id="mse-paragraph" style="display: none;">
                     Evaluation metric for regression that measures the average of the squared differences between
-                    actual and predicted values (the variance of residuals). 
+                    actual and predicted values (the variance of residuals).
                     <br>
                     Lower MSE means better model performance. The MSE represents
                     unexplained
                     variance, the portion of variability in the dependent variable that is not explained by the
-                    model's independent variables. Goodness of fit metric for liear regression. 
+                    model's independent variables. Goodness of fit metric for liear regression.
                     \[ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
 
-                    MSE is more sensitive to outliers than MAE because it penalizes large errors more. 
+                    MSE is more sensitive to outliers than MAE because it penalizes large errors more.
                 </p>
                 <script>
                     const mseButton = document.getElementById('mse-button');
@@ -923,13 +962,21 @@
                 <!--Button-->
                 <button id="naive-button">naive bayes</button>
                 <p id="naive-paragraph" style="display: none;">
-                    A supervised machine learning algorithm used for classification problems that applies Bayes' Theorem with a naive assumption of independence between features.
-                    In other words, it decouples the class conditional feature distributions by assuming that the presence of a particular feature in a class is independent of all other features. Each feature's distribution can be independently estimated as a 1-D distribution \( P(X_1...X_n|Y)=\prod_{i=1}^n P(X_i|Y) \). Apply the conditional independence assumption and Bayes' Theorem gives the classification rule \( \hat{y}=argmax_{y_i} P(Y=y_i) \prod_j P(X_j|Y=y_i)\). 
+                    A supervised machine learning algorithm used for classification problems that applies Bayes' Theorem
+                    with a naive assumption of independence between features.
+                    In other words, it decouples the class conditional feature distributions by assuming that the
+                    presence of a particular feature in a class is independent of all other features. Each feature's
+                    distribution can be independently estimated as a 1-D distribution \( P(X_1...X_n|Y)=\prod_{i=1}^n
+                    P(X_i|Y) \). Apply the conditional independence assumption and Bayes' Theorem gives the
+                    classification rule \( \hat{y}=argmax_{y_i} P(Y=y_i) \prod_j P(X_j|Y=y_i)\).
                     <br><br>
-                    For any machine learning model with <i>k</i> features, there are 2\(^k\) possible feature interactions. You would need 2\(^k\) data points for a good model. However, the conditional independence assumption of Naive Bayes requires only <i>k</i> data points. 
+                    For any machine learning model with <i>k</i> features, there are 2\(^k\) possible feature
+                    interactions. You would need 2\(^k\) data points for a good model. However, the conditional
+                    independence assumption of Naive Bayes requires only <i>k</i> data points.
                     <br><br>
                     Assumptions \(P(Y|X)\):<br>
-                    &nbsp; • Each \(x_i\) is independent of any other \(x_j\) given \(Y\) for any pair of features \(x_i\) and \(x_j\)<br>
+                    &nbsp; • Each \(x_i\) is independent of any other \(x_j\) given \(Y\) for any pair of features
+                    \(x_i\) and \(x_j\)<br>
                     &nbsp;&nbsp;&nbsp;&nbsp; This is generally not true because features tend to be correlated. <br>
                     &nbsp; • Each feature is given the same weight
                     <br><br>
@@ -938,7 +985,7 @@
                     &nbsp; • Computationally fast <br>
                     &nbsp; • Scalable
 
-                    
+
                 </p>
                 <script>
                     const naiveB = document.getElementById('naive-button');
@@ -981,25 +1028,26 @@
                 <!-- Button -->
                 <button id="pca-button">principal component analysis</button>
                 <p id="pca-paragraph" style="display: none;">
-                    PCA combines highly correlated data into principal components which capture the most variance. 
+                    PCA combines highly correlated data into principal components which capture the most variance.
                     It looks for linear combos of each row vector to explain variance in \(X\).
                     <br><br>
 
-                    1.	Find component with max variance <br>
-                    2.	Find 2nd component uncorrelated to the 1st with 2nd highest variance <br>
-                    3.	Some <i>k</i> dimensions such that y\(_1\),…,y\(_k\) explains the majority of <i>k</i> variance, <i>k</i> \(<\)\(<\)\(<\) <i>p</i> <br>
-                    4.	Eigendecomposition of covariance matrix of \(X\)
-                    <br><br>
-                    Eigenvectors are the principal components. Eigenvalues are the magnitude of variance.
-                    <br><br>
-                    Find \(\vec{w}\) such that \(y_i = w_i^T x = \sum_{j=1}^p w_{ij}x_j \)
+                    1. Find component with max variance <br>
+                    2. Find 2nd component uncorrelated to the 1st with 2nd highest variance <br>
+                    3. Some <i>k</i> dimensions such that y\(_1\),…,y\(_k\) explains the majority of <i>k</i> variance,
+                    <i>k</i> \(<\)\(<\)\(<\) <i>p</i> <br>
+                        4. Eigendecomposition of covariance matrix of \(X\)
+                        <br><br>
+                        Eigenvectors are the principal components. Eigenvalues are the magnitude of variance.
+                        <br><br>
+                        Find \(\vec{w}\) such that \(y_i = w_i^T x = \sum_{j=1}^p w_{ij}x_j \)
 
-                    <br><br>
-                    Assumes variables have a linear relationship.
-                    <br><br>
-                    Cons: <br>
-                    &nbsp; • Struggles with outliers<br>
-                    &nbsp; • Sensitive to units for input features (need to standardize)
+                        <br><br>
+                        Assumes variables have a linear relationship.
+                        <br><br>
+                        Cons: <br>
+                        &nbsp; • Struggles with outliers<br>
+                        &nbsp; • Sensitive to units for input features (need to standardize)
 
 
                 </p>
@@ -1023,19 +1071,27 @@
                 <!--Button-->
                 <button id="qq-button">qq plot</button>
                 <p id="qq-paragraph" style="display: none;">
-                    A QQ (Quantile-Quantile) plot is a graphical tool used to assess if a dataset follows a particular theoretical distribution, such as a normal distribution. This is important because many statistical tests and machine learning algorithms assume normality of the data.
+                    A QQ (Quantile-Quantile) plot is a graphical tool used to assess if a dataset follows a particular
+                    theoretical distribution, such as a normal distribution. This is important because many statistical
+                    tests and machine learning algorithms assume normality of the data.
                     <br><br>
-                    Quantiles are points taken at regular intervals from the cumulative distribution function (CDF) of a distribution. For a normal distribution, these quantiles would correspond to z-scores.
+                    Quantiles are points taken at regular intervals from the cumulative distribution function (CDF) of a
+                    distribution. For a normal distribution, these quantiles would correspond to z-scores.
                     <br><br>
-                    1. Generate theoretical quantiles for the distribution you're comparing against (e.g., normal distribution). <br>
+                    1. Generate theoretical quantiles for the distribution you're comparing against (e.g., normal
+                    distribution). <br>
                     2. Sort the data and compute the quantiles from the sample (standardized residuals). <br>
                     3. Plot the sample quantiles on the y-axis against the theoretical quantiles on the x-axis.
                     <br><br>
                     Interpretation: <br>
-                    &nbsp; • Straight Line: If the data follows the theoretical distribution, the points will lie approximately on a straight line. <br>
-                    &nbsp; • Deviation from Line: Systematic deviations from the line indicate departures from the theoretical distribution.<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Upward/Downward Curvature: This indicates skewness (asymmetry).<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • S-Shaped Curve: This indicates heavier or lighter tails (kurtosis) than the theoretical distribution.
+                    &nbsp; • Straight Line: If the data follows the theoretical distribution, the points will lie
+                    approximately on a straight line. <br>
+                    &nbsp; • Deviation from Line: Systematic deviations from the line indicate departures from the
+                    theoretical distribution.<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • Upward/Downward Curvature: This indicates skewness
+                    (asymmetry).<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • S-Shaped Curve: This indicates heavier or lighter tails
+                    (kurtosis) than the theoretical distribution.
                 </p>
                 <script>
                     const qqB = document.getElementById('qq-button');
@@ -1105,8 +1161,11 @@
                 <!--Button-->
                 <button id="regularization-button">regularization</button>
                 <p id="regularization-paragraph" style="display: none;">
-                    Regularization is a technique used to prevent overfitting (reduce complexity) and improve the generalization of models. It aims to reduce variance while only slightly increasing bias.
-                    It does so by adding a penalty to the loss function of a model, discouraging it from fitting the training data too closely (shrinks coefficient of features) and instead promoting simpler models that generalize better to unseen data.
+                    Regularization is a technique used to prevent overfitting (reduce complexity) and improve the
+                    generalization of models. It aims to reduce variance while only slightly increasing bias.
+                    It does so by adding a penalty to the loss function of a model, discouraging it from fitting the
+                    training data too closely (shrinks coefficient of features) and instead promoting simpler models
+                    that generalize better to unseen data.
 
                     <br><br>
                     <b>L1 (Lasso) Regularization</b><br>
@@ -1114,11 +1173,11 @@
                     &nbsp; • Can be used to feature selection because stricter than L2 (coefficient \(\rightarrow\) 0)
                     <br><br>
                     <b>L2 (Ridge) Regularization</b><br>
-                    &nbsp; • Penalty: squared magnitude of the coefficient 
+                    &nbsp; • Penalty: squared magnitude of the coefficient
                     <br><br>
                     <b>Elastic Net</b><br>
                     &nbsp; • Linear combination of L1 and L2
-                    
+
                 </p>
                 <script>
                     const regularizationB = document.getElementById('regularization-button');
@@ -1236,7 +1295,8 @@
                 <button id="shap-button">SHAP</button>
                 <p id="shap-paragraph" style="display: none;">Shapley Additive Explanation
                     <br><br>
-                    SHAP values show the average marginal contribution of a feature over all possible combinations of inputs. 
+                    SHAP values show the average marginal contribution of a feature over all possible combinations of
+                    inputs.
                 </p>
                 <script>
                     const shapB = document.getElementById('shap-button');
@@ -1315,7 +1375,8 @@
                 <p id="svm-paragraph" style="display: none;">
                     A max-margin supervised classification model that forms a hyperplane that linearly separates the
                     training data. The margin between the decision boundary (hyperplane) to any training point (usually
-                    the support vectors) is maximized. The margin can be linear or nonlinear. The points closest to the hyperplane that define the margins are support vectors.<br><br>
+                    the support vectors) is maximized. The margin can be linear or nonlinear. The points closest to the
+                    hyperplane that define the margins are support vectors.<br><br>
 
                     SVM works well: <br>
                     • for high dimensional spaces<br>
@@ -1346,9 +1407,12 @@
                 <!--Button-->
                 <button id="xgb-button">XGBoost</button>
                 <p id="xgb-paragraph" style="display: none;">
-                    eXtreme Gradient Boosting (XGBoost) is a supervised ensemble method that uses sequential boosting, combining multiple weak learners (often decision trees) sequentially to create a strong learner.
-                    It is the generalized form of AdaBoost. 
-                     It uses gradients to identify the shortcomings of previous models rather than high weight points (like AdaBoost). All classifiers have equal weights in XGBoost. High execution speed and model performance.
+                    eXtreme Gradient Boosting (XGBoost) is a supervised ensemble method that uses sequential boosting,
+                    combining multiple weak learners (often decision trees) sequentially to create a strong learner.
+                    It is the generalized form of AdaBoost.
+                    It uses gradients to identify the shortcomings of previous models rather than high weight points
+                    (like AdaBoost). All classifiers have equal weights in XGBoost. High execution speed and model
+                    performance.
 
                 </p>
                 <script>
