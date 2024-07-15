@@ -1145,6 +1145,14 @@
                     correlation
                     among features) to prevent overfitting. It introduces additional information to penalize extreme
                     parameter (weight) values
+                    <br><br>
+                    <b>Assumptions</b>:<br>
+                    &nbsp; • Linearity<br>
+                    &nbsp; • Independent and identically distributed (iid), meaning:<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; - Homoscedasticity (variance of residuals is constant) <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp; - Independence<br>
+                    &nbsp; • Normality of the residuals 
+
                 </p>
                 <script>
                     const regButton = document.getElementById('reg-button');
@@ -1356,6 +1364,13 @@
                     &nbsp; • <b>Forward</b>: Start with an empty model and add the most useful predictors iteratively
                     <br>
                     &nbsp; • <b>Backward</b>: Start with a full model and remove least useful predictors iteratively
+                    <br><br>
+
+                    Best Subset Selection<br><br>
+                    &nbsp; • Tries the model with k predictors out of a total of p possible ones (k < p)<br>
+                    &nbsp; • Choose the best subset using a metric like R-squared<br>
+                    &nbsp; • Computationally expensive
+                
                 </p>
                 <script>
                     const selectionB = document.getElementById('selection-button');
