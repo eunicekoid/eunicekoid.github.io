@@ -178,18 +178,36 @@
                 </style>
 
 
-                <!-- Button -->
-                <button id="bigo-button">big-o</button>
-                <p id="bigo-paragraph" style="display: none;">
-                    Describes the worst-case runtime scenario, the asymptotic upper bound of an algorithm
-                </p>
+
+                <!--Button-->
+                <button id="bigo-button">big-O</button>
+                <div id="bigo-paragraph" style="display: none; text-align: left;">
+                    Describes the worst-case runtime scenario, the asymptotic upper bound of an algorithm.
+
+                    <div style="margin: 0 auto; padding: 10px; display: inline-block;">
+                        <table border=".1">
+                            <tr>
+                                <td><b>&nbsp;O(1)</b></td>
+                                <td>&nbsp;Constant time. Example: retrieving a value from array with size N.</td>
+                            </tr>
+                            <tr>
+                                <td><b>&nbsp;O(log N)</b></td>
+                                <td>&nbsp;Log time (cutting N in half). Examples: binary search, heap pop, BST. <br> 2<sup>x</sup>=n. x=log<sub>2</sub>n</td>
+                            </tr>
+                            <tr>
+                                <td><b>&nbsp;O(N)</b></td>
+                                <td>&nbsp;Linear time.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
                 <script>
                     const bigoB = document.getElementById('bigo-button');
                     const bigoP = document.getElementById('bigo-paragraph');
+
                     bigoB.addEventListener('click', () => {
                         if (bigoP.style.display === 'none') {
                             bigoP.style.display = 'block';
-                            MathJax.typeset();
                         } else {
                             bigoP.style.display = 'none';
                         }
@@ -214,23 +232,23 @@
                     });
                 </script>
 
-                 <!-- Button -->
-                 <button id="bigtheta-button">big-theta</button>
-                 <p id="bigtheta-paragraph" style="display: none;">
-                    Describes both the upper and lower bound of a function, the average time complexity. 
-                 </p>
-                 <script>
-                     const bigthetaB = document.getElementById('bigtheta-button');
-                     const bigthetaP = document.getElementById('bigtheta-paragraph');
-                     bigthetaB.addEventListener('click', () => {
-                         if (bigthetaP.style.display === 'none') {
+                <!-- Button -->
+                <button id="bigtheta-button">big-theta</button>
+                <p id="bigtheta-paragraph" style="display: none;">
+                    Describes both the upper and lower bound of a function, the average time complexity.
+                </p>
+                <script>
+                    const bigthetaB = document.getElementById('bigtheta-button');
+                    const bigthetaP = document.getElementById('bigtheta-paragraph');
+                    bigthetaB.addEventListener('click', () => {
+                        if (bigthetaP.style.display === 'none') {
                             bigthetaP.style.display = 'block';
-                             MathJax.typeset();
-                         } else {
+                            MathJax.typeset();
+                        } else {
                             bigthetaP.style.display = 'none';
-                         }
-                     });
-                 </script>
+                        }
+                    });
+                </script>
 
 
 
