@@ -281,22 +281,25 @@
                 <button id="reduce-button">reduce function</button>
                 <p id="reduce-paragraph" style="display: none;">
                 <pre><code class="language-javascript">
-                    array.reduce(reducerFunction, initialValue)
-
-                        </code></pre>
+                        array.reduce(function)
+        </code></pre>
                 </p>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
                 <script>
                     const reduceB = document.getElementById('reduce-button');
                     const reduceP = document.getElementById('reduce-paragraph');
                     reduceB.addEventListener('click', () => {
                         if (reduceP.style.display === 'none') {
                             reduceP.style.display = 'block';
-                            MathJax.typeset();
+                            Prism.highlightAll(); // Highlight the code
                         } else {
                             reduceP.style.display = 'none';
                         }
                     });
                 </script>
+
                 <!-- Include a code highlighter library -->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
