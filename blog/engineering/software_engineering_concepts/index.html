@@ -192,7 +192,8 @@
                             </tr>
                             <tr>
                                 <td><b>&nbsp;O(logN)&nbsp;</b></td>
-                                <td>&nbsp;Log time (cutting N in half). Examples: binary search, heap pop, BST. 2<sup>x</sup>=n. x=log<sub>2</sub>n</td>
+                                <td>&nbsp;Log time (cutting N in half). Examples: binary search, heap pop, BST.
+                                    2<sup>x</sup>=n. x=log<sub>2</sub>n</td>
                             </tr>
                             <tr>
                                 <td><b>&nbsp;O(\(\sqrt{N}\))&nbsp;</b></td>
@@ -200,7 +201,8 @@
                             </tr>
                             <tr>
                                 <td><b>&nbsp;O(N)&nbsp;</b></td>
-                                <td>&nbsp;Linear time. Examples: traversing through an array, heapify, sliding window, monotonic stack.&nbsp;</td>
+                                <td>&nbsp;Linear time. Examples: traversing through an array, heapify, sliding window,
+                                    monotonic stack.&nbsp;</td>
                             </tr>
                             <tr>
                                 <td><b>&nbsp;O(NlogN)&nbsp;</b></td>
@@ -208,11 +210,13 @@
                             </tr>
                             <tr>
                                 <td><b>&nbsp;O(N<sup>2</sup>)&nbsp;</b></td>
-                                <td>&nbsp;Quadratic time. Examples: traversing an NxN grid, insertion sort, traversing through all pairs in a nested for-loop.&nbsp;</td>
+                                <td>&nbsp;Quadratic time. Examples: traversing an NxN grid, insertion sort, traversing
+                                    through all pairs in a nested for-loop.&nbsp;</td>
                             </tr>
                             <tr>
                                 <td><b>&nbsp;O(2<sup>N</sup>)&nbsp;</b></td>
-                                <td>&nbsp;Exponential time. Examples: recursion, tree heigh of N with two branches (e.g., Fibonnaci).&nbsp;</td>
+                                <td>&nbsp;Exponential time. Examples: recursion, tree heigh of N with two branches
+                                    (e.g., Fibonnaci).&nbsp;</td>
                             </tr>
                             <tr>
                                 <td><b>&nbsp;O(N!)&nbsp;</b></td>
@@ -273,6 +277,38 @@
 
 
                 <br />
+                <br />
+
+                <!-- Button -->
+                <button id="reduce-button">reduce function</button>
+                <p id="reduce-paragraph" style="display: none;">
+                <pre><code>
+        const reduceB = document.getElementById('reduce-button');
+        const reduceP = document.getElementById('reduce-paragraph');
+        reduceB.addEventListener('click', () => {
+            if (reduceP.style.display === 'none') {
+               reduceP.style.display = 'block';
+                MathJax.typeset();
+            } else {
+               reduceP.style.display = 'none';
+            }
+        });
+    </code></pre>
+                </p>
+                <script>
+                    const reduceB = document.getElementById('reduce-button');
+                    const reduceP = document.getElementById('reduce-paragraph');
+                    reduceB.addEventListener('click', () => {
+                        if (reduceP.style.display === 'none') {
+                            reduceP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            reduceP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+
 
 
             </article>
