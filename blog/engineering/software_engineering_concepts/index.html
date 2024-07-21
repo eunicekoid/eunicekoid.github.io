@@ -319,52 +319,55 @@
                 <button id="reduce-button">reduce function</button>
                 <p id="reduce-paragraph" style="display: none;">
                     <code class="language-javascript">
-array.reduce(reducerFunction, initialValue)
-        </code>
+                        array.reduce(reducerFunction, initialValue)
+                                </code>
+                                <br><br>
+                                            <code class="language-javascript">
+                        // Example - Summing Numbers in an Array
+                        const numbers = [1, 2, 3, 4, 5];
+                        const sum = numbers.reduce((accumulator, currentValue) => {
+                            return accumulator + currentValue;
+                        }, 0);
+                        console.log(sum); // Output: 15
+                                </code>
 
                     <code class="language-javascript">
-// Example - Summing Numbers in an Array
-const numbers = [1, 2, 3, 4, 5];
-const sum = numbers.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-}, 0);
-console.log(sum); // Output: 15
-        </code>
-
-                    <code class="language-javascript">
-const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
-const nameCount = names.reduce((acc, name) => {
-    if (acc[name]) {
-        acc[name]++;
-    } else {
-        acc[name] = 1;
-    }
-    return acc;
-}, {});
-console.log(nameCount); 
-// Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
-        </code>
+                        // Example - Counting Frequency of Names
+                        const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+                        const nameCount = names.reduce((acc, name) => {
+                            if (acc[name]) {
+                                acc[name]++;
+                            } else {
+                                acc[name] = 1;
+                            }
+                            return acc;
+                        }, {});
+                        console.log(nameCount); 
+                        // Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
+                                </code>
 
                     <code class="language-python">
-from functools import reduce
+                        # Example - Summing Numbers in an Array
+                    from functools import reduce
 
-numbers = [1, 2, 3, 4, 5]
+                    numbers = [1, 2, 3, 4, 5]
 
-sum = reduce(lambda accumulator, current: accumulator + current, numbers)
+                    sum = reduce(lambda accumulator, current: accumulator + current, numbers)
 
-print(sum)  # Output: 15
-        </code>
+                    print(sum)  # Output: 15
+                            </code>
 
                     <code class="language-python">
-from functools import reduce
-import operator
+                        # Example - Turning an Array of Arrays into One Array
+                    from functools import reduce
+                    import operator
 
-arrays = [[1, 2, 3], [4, 5], [6]]
+                    arrays = [[1, 2, 3], [4, 5], [6]]
 
-flattened_list = reduce(operator.concat, arrays)
+                    flattened_list = reduce(operator.concat, arrays)
 
-print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6]
-        </code>
+                    print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6]
+                            </code>
                 </p>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
                 <script
