@@ -273,26 +273,16 @@
                         }
                     });
                 </script>
-
-
-
                 <br />
                 <br />
+
 
                 <!-- Button -->
                 <button id="reduce-button">reduce function</button>
                 <p id="reduce-paragraph" style="display: none;">
                 <pre><code class="language-javascript">
-                    const reduceB = document.getElementById('reduce-button');
-                    const reduceP = document.getElementById('reduce-paragraph');
-                    reduceB.addEventListener('click', () => {
-                        if (reduceP.style.display === 'none') {
-                            reduceP.style.display = 'block';
-                            MathJax.typeset();
-                        } else {
-                            reduceP.style.display = 'none';
-                        }
-                    });
+                    array.reduce(reducerFunction, initialValue)
+
                         </code></pre>
                 </p>
                 <script>
