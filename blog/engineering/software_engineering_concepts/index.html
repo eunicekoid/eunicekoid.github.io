@@ -7,6 +7,20 @@
     <!-- Standard metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+    <style>
+        code {
+            display: block;
+            white-space: pre-wrap;
+            /* Preserves whitespace */
+            background-color: #f5f2f0;
+            /* Matches Prism's default background color */
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Eunice Koid | Software Engineering Concepts</title>
     <meta name="author" content="Eunice Koid" />
@@ -278,59 +292,79 @@
 
 
                 <!-- Button -->
+                <button id="hofunc-button">higher-order functions</button>
+                <p id="hofunc-paragraph" style="display: none;">
+
+                </p>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+                <script>
+                    const hofuncB = document.getElementById('hofunc-button');
+                    const hofuncP = document.getElementById('hofunc-paragraph');
+                    hofuncB.addEventListener('click', () => {
+                        if (hofuncP.style.display === 'none') {
+                            hofuncP.style.display = 'block';
+                            Prism.highlightAll(); // Highlight the code
+                        } else {
+                            hofuncP.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
+
+                <!-- Button -->
                 <button id="reduce-button">reduce function</button>
                 <p id="reduce-paragraph" style="display: none;">
                     <code class="language-javascript">
-                        array.reduce(reducerFunction, initialValue)</code>
-                    
-                        <code class="language-javascript">
-                        // Example - Summing Numbers in an Array <br>
-                        const numbers = [1, 2, 3, 4, 5];<br>
-                        const sum = numbers.reduce((accumulator, currentValue) => {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    return accumulator + currentValue;
-                        }, 0);<br>
-                        console.log(sum); // Output: 15
+array.reduce(reducerFunction, initialValue)
+        </code>
 
-                    </code>
-                    <br><br>
                     <code class="language-javascript">
-                    const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];<br>
+// Example - Summing Numbers in an Array
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+console.log(sum); // Output: 15
+        </code>
 
-                    const nameCount = names.reduce((acc, name) => {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (acc[name]) {<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   acc[name]++;<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   acc[name] = 1;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return acc;<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, {});<br>
-                                <br> <br>
-                    console.log(nameCount); <br>
-                    // Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
-                    
-                    </code>
-                    <br> <br>
+                    <code class="language-javascript">
+const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+const nameCount = names.reduce((acc, name) => {
+    if (acc[name]) {
+        acc[name]++;
+    } else {
+        acc[name] = 1;
+    }
+    return acc;
+}, {});
+console.log(nameCount); 
+// Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
+        </code>
+
                     <code class="language-python">
-                        from functools import reduce <br><br>
+from functools import reduce
 
-                        numbers = [1, 2, 3, 4, 5] <br><br>
-                        
-                        sum = reduce(lambda accumulator, current: accumulator + current, numbers) <br><br>
-                        
-                        print(sum)  # Output: 15
-                    </code>
+numbers = [1, 2, 3, 4, 5]
+
+sum = reduce(lambda accumulator, current: accumulator + current, numbers)
+
+print(sum)  # Output: 15
+        </code>
+
                     <code class="language-python">
+from functools import reduce
+import operator
 
-                    from functools import reduce<br>
-                    import operator<br><br>
+arrays = [[1, 2, 3], [4, 5], [6]]
 
-                    arrays = [[1, 2, 3], [4, 5], [6]]<br><br>
+flattened_list = reduce(operator.concat, arrays)
 
-                    flattened_list = reduce(operator.concat, arrays)<br><br>
-
-                    print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6]
-                    </code>
-
+print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6]
+        </code>
                 </p>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
                 <script
