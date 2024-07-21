@@ -310,6 +310,16 @@
                     
                     </code>
 
+                    <code class="language-python">
+                        from functools import reduce
+
+                        numbers = [1, 2, 3, 4, 5]
+                        
+                        sum = reduce(lambda accumulator, current: accumulator + current, numbers)
+                        
+                        print(sum)  # Output: 15
+                    </code>
+
                 </p>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
                 <script
