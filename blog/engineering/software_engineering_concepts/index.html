@@ -12,7 +12,7 @@
     <style>
         code {
             display: block;
-            white-space: pre-line; /* Preserves whitespace and line breaks */
+            white-space: pre-wrap; /* Preserves whitespace and line breaks */
             background-color: #f5f2f0; /* Matches Prism's default background color */
             padding: 10px;
             border-radius: 5px;
@@ -317,9 +317,9 @@
                 <!-- Button -->
                 <button id="reduce-button">reduce function</button>
                 <p id="reduce-paragraph" style="display: none;">
-                    <pre><code class="language-javascript">
+                    <code class="language-javascript">
                         array.reduce(reducerFunction, initialValue)
-                                </code></pre>
+                                </code>
                           
                                             <code class="language-javascript">
                         // Example - Summing Numbers in an Array
