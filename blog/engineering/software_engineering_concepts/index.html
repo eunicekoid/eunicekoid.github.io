@@ -282,18 +282,18 @@
                 <!-- Button -->
                 <button id="reduce-button">reduce function</button>
                 <p id="reduce-paragraph" style="display: none;">
-                <pre><code>
-        const reduceB = document.getElementById('reduce-button');
-        const reduceP = document.getElementById('reduce-paragraph');
-        reduceB.addEventListener('click', () => {
-            if (reduceP.style.display === 'none') {
-               reduceP.style.display = 'block';
-                MathJax.typeset();
-            } else {
-               reduceP.style.display = 'none';
-            }
-        });
-    </code></pre>
+                <pre><code class="language-javascript">
+                    const reduceB = document.getElementById('reduce-button');
+                    const reduceP = document.getElementById('reduce-paragraph');
+                    reduceB.addEventListener('click', () => {
+                        if (reduceP.style.display === 'none') {
+                            reduceP.style.display = 'block';
+                            MathJax.typeset();
+                        } else {
+                            reduceP.style.display = 'none';
+                        }
+                    });
+                        </code></pre>
                 </p>
                 <script>
                     const reduceB = document.getElementById('reduce-button');
@@ -307,10 +307,11 @@
                         }
                     });
                 </script>
-
-
-
-
+                <!-- Include a code highlighter library -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
             </article>
         </div>
     </div>
