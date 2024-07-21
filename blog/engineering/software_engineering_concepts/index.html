@@ -284,28 +284,28 @@
                         array.reduce(reducerFunction, initialValue)</code>
                     
                         <code class="language-javascript">
-                        // Example - Summing Numbers in an Array
-                        const numbers = [1, 2, 3, 4, 5];
-                        const sum = numbers.reduce((accumulator, currentValue) => {
-                            return accumulator + currentValue;
-                        }, 0);
+                        // Example - Summing Numbers in an Array <br>
+                        const numbers = [1, 2, 3, 4, 5];<br>
+                        const sum = numbers.reduce((accumulator, currentValue) => {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    return accumulator + currentValue;
+                        }, 0);<br>
                         console.log(sum); // Output: 15
 
                     </code>
-
+                    <br><br>
                     <code class="language-javascript">
-                    const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+                    const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];<br>
 
-                    const nameCount = names.reduce((acc, name) => {
-                    if (acc[name]) {
-                        acc[name]++;
-                    } else {
-                        acc[name] = 1;
-                    }
-                    return acc;
-                    }, {});
-
-                    console.log(nameCount); 
+                    const nameCount = names.reduce((acc, name) => {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (acc[name]) {<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   acc[name]++;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   acc[name] = 1;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return acc;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}, {});<br>
+                                <br> <br>
+                    console.log(nameCount); <br>
                     // Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
                     
                     </code>
