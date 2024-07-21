@@ -311,13 +311,24 @@
                     </code>
                     <br> <br>
                     <code class="language-python">
-                        from functools import reduce <br>
+                        from functools import reduce <br><br>
 
-                        numbers = [1, 2, 3, 4, 5] <br>
+                        numbers = [1, 2, 3, 4, 5] <br><br>
                         
-                        sum = reduce(lambda accumulator, current: accumulator + current, numbers) <br>
+                        sum = reduce(lambda accumulator, current: accumulator + current, numbers) <br><br>
                         
                         print(sum)  # Output: 15
+                    </code>
+                    <code class="language-python">
+
+                    from functools import reduce<br>
+                    import operator<br><br>
+
+                    arrays = [[1, 2, 3], [4, 5], [6]]<br><br>
+
+                    flattened_list = reduce(operator.concat, arrays)<br><br>
+
+                    print(flattened_list)  # Output: [1, 2, 3, 4, 5, 6]
                     </code>
 
                 </p>
