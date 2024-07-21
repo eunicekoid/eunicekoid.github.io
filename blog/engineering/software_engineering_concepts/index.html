@@ -290,9 +290,26 @@
                         }, 0);
                         console.log(sum); // Output: 15
 
-                    </code>
-                    
+                        // 
 
+                    </code>
+
+                    <code class="language-javascript">
+                    const names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+                    const nameCount = names.reduce((acc, name) => {
+                    if (acc[name]) {
+                        acc[name]++;
+                    } else {
+                        acc[name] = 1;
+                    }
+                    return acc;
+                    }, {});
+
+                    console.log(nameCount); 
+                    // Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
+                    
+                    </code>
 
                 </p>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
