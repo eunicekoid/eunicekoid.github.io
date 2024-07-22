@@ -459,6 +459,39 @@
                     });
                 </script>
 
+
+                <!-- Button -->
+                <button id="regex-button">regex</button>
+                <p id="regex-paragraph" style="display: none;">
+                    <b>JavaScript</b> <br>
+                    <code class="language=javascript">
+                        // Test function (boolean)
+                        /regex/.test('string');
+                        
+                        // Match function (extraction)
+                        'string'.match(/regex/);
+
+                        </code>
+                        
+                        
+                    
+                </p>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+                <script>
+                    const regexB = document.getElementById('regex-button');
+                    const regexP = document.getElementById('regex-paragraph');
+                    regexB.addEventListener('click', () => {
+                        if (regexP.style.display === 'none') {
+                            regexP.style.display = 'block';
+                            Prism.highlightAll(); // Highlight the code
+                        } else {
+                            regexP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <!-- Include a code highlighter library -->
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css">
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
