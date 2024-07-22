@@ -294,10 +294,26 @@
                 <button id="hofunc-button">higher-order functions</button>
                 <p id="hofunc-paragraph" style="display: none;">
 
+                    <code>
+                        // Example
+                        function loop(value, test, update, body) {
+                            while (test(value)) {
+                              body(value);
+                              value = update(value);
+                            }
+                          }
+                          
+                          // Example usage
+                          loop(3, n => n > 0, n => n - 1, console.log);
+                          // → 3
+                          // → 2
+                          // → 1
+                    </code>
+
                 </p>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
-                <script
-                    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
                 <script>
                     const hofuncB = document.getElementById('hofunc-button');
                     const hofuncP = document.getElementById('hofunc-paragraph');
@@ -345,7 +361,7 @@
                             }
                             return acc;
                         }, {});
-                        
+
                         console.log(nameCount); 
                         // Output: { Alice: 2, Bob: 1, Tiff: 1, Bruce: 1 }
                                 </code>
