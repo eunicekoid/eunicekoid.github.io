@@ -342,6 +342,45 @@
                 <br />
                 <br />
 
+                <!-- Button -->
+                <button id="lambda-button">lambda function</button>
+                <p id="lambda-paragraph" style="display: none;">
+                    <code>
+                        # Using lambda with map to square numbers in a list
+                        numbers = [1, 2, 3, 4, 5]
+                        squared = map(lambda x: x ** 2, numbers)
+                        print(list(squared))  # Output: [1, 4, 9, 16, 25]
+
+                        # Using lambda with filter to get even numbers from a list
+                        even_numbers = filter(lambda x: x % 2 == 0, numbers)
+                        print(list(even_numbers))  # Output: [2, 4]
+
+                        # Using lambda with reduce to compute the product of numbers in a list
+                        from functools import reduce
+                        product = reduce(lambda x, y: x * y, numbers)
+                        print(product)  # Output: 120
+
+                    </code>
+
+                </p>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+                <script>
+                    const lambdaB = document.getElementById('lambda-button');
+                    const lambdaP = document.getElementById('lambda-paragraph');
+                    lambdaB.addEventListener('click', () => {
+                        if (lambdaP.style.display === 'none') {
+                            lambdaP.style.display = 'block';
+                            Prism.highlightAll(); // Highlight the code
+                        } else {
+                            lambdaP.style.display = 'none';
+                        }
+                    });
+                </script>
+                <br />
+                <br />
+
 
                 <!-- Button -->
                 <button id="reduce-button">reduce function</button>
