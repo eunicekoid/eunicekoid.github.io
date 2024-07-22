@@ -293,7 +293,7 @@
                 <!-- Button -->
                 <button id="hofunc-button">higher-order functions</button>
                 <p id="hofunc-paragraph" style="display: none;">
-
+                    <b>JavaScript</b><br>
                     <code>
                         // Example
                         function loop(value, test, update, body) {
@@ -308,6 +308,19 @@
                           // → 3
                           // → 2
                           // → 1
+                    </code>
+                    <b>Python</b><br>
+                    <code>
+                        def loop(value, test, update, body):
+                            while test(value):
+                                body(value)
+                                value = update(value)
+
+                        # Example usage
+                        loop(3, lambda n: n > 0, lambda n: n - 1, print)
+                        # → 3
+                        # → 2
+                        # → 1
                     </code>
 
                 </p>
