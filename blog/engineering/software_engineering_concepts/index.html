@@ -492,7 +492,7 @@
                         <b>{</b>&nbsp;&nbsp;<b>}</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; specify # of times a character appears (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /Haz{4,}ah/;</span> matches if there are 4+ z's in Hazzzzah) <br>
                         \( (?=...) \) &nbsp; checks if \(... \) exists <br>
                         \( (?!...) \) &nbsp;&nbsp;&nbsp;&nbsp; checks if \(... \) does not exist <br>
-                        \( (...) \text{\1 } \text{\1 }\) &nbsp;&nbsp;&nbsp;&nbsp; capture groups; match \(...\) a specified number of times indicated by \(\text{\1}\) <br>
+                        \( (...) \text{\1}\) &nbsp;&nbsp;&nbsp; capture groups; match \(...\) a specified number of times indicated by \(\text{\1}\) <br>
                         <br>
                         <u>Flags</u><br>
                         \(\text{g} \) &nbsp;&nbsp;&nbsp;&nbsp; global flag to find more than just the first match <br>
