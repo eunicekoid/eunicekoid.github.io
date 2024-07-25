@@ -476,11 +476,13 @@
                         \( | \)   OR operator (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /yes | no/;</span>) <br>
                         \( . \)   wildcard character (matches anything) <br>
                         \( [ \) \( ]\)  character class (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /[a-z]/;</span> searches all letters) <br>
-                        \( ^ \)  negated character if within brackets (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /[^aeiou]/;</span> excludes vowels) <br>
-                        \( ^ \)  match beginning of a string (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /^start/;</span>  <br>
+                        \( \text{^} \)  negated character if within brackets (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /[^aeiou]/;</span> excludes vowels) <br>
+                        \( \text{^} \)  match beginning of a string (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /^start/;</span>  <br>
+                        \( $ \)  match end of a string (e.g., <span style="font-family: Consolas, 'Courier New', monospace;">let regex = /end$/;</span>  <br>
                         \( + \)  match character that occurs one or more times in a row <br>
                         \( * \)  match character that occurs zero or more times <br>
                         \( ? \)  lazy matching; finds the smallest part that matches the regex <br>
+                        \( \\w \)  matches all upper and lower case letters and numbers <br>
                         <br><br>
                         <u>Flags</u><br>
                         \(\text{g} \): global flag to find more than just the first match <br>
