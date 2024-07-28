@@ -289,6 +289,34 @@
                 <br />
                 <br />
 
+                <!-- Button -->
+                <button id="git-button">git commands</button>
+                <p id="git-paragraph" style="display: none;">
+                    \( \text{git init}\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Initialize local git repository (.git hidden folder)<br>
+                    \( \text{git add < file >} \) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Add file(s) to index <br>
+                    \( \text{git status}\) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Status of working tree. Display differences between working tree and staging area (index) <br>
+                    
+
+                </p>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-javascript.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-python.min.js"></script>
+                <script>
+                    const gitB = document.getElementById('git-button');
+                    const gitP = document.getElementById('git-paragraph');
+                    gitB.addEventListener('click', () => {
+                        if (gitP.style.display === 'none') {
+                            gitP.style.display = 'block';
+                            Prism.highlightAll(); // Highlight the code
+                        } else {
+                            gitP.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <br />
+                <br />
+
 
                 <!-- Button -->
                 <button id="hofunc-button">higher-order functions</button>
