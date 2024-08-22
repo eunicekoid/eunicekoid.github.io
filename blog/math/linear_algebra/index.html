@@ -232,6 +232,29 @@
                         }
                     });
                 </script>
+
+                <!-- Button -->
+                <button id="dot-button">dot product</button>
+                <p id="dot-paragraph" style="display: none;">
+                    Geometrically, the dot product expresses the magnitude and alignment of one vector to another vector. <br>
+                    \( A \dot B = |A| |B| cos \theta \)
+
+                    
+
+                </p>
+                <script>
+                    const dotButton = document.getElementById('dot-button');
+                    const dotPara = document.getElementById('dot-paragraph');
+                    dotButton.addEventListener('click', () => {
+                        if (dotPara.style.display === 'none') {
+                            dotPara.style.display = 'block';
+                            dotPara.typeset();
+                        } else {
+                            dotPara.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
