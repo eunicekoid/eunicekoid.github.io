@@ -425,6 +425,27 @@
                         }
                     });
                 </script>
+
+                <!-- Button -->
+                <button id="outer-button">outer product</button>
+                <p id="outer-paragraph" style="display: none;">
+                    The outer product of \(\mathbf{a}\) and \(\mathbf{b}\) is the matrix you get when you multiply every element of \(\mathbf{a}\) with every element of \(\mathbf{b}\). <br><br>
+
+                    
+                </p>
+                <script>
+                    const outerB = document.getElementById('outer-button');
+                    const outerP = document.getElementById('outer-paragraph');
+                    outerB.addEventListener('click', () => {
+                        if (outerP.style.display === 'none') {
+                            outerP.style.display = 'block';
+                            outerP.typeset();
+                        } else {
+                            ortouterPhoP.style.display = 'none';
+                        }
+                    });
+                </script>
+
                 <br />
                 <br />
 
