@@ -129,6 +129,7 @@
         <a href="#intro">Introduction</a>
         <br />
         <br />
+        <a href="#rf">BLUF</a>
         <!-- <a href="#eda">Exploratory Data Analysis</a>
         <div class="submenu">
             <a href="#datacleaning">Data Cleaning</a><br>
@@ -237,7 +238,19 @@
               
                 </p>
 
-                <h2 id="rf">Random Forest</h2>
+                <h2 id="rf">BLUF</h2>
+                <p>The bottom line up front is that ultimately, performance in the benchmark workouts is not a good predictor of CrossFit Games ranking. Elite athletes have very similar records for each of the benchmark workouts, so they are not informative enough to differentiate athletes' ranking. The features (benchmark workouts) do not have clean boundaries that help separate the target class (ranking). 
+
+                    The best perfoming random forest model for both the Men and Women Divisions resulted in a 37% accuracy and averaged between 31-37% for precision, recall, and F1 score. This is very low, indicating that the model struggles to distinguish between target classes and will not perform well with unseen data. 
+                    
+                    Despite preprocessing the data, tuning hyperparameters, and performing feature engineering, the model's performance did not improve. The following are suggestions for future improvement: 
+                    <ul>
+                        <li>Gather additional features: Include other data about athletes that could be good indicators of ranking (e.g., training time, rankings in smaller events, height, weight) </li>
+                        <li>Experiment with other algorithms like XGBoost or neural networks to see if they perform better</li>
+                        <li>Explore using interpretability metrics like SHAP to understand the contribution of features to better implement feature engineering techniques</li>
+                
+                    </ul>
+                </p>
 
                 
                         
