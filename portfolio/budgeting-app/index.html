@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+
+<head> <!-- Metadata, OpenGraph and Schema.org -->
+
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Eunice Koid | Budgeting Application (Django/React/AWS/PostgreSQL)</title>
+    <meta name="author" content="Eunice Koid" />
+    <meta name="description" content="full-stack application, django, python, react, aws" />
+    <meta name="keywords" content="django, python, react, aws, cloud, PostgreSQL" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css"
+        integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
+        integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css"
+        integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons"> -->
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css"
+        media="none" id="highlight_theme_light" />
+
+    <!-- Styles -->
+
+    <link rel="shortcut icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◼️</text></svg>">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://eunicekoid.github.io/projects/forest-coverage-covid-19-india-machine-learning/">
+
+    <!-- Dark Mode -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css"
+        media="none" id="highlight_theme_dark" />
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+
+    <!-- Table of Contents in Left Panel-->
+    <style>
+        body {
+            margin-left: 2px;
+        }
+
+        .fixedNavigation {
+            position: fixed;
+            top: 1000;
+            width: 275px;
+            left: 10;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+        }
+
+        .submenu {
+            margin-left: 3px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<!-- Body -->
+
+<body class="fixed-top-nav ">
+
+    <!-- Header -->
+    <header>
+
+        <!-- Nav Bar -->
+        <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+            <div class="container">
+                <a class="navbar-brand title font-weight-lighter" href="https://eunicekoid.github.io/"><span
+                        class="font-weight-bold">Eunice</span> Koid</a>
+                <!-- Navbar Toggle -->
+                <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse"
+                    data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar top-bar"></span>
+                    <span class="icon-bar middle-bar"></span>
+                    <span class="icon-bar bottom-bar"></span>
+                </button>
+
+                <div class="collapse navbar-collapse text-right" id="navbarNav">
+                    <ul class="navbar-nav ml-auto flex-nowrap">
+
+                        <!-- About -->
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/">about</a>
+                        </li>
+
+                        <!-- Portfolio -->
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/portfolio/">portfolio</a>
+                        </li>
+
+                        <!-- Blog -->
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/blog/">blog</a>
+                        </li>
+
+                        <!-- Toogle theme mode -->
+                        <div class="toggle-container">
+                            <a id="light-toggle">
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-sun"></i>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+        <!-- page.html -->
+        <div class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Full-Stack Budgeting Application</h1>
+                <p class="post-description"></p>
+            </header>
+            <a href="http://euniceproj-alb-130693636.us-east-1.elb.amazonaws.com/" style="font-size: 16px;">
+                <u>View the Web App</u>
+                <br>
+                <br>
+                <a href="https://github.com/eunicekoid/euniceproj
+                style=" font-size: 16px;">
+                    <u>View code on Github</u>
+                </a>
+                <br />
+                <br />
+                <style>
+                    .scaled-image-icons {
+                        width: 90%;
+                    }
+                </style>
+                <img class="img-fluid z-dept-1 rounded scaled-image-icons" src="/assets/img/icons_cf.png"
+                    alt="icons_cf.png" />
+                <br>
+                <hr>
+
+
+                <article>
+                    <p>
+                        This personal budgeting application is a financial budgeting tool designed to help users track
+                        and manage their personal finances. It provides an intuitive interface for budget planning,
+                        expense tracking, and financial analysis.
+
+                    </p>
+
+                    <strong>Key Features</strong>
+                    <ol>
+                        <li><strong>Budget Management</strong>
+                            <ul>
+                                <li>Set monthly budgets with customizable timeframes</li>
+                                <li>Track budget progress in real-time</li>
+                                <li>Visual indicators for budget status</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transaction Management</strong>
+                            <ul>
+                                <li>Add one-time and recurring transactions</li>
+                                <li>Two-level categorization system</li>
+                                <li>Automatic budget alignment</li>
+                                <li>Detailed transaction history</li>
+                            </ul>
+                        </li>
+                        <li><strong>Recurring Transactions</strong>
+                            <ul>
+                                <li>Set up monthly, quarterly, or yearly recurring expenses</li>
+                                <li>Automatic transaction generation</li>
+                                <li>Flexible date range selection</li>
+                                <li>Easy modification of recurring transactions</li>
+                            </ul>
+                        </li>
+                        <li><strong>Currency Support</strong>
+                            <ul>
+                                <li>Real-time currency conversion using ExchangeRate API</li>
+                                <li>Support for multiple currencies</li>
+                                <li>Automatic USD conversion for tracking</li>
+                            </ul>
+                        </li>
+                        <li><strong>Financial Overview</strong>
+                            <ul>
+                                <li>Monthly budget tracking</li>
+                                <li>Category-wise expense breakdown</li>
+                                <li>Visual budget status indicators</li>
+                                <li>Remaining budget calculations</li>
+                            </ul>
+                        </li>
+                        <li><strong>Smart Input Features</strong>
+                            <ul>
+                                <li>Built-in mathematical expression evaluation</li>
+                                <li>Wolfram Alpha API integration</li>
+                                <li>Currency conversion on the fly</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <strong>Technologies Used</strong>
+                    <ul>
+                        <li><strong>Backend</strong>: Django, PostgreSQL (Database), Django REST Framework (API), JWT
+                            Authentication</li>
+                        <li><strong>Frontend</strong>: React, Vite (Build tool), Material-UI (Component library),
+                            JavaScript</li>
+                        <li><strong>APIs</strong>
+                            <ul>
+                                <li>ExchangeRate API (Currency conversion). The app uses fallback rates when API limits
+                                    are reached.</li>
+                                <li>Wolfram Alpha API (Mathematical computations)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Development Tools</strong>: Docker (Containerization), Postman (API testing), Git
+                        </li>
+                        <li><strong>Deployment</strong>: Docker, AWS (Cloud hosting)</li>
+                    </ul>
+
+
+
+
+                </article>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="fixed-bottom">
+        <div class="container mt-0">
+            <!-- © Copyright 2022 Eunice Koid. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>. -->
+
+        </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <script>
+        function toggleNavigation() {
+            var navigation = document.querySelector('.fixedNavigation');
+            if (window.innerWidth <= 1400) {
+                navigation.style.display = 'none';
+            } else {
+                navigation.style.display = 'block';
+            }
+        }
+
+        // Initial call to set the initial state on page load
+        toggleNavigation();
+
+        // Attach the function to the resize event
+        window.addEventListener('resize', toggleNavigation);
+    </script>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.2/dist/umd/popper.min.js"
+        integrity="sha256-l/1pMF/+J4TThfgARS6KwWrk/egwuVvhRzfLAMQ6Ds4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha256-SyTu6CwrfOhaznYZPoolVw2rxoY7lKYKQvqbtqN93HI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"
+        integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+    <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+
+    <!-- Medium Zoom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"
+        integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+    <script src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+    <script src="/assets/js/common.js"></script>
+
+    <!-- MathJax -->
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                tags: 'ams'
+            }
+        };
+    </script>
+    <script defer type="text/javascript" id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+    <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+</body>
+
+</html>
